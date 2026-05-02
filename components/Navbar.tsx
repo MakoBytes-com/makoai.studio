@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -124,16 +123,15 @@ export default function Navbar() {
 function MakoMark() {
   return (
     <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-tide-500 to-ink-700 flex items-center justify-center shadow-glow overflow-hidden">
-      <Image
-        src="/mako-whale.png"
-        alt=""
+      <svg
+        viewBox="0 0 32 32"
+        className="w-6 h-6 text-white"
+        fill="currentColor"
         aria-hidden
-        width={28}
-        height={28}
-        priority
-        className="w-7 h-7 object-contain"
-        style={{ filter: "brightness(0) invert(1)" }}
-      />
+      >
+        <path d="M3 17.5c0-3.6 4-6.5 9-6.5 3.7 0 6.9 1.6 8.5 3.9l5-3.2c.6-.4 1.5.1 1.5.8v6.9c0 .8-.9 1.2-1.6.8l-4.9-3.2c-1.6 2.4-4.8 4-8.5 4-5 0-9-2.9-9-6.5Z" />
+        <circle cx="9" cy="15.5" r="0.9" fill="#10182C" />
+      </svg>
       <div className="absolute inset-0 bg-gradient-to-t from-transparent via-white/5 to-white/20 pointer-events-none" />
     </div>
   );
