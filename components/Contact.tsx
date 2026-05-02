@@ -72,7 +72,7 @@ export default function Contact() {
         />
         <div className="absolute inset-0 bg-ink-900/25" />
         <div className="absolute inset-0 bg-gradient-to-l from-ink-900/85 via-ink-900/35 to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-80 md:h-96 bg-gradient-to-b from-ink-900 via-ink-900/90 via-50% to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[28rem] md:h-[34rem] bg-[linear-gradient(to_bottom,#050912_0%,#050912_28%,rgba(5,9,18,0.88)_52%,rgba(5,9,18,0.55)_72%,rgba(5,9,18,0.2)_88%,transparent_100%)]" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-ink-900 to-transparent" />
       </div>
       <div className="container-narrow relative">
