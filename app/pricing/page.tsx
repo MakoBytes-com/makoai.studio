@@ -161,7 +161,7 @@ export default function PricingPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 md:pt-40 pb-16 border-b border-white/5">
+      <section className="relative pt-32 md:pt-40 pb-16">
         <div className="absolute inset-0 bg-hero-radial pointer-events-none" />
         <div className="container-narrow relative">
           <span className="section-label">Pricing</span>
@@ -182,7 +182,7 @@ export default function PricingPage() {
       </section>
 
       {/* Build pricing */}
-      <section className="py-20 md:py-28 border-b border-white/5">
+      <section className="py-20 md:py-28">
         <div className="container-narrow">
           <div className="mb-12">
             <span className="section-label">New builds</span>
@@ -232,7 +232,7 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
-                <p className="mt-6 pt-5 border-t border-white/5 text-[12px] text-steel-400 italic leading-relaxed">
+                <p className="mt-6 pt-5 text-[12px] text-steel-400 italic leading-relaxed">
                   {t.typicalClient}
                 </p>
               </article>
@@ -242,7 +242,7 @@ export default function PricingPage() {
       </section>
 
       {/* Maintenance */}
-      <section className="py-20 md:py-28 border-b border-white/5">
+      <section className="py-20 md:py-28">
         <div className="container-narrow">
           <div className="mb-12">
             <span className="section-label">Ongoing</span>
@@ -299,7 +299,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 md:py-28 border-b border-white/5">
+      <section className="py-20 md:py-28">
         <div className="container-narrow max-w-3xl">
           <div className="mb-10">
             <span className="section-label">Straight answers</span>
@@ -329,7 +329,7 @@ export default function PricingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-28 border-b border-white/5">
+      <section className="py-20 md:py-28">
         <div className="container-narrow text-center">
           <span className="section-label">Next</span>
           <h2 className="mt-5 font-display font-semibold text-[32px] md:text-[48px] leading-tight tracking-tight">

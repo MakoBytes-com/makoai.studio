@@ -95,7 +95,7 @@ export default async function CaseStudyPage({
       />
 
       {/* Hero */}
-      <section className="relative pt-32 md:pt-40 pb-16 md:pb-20 border-b border-white/5">
+      <section className="relative pt-32 md:pt-40 pb-16 md:pb-20">
         <div className="absolute inset-0 bg-hero-radial pointer-events-none" />
         <div className="container-narrow relative">
           <nav
@@ -149,7 +149,7 @@ export default async function CaseStudyPage({
             </div>
           ) : null}
 
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 border-t border-white/5 pt-8">
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 pt-8">
             <MetaItem label="Client" value={cs.client} />
             <MetaItem label="Role" value={cs.role} />
             <MetaItem label="Timeline" value={cs.timeline} />
@@ -160,7 +160,7 @@ export default async function CaseStudyPage({
 
       {/* Hero image */}
       {item.screenshot ? (
-        <section className="py-16 md:py-20 border-b border-white/5">
+        <section className="py-16 md:py-20">
           <div className="container-narrow">
             <div className="relative aspect-[16/9] rounded-2xl overflow-hidden glass">
               <Image
@@ -205,7 +205,7 @@ export default async function CaseStudyPage({
       </CaseSection>
 
       {/* Shipped */}
-      <section className="py-20 md:py-28 border-b border-white/5">
+      <section className="py-20 md:py-28">
         <div className="container-narrow">
           <div className="grid md:grid-cols-[200px_1fr] gap-10 md:gap-16 mb-10">
             <div>
@@ -243,7 +243,7 @@ export default async function CaseStudyPage({
 
       {/* Gallery */}
       {cs.gallery && cs.gallery.length > 0 ? (
-        <section className="py-20 md:py-28 border-b border-white/5">
+        <section className="py-20 md:py-28">
           <div className="container-narrow">
             <span className="section-label mb-10 block">Gallery</span>
             <div className="grid md:grid-cols-2 gap-5 mt-6">
@@ -262,7 +262,7 @@ export default async function CaseStudyPage({
                     />
                   </div>
                   {g.caption ? (
-                    <figcaption className="px-5 py-4 text-[12px] text-steel-400 border-t border-white/5">
+                    <figcaption className="px-5 py-4 text-[12px] text-steel-400">
                       {g.caption}
                     </figcaption>
                   ) : null}
@@ -274,7 +274,7 @@ export default async function CaseStudyPage({
       ) : null}
 
       {/* Next / CTA */}
-      <section className="py-20 md:py-28 border-b border-white/5">
+      <section className="py-20 md:py-28">
         <div className="container-narrow">
           <div className="glass rounded-2xl p-8 md:p-12 text-center">
             <span className="section-label">Next</span>
@@ -346,7 +346,7 @@ function CaseSection({
   children: React.ReactNode;
 }) {
   return (
-    <section className="py-20 md:py-28 border-b border-white/5">
+    <section className="py-20 md:py-28">
       <div className="container-narrow grid md:grid-cols-[200px_1fr] gap-10 md:gap-16">
         <div>
           <span className="section-label">{label}</span>

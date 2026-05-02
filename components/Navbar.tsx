@@ -87,14 +87,14 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-white/5 bg-ink-900/95 backdrop-blur-xl">
+        <div className="md:hidden bg-ink-900/95 backdrop-blur-xl">
           <div className="container-narrow flex flex-col py-4 gap-1">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="py-3 text-[15px] text-steel-200 hover:text-white border-b border-white/5"
+                className="py-3 text-[15px] text-steel-200 hover:text-white"
               >
                 {l.label}
               </a>

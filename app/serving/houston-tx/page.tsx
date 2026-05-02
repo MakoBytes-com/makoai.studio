@@ -87,7 +87,7 @@ export default function HoustonPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
-      <section className="relative pt-32 md:pt-40 pb-16 border-b border-white/5">
+      <section className="relative pt-32 md:pt-40 pb-16">
         <div className="absolute inset-0 bg-hero-radial pointer-events-none" />
         <div className="container-narrow relative">
           <span className="section-label">Service area</span>
@@ -108,7 +108,7 @@ export default function HoustonPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24 border-b border-white/5">
+      <section className="py-20 md:py-24">
         <div className="container-narrow">
           <div className="grid md:grid-cols-[220px_1fr] gap-10 md:gap-16">
             <div>
@@ -153,7 +153,7 @@ export default function HoustonPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24 border-b border-white/5">
+      <section className="py-20 md:py-24">
         <div className="container-narrow">
           <div className="grid md:grid-cols-[220px_1fr] gap-10 md:gap-16">
             <div>
@@ -219,7 +219,7 @@ export default function HoustonPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24 border-b border-white/5">
+      <section className="py-20 md:py-24">
         <div className="container-narrow">
           <div className="grid md:grid-cols-[220px_1fr] gap-10 md:gap-16">
             <div>

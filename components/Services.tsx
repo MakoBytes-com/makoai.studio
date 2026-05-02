@@ -100,7 +100,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-28 md:py-36 border-b border-white/5"
+      className="relative py-28 md:py-36"
     >
       <div className="container-narrow">
         <div className="grid md:grid-cols-12 gap-10 mb-16">

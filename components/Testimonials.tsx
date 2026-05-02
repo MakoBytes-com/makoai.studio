@@ -59,7 +59,7 @@ export default async function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative py-28 md:py-36 border-b border-white/5 overflow-hidden"
+      className="relative py-28 md:py-36 overflow-hidden"
     >
       <div className="absolute inset-0">
         <TestimonialsVideoBackground />
@@ -125,7 +125,7 @@ export default async function Testimonials() {
               <p className="text-[14px] text-steel-200 leading-relaxed flex-1">
                 &ldquo;{r.text}&rdquo;
               </p>
-              <div className="mt-5 pt-4 border-t border-white/5 flex items-center gap-3">
+              <div className="mt-5 pt-4 flex items-center gap-3">
                 {r.authorPhotoUri ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img

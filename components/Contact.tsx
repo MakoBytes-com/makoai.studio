@@ -57,7 +57,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-28 md:py-36 border-b border-white/5 overflow-hidden"
+      className="relative py-28 md:py-36 overflow-hidden"
     >
       <div className="absolute inset-0">
         <Image
@@ -72,7 +72,7 @@ export default function Contact() {
         />
         <div className="absolute inset-0 bg-ink-900/25" />
         <div className="absolute inset-0 bg-gradient-to-l from-ink-900/85 via-ink-900/35 to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-ink-900 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-80 md:h-96 bg-gradient-to-b from-ink-900 via-ink-900/90 via-50% to-transparent" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-ink-900 to-transparent" />
       </div>
       <div className="container-narrow relative">

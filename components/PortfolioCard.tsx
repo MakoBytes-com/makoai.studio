@@ -18,7 +18,7 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
     <>
       {/* Preview */}
       <div
-        className={`relative aspect-[16/10] overflow-hidden border-b border-white/5 bg-ink-700 ${
+        className={`relative aspect-[16/10] overflow-hidden bg-ink-700 ${
           archived ? "opacity-90" : ""
         }`}
       >
@@ -106,7 +106,7 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
           </div>
         ) : null}
         {archived && item.archivedNote ? (
-          <p className="mt-5 text-[12px] text-steel-400 italic leading-relaxed border-t border-white/5 pt-4">
+          <p className="mt-5 text-[12px] text-steel-400 italic leading-relaxed pt-4">
             {item.archivedNote}
           </p>
         ) : null}

@@ -62,7 +62,7 @@ export default function Process() {
   }, [active]);
 
   return (
-    <section className="relative py-28 md:py-36 border-b border-white/5 overflow-hidden">
+    <section className="relative py-28 md:py-36 overflow-hidden">
       <div className="absolute inset-0">
         {hasVideo && (
           <>
