@@ -217,7 +217,7 @@ export default function ConroePage() {
                   Long-term maintenance, not
                   &quot;billable-hour panic&quot;.
                 </strong>{" "}
-                Monthly maintenance from $99/mo keeps the site current, the
+                Monthly maintenance from $149/mo keeps the site current, the
                 SSL valid, and security patches applied without an every-issue
                 invoice fight.
               </p>

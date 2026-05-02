@@ -109,7 +109,9 @@ export default function Services() {
             <h2 className="mt-5 font-display font-semibold text-[36px] md:text-[52px] leading-[1.05] tracking-tight">
               Built end-to-end.
               <br />
-              <span className="text-steel-400">Shipped fast.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+                Shipped fast.
+              </span>
             </h2>
           </div>
           <div className="md:col-span-6 md:col-start-7 flex items-end">

@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Pricing — Mako Studio",
   description:
-    "Honest pricing for custom AI-native websites. Projects from $2,500. Most small-business sites land at $3,500–$4,500. Monthly maintenance from $99/mo. No ghost pricing, no $500/mo SEO retainers, no surprise fees.",
+    "Honest pricing for custom AI-native websites. Projects from $2,500. Most small-business sites land at $3,500–$4,500. Monthly maintenance from $149/mo with optional self-hosted email. No ghost pricing, no $500/mo SEO retainers, no surprise fees.",
   alternates: { canonical: "https://makoai.studio/pricing" }
 };
 
@@ -74,19 +74,19 @@ const buildTiers = [
 const msTiers = [
   {
     name: "Care",
-    price: "$99",
+    price: "$149",
     tagline: "Keep the lights on.",
     features: [
       "Hosting + SSL + domain routing",
       "Automated daily backups",
       "Uptime monitoring",
       "Security monitoring + patch updates",
-      "Email deliverability kept healthy"
+      "Up to 5 self-hosted email accounts included"
     ]
   },
   {
     name: "Standard",
-    price: "$149",
+    price: "$249",
     tagline: "The real MSP tier.",
     features: [
       "Everything in Care",
@@ -99,7 +99,7 @@ const msTiers = [
   },
   {
     name: "Growth",
-    price: "$249",
+    price: "$349",
     tagline: "Active hands on your site.",
     features: [
       "Everything in Standard",
@@ -108,6 +108,34 @@ const msTiers = [
       "Performance tuning",
       "Priority response (same-day on business days)"
     ]
+  }
+];
+
+const emailTiers = [
+  {
+    name: "Included with Care",
+    price: "Bundled",
+    range: "1–5 accounts",
+    note: "Comes free with the Care maintenance tier."
+  },
+  {
+    name: "Tier 1",
+    price: "$50",
+    range: "6–10 accounts",
+    note: "Add-on for Care or higher."
+  },
+  {
+    name: "Tier 2",
+    price: "$100",
+    range: "11–25 accounts",
+    note: "Add-on for Care or higher.",
+    highlighted: true
+  },
+  {
+    name: "Tier 3",
+    price: "$200",
+    range: "26–50 accounts",
+    note: "Add-on for Care or higher."
   }
 ];
 
@@ -176,7 +204,8 @@ export default function PricingPage() {
             Most agencies bury pricing and hand you a $12,000 quote for a
             brochure site. We don't. Projects start at $2,500. Most small-
             business builds land at $3,500–$4,500. Monthly maintenance starts
-            at $99. What you see below is what you pay.
+            at $149 and bundles up to five self-hosted mailboxes. What you see
+            below is what you pay.
           </p>
         </div>
       </section>
@@ -294,6 +323,65 @@ export default function PricingPage() {
             Anything larger than what maintenance covers — a new section, a new
             integration, a redesign — is quoted separately. You approve the
             estimate before we start. Never any surprise invoices.
+          </p>
+        </div>
+      </section>
+
+      {/* Email hosting */}
+      <section className="py-20 md:py-28">
+        <div className="container-narrow">
+          <div className="mb-12">
+            <span className="section-label">Email hosting</span>
+            <h2 className="mt-4 font-display font-semibold text-[32px] md:text-[44px] leading-tight tracking-tight">
+              Mailboxes,{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+                on our server.
+              </span>
+            </h2>
+            <p className="mt-3 max-w-xl text-[15px] text-steel-300 leading-relaxed">
+              Real <code>you@yourdomain.com</code> mailboxes hosted on our own
+              cPanel — no Google Workspace tax, no per-seat creep. The first
+              five accounts come bundled with Care. Past that it scales in flat
+              tiers.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {emailTiers.map((t) => (
+              <article
+                key={t.name}
+                className={`glass rounded-2xl p-7 flex flex-col ${t.highlighted ? "border-tide-500/40 shadow-glow" : ""}`}
+              >
+                {t.highlighted ? (
+                  <span className="inline-block self-start mb-3 px-2.5 py-1 text-[10px] uppercase tracking-widest font-semibold text-tide-200 bg-tide-500/15 border border-tide-500/30 rounded-full">
+                    Most common
+                  </span>
+                ) : null}
+                <h3 className="font-display text-[18px] font-semibold text-steel-100">
+                  {t.name}
+                </h3>
+                <div className="mt-3 flex items-baseline gap-1.5">
+                  <span className="font-display font-semibold text-[32px] text-steel-100 leading-none">
+                    {t.price}
+                  </span>
+                  {t.price.startsWith("$") ? (
+                    <span className="text-[13px] text-steel-400">/ mo</span>
+                  ) : null}
+                </div>
+                <p className="mt-3 text-[13px] text-tide-300 font-medium">
+                  {t.range}
+                </p>
+                <p className="mt-3 text-[13px] text-steel-300 leading-relaxed flex-1">
+                  {t.note}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <p className="mt-8 text-[13px] text-steel-400 italic max-w-2xl">
+            Storage: each tier covers the first 20 GB of mail data shared
+            across all accounts. Past that, every additional 10 GB is
+            +$5 / month. We&apos;ll tell you before you cross the line.
           </p>
         </div>
       </section>

@@ -116,7 +116,9 @@ export default function Hero() {
 
           <h1 className="mt-6 font-display font-semibold text-[40px] md:text-[68px] leading-[1.02] tracking-tight">
             AI-native design
-            <span className="block text-steel-400">and engineering.</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+              and engineering.
+            </span>
           </h1>
 
           <p className="mt-6 max-w-xl text-[16px] md:text-[18px] text-steel-300 leading-relaxed">

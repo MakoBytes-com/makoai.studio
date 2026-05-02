@@ -105,7 +105,9 @@ export default function Process() {
             <h2 className="mt-5 font-display font-semibold text-[36px] md:text-[52px] leading-[1.05] tracking-tight">
               AI-native.
               <br />
-              <span className="text-steel-400">Not AI-assisted.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+                Not AI-assisted.
+              </span>
             </h2>
           </div>
           <div className="md:col-span-6 md:col-start-7 flex items-end">

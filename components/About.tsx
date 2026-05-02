@@ -41,7 +41,9 @@ export default function About() {
             <h2 className="mt-5 font-display font-semibold text-[36px] md:text-[52px] leading-[1.05] tracking-tight">
               One partner.
               <br />
-              <span className="text-steel-400">Start to finish.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+                Start to finish.
+              </span>
             </h2>
             <p className="mt-6 text-[15px] text-steel-300 leading-relaxed">
               Mako Studio is the in-house AI-native web team at{" "}
