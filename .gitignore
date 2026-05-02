@@ -39,3 +39,7 @@ AGENTS.md
 
 # Claude Code local settings
 .claude/
+
+# Local backup / scratch files
+*.bak
+*.tmp.*
