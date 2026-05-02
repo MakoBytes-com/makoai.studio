@@ -65,7 +65,7 @@ export default async function Testimonials() {
         <TestimonialsVideoBackground />
         <div className="absolute inset-0 bg-ink-900/55" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-ink-900 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[28rem] md:h-[34rem] bg-[linear-gradient(to_bottom,#050912_0%,#050912_28%,rgba(5,9,18,0.88)_52%,rgba(5,9,18,0.55)_72%,rgba(5,9,18,0.2)_88%,transparent_100%)]" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[28rem] md:h-[34rem] bg-[linear-gradient(to_top,#050912_0%,#050912_28%,rgba(5,9,18,0.88)_52%,rgba(5,9,18,0.55)_72%,rgba(5,9,18,0.2)_88%,transparent_100%)]" />
       </div>
       <div className="container-narrow relative">
