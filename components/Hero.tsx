@@ -64,7 +64,7 @@ export default function Hero() {
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
                 active === "a" ? "opacity-100" : "opacity-0"
               }`}
-              style={{ filter: "brightness(0.7) saturate(1.05)" }}
+              style={{ filter: "brightness(0.9) saturate(1.1)" }}
               src="/hero.mp4"
               autoPlay
               muted
@@ -77,7 +77,7 @@ export default function Hero() {
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
                 active === "b" ? "opacity-100" : "opacity-0"
               }`}
-              style={{ filter: "brightness(0.7) saturate(1.05)" }}
+              style={{ filter: "brightness(0.9) saturate(1.1)" }}
               src="/hero.mp4"
               muted
               playsInline
@@ -102,11 +102,11 @@ export default function Hero() {
 
         {/* Left-weighted dark pane so text stays readable on busy footage.
             Right side stays bright to show off the video. */}
-        <div className="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/75 to-ink-900/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink-900/95 via-ink-900/45 to-transparent" />
         {/* Top + bottom fade — softens navbar edge and transitions into next section */}
-        <div className="absolute inset-0 bg-gradient-to-b from-ink-900/60 via-transparent to-ink-900" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink-900/50 via-transparent to-ink-900" />
         {/* Subtle blue atmosphere at top */}
-        <div className="absolute inset-0 bg-hero-radial opacity-60" />
+        <div className="absolute inset-0 bg-hero-radial opacity-40" />
       </div>
 
       {/* Content */}
