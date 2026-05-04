@@ -10,14 +10,15 @@
 import { writeFile, mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
 
-// Source thumbnails from frozen showcase forks for client builds whose
-// live site can drift after takeover (buffaloseal, woodlands, aaaawning,
-// bulldog). Source from live URLs for our own products and live-by-us
-// sites where what's live IS what we shipped.
+// Source thumbnails from frozen showcase forks for ALL client builds —
+// every portfolio entry except our own products (toppaws, makobot,
+// aipromptshive, makobytes) gets sourced from a *-showcase.vercel.app
+// fork so the portfolio image never drifts post-handover.
 const sites = [
   { slug: "bulldog", url: "https://bulldog-showcase.vercel.app" },
   { slug: "aaaawning", url: "https://aaaawning-showcase.vercel.app" },
-  { slug: "lagunares", url: "https://lagunares-com.vercel.app" },
+  { slug: "bndt", url: "https://bndt-showcase.vercel.app" },
+  { slug: "lagunares", url: "https://lagunares-showcase.vercel.app" },
   { slug: "toppaws", url: "https://toppaws.com" },
   { slug: "makobot", url: "https://makobot.com" },
   { slug: "aipromptshive", url: "https://aipromptshive.com" },
@@ -28,7 +29,7 @@ const sites = [
 
 const onlyNew = process.argv.includes("--only-new");
 const filtered = onlyNew
-  ? sites.filter((s) => s.slug === "bulldog" || s.slug === "aaaawning")
+  ? sites.filter((s) => s.slug === "bndt" || s.slug === "lagunares")
   : sites;
 
 const outDir = resolve(process.cwd(), "public", "portfolio");

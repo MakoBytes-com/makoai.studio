@@ -39,6 +39,8 @@ compressing 6-week timelines into 2 without cutting corners.
 - Bulldog Security Service (https://bulldogsecurityservice.com) — multi-state ADT-partner residential security (client)
 - Buffalo Seal & Gasket (https://buffalosealandgasket.com) — Houston, TX industrial seal + gasket supplier (client)
 - Family Psychiatry of The Woodlands (https://woodlandsfamilypsychiatry.com) — The Woodlands, TX psychiatric practice (client)
+- Burton NDT Rentals (https://www.bndtrentals.com) — La Porte, TX non-destructive testing equipment rental, sales, calibration & repair (pitch build, pending close)
+- Laguna Resources (https://lagunares.com) — Texas-based upstream oil & gas operator (pitch build, pending close)
 - Davis Investigation Services (https://www.davisinvestigationservices.com) — Conroe, TX pre-employment screening firm (maintained by Makologics MSP)
 - Pro-Surve Technical Services (https://pro-surve.com) — League City, TX industrial inspection + NDT (maintenance by Makologics MSP)
 
