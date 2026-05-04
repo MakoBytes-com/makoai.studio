@@ -296,6 +296,74 @@ export const portfolio: PortfolioItem[] = [
     }
   },
   {
+    slug: "utilities-plus",
+    name: "Utilities Plus",
+    url: "https://utilities-plus-showcase.vercel.app",
+    tagline: "Free utility concierge — Houston, TX",
+    description:
+      "Full WordPress → Next.js 16 rebuild for a utility concierge service that sets up electricity, internet, security, gas, water, solar, waste, home warranty, and insurance referrals through one dedicated rep. Pexels hero video, deep-navy brand theme, custom SVG icon system across services and partner-types, FAQ with FAQPage schema, Google Maps embed on contact, and the full Mako security + AI-search baseline. Shown as shipped on a frozen showcase fork.",
+    tags: ["Next.js 16", "Tailwind v4", "WP Migration", "Local SEO", "FAQ Schema"],
+    status: "In Progress",
+    year: "2026",
+    accent: "blue",
+    screenshot: "/portfolio/utilities-plus.png",
+    tier: "client-build",
+    caseStudy: {
+      oneLiner:
+        "Full WordPress → Next.js 16 rebuild for a Houston utility concierge — Pexels hero video, deep-navy brand theme, custom icon system, FAQPage schema, Google Maps on contact, and the complete Mako security + AI-search baseline.",
+      client: "Utilities Plus · Houston, TX",
+      role: "Design + full-stack build + migration",
+      timeline: "2026 · pitch build, pending close",
+      stack: [
+        "Next.js 16",
+        "React 19",
+        "Tailwind v4",
+        "Vercel",
+        "Pexels (hero video)",
+        "Google Maps Embed",
+        "JSON-LD (Organization, WebSite, BlogPosting, FAQPage)",
+      ],
+      viewUrl: "https://utilities-plus-showcase.vercel.app",
+      viewLabel: "View frozen showcase",
+      problem:
+        "Utilities Plus is a free utility concierge service in Houston that sets up electricity, internet, security, gas, water, solar, waste, home warranty, and insurance referrals for homebuyers and real-estate professionals through one dedicated rep. Their old site was a stock WordPress / Astra / Elementor build — slow, generic, and indistinguishable from a thousand other home-services templates. The brand was meant to feel premium and trust-first; the site read like a brochure.\n\nThe brief: a custom rebuild that captures the white-glove positioning, makes the eight services feel like one cohesive offering instead of a bullet list, and gives both audiences (homebuyers and real-estate partners) clear paths through the site. AI-search ready. Same security baseline we ship on every Mako property.",
+      approach:
+        "Next.js 16 + Tailwind v4 with the brand palette extracted from a sister-property reference and dialed in across a deep-navy ramp from brand-50 to brand-950. Mulish for body, Baskervville for display headlines, Frank Ruhl Libre as a serif accent for the editorial step-numerals — typography mix that reads premium without overshooting into luxury territory.\n\nThe homepage hero pairs a looping Pexels family-moving clip (3.95 MB at 720p, autoplay-muted-loop-playsinline, hidden under prefers-reduced-motion) with a brand-navy gradient overlay so the headline stays sharp. A custom SVG icon library covers all eight services plus the How-It-Works steps, the Why-Use-Us benefits grid, and the Who-We-Partner-With grid — every section has its own visual rhythm without leaning on a third-party icon font.\n\nThe FAQ converts the original blog topics into 29 grouped questions across 5 categories with FAQPage JSON-LD for Google rich results. Google Maps keyless embed on the contact page sits under the office hours, with CSP frame-src updated to allow Google's iframe domains. Full Mako security baseline: HSTS preload, X-Frame, X-Content nosniff, Referrer-Policy, locked Permissions-Policy, full CSP with frame-ancestors none. 301 redirects from every old WordPress slug.",
+      shipped: [
+        {
+          title: "Full WordPress → Next.js 16 migration",
+          body: "Astra + Elementor source replaced with hand-written Next.js 16 components. 22 routes generating cleanly — every WP page rebuilt, every image migrated to public/images, every blog post re-stubbed with original copy.",
+        },
+        {
+          title: "Pexels family-moving hero video",
+          body: "3.95 MB 720p mp4 self-hosted, autoplay-muted-loop-playsinline, brand-navy gradient overlay for legibility, Cache-Control immutable. Falls back to a poster JPG under prefers-reduced-motion.",
+        },
+        {
+          title: "Custom icon system (24+ SVGs)",
+          body: "Hand-written stroke-based icons covering services (plug, wifi, shield, droplet, sun, trash, warranty, umbrella), how-it-works steps, why-use benefits, and partner-types. One ServiceIcon component, no icon font dependency.",
+        },
+        {
+          title: "FAQ with FAQPage JSON-LD",
+          body: "29 questions across 5 groups (About, Before move, Choosing plans, Day-of, Real-estate pros) using native details/summary accordion. Schema-tagged for Google rich results without third-party widgets.",
+        },
+        {
+          title: "Google Maps embed on contact",
+          body: "Keyless Google Maps iframe lazy-loaded under office hours with a Get Directions link. CSP frame-src updated to allow www.google.com and maps.google.com without weakening the rest of the policy.",
+        },
+        {
+          title: "Mako security + SEO baseline",
+          body: "HSTS preload, full CSP with frame-ancestors none, locked Permissions-Policy, poweredByHeader off, immutable cache on /images and /videos. Sitemap, robots, llms.txt, Organization + WebSite + BlogPosting + FAQPage JSON-LD, OG/Twitter cards, 301s from every old WP slug.",
+        },
+        {
+          title: "Frozen showcase fork",
+          body: "utilities-plus-showcase.vercel.app with noindex + a Portfolio Demo pill. The portfolio version stays canonical even as the live site evolves under client ownership.",
+        },
+      ],
+      outcome:
+        "Pitch build live and serving from Vercel. In front of the client for evaluation. When the deal closes, this is the design we ship under their production domain — and the showcase stays locked as the canonical 'as we built it' version.",
+    },
+  },
+  {
     slug: "toppaws",
     name: "TopPaws.com",
     url: "https://toppaws.com",

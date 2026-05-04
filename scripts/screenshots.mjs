@@ -19,6 +19,7 @@ const sites = [
   { slug: "aaaawning", url: "https://aaaawning-showcase.vercel.app" },
   { slug: "bndt", url: "https://bndt-showcase.vercel.app" },
   { slug: "lagunares", url: "https://lagunares-showcase.vercel.app" },
+  { slug: "utilities-plus", url: "https://utilities-plus-showcase.vercel.app" },
   { slug: "toppaws", url: "https://toppaws.com" },
   { slug: "makobot", url: "https://makobot.com" },
   { slug: "aipromptshive", url: "https://aipromptshive.com" },
