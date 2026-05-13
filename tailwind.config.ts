@@ -26,8 +26,8 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["'Space Grotesk'", "Inter", "sans-serif"]
+        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-space-grotesk)", "var(--font-inter)", "sans-serif"]
       },
       backgroundImage: {
         "hero-radial":
