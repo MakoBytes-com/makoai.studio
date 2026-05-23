@@ -17,6 +17,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9
     },
     {
+      url: "https://makoai.studio/work",
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9
+    },
+    {
+      url: "https://makoai.studio/serving",
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8
+    },
+    {
       url: "https://makoai.studio/privacy",
       lastModified: now,
       changeFrequency: "yearly",
