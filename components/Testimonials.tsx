@@ -47,9 +47,10 @@ function GoogleMark() {
 
 export default async function Testimonials() {
   const data = await fetchPlaceReviews();
-  if (!data || data.reviews.length === 0) return null;
-
-  const { reviews, rating, userRatingCount } = data;
+  const reviews = data?.reviews ?? [];
+  const rating = data?.rating ?? null;
+  const userRatingCount = data?.userRatingCount ?? null;
+  const hasReviews = reviews.length > 0;
 
   // Note: no JSON-LD here. These reviews are for Mako Logics LLC (the parent
   // MSP), not Mako Studio — claiming them as schema on makoai.studio could be
@@ -113,45 +114,62 @@ export default async function Testimonials() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {reviews.slice(0, 6).map((r, i) => (
-            <article
-              key={`${r.authorName}-${i}`}
-              className="glass rounded-2xl p-6 flex flex-col"
-            >
-              <div className="flex items-center justify-between gap-3 mb-3">
-                <Stars rating={r.rating} />
-                <GoogleMark />
-              </div>
-              <p className="text-[14px] text-steel-200 leading-relaxed flex-1">
-                &ldquo;{r.text}&rdquo;
-              </p>
-              <div className="mt-5 pt-4 flex items-center gap-3">
-                {r.authorPhotoUri ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={r.authorPhotoUri}
-                    alt={r.authorName}
-                    className="w-8 h-8 rounded-full"
-                    referrerPolicy="no-referrer"
-                  />
-                ) : (
-                  <div className="w-8 h-8 rounded-full bg-tide-500/20 flex items-center justify-center text-[12px] font-semibold text-tide-300">
-                    {r.authorName.charAt(0).toUpperCase()}
-                  </div>
-                )}
-                <div className="min-w-0">
-                  <div className="text-[13px] font-semibold text-steel-100 truncate">
-                    {r.authorName}
-                  </div>
-                  <div className="text-[11px] text-steel-400">
-                    {r.relativePublishTimeDescription}
+        {hasReviews ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {reviews.slice(0, 6).map((r, i) => (
+              <article
+                key={`${r.authorName}-${i}`}
+                className="glass rounded-2xl p-6 flex flex-col"
+              >
+                <div className="flex items-center justify-between gap-3 mb-3">
+                  <Stars rating={r.rating} />
+                  <GoogleMark />
+                </div>
+                <p className="text-[14px] text-steel-200 leading-relaxed flex-1">
+                  &ldquo;{r.text}&rdquo;
+                </p>
+                <div className="mt-5 pt-4 flex items-center gap-3">
+                  {r.authorPhotoUri ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={r.authorPhotoUri}
+                      alt={r.authorName}
+                      className="w-8 h-8 rounded-full"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <div className="w-8 h-8 rounded-full bg-tide-500/20 flex items-center justify-center text-[12px] font-semibold text-tide-300">
+                      {r.authorName.charAt(0).toUpperCase()}
+                    </div>
+                  )}
+                  <div className="min-w-0">
+                    <div className="text-[13px] font-semibold text-steel-100 truncate">
+                      {r.authorName}
+                    </div>
+                    <div className="text-[11px] text-steel-400">
+                      {r.relativePublishTimeDescription}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </article>
-          ))}
-        </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div className="glass rounded-2xl p-10 text-center">
+            <p className="text-[16px] text-steel-200 leading-relaxed">
+              See our reviews live on{" "}
+              <a
+                href="https://www.google.com/maps/place/?q=place_id:ChIJ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-tide-300 hover:text-tide-200 underline decoration-tide-500/30 underline-offset-2"
+              >
+                Mako Logics&apos; Google Business profile
+              </a>
+              .
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
