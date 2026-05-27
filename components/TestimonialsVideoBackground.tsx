@@ -51,7 +51,7 @@ export default function TestimonialsVideoBackground() {
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
           active === "a" ? "opacity-100" : "opacity-0"
         }`}
-        style={{ filter: "brightness(0.45) saturate(1.05)" }}
+        style={{ filter: "brightness(0.75) saturate(1.05)" }}
         src="/testimonials.mp4"
         autoPlay
         muted
@@ -64,7 +64,7 @@ export default function TestimonialsVideoBackground() {
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
           active === "b" ? "opacity-100" : "opacity-0"
         }`}
-        style={{ filter: "brightness(0.45) saturate(1.05)" }}
+        style={{ filter: "brightness(0.75) saturate(1.05)" }}
         src="/testimonials.mp4"
         muted
         playsInline
