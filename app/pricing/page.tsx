@@ -165,6 +165,18 @@ const faqs = [
     a: "If you'd rather not write a big check up front and you want us handling hosting, security, and edits every month, the $0-down plan at $349/mo is the easiest way to launch. If you'd rather own the site outright from day one and keep monthly costs minimal, buy it outright from $2,500 and add a maintenance tier only if you want one. Same custom build either way."
   },
   {
+    q: "Do I own my website on the $0-down plan?",
+    a: "Your domain and all your content are always yours — registered in your name, portable, no strings. The site's code itself stays ours while you're on the $0-down plan; that's the trade that lets us build it for nothing up front. Any time you want to own the code outright, pay the one-time build buy-out and it's fully yours. Prefer to own everything from day one? Buy the site outright instead — same build."
+  },
+  {
+    q: "What happens to my site if I cancel?",
+    a: "Finish the 12-month term and you can cancel anytime after with 30 days' notice. If you want to keep the exact site, pay the one-time buy-out and we hand over the code and help you move it — it's yours. If you don't buy it out, the build and its managed hosting come down when the plan ends, but your domain and content stay with you to take anywhere. We tell you the buy-out number up front, so it's never a surprise."
+  },
+  {
+    q: "Will the $349 go up on me?",
+    a: "Not during your term — the rate you start at is locked for the 12 months. After that it stays month-to-month at the same price unless we agree otherwise. Any future pricing changes only ever apply to new sign-ups, never retroactively to clients already on a plan."
+  },
+  {
     q: "What if a change is bigger than my monthly maintenance covers?",
     a: "We flag it the moment we see it, send a quick quote for the extra time, and wait for your approval before starting. No surprise invoices, ever. Most months, maintenance covers everything."
   },
@@ -174,15 +186,15 @@ const faqs = [
   },
   {
     q: "Do I pay for hosting + domain separately?",
-    a: "Maintenance includes hosting (Vercel) and the domain's DNS / email routing (Cloudflare). You only pay your domain registrar its annual renewal fee (typically $10–$15/year — we register at cost through Cloudflare)."
+    a: "No. Both the $0-down plan and our maintenance tiers include hosting (Vercel) and the domain's DNS / email routing (Cloudflare). You only pay your domain registrar its annual renewal fee (typically $10–$15/year — we register at cost through Cloudflare)."
   },
   {
     q: "Why is this cheaper than other agencies?",
     a: "We're AI-native, not AI-assisted. Every project runs through one engineer with AI leverage end-to-end — no hand-offs between designer / developer / PM. That's the overhead traditional agencies bill you for. We cut it out, keep the quality, pass the savings."
   },
   {
-    q: "What's not included in the project price?",
-    a: "Third-party paid services (paid stock photography, premium fonts you specifically ask for, paid API plans), professional copywriting if you want us to write from scratch (we edit what you have; full copywriting is a quoted add-on), and paid SEO / paid ads (separate specialty)."
+    q: "What's not included in the price?",
+    a: "Whether you're on the $0-down plan or buying outright: third-party paid services (paid stock photography, premium fonts you specifically ask for, paid API plans), professional copywriting if you want us to write from scratch (we edit what you have; full copywriting is a quoted add-on), and paid SEO / paid ads (separate specialty)."
   },
   {
     q: "Can we start small and upgrade later?",
