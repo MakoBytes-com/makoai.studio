@@ -38,6 +38,8 @@ compressing 6-week timelines into 2 without cutting corners.
 - AAA Awning Co. (https://www.aaaawning.net) — Houston, TX custom awning fabricator since 1984 (client)
 - Bulldog Security Service (https://bulldogsecurityservice.com) — multi-state ADT-partner residential security (client)
 - Buffalo Seal & Gasket (https://buffalosealandgasket.com) — Houston, TX industrial seal + gasket supplier (client)
+- AXYS Industrial Solutions (https://axyscorp.com) — Houston, TX chemical & refining secondary-stream recovery, full WordPress → Next.js rebuild (client)
+- Bishopbend Insurance Services (https://bishopbend.com) — independent insurance agency licensed in 33+ states, custom build with client portal + admin CRM (client)
 - Family Psychiatry of The Woodlands (https://woodlandsfamilypsychiatry.com) — The Woodlands, TX psychiatric practice (client)
 - Burton NDT Rentals (https://www.bndtrentals.com) — La Porte, TX non-destructive testing equipment rental, sales, calibration & repair (pitch build, pending close)
 - Laguna Resources (https://lagunares.com) — Texas-based upstream oil & gas operator (pitch build, pending close)

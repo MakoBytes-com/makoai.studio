@@ -364,6 +364,136 @@ export const portfolio: PortfolioItem[] = [
     },
   },
   {
+    slug: "axyscorp",
+    name: "AXYS Industrial Solutions",
+    url: "https://axyscorp-showcase.vercel.app",
+    tagline: "Chemical & refining secondary-stream recovery — Houston, TX",
+    description:
+      "Full WordPress → Next.js 16 rebuild for a Houston chemical & refining partner that turns byproducts and off-spec streams into revenue. Verbatim content migration including the real 183-chemical product catalog, full team bios, a cinematic full-screen refinery hero video, the client's own industry line-art icon set, and the complete Mako security + AI-search baseline. Shown as shipped on a frozen showcase fork.",
+    tags: ["Next.js 16", "Tailwind v4", "WP Migration", "Industrial SEO"],
+    status: "Client",
+    year: "2026",
+    accent: "steel",
+    screenshot: "/portfolio/axyscorp.png",
+    tier: "client-build",
+    caseStudy: {
+      oneLiner:
+        "Full WordPress → Next.js 16 rebuild for a Houston chemical & refining recovery partner — real 183-chemical catalog, cinematic refinery hero video, the client's own icon set, and the complete Mako security + AI-search baseline.",
+      client: "AXYS Corporation · Houston, TX",
+      role: "Design + full-stack build + migration",
+      timeline: "2026 · build delivered",
+      stack: [
+        "Next.js 16",
+        "Tailwind v4",
+        "Vercel",
+        "next/image (AVIF/WebP)",
+        "JSON-LD schema",
+      ],
+      viewUrl: "https://axyscorp-showcase.vercel.app",
+      viewLabel: "View frozen showcase",
+      problem:
+        "AXYS has partnered with manufacturers and refiners since 2003, converting chemical and refining secondary streams — byproducts, off-spec materials, wash oils, high boilers — into compliant reuse, recovery, and revenue. Their WordPress site buried that value behind a generic industrial template: the real depth (a 183-line product catalog, categorized organic streams, a credentialed team) was either missing or trapped in plugin-rendered tables that read poorly and ranked worse.\n\nThe brief: migrate completely off WordPress to a fast, prerendered stack; carry over every piece of real content verbatim — the full catalog, the organic product groups, the complete team bios — and present it like a serious industrial partner, not a brochure. AI-search ready, same security baseline we ship on every Mako property.",
+      approach:
+        "Next.js 16 + Tailwind v4 with the brand recolored to a deep industrial navy palette, serif display headings (Frank Ruhl Libre) over a Mulish body. Every page was rebuilt from the real source — all nine live pages deep-scraped to verbatim text, the 183-chemical TablePress catalog extracted into a typed data module and rendered in a clean multi-column layout, the categorized organic product groups and full multi-paragraph team bios carried over exactly.\n\nThe homepage hero is a full-screen, seamlessly looping refinery video (pre-rendered boomerang so it runs forward and back without a seek stutter) behind a navy overlay. Industries use the client's own blue line-art icon set pulled from their media library — not stock icons or the legacy photos. Plant-background imagery confirmed against the original Elementor section CSS so every image lands where it belongs.\n\nFull Mako baseline: HSTS preload, strict CSP with frame-ancestors none, X-Frame, nosniff, Referrer-Policy, locked Permissions-Policy, poweredByHeader off, AVIF/WebP with immutable cache on static assets. SEO: sitemap, robots with AI-crawler rules, per-page metadata + canonicals, Organization JSON-LD, llms.txt + llms-full.txt, manifest, custom not-found.",
+      shipped: [
+        {
+          title: "Full WordPress → Next.js 16 migration",
+          body: "Every WP page rebuilt and prerendered; all real content carried over verbatim. Lighthouse-green static delivery in place of the plugin-laden Elementor build.",
+        },
+        {
+          title: "Real 183-chemical product catalog",
+          body: "The live TablePress 3-column catalog extracted into a typed data module and rendered in a clean four-column layout — searchable, fast, and crawlable instead of trapped in a plugin table.",
+        },
+        {
+          title: "Cinematic full-screen refinery hero",
+          body: "A pre-rendered boomerang refinery video (ffmpeg forward+reverse concat) loops smoothly both directions behind a navy gradient overlay. Self-hosted, immutable-cached, paused under prefers-reduced-motion.",
+        },
+        {
+          title: "Client's own icon + image system",
+          body: "Industries render the client's blue line-art icons from their own media library; plant backgrounds and step photos placed exactly where the original Elementor CSS had them. No stock filler.",
+        },
+        {
+          title: "Verbatim team bios + organic product groups",
+          body: "Full multi-paragraph leadership bios and the categorized organic-stream product groups carried over word-for-word from the real source, cross-referenced page-by-page against the live site.",
+        },
+        {
+          title: "Mako security + AI-search baseline",
+          body: "HSTS preload, full CSP with frame-ancestors none, locked Permissions-Policy, poweredByHeader off, AVIF/WebP immutable cache. Sitemap, robots, Organization JSON-LD, llms.txt + llms-full.txt, OG/Twitter cards.",
+        },
+        {
+          title: "Frozen showcase fork",
+          body: "axyscorp-showcase.vercel.app with noindex + a Portfolio Demo pill. The portfolio version stays canonical even as the live site evolves under client ownership.",
+        },
+      ],
+      outcome:
+        "Built, content-accurate, and live on the showcase fork — ready to ship under the client's production domain. The frozen showcase is deployed and locked as the canonical 'as we built it' version.",
+    },
+  },
+  {
+    slug: "bishopbend",
+    name: "Bishopbend Insurance Services",
+    url: "https://bishopbend-showcase.vercel.app",
+    tagline: "Independent insurance agency licensed in 33+ states",
+    description:
+      "Ground-up build for a women-owned, mother-daughter independent insurance agency writing personal, commercial, farm, bonds, and specialty coverage across 33+ states. Custom navy brand with a script-accent hero and light/dark theming, an MFA-protected client portal with a document vault and coverage-specific quote requests, a full admin CRM with HawkSoft integration, and a GLBA-aware security baseline. Shown as shipped on a frozen showcase fork.",
+    tags: ["Next.js 16", "Drizzle", "Client Portal", "MFA", "Insurance"],
+    status: "Client",
+    year: "2026",
+    accent: "blue",
+    screenshot: "/portfolio/bishopbend.png",
+    tier: "client-build",
+    caseStudy: {
+      oneLiner:
+        "Ground-up build for a women-owned independent insurance agency licensed in 33+ states — custom brand, MFA-protected client portal with a document vault, a full admin CRM with HawkSoft integration, and a GLBA-aware security baseline.",
+      client: "Bishopbend Insurance Services · Texas",
+      role: "Design + full-stack build",
+      timeline: "2026 · build delivered",
+      stack: [
+        "Next.js 16",
+        "Drizzle ORM",
+        "Supabase Postgres",
+        "iron-session + TOTP MFA",
+        "Cloudflare Turnstile",
+        "Resend",
+        "Vercel",
+      ],
+      viewUrl: "https://bishopbend-showcase.vercel.app",
+      viewLabel: "View frozen showcase",
+      problem:
+        "Bishopbend is a women-owned, mother-daughter independent agency that solves complex insurance needs one client-partner at a time — personal, commercial, farm and ranch, surety bonds, plus specialty lines from identity-theft and pet to tornado, travel, non-profit, and IRS-audit coverage, licensed across 33+ states. They needed more than a brochure site: a credible boutique brand, a secure way for clients to request coverage and exchange documents, and an internal panel the team could actually run the agency from.\n\nAs an insurance broker the agency is regulated under GLBA and state insurance data-security rules, so client data handling had to be built right from day one — not bolted on later.",
+      approach:
+        "Next.js 16 + Drizzle over Supabase Postgres, with a custom navy brand, a flowing Tangerine script accent on the hero (Playfair display + Inter body), and a FOUC-safe light/dark theme toggle. The public marketing site covers every coverage line with its own page, generated from a typed coverage module with per-page schema.\n\nThe client portal is real software: signup with email verification, iron-session auth, TOTP multi-factor, a document vault, and coverage-specific quote-request flows (business auto, commercial property, general liability, inland marine, umbrella, workers' comp, and more). The admin side is a full CRM — customers with CSV import and a HawkSoft export bridge, quote-request and message queues, an error-monitoring dashboard, in-house analytics with real-user Core Web Vitals, and a master-API bridge for fleet oversight.\n\nGLBA-aware security baseline throughout: bcrypt, TOTP, Cloudflare Turnstile on every auth form, DB-backed rate limiting, Postgres row-level security, HSTS preload, strict CSP, locked Permissions-Policy, and poweredByHeader off. Secrets stay server-side; the public/client boundary is enforced with server-only guards.",
+      shipped: [
+        {
+          title: "Custom boutique brand + theming",
+          body: "Navy palette with a Tangerine script-accent hero, Playfair display over Inter body, and a flash-free light/dark toggle. Reads like a trusted boutique agency, not a template.",
+        },
+        {
+          title: "Coverage-line marketing site",
+          body: "Every personal, commercial, farm, bond, and specialty line gets its own page from a typed coverage module with canonical URLs and per-page schema — built to rank for real coverage intent.",
+        },
+        {
+          title: "MFA-protected client portal",
+          body: "Client signup with email verification, iron-session auth, TOTP multi-factor, a document vault, and coverage-specific quote-request flows. Real account software, not a contact form.",
+        },
+        {
+          title: "Full admin CRM + HawkSoft bridge",
+          body: "Customers with CSV import and a HawkSoft export path, quote-request and message queues, ticketing, an error-monitoring dashboard, and in-house analytics with real-user Core Web Vitals.",
+        },
+        {
+          title: "GLBA-aware security baseline",
+          body: "bcrypt + TOTP, Turnstile on every auth form, DB-backed rate limiting, Postgres row-level security, HSTS preload, strict CSP, locked Permissions-Policy, poweredByHeader off, server-only secret boundaries.",
+        },
+        {
+          title: "Frozen showcase fork",
+          body: "bishopbend-showcase.vercel.app served as a static, credential-free demo (admin + database stripped) with noindex + a Portfolio Demo pill — the portfolio shows the design with zero client data on it.",
+        },
+      ],
+      outcome:
+        "Built and live — marketing site, client portal, and admin CRM shipped with a regulation-aware security baseline. The frozen showcase is a static, no-credentials demo so the portfolio carries none of the client's data.",
+    },
+  },
+  {
     slug: "toppaws",
     name: "TopPaws.com",
     url: "https://toppaws.com",
@@ -578,7 +708,7 @@ export const portfolio: PortfolioItem[] = [
     description:
       "Professional healthcare site for a family psychiatry practice with 30+ years in The Woodlands, TX. Provider bios, services, secure intake forms, clinical trials, HIPAA-aware content. Shown as shipped on a frozen showcase fork.",
     tags: ["Next.js", "Healthcare", "Intake forms"],
-    status: "Client",
+    status: "In Progress",
     year: "2026",
     accent: "steel",
     screenshot: "/portfolio/woodlands.png",
