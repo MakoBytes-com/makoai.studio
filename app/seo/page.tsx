@@ -69,6 +69,29 @@ const weDont = [
   "Hold your Google account, domain, or files hostage"
 ];
 
+const aiPoints = [
+  {
+    h: "Schema / structured data",
+    p: "We mark up every page so AI can read exactly what your business is, instead of guessing. Pages with proper FAQ and business schema are far more likely to show up in Google's AI answers."
+  },
+  {
+    h: "Clear, direct answers",
+    p: "AI pulls the page that answers the question plainly and up front — not the one stuffed with keywords. We write your pages to be quotable."
+  },
+  {
+    h: "An llms.txt file",
+    p: "A plain-text guide at yoursite.com/llms.txt that tells ChatGPT, Claude, and Perplexity what you do and what matters. We build one into every site — ours is live right now."
+  },
+  {
+    h: "Open to AI crawlers",
+    p: "If your robots.txt blocks GPTBot, ClaudeBot, or Google's AI crawler, you're invisible to them. We make sure the right bots are let in."
+  },
+  {
+    h: "Authority across the web",
+    p: "AI stitches its answer together from many sources — so the same Google Business Profile, real reviews, and consistent business info that win local search also feed AI recommendations."
+  }
+];
+
 const faqs = [
   {
     q: "Do I need to pay for SEO every month?",
@@ -85,6 +108,10 @@ const faqs = [
   {
     q: "What about all those SEO reports and backlink packages?",
     a: "Most of it is theater. Monthly vanity-metric reports, bought backlinks, and AI-spun blog filler exist to justify a retainer, not to grow your business — and some of it, link schemes especially, can actively get you penalized by Google. We'd rather do the few things that genuinely work and not charge you for the rest."
+  },
+  {
+    q: "Will AI tools like ChatGPT actually recommend my business?",
+    a: "They can — if your site is built so AI can read and trust it. AI answer engines (ChatGPT, Claude, Perplexity, Google's AI Overviews) pull from sites with clear answers, proper schema / structured data, an llms.txt guide, and open access to AI crawlers, then cross-check that against your reviews and consistent business info around the web. Those are the same fundamentals that win local search, plus a few AI-specific touches — and we build all of them into every site by default, because we're AI-native."
   }
 ];
 
@@ -220,6 +247,52 @@ export default function SeoPage() {
             who promises to override distance is selling you something. What you{" "}
             <em>can</em> control are the three levers above — and that&apos;s
             exactly where we focus.
+          </p>
+        </div>
+      </section>
+
+      {/* How AI finds you */}
+      <section className="py-16 md:py-24">
+        <div className="container-narrow">
+          <div className="mb-12">
+            <span className="section-label">The new frontier</span>
+            <h2 className="mt-4 font-display font-semibold text-[32px] md:text-[44px] leading-tight tracking-tight">
+              How AI finds{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+                your business.
+              </span>
+            </h2>
+            <p className="mt-3 max-w-2xl text-[15px] text-steel-300 leading-relaxed">
+              More and more people don&apos;t scroll ten blue links anymore —
+              they ask ChatGPT, Claude, Perplexity, or Google&apos;s AI for a
+              recommendation and get one answer back. You&apos;re either in that
+              answer or you&apos;re invisible. The good news: the same
+              fundamentals that win regular search are what get you cited by AI,
+              plus a few AI-specific touches we build in by default.
+            </p>
+          </div>
+
+          <div className="glass rounded-2xl p-7 md:p-9">
+            <ul className="space-y-5">
+              {aiPoints.map((a) => (
+                <li key={a.h} className="flex items-start gap-3">
+                  <span className="text-tide-400 mt-1 flex-shrink-0">+</span>
+                  <div>
+                    <span className="text-[15px] font-display font-semibold text-steel-100">
+                      {a.h}
+                    </span>
+                    <p className="mt-1 text-[13px] text-steel-300 leading-relaxed">
+                      {a.p}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <p className="mt-8 text-[13px] text-steel-400 italic max-w-2xl">
+            Because we&apos;re AI-native, all of this ships with every site we
+            build — no add-on, no separate &quot;AI SEO&quot; invoice.
           </p>
         </div>
       </section>
