@@ -56,6 +56,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/seo" className="text-steel-300 hover:text-white">
+                  Honest SEO
+                </a>
+              </li>
+              <li>
                 <a href="/#about" className="text-steel-300 hover:text-white">
                   About
                 </a>

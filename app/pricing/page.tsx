@@ -247,6 +247,21 @@ export default function PricingPage() {
             — or own it outright from $2,500. What you see below is what you
             pay. No ghost pricing, no surprise fees.
           </p>
+          <Link
+            href="/seo"
+            className="mt-6 inline-flex items-center gap-1.5 text-[14px] text-tide-300 hover:text-tide-200 font-medium transition-colors"
+          >
+            Read our honest take on that $500/mo SEO scam
+            <svg viewBox="0 0 16 16" className="w-4 h-4" fill="none">
+              <path
+                d="M3 8h10m0 0l-4-4m4 4l-4 4"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Link>
         </div>
       </section>
 
