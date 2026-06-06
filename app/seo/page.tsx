@@ -209,6 +209,18 @@ export default function SeoPage() {
               </article>
             ))}
           </div>
+
+          <p className="mt-8 text-[13px] text-steel-400 italic max-w-2xl">
+            One honest caveat: the single biggest factor in local search is{" "}
+            <span className="text-steel-300 font-medium not-italic">
+              proximity
+            </span>{" "}
+            — how close your business is to the person searching — and nobody
+            can control that. No agency can move your storefront, and anyone
+            who promises to override distance is selling you something. What you{" "}
+            <em>can</em> control are the three levers above — and that&apos;s
+            exactly where we focus.
+          </p>
         </div>
       </section>
 
