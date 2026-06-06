@@ -140,7 +140,7 @@ const emailTiers = [
 ];
 
 const waasIncludes = [
-  "A custom, AI-native build — designed for your business, never a template",
+  "A custom, AI-native build up to our Standard tier (6–12 pages) — designed for your business, never a template",
   "Hosting, SSL, domain + email routing, fully managed",
   "Up to 5 self-hosted you@yourdomain.com mailboxes",
   "Security hardening, daily backups, uptime + patch monitoring",
@@ -159,6 +159,10 @@ const faqs = [
   {
     q: "How does the $0-down / $349-a-month website work?",
     a: "We design and build your custom site at no upfront cost, then host, secure, and maintain it for $349/month on a 12-month term. After the first year it goes month-to-month — cancel anytime with 30 days' notice. Want to leave early or own the site outright? Pay a one-time build buy-out and the site is yours, code and all. No lock-in games, no held-hostage files."
+  },
+  {
+    q: "What size site does the $0-down plan include?",
+    a: "The free $0-down build covers up to our Standard tier — a custom 6–12 page site with custom design, Google Maps + local SEO, analytics, Resend email, and a light CMS for your own copy edits. That fits the large majority of small-business sites. Need a Premium AI feature (chatbot, smart search, AI content generator) or a Custom build (client portal, multi-tenant app, complex integrations)? We fold it in for a quoted adder on top of the $349 — and we tell you the number before we start, never a surprise."
   },
   {
     q: "$0-down or buy outright — which should I pick?",
@@ -297,6 +301,20 @@ export default function PricingPage() {
                     />
                   </svg>
                 </Link>
+
+                <div className="mt-8 pt-6 border-t border-white/10">
+                  <h4 className="text-[14px] font-display font-semibold text-steel-100">
+                    What your free build covers
+                  </h4>
+                  <p className="mt-2 text-[13px] text-steel-300 leading-relaxed">
+                    The $0-down build covers up to our{" "}
+                    <span className="text-steel-100 font-semibold">Standard tier</span>{" "}
+                    — a custom 6–12 page site with local SEO, analytics, and a
+                    light CMS. Want Premium AI features or a custom portal? We
+                    fold them in for a small quoted adder — we tell you the
+                    number before we start.
+                  </p>
+                </div>
 
                 <div className="mt-8 pt-6 border-t border-white/10">
                   <h4 className="text-[14px] font-display font-semibold text-steel-100">
