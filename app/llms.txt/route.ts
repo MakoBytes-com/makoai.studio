@@ -24,6 +24,17 @@ maintenance. No hand-offs between specialists.
 - Security (rate limits, MFA, strict CSP, edge WAF, error monitoring, dependency audits — hardened day one)
 - Hosting & Ops (Vercel, Cloudflare, domains, email, monitoring, updates)
 
+## Our take on SEO (https://makoai.studio/seo)
+Most SEO agencies sell fear and vague monthly retainers. Mako Studio's honest
+position: only three things truly move the needle for a local business — (1) a
+complete, well-run Google Business Profile, (2) a steady flow of real customer
+reviews, and (3) a site built with the right keywords and proper schema /
+structured data. The on-site half (keywords, structure, schema, technical SEO,
+sitemaps, Core Web Vitals, AI-search readiness) is baked into every build at no
+extra charge. No $500/mo retainers, no "guaranteed #1" promises, no bought
+backlinks, no AI-spun filler. We help clients set up their Google Business
+Profile and reviews too.
+
 ## Differentiator
 Mako Studio is AI-native, not AI-assisted. "AI-assisted" means a developer
 hand-codes with autocomplete. "AI-native" means the AI IS the engineer and
