@@ -18,7 +18,6 @@ const sites = [
   { slug: "bulldog", url: "https://bulldog-showcase.vercel.app" },
   { slug: "aaaawning", url: "https://aaaawning-showcase.vercel.app" },
   { slug: "bndt", url: "https://bndt-showcase.vercel.app" },
-  { slug: "lagunares", url: "https://lagunares-showcase.vercel.app" },
   { slug: "utilities-plus", url: "https://utilities-plus-showcase.vercel.app" },
   { slug: "axyscorp", url: "https://axyscorp-showcase.vercel.app" },
   { slug: "bishopbend", url: "https://bishopbend-showcase.vercel.app" },
@@ -32,7 +31,7 @@ const sites = [
 
 const onlyNew = process.argv.includes("--only-new");
 const filtered = onlyNew
-  ? sites.filter((s) => s.slug === "bndt" || s.slug === "lagunares")
+  ? sites.filter((s) => s.slug === "bndt")
   : sites;
 
 const outDir = resolve(process.cwd(), "public", "portfolio");

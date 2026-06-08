@@ -52,7 +52,6 @@ compressing 6-week timelines into 2 without cutting corners.
 - Bishopbend Insurance Services (https://bishopbend.com) — independent insurance agency licensed in 33+ states, custom build with client portal + admin CRM (client)
 - Family Psychiatry of The Woodlands (https://woodlandsfamilypsychiatry.com) — The Woodlands, TX psychiatric practice (client)
 - Burton NDT Rentals (https://www.bndtrentals.com) — La Porte, TX non-destructive testing equipment rental, sales, calibration & repair (pitch build, pending close)
-- Laguna Resources (https://lagunares.com) — Texas-based upstream oil & gas operator (pitch build, pending close)
 - Davis Investigation Services (https://www.davisinvestigationservices.com) — Conroe, TX pre-employment screening firm (maintained by Makologics MSP)
 - Pro-Surve Technical Services (https://pro-surve.com) — League City, TX industrial inspection + NDT (maintenance by Makologics MSP)
 

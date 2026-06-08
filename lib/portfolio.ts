@@ -235,67 +235,6 @@ export const portfolio: PortfolioItem[] = [
     }
   },
   {
-    slug: "lagunares",
-    name: "Laguna Resources",
-    url: "https://lagunares-showcase.vercel.app",
-    tagline: "Texas-based upstream oil & gas — pitch build",
-    description:
-      "Pitch site for a Texas-based upstream oil & gas prospect. Houston HQ, Midland office, current operations in Dawson County. Warm editorial theme on light neutrals with a dark cinematic hero, organization + LocalBusiness schema, three-section narrative built to be presented over a single live URL. Shown as shipped on a frozen showcase fork.",
-    tags: ["Next.js 16", "Editorial Design", "Pitch Build", "JSON-LD"],
-    status: "In Progress",
-    year: "2026",
-    accent: "steel",
-    screenshot: "/portfolio/lagunares.png",
-    tier: "client-build",
-    caseStudy: {
-      oneLiner:
-        "Pitch site for a Texas-based upstream oil & gas prospect — warm editorial theme, dark cinematic hero, three-section narrative built to be presented over a single live URL.",
-      client: "Laguna Resources · Houston + Midland, TX",
-      role: "Design + full-stack build",
-      timeline: "2026 · pitch build, pending close",
-      stack: [
-        "Next.js 16",
-        "Vercel",
-        "JSON-LD (Organization + LocalBusiness)",
-        "Self-hosted Umami"
-      ],
-      viewUrl: "https://lagunares-showcase.vercel.app",
-      viewLabel: "View frozen showcase",
-      problem:
-        "Laguna Resources is a Texas-based upstream oil & gas operator focused on US Onshore. Houston HQ, Midland office, current operations in Dawson County (Permian Basin adjacent). They came to the table needing a credible web presence built fast — something they could send to potential JV partners, capital sources, and acquisition targets without it reading like a deck-built-in-a-weekend.\n\nThe brief: editorial-grade tone, RRC-operator-credible details, and a presentation-ready single live URL. Three sections, no marketing fluff, no stock energy photography.",
-      approach:
-        "Next.js 16 with a warm light-neutrals palette and a dark cinematic hero. The dark hero anchors the brand identity; the rest of the site reads like an investor letter — generous line-height, restrained typography, real numbers in plain English. About / Operations / Contact, each one tight enough to read in under two minutes but with enough substance to hold up to a partner due-diligence read.\n\nOrganization + LocalBusiness JSON-LD so search engines + AI can map Laguna correctly to its RRC operator number and offices. A self-hosted Umami install gives the team a private view of who's reading the site without sliding into Google Analytics privacy ambiguity.",
-      shipped: [
-        {
-          title: "Warm editorial theme + dark cinematic hero",
-          body: "Light neutrals with a walnut-brown accent on the body; dark hero anchors the brand. Reads like an investor letter, not a startup landing page."
-        },
-        {
-          title: "Three-section narrative",
-          body: "About / Operations / Contact, each one tight, focused, and credible. Built for a real partner read, not for marketing-funnel KPIs."
-        },
-        {
-          title: "RRC-operator-grade details",
-          body: "Operator number, locations, current operating county, and partner posture — surfaced where a counterparty would actually look."
-        },
-        {
-          title: "Schema for AI + search readability",
-          body: "Organization + LocalBusiness JSON-LD so Laguna maps cleanly to its actual entity in Google Knowledge Graph and AI search engines."
-        },
-        {
-          title: "Private analytics",
-          body: "Self-hosted Umami — no GA cookies, no PII collection — so the team sees real visitor activity during the pitch cycle."
-        },
-        {
-          title: "Frozen showcase fork",
-          body: "lagunares-showcase.vercel.app with noindex + Portfolio Demo pill. Locks the design as we built it, regardless of how the engagement evolves."
-        }
-      ],
-      outcome:
-        "Pitch build live on the showcase fork. Currently in front of Laguna for evaluation as the final web presence for their next capital cycle. Frozen showcase deployed and locked for portfolio purposes."
-    }
-  },
-  {
     slug: "utilities-plus",
     name: "Utilities Plus",
     url: "https://utilities-plus-showcase.vercel.app",
