@@ -74,7 +74,7 @@ const areas: ServiceArea[] = [
     label: "Industrial B2B · Energy · Healthcare",
     blurb:
       "Houston runs on industrial B2B — petrochemical, NDT, awnings and fabrication, upstream oil & gas, security, and the professional services orbiting them. We ship custom Next.js builds that read like real catalogs and operator pages, not generic templates. AI-search ready, schema-rich, and tuned for the long-tail equipment-name and city-intent searches that actually drive B2B leads.",
-    highlight: "Featured: AAA Awning, Burton NDT, Laguna Resources, Utilities Plus"
+    highlight: "Featured: AAA Awning, Burton NDT, Utilities Plus"
   }
 ];
 
