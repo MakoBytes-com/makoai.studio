@@ -649,58 +649,6 @@ export const portfolio: PortfolioItem[] = [
     tier: "product"
   },
   {
-    slug: "buffaloseal",
-    name: "Buffalo Seal & Gasket",
-    url: "https://buffaloseal-showcase.vercel.app",
-    tagline: "Industrial sealing solutions — Houston, TX",
-    description:
-      "Custom site for a Houston-based industrial seal & gasket supplier. Contact-driven B2B layout with product categories, service pages, and SEO structure. Shown as shipped on a frozen showcase fork.",
-    tags: ["Next.js", "B2B", "Local SEO"],
-    status: "Client",
-    year: "2026",
-    accent: "silver",
-    screenshot: "/portfolio/buffaloseal.png",
-    tier: "client-build",
-    caseStudy: {
-      oneLiner:
-        "Custom B2B site for a Houston industrial seal & gasket supplier — contact-driven, catalog-organized, SEO-tuned for local intent, preserved on a frozen fork so the portfolio never drifts.",
-      client: "Buffalo Seal & Gasket · Houston, TX",
-      role: "Design + full-stack build",
-      timeline: "2026 · approved build",
-      stack: ["Next.js 15", "Vercel", "Local SEO", "JSON-LD schema"],
-      viewUrl: "https://buffaloseal-showcase.vercel.app",
-      viewLabel: "View frozen showcase",
-      problem:
-        "Buffalo Seal & Gasket is a Houston-based industrial seal and gasket supplier with a functional but dated site. Distributors and procurement contacts need to find product categories fast, get straight to a human, and trust the outfit before picking up the phone. The old site didn't do the second or third part well.\n\nThe brief: clean, professional, contact-driven. No marketing fluff, no quote form that drops into a black hole. Product/service pages that read like a catalog, not a brochure. Local SEO that actually works in a Houston industrial context.",
-      approach:
-        "Next.js 15 on Vercel for fast page loads on distributor-desk browsers and mobile. Clear product category structure up front, contact info above the fold on every page, and JSON-LD schema marking the business as a LocalBusiness so Google can rank it properly for regional intent.\n\nOnce the client goes live on their own domain, the shipped design is preserved on a frozen Vercel fork. The portfolio on makoai.studio always shows the site as we built it, regardless of how the client evolves it over the years.",
-      shipped: [
-        {
-          title: "Custom-built Next.js site",
-          body: "Hand-tailored layout, no template. Typography, spacing, and color calibrated for an industrial B2B read."
-        },
-        {
-          title: "Product + service architecture",
-          body: "Category pages that read like a distributor catalog — product family, specs, use cases, contact path on every page."
-        },
-        {
-          title: "Local SEO foundation",
-          body: "LocalBusiness schema, contact-info parity across pages, Houston-area geographic signals, heading structure tuned for industrial search intent."
-        },
-        {
-          title: "Contact-driven conversion",
-          body: "Phone and email visible above the fold everywhere. Contact form hits a real inbox, not a support queue."
-        },
-        {
-          title: "Frozen showcase fork",
-          body: "On approval, final build is forked to buffaloseal-showcase.vercel.app with noindex plus a Portfolio Demo pill. The portfolio never degrades as the client evolves their live site."
-        }
-      ],
-      outcome:
-        "Approved by the client. Ready to go live on their production domain. The showcase fork is deployed, locked, and canonical for portfolio purposes."
-    }
-  },
-  {
     slug: "woodlands",
     name: "Family Psychiatry of The Woodlands",
     url: "https://woodlands-showcase.vercel.app",
