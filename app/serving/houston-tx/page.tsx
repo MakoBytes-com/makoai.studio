@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "AI-Native Web Design for Greater Houston, TX — Mako Studio",
   description:
-    "Custom Next.js web design for Houston-area businesses — no WordPress, no templates. Industrial B2B, energy corridor, specialty trades, and small businesses that need more than a Galleria-priced agency can profitably deliver. Featured: Buffalo Seal & Gasket.",
+    "Custom Next.js web design for Houston-area businesses — no WordPress, no templates. Industrial B2B, energy corridor, specialty trades, and small businesses that need more than a Galleria-priced agency can profitably deliver. Featured: Pro-Surve Technical Services.",
   alternates: { canonical: "https://makoai.studio/serving/houston-tx" },
   openGraph: {
     title: "Web Design for Greater Houston, TX — Mako Studio",
@@ -162,51 +162,12 @@ export default function HoustonPage() {
             <div>
               <div className="glass rounded-2xl p-7 md:p-9">
                 <div className="text-[11px] uppercase tracking-[0.2em] text-steel-400 font-medium">
-                  Industrial B2B · Houston, TX
-                </div>
-                <h2 className="mt-3 font-display font-semibold text-[24px] md:text-[30px] text-steel-100 leading-tight tracking-tight">
-                  Buffalo Seal &amp; Gasket
-                </h2>
-                <p className="mt-4 text-[15px] md:text-[16px] text-steel-300 leading-relaxed">
-                  Buffalo Seal &amp; Gasket is a Houston-based industrial seal
-                  and gasket supplier. The old site didn&apos;t do the hard
-                  job: distributors and procurement contacts couldn&apos;t find
-                  product categories fast, couldn&apos;t get straight to a
-                  human, and couldn&apos;t tell the outfit was worth picking
-                  up the phone for. The new build is clean, professional,
-                  contact-driven — product/service pages that read like a
-                  catalog, contact parity on every page, and local SEO tuned
-                  for Houston industrial search intent. LocalBusiness schema,
-                  Houston-area geographic signals, and heading structure
-                  written for procurement search behavior.
-                </p>
-                <div className="mt-6">
-                  <Link
-                    href="/work/buffaloseal"
-                    className="inline-flex items-center gap-2 text-[14px] text-tide-300 hover:text-tide-200 font-medium"
-                  >
-                    Read the full case study
-                    <svg viewBox="0 0 16 16" className="w-4 h-4" fill="none">
-                      <path
-                        d="M3 8h10m0 0l-4-4m4 4l-4 4"
-                        stroke="currentColor"
-                        strokeWidth="1.75"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-
-              <div className="mt-5 glass rounded-2xl p-7">
-                <div className="text-[11px] uppercase tracking-[0.2em] text-steel-400 font-medium">
                   Inspection &amp; NDT · League City, TX
                 </div>
-                <h3 className="mt-2 font-display font-semibold text-[18px] text-steel-100">
+                <h2 className="mt-3 font-display font-semibold text-[24px] md:text-[30px] text-steel-100 leading-tight tracking-tight">
                   Pro-Surve Technical Services
-                </h3>
-                <p className="mt-3 text-[14px] md:text-[15px] text-steel-300 leading-relaxed">
+                </h2>
+                <p className="mt-4 text-[15px] md:text-[16px] text-steel-300 leading-relaxed">
                   Inspection, engineering, and non-destructive testing for oil
                   &amp; gas, petrochemical, aerospace, and power generation
                   clients out of League City. Custom-themed site, built from
