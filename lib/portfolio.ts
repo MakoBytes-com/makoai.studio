@@ -371,7 +371,7 @@ export const portfolio: PortfolioItem[] = [
     description:
       "Full WordPress → Next.js 16 rebuild for a Houston chemical & refining partner that turns byproducts and off-spec streams into revenue. Verbatim content migration including the real 183-chemical product catalog, full team bios, a cinematic full-screen refinery hero video, the client's own industry line-art icon set, and the complete Mako security + AI-search baseline. Shown as shipped on a frozen showcase fork.",
     tags: ["Next.js 16", "Tailwind v4", "WP Migration", "Industrial SEO"],
-    status: "Client",
+    status: "In Progress",
     year: "2026",
     accent: "steel",
     screenshot: "/portfolio/axyscorp.png",
