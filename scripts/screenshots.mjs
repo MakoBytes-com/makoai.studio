@@ -25,7 +25,7 @@ const sites = [
   { slug: "toppaws", url: "https://toppaws.com" },
   { slug: "makobot", url: "https://makobot.com" },
   { slug: "aipromptshive", url: "https://aipromptshive.com" },
-  { slug: "buffaloseal", url: "https://buffaloseal-showcase.vercel.app" },
+  { slug: "machine-template", url: "https://machine-template-web.vercel.app" },
   { slug: "woodlands", url: "https://woodlands-showcase.vercel.app" },
   { slug: "makobytes", url: "https://makobytes.com" }
 ];
