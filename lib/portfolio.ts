@@ -649,6 +649,54 @@ export const portfolio: PortfolioItem[] = [
     tier: "product"
   },
   {
+    slug: "machine-template",
+    name: "Machine Template",
+    url: "https://machine-template-web.vercel.app",
+    tagline: "Industrial / B2B website template — Next.js + Tailwind",
+    description:
+      "A production-ready, brandable website template for industrial, manufacturing, and B2B-supply businesses. One-file rebranding, SEO and security baked in, and a Resend-wired quote form. Built as a Mako Studio product, licensed per project.",
+    tags: ["Next.js", "Tailwind", "Template", "Industrial B2B"],
+    status: "Available",
+    year: "2026",
+    accent: "silver",
+    screenshot: "/portfolio/machine-template.png",
+    tier: "product",
+    caseStudy: {
+      oneLiner:
+        "A brandable Next.js + Tailwind website template for industrial and B2B-supply businesses — rebrand from a single config file, with SEO, security headers, and a wired quote form out of the box.",
+      client: "Mako Studio product",
+      role: "Design + full-stack build",
+      timeline: "2026",
+      stack: ["Next.js 16", "Tailwind CSS", "Vercel", "Resend"],
+      viewUrl: "https://machine-template-web.vercel.app",
+      viewLabel: "View live demo",
+      problem:
+        "Industrial and B2B-supply businesses keep needing the same thing: a fast, professional, contact-driven site with a product/services structure and real local SEO — not a WordPress theme. Rebuilding that from scratch for every prospect is slow and hard to price profitably.\n\nThe goal: package the proven structure into a clean, brandable template that can stand up a new industrial site in an afternoon, and sell it as a product.",
+      approach:
+        "Every business-specific value — name, tagline, phones, address, hours — lives in a single site.ts config, so a full rebrand is a one-file change. SEO (sitemap, robots, llms.txt, JSON-LD), security headers + CSP, accessibility basics, and a Resend-powered quote form are wired in from the start. Demo imagery uses neutral placeholders the buyer swaps for their own.",
+      shipped: [
+        {
+          title: "One-file rebranding",
+          body: "All brand, contact, and copy tokens centralized in src/lib/site.ts — change once, updates the whole site, metadata, schema, sitemap, and llms.txt."
+        },
+        {
+          title: "SEO + AI-search baseline",
+          body: "Sitemap, robots, /llms.txt, Organization JSON-LD, per-page metadata, and an auto-generated Open Graph image."
+        },
+        {
+          title: "Security baseline",
+          body: "Strict CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy, and poweredByHeader disabled — shipped, not optional."
+        },
+        {
+          title: "Wired quote form",
+          body: "Contact form posts to a server route that emails via Resend when configured, with a graceful demo mode until keys are added."
+        }
+      ],
+      outcome:
+        "Live demo deployed and licensed per end product. Reusable foundation for future industrial and B2B builds."
+    }
+  },
+  {
     slug: "woodlands",
     name: "Family Psychiatry of The Woodlands",
     url: "https://woodlands-showcase.vercel.app",
