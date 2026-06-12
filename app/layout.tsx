@@ -118,6 +118,8 @@ export default function RootLayout({
       <body>
         {children}
         <Analytics />
+        {/* MakoChat widget (makochat.app) */}
+        <script src="https://makochat.app/embed.js" data-makochat="makoai-studio" defer />
       </body>
     </html>
   );
