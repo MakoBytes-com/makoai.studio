@@ -436,10 +436,10 @@ export const portfolio: PortfolioItem[] = [
     slug: "toppaws",
     name: "TopPaws.com",
     url: "https://toppaws.com",
-    tagline: "AI creative platform for pet owners",
+    tagline: "The \"Yelp for pets\" — directory, adoption, lost & found + community",
     description:
-      "Full AI creative platform. Image + video generation, meme studio, user profiles, Stripe billing, admin console, and a community feed.",
-    tags: ["Next.js", "Supabase", "Stripe", "Mux", "AI"],
+      "A nationwide pet platform on a premium domain: a 148,000-business directory with pet-owner reviews and owner claiming, plus four marketplace + community verticals — adopt (59,000+ shelter pets), AI-matched lost & found, a pets-for-sale classifieds with Section-230 guardrails, and a community forum. Programmatic SEO across tens of thousands of city pages, an in-house analytics + moderation admin, and the full Mako security / AI-search baseline.",
+    tags: ["Next.js 16", "Supabase + PostGIS", "Programmatic SEO", "Marketplace", "iron-session"],
     status: "Live",
     year: "2026",
     accent: "blue",
@@ -447,53 +447,59 @@ export const portfolio: PortfolioItem[] = [
     tier: "product",
     caseStudy: {
       oneLiner:
-        "Full AI creative platform for pet owners — image + video generation, meme studio, Stripe-billable, community-ready, shipped end-to-end.",
+        "A nationwide \"Yelp for pets\" on a premium domain — a 148k-business directory with reviews + owner claiming, adopt / lost-&-found / for-sale marketplaces, a community forum, and programmatic SEO across tens of thousands of pages.",
       client: "Mako Logics (own product)",
       role: "Design + full-stack build",
       timeline: "2026 · live",
       stack: [
-        "Next.js 15",
-        "Supabase",
-        "Stripe",
-        "Mux",
-        "Cloudflare R2",
-        "fal.ai",
+        "Next.js 16",
+        "Supabase Postgres + PostGIS",
+        "iron-session auth",
+        "Resend",
+        "Cloudflare Turnstile",
+        "OpenAI (moderation, embeddings, vision)",
+        "RescueGroups API",
+        "Recharts",
         "Vercel"
       ],
       viewUrl: "https://toppaws.com",
       viewLabel: "Visit TopPaws",
       problem:
-        "Pet owners wanted a single place to generate AI images and videos of their pets, make memes, and share creations with a community. Existing tools either gated AI features behind subscriptions that didn't match real usage, or were creator tools with no community layer.\n\nWe wanted to ship something end-to-end: AI generation, meme studio, auth, profiles, billing, admin console, community feed. All production-grade, not a prototype wearing a marketing site.",
+        "TopPaws.com is a premium, high-authority pet domain — which flips the usual directory cold-start problem on its head. Programmatic pages on an established domain rank fast, and there's an audience to build a real product against from day one. The opportunity: a 'Yelp for pets' that no single competitor covers end-to-end — Yelp has reviews but no pet depth, Petfinder has adoption but nothing else, PawBoost has lost-and-found alone. None of them put all of it on one trusted pet domain.\n\nThe brief (own product): build the whole flywheel — a nationwide business directory with real pet-owner reviews and owner claiming, adoption + lost-and-found + for-sale marketplaces, and a community — production-grade, SEO-first, and legally defensible.",
       approach:
-        "Scaffolded with Next.js 15 and Supabase, then built feature-by-feature in tight AI-native passes. Auth and profiles first, then image generation via fal.ai, then video via Mux. Stripe was wired in for credit-pack billing before the second UI feature shipped — money-in plumbing is easier to build once and leave alone than to retrofit later.\n\nThe admin console and error-logging pipeline were first-class features from day one, not afterthoughts. Every server action and webhook logs to a queryable error table, surfaced in a real admin UI. That turned what would have been a multi-day launch-day debugging slog into a triage workflow.",
+        "Next.js 16 (App Router) over Supabase Postgres with PostGIS for geo. The directory is seeded from legal open data (never scraped from Google or Yelp, whose terms forbid it), normalized and de-duplicated into ~148k active US pet businesses, then enriched from each business's own website. Tens of thousands of city × category pages render via tiered SSG/ISR so the long tail is crawlable without blowing up the build.\n\nReviews, business claiming (email-to-domain verification), and a moderation queue sit on iron-session auth with Cloudflare Turnstile + honeypots on every public form and OpenAI moderation on every piece of user content. The marketplace verticals are classifieds by design — TopPaws never processes a pet transaction, which preserves Section 230 and removes transaction liability — with adoption sourced live from the RescueGroups API (59k+ pets, weekly refresh, link-out only), AI photo-matching for lost & found via OpenAI vision + pgvector, and a hardened for-sale flow (USDA/AWA seller attestations, non-dismissable 2025 scam-pattern warnings).\n\nEverything ships on the full Mako baseline: HSTS preload, strict CSP, locked Permissions-Policy, JSON-LD across every page type, llms.txt for AI search, a WCAG accessibility pass, an in-house analytics + audit-logged moderation admin, and a custom 3D-clay icon system across the brand.",
       shipped: [
         {
-          title: "AI image + video generation",
-          body: "fal.ai for images, Mux for HLS video playback across devices. Each generation debits a credit balance tied to the user."
+          title: "148k-business directory + reviews",
+          body: "Nationwide pet-business directory seeded from legal open data, deduplicated, and enriched — with pet-owner reviews, ratings, photos, owner responses, and AggregateRating rich results. Owner claiming via email-to-domain verification unlocks an editable listing plus a views + messages analytics dashboard."
         },
         {
-          title: "Meme + photo studio",
-          body: "Canvas editor with stickers and AI-fill. Web Share API flow works with iOS share sheets (TikTok, Instagram, Snapchat). Photo-only mode for uploads without generation."
+          title: "Programmatic SEO at scale",
+          body: "Tens of thousands of city × category pages on a high-authority domain, tiered SSG/ISR so the long tail caches on first crawl. Sitemaps, robots with AI-crawler rules, JSON-LD (LocalBusiness, Product, FAQPage, Breadcrumb, ItemList), and llms.txt — built to rank in Google and read cleanly to GPT, Claude, and Perplexity."
         },
         {
-          title: "Stripe credits billing",
-          body: "Credit packs, live usage pill, provider-grouped Usage & Costs admin page showing real Stripe + Mux + Supabase spend. Webhook-driven."
+          title: "Adopt — 59k shelter pets",
+          body: "Live adoption listings from the RescueGroups API (display + link-out only, weekly refresh), each pet with its own page that routes adopters to the rescue's website, email, or phone. Stale and dead-link listings are validated and auto-pruned so the directory stays clean."
         },
         {
-          title: "Community feed + profiles",
-          body: "Public feed of user creations, profile pages with creation grids, share-to-social with clipboard fallback."
+          title: "AI-matched lost & found",
+          body: "Post a lost or found pet with a photo and last-seen location; OpenAI vision + pgvector surface look-alike matches nearby, ranked by similarity, with Resend email alerts. Free forever — the goodwill + traffic engine."
         },
         {
-          title: "Admin console",
-          body: "Role-gated nav entry. Error Logs, Usage & Costs dashboard, Changelog, quick-link grid for every provider."
+          title: "Pets-for-sale classifieds (Section 230)",
+          body: "A pure classifieds vertical — TopPaws never processes payment — with USDA/AWA seller attestations recorded as proof, a moderation queue, and non-dismissable scam-pattern warnings researched against current BBB/FTC guidance. Built legally defensible, not just functional."
         },
         {
-          title: "Full SEO + AI-search build",
-          body: "Sitemap, robots, OG/Twitter meta, JSON-LD (FAQPage + HowTo), llms.txt, ProfilePage rich-results on every profile."
+          title: "Community, messaging + admin",
+          body: "A Discourse-style community forum, a pet gallery, private finder↔owner messaging, real DB-backed contact + report forms, and a full in-house admin: Recharts analytics, an audit-logged moderation queue, error-event logging, business dedup, and a contact inbox."
+        },
+        {
+          title: "Full security + AI-search baseline",
+          body: "iron-session auth, Turnstile + honeypot + AI moderation on every form, HSTS preload, strict CSP, locked Permissions-Policy, peppered credentials, rate limiting, a WCAG a11y pass, and the complete JSON-LD + llms.txt AI-search build — plus a bespoke 3D-clay icon system across categories, species, and the community."
         }
       ],
       outcome:
-        "Live on HTTPS with Stripe billing, Vercel Analytics, and a real admin stack. What a traditional agency would have booked as a 6-month engagement shipped in a single AI-native build cycle without cutting corners on infrastructure."
+        "Live on the toppaws.com domain — a 148k-business directory, 59k adoptable pets, four marketplace + community verticals, and an in-house analytics/moderation admin, all on one SEO-first, legally-defensible platform. What an agency would scope as a multi-quarter engagement, shipped end-to-end in AI-native build cycles."
     }
   },
   {
