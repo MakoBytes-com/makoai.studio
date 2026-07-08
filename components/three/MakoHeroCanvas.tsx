@@ -34,11 +34,15 @@ export default function MakoHeroCanvas() {
     []
   );
 
-  const count = useMemo(() => {
-    if (typeof window === "undefined") return 30000;
+  const { count, offset } = useMemo(() => {
+    if (typeof window === "undefined")
+      return { count: 30000, offset: [0.85, -0.1, 0] as const };
     const coarse = window.matchMedia("(pointer: coarse)").matches;
     const small = window.innerWidth < 768;
-    return coarse || small ? 16000 : 42000;
+    return small || coarse
+      ? // phones: fewer particles, shark centered low beneath the copy
+        { count: 16000, offset: [0, -1.15, 0] as const }
+      : { count: 42000, offset: [0.85, -0.1, 0] as const };
   }, []);
 
   useEffect(() => {
@@ -113,7 +117,7 @@ export default function MakoHeroCanvas() {
         fallback={null}
         flat
       >
-        <group position={[0.85, -0.1, 0]}>
+        <group position={[offset[0], offset[1], offset[2]]}>
           <MakoParticles count={count} formed={formed} />
         </group>
       </Canvas>

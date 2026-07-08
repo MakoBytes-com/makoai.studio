@@ -1,3 +1,5 @@
+import { Reveal, RevealLines } from "@/components/motion/Reveal";
+
 const serviceAreas = [
   { href: "/serving/the-woodlands-tx", label: "The Woodlands, TX" },
   { href: "/serving/conroe-tx", label: "Conroe, TX" },
@@ -98,97 +100,102 @@ const services = [
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      className="relative py-28 md:py-36"
-    >
-      <div className="container-narrow">
+    <section id="services" className="relative py-28 md:py-40">
+      {/* Faint bioluminescent haze behind the grid */}
+      <div className="absolute inset-0 bg-lumen-radial opacity-60" aria-hidden />
+
+      <div className="container-narrow relative">
         <div className="grid md:grid-cols-12 gap-10 mb-16">
           <div className="md:col-span-5">
-            <span className="section-label">What we do</span>
-            <h2 className="mt-5 font-display font-semibold text-[36px] md:text-[52px] leading-[1.05] tracking-tight">
-              Built end-to-end.
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+            <Reveal y={18}>
+              <span className="section-label">What we do</span>
+            </Reveal>
+            <RevealLines
+              as="h2"
+              className="mt-6 font-display font-medium text-[38px] md:text-[56px] leading-[1.04] tracking-tight text-mist-100"
+            >
+              <>Built end-to-end.</>
+              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200 pr-1.5">
                 Shipped fast.
               </span>
-            </h2>
+            </RevealLines>
           </div>
           <div className="md:col-span-6 md:col-start-7 flex items-end">
-            <p className="text-[16px] text-steel-300 leading-relaxed">
-              Most freelancers hand you a design and disappear. Most agencies
-              pass you between strangers. Mako Studio does all of it — design,
-              build, deploy, host, maintain — without losing the thread.
-            </p>
+            <Reveal delay={0.25}>
+              <p className="text-[16px] text-mist-300 leading-relaxed">
+                Most freelancers hand you a design and disappear. Most agencies
+                pass you between strangers. Mako Studio does all of it — design,
+                build, deploy, host, maintain — without losing the thread.
+              </p>
+            </Reveal>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <Reveal stagger={0.08} className="grid md:grid-cols-2 gap-4">
           {services.map((s) => (
-            <article
-              key={s.title}
-              className="group glass rounded-2xl p-8 hover:border-tide-500/30 transition-colors"
-            >
+            <article key={s.title} className="group glass-deep rounded-2xl p-8">
               <div className="flex items-start gap-5">
-                <div className="w-11 h-11 rounded-xl bg-tide-500/10 text-tide-300 flex items-center justify-center group-hover:bg-tide-500/20 transition-colors">
+                <div className="w-11 h-11 shrink-0 rounded-xl bg-lumen-400/10 text-lumen-300 flex items-center justify-center group-hover:bg-lumen-400/20 group-hover:shadow-glow-lumen-sm transition-all duration-500">
                   {s.icon}
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-display text-[20px] font-semibold text-steel-100">
+                  <h3 className="font-display text-[21px] font-medium text-mist-100">
                     {s.title}
                   </h3>
-                  <p className="mt-2 text-[14px] text-steel-300 leading-relaxed">
+                  <p className="mt-2 text-[14px] text-mist-300 leading-relaxed">
                     {s.body}
                   </p>
                 </div>
               </div>
             </article>
           ))}
-        </div>
+        </Reveal>
 
-        <div className="mt-10 glass rounded-2xl p-6 md:p-7 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
-          <div className="flex items-start gap-4">
-            <div className="w-11 h-11 shrink-0 rounded-xl bg-tide-500/10 text-tide-300 flex items-center justify-center">
-              <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-                <path
-                  d="M12 21s7-7.5 7-13a7 7 0 10-14 0c0 5.5 7 13 7 13z"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                />
-                <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.5" />
-              </svg>
-            </div>
-            <div>
-              <h3 className="font-display text-[17px] font-semibold text-steel-100">
-                Serving Montgomery County &amp; Greater Houston
-              </h3>
-              <p className="mt-1 text-[13px] text-steel-400 leading-relaxed">
-                Pick your city for a page with local case studies, neighborhood
-                context, and how we work with businesses in your area.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-wrap gap-2 md:shrink-0">
-            {serviceAreas.map((a) => (
-              <a
-                key={a.href}
-                href={a.href}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/10 hover:border-tide-500/40 hover:bg-white/5 text-[13px] text-steel-200 hover:text-steel-100 font-medium transition-colors"
-              >
-                {a.label}
-                <svg viewBox="0 0 16 16" className="w-3 h-3" fill="none">
+        <Reveal delay={0.1}>
+          <div className="mt-10 glass-deep rounded-2xl p-6 md:p-7 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+            <div className="flex items-start gap-4">
+              <div className="w-11 h-11 shrink-0 rounded-xl bg-lumen-400/10 text-lumen-300 flex items-center justify-center">
+                <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
                   <path
-                    d="M3 8h10m0 0l-4-4m4 4l-4 4"
+                    d="M12 21s7-7.5 7-13a7 7 0 10-14 0c0 5.5 7 13 7 13z"
                     stroke="currentColor"
-                    strokeWidth="1.75"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                    strokeWidth="1.5"
                   />
+                  <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.5" />
                 </svg>
-              </a>
-            ))}
+              </div>
+              <div>
+                <h3 className="font-display text-[18px] font-medium text-mist-100">
+                  Serving Montgomery County &amp; Greater Houston
+                </h3>
+                <p className="mt-1 text-[13px] text-mist-400 leading-relaxed">
+                  Pick your city for a page with local case studies, neighborhood
+                  context, and how we work with businesses in your area.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2 md:shrink-0">
+              {serviceAreas.map((a) => (
+                <a
+                  key={a.href}
+                  href={a.href}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-mist-300/10 hover:border-lumen-400/40 hover:bg-lumen-400/5 text-[13px] text-mist-200 hover:text-mist-100 font-medium transition-colors duration-300"
+                >
+                  {a.label}
+                  <svg viewBox="0 0 16 16" className="w-3 h-3" fill="none">
+                    <path
+                      d="M3 8h10m0 0l-4-4m4 4l-4 4"
+                      stroke="currentColor"
+                      strokeWidth="1.75"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,3 +1,5 @@
+import { Reveal, RevealLines } from "@/components/motion/Reveal";
+
 const stats = [
   { n: "2010", l: "Shipping Since" },
   { n: "10+", l: "Selected Works" },
@@ -30,75 +32,71 @@ const process = [
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="relative py-28 md:py-36"
-    >
-      <div className="container-narrow">
+    <section id="about" className="relative py-28 md:py-40">
+      <div className="absolute inset-0 bg-lumen-radial opacity-40" aria-hidden />
+      <div className="container-narrow relative">
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
-            <span className="section-label">About the studio</span>
-            <h2 className="mt-5 font-display font-semibold text-[36px] md:text-[52px] leading-[1.05] tracking-tight">
-              One partner.
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+            <Reveal y={18}>
+              <span className="section-label">About the studio</span>
+            </Reveal>
+            <RevealLines
+              as="h2"
+              className="mt-6 font-display font-medium text-[38px] md:text-[56px] leading-[1.04] tracking-tight text-mist-100"
+            >
+              <>One partner.</>
+              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200 pr-1.5">
                 Start to finish.
               </span>
-            </h2>
-            <p className="mt-6 text-[15px] text-steel-300 leading-relaxed">
-              Mako Studio is the in-house AI-native web team at{" "}
-              <span className="text-steel-100">Mako Logics LLC</span>, based in
-              Montgomery, TX. We serve small businesses across{" "}
-              <span className="text-steel-100">
-                The Woodlands, Montgomery, Conroe, Spring, and the greater
-                Houston area
-              </span>
-              . We&apos;ve shipped AI platforms, client sites, commercial
-              software, and a Windows-signed desktop app. Every project is
-              built with Claude as the core development partner. No WordPress,
-              no page builders, no templates — custom code, production-grade,
-              end-to-end.
-            </p>
+            </RevealLines>
+            <Reveal delay={0.25}>
+              <p className="mt-6 text-[15px] text-mist-300 leading-relaxed">
+                Mako Studio is the in-house AI-native web team at{" "}
+                <span className="text-mist-100">Mako Logics LLC</span>, based in
+                Montgomery, TX. We serve small businesses across{" "}
+                <span className="text-mist-100">
+                  The Woodlands, Montgomery, Conroe, Spring, and the greater
+                  Houston area
+                </span>
+                . We&apos;ve shipped AI platforms, client sites, commercial
+                software, and a Windows-signed desktop app. Every project is
+                built with Claude as the core development partner. No WordPress,
+                no page builders, no templates — custom code, production-grade,
+                end-to-end.
+              </p>
+            </Reveal>
 
-            <div className="mt-10 grid grid-cols-2 gap-6">
+            <Reveal stagger={0.08} className="mt-10 grid grid-cols-2 gap-6">
               {stats.map((s) => (
-                <div
-                  key={s.l}
-                  className="border-l border-tide-500/30 pl-4"
-                >
-                  <div className="font-display text-[36px] font-semibold text-steel-100 leading-none">
+                <div key={s.l} className="border-l border-lumen-400/30 pl-4">
+                  <div className="font-display text-[38px] font-medium text-mist-100 leading-none">
                     {s.n}
                   </div>
-                  <div className="mt-1.5 text-[11px] tracking-[0.2em] uppercase text-steel-400">
-                    {s.l}
-                  </div>
+                  <div className="mt-2 telemetry">{s.l}</div>
                 </div>
               ))}
-            </div>
+            </Reveal>
           </div>
 
           <div className="md:col-span-6 md:col-start-7">
-            <div className="space-y-3">
-              {process.map((p, i) => (
+            <Reveal stagger={0.1} className="space-y-3">
+              {process.map((p) => (
                 <div
                   key={p.n}
-                  className="glass rounded-2xl p-6 hover:border-tide-500/30 transition-colors flex gap-6"
-                  style={{ animationDelay: `${i * 80}ms` }}
+                  className="glass-deep rounded-2xl p-6 flex gap-6"
                 >
-                  <div className="font-mono text-[13px] text-tide-300 mt-0.5">
-                    {p.n}
-                  </div>
+                  <div className="telemetry text-lumen-400 mt-1">{p.n}</div>
                   <div>
-                    <h3 className="font-display text-[18px] font-semibold text-steel-100">
+                    <h3 className="font-display text-[19px] font-medium text-mist-100">
                       {p.t}
                     </h3>
-                    <p className="mt-1.5 text-[14px] text-steel-300 leading-relaxed">
+                    <p className="mt-1.5 text-[14px] text-mist-300 leading-relaxed">
                       {p.d}
                     </p>
                   </div>
                 </div>
               ))}
-            </div>
+            </Reveal>
           </div>
         </div>
       </div>
