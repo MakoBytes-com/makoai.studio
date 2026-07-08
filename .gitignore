@@ -30,8 +30,6 @@ next-env.d.ts
 .vscode
 .idea
 
-.vercel
-
 # MakoBot auto-injected (local dev context, not source)
 CLAUDE.md
 AGENTS.md
@@ -43,3 +41,13 @@ AGENTS.md
 # Local backup / scratch files
 *.bak
 *.tmp.*
+
+# Supabase CLI debris from MakoAnswer sessions run from this cwd — not this project's infra
+supabase/
+
+# MakoBot MCP config contains a local auth token — do not commit
+.mcp.json
+.mcp.json.*
+.cursor/mcp.json
+# MakoBot MCP config contains a local auth token — do not commit
+.cursor/mcp.json.*
