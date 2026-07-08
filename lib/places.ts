@@ -43,8 +43,8 @@ const ENDPOINT = "https://places.googleapis.com/v1/places";
 const FIELD_MASK = "id,displayName,rating,userRatingCount,reviews";
 
 export async function fetchPlaceReviews(): Promise<PlaceData | null> {
-  const apiKey = process.env.GOOGLE_PLACES_API_KEY;
-  const placeId = process.env.GOOGLE_PLACES_PLACE_ID;
+  const apiKey = process.env.GOOGLE_PLACES_API_KEY?.trim();
+  const placeId = process.env.GOOGLE_PLACES_PLACE_ID?.trim();
   if (!apiKey || !placeId) return null;
 
   try {
