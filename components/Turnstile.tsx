@@ -145,8 +145,8 @@ export default function Turnstile({ onToken, onExpire }: Props) {
   return (
     <div className="min-h-[70px]">
       {state === "loading" && (
-        <div className="flex items-center gap-2 text-[12px] text-steel-400">
-          <span className="inline-block w-3 h-3 border-2 border-steel-500 border-t-tide-300 rounded-full animate-spin" />
+        <div className="flex items-center gap-2 text-[12px] text-mist-400">
+          <span className="inline-block w-3 h-3 border-2 border-mist-500 border-t-lumen-300 rounded-full animate-spin" />
           Loading verification…
         </div>
       )}
