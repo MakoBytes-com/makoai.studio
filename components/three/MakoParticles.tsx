@@ -63,7 +63,7 @@ const VERTEX = /* glsl */ `
     // ── pointer repulsion: light parts around a touch ──
     vec3 away = p - uPointer;
     float d = length(away);
-    p += normalize(away + 0.0001) * smoothstep(1.1, 0.0, d) * 0.4 * form;
+    p += normalize(away + 0.0001) * smoothstep(1.45, 0.0, d) * 0.55 * form;
 
     vec4 mv = modelViewMatrix * vec4(p, 1.0);
     gl_Position = projectionMatrix * mv;
@@ -101,15 +101,21 @@ const FRAGMENT = /* glsl */ `
 
 export default function MakoParticles({
   count,
-  formed
+  formed,
+  pointerNdc,
+  groupOffset
 }: {
   count: number;
   /** Ref-like driver: 0..1, eased outside (intro + scroll). */
   formed: { current: number };
+  /** Window-tracked pointer in canvas NDC (-1..1) — see MakoHeroCanvas. */
+  pointerNdc: { current: { x: number; y: number } };
+  /** The parent group's world offset, so repulsion lands in local space. */
+  groupOffset: readonly [number, number, number];
 }) {
   const mat = useRef<THREE.ShaderMaterial>(null);
   const group = useRef<THREE.Group>(null);
-  const { viewport, pointer } = useThree();
+  const { viewport } = useThree();
   const pointerWorld = useRef(new THREE.Vector3(999, 999, 0));
 
   const cloud = useMemo(() => buildMakoCloud(count), [count]);
@@ -144,18 +150,23 @@ export default function MakoParticles({
     m.uniforms.uForm.value = formed.current;
     m.uniforms.uPixelRatio.value = state.gl.getPixelRatio();
 
-    // Pointer in world space at the shark's plane (z ≈ 0)
+    // Pointer in world space at the shark's plane (z ≈ 0), then into the
+    // parent group's LOCAL space — shader positions are pre-transform,
+    // so the group offset must be subtracted or the repulsion misses.
+    const ndc = pointerNdc.current;
     pointerWorld.current.set(
-      (pointer.x * viewport.width) / 2,
-      (pointer.y * viewport.height) / 2,
+      (ndc.x * viewport.width) / 2 - groupOffset[0],
+      (ndc.y * viewport.height) / 2 - groupOffset[1],
       0
     );
 
     // The whole school leans subtly toward the cursor — parallax life
     if (group.current) {
       const g = group.current;
-      g.rotation.y += (pointer.x * 0.14 - g.rotation.y) * 0.04;
-      g.rotation.x += (-pointer.y * 0.08 - g.rotation.x) * 0.04;
+      const px = Math.max(-1, Math.min(1, ndc.x));
+      const py = Math.max(-1, Math.min(1, ndc.y));
+      g.rotation.y += (px * 0.14 - g.rotation.y) * 0.04;
+      g.rotation.x += (-py * 0.08 - g.rotation.x) * 0.04;
     }
   });
 
