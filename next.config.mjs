@@ -34,7 +34,7 @@ const nextConfig = {
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: blob: https://lh3.googleusercontent.com",
       "font-src 'self' data: https://fonts.gstatic.com",
-      "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://vercel.live https://fonts.googleapis.com https://fonts.gstatic.com",
+      "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://vercel.live https://fonts.googleapis.com https://fonts.gstatic.com https://portal.makoai.studio",
       "media-src 'self'",
       "frame-src 'self' https://challenges.cloudflare.com https://www.google.com https://maps.google.com https://makochat.app",
       "form-action 'self' https://challenges.cloudflare.com",
