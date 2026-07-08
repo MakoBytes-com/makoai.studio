@@ -88,17 +88,17 @@ export default function HoustonPage() {
       />
 
       <section className="relative pt-32 md:pt-40 pb-16">
-        <div className="absolute inset-0 bg-hero-radial pointer-events-none" />
+        <div className="absolute inset-0 bg-surface-light pointer-events-none" />
         <div className="container-narrow relative">
           <span className="section-label">Service area</span>
-          <h1 className="mt-5 font-display font-semibold text-[40px] md:text-[68px] leading-[1.02] tracking-tight max-w-3xl">
+          <h1 className="mt-5 font-display font-medium text-[40px] md:text-[68px] leading-[1.02] tracking-tight max-w-3xl">
             Web design for
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200 italic">
               Greater Houston, TX.
             </span>
           </h1>
-          <p className="mt-7 text-[17px] md:text-[19px] text-steel-300 leading-relaxed max-w-2xl">
+          <p className="mt-7 text-[17px] md:text-[19px] text-mist-300 leading-relaxed max-w-2xl">
             Our service area reaches from our Montgomery, TX headquarters down
             into Harris County — through Spring, Cypress, Tomball, League
             City, and into the core of Houston. The market is larger and the
@@ -114,7 +114,7 @@ export default function HoustonPage() {
             <div>
               <span className="section-label">Who we work with in Houston</span>
             </div>
-            <div className="space-y-6 text-[16px] md:text-[17px] text-steel-200 leading-relaxed">
+            <div className="space-y-6 text-[16px] md:text-[17px] text-mist-200 leading-relaxed">
               <p>
                 Houston is an industrial and energy town first. The clients
                 most of our Houston work comes from are B2B suppliers,
@@ -160,14 +160,14 @@ export default function HoustonPage() {
               <span className="section-label">Featured work</span>
             </div>
             <div>
-              <div className="glass rounded-2xl p-7 md:p-9">
-                <div className="text-[11px] uppercase tracking-[0.2em] text-steel-400 font-medium">
+              <div className="glass-deep rounded-2xl p-7 md:p-9">
+                <div className="text-[11px] uppercase tracking-[0.2em] text-mist-400 font-medium">
                   Inspection &amp; NDT · League City, TX
                 </div>
-                <h2 className="mt-3 font-display font-semibold text-[24px] md:text-[30px] text-steel-100 leading-tight tracking-tight">
+                <h2 className="mt-3 font-display font-medium text-[24px] md:text-[30px] text-mist-100 leading-tight tracking-tight">
                   Pro-Surve Technical Services
                 </h2>
-                <p className="mt-4 text-[15px] md:text-[16px] text-steel-300 leading-relaxed">
+                <p className="mt-4 text-[15px] md:text-[16px] text-mist-300 leading-relaxed">
                   Inspection, engineering, and non-destructive testing for oil
                   &amp; gas, petrochemical, aerospace, and power generation
                   clients out of League City. Custom-themed site, built from
@@ -186,7 +186,7 @@ export default function HoustonPage() {
             <div>
               <span className="section-label">Why a Montgomery-based studio works for Houston clients</span>
             </div>
-            <div className="space-y-5 text-[15px] md:text-[16px] text-steel-200 leading-relaxed">
+            <div className="space-y-5 text-[15px] md:text-[16px] text-mist-200 leading-relaxed">
               <p>
                 The Houston-agency market is full of two kinds of shops: large
                 downtown agencies with hand-offs and markup, or gig-platform
@@ -214,25 +214,25 @@ export default function HoustonPage() {
 
       <section className="py-20 md:py-28">
         <div className="container-narrow">
-          <div className="glass rounded-2xl p-8 md:p-12 text-center">
+          <div className="glass-deep rounded-2xl p-8 md:p-12 text-center">
             <span className="section-label">Start a project</span>
-            <h2 className="mt-5 font-display font-semibold text-[28px] md:text-[38px] leading-tight tracking-tight">
+            <h2 className="mt-5 font-display font-medium text-[28px] md:text-[38px] leading-tight tracking-tight">
               Ready to talk?
             </h2>
-            <p className="mt-4 text-[15px] md:text-[16px] text-steel-300 leading-relaxed max-w-lg mx-auto">
+            <p className="mt-4 text-[15px] md:text-[16px] text-mist-300 leading-relaxed max-w-lg mx-auto">
               Send a few sentences about your project. For Houston-area
               clients we can usually meet on-site within the week.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link
                 href="/#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-tide-500 hover:bg-tide-600 text-white text-[14px] font-medium transition-all shadow-glow"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-tide-500 hover:bg-tide-600 text-white text-[14px] font-medium transition-all shadow-glow hover:shadow-glow-lumen"
               >
                 Contact form
               </Link>
               <a
                 href="tel:+12812064848"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 text-steel-100 hover:border-tide-500/40 text-[14px] font-medium transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-mist-300/10 text-mist-100 hover:border-lumen-400/40 text-[14px] font-medium transition-all"
               >
                 (281) 206-4848
               </a>

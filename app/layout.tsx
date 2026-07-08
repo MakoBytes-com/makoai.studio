@@ -1,23 +1,35 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import SmoothScroll from "@/components/motion/SmoothScroll";
 import "./globals.css";
 
 // Self-hosted Google Fonts via next/font. Downloaded at build time
 // and served from same origin — no runtime request to Google, which
 // keeps visitor IPs out of Google's hands (GDPR / privacy hygiene
 // baseline per CLAUDE.md).
+//
+// Type system (BIOLUMINANCE):
+//  - Fraunces        display serif — variable, with italics; the voice
+//  - Inter           body — disappears, as body text should
+//  - JetBrains Mono  telemetry — the submersible-instrument voice
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-inter",
   display: "swap"
 });
 
-const spaceGrotesk = Space_Grotesk({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-space-grotesk",
+  style: ["normal", "italic"],
+  axes: ["SOFT", "WONK", "opsz"],
+  variable: "--font-fraunces",
+  display: "swap"
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
   display: "swap"
 });
 
@@ -108,7 +120,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
@@ -116,7 +131,9 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <SmoothScroll />
         {children}
+        <div className="grain" aria-hidden />
         <Analytics />
         {/* MakoChat widget (makochat.app) */}
         <script src="https://makochat.app/embed.js" data-makochat="makoai-studio" defer />

@@ -88,31 +88,31 @@ export default function ServingIndexPage() {
       />
 
       <section className="relative pt-32 md:pt-40 pb-16">
-        <div className="absolute inset-0 bg-hero-radial pointer-events-none" />
+        <div className="absolute inset-0 bg-surface-light pointer-events-none" />
         <div className="container-narrow relative">
           <nav
-            className="mb-10 text-[12px] text-steel-400 font-medium"
+            className="mb-10 text-[12px] text-mist-400 font-medium"
             aria-label="Breadcrumb"
           >
             <Link
               href="/"
-              className="hover:text-tide-300 transition-colors"
+              className="hover:text-lumen-300 transition-colors"
             >
               Home
             </Link>
-            <span className="mx-2 text-steel-400/50">/</span>
-            <span className="text-steel-200">Service Areas</span>
+            <span className="mx-2 text-mist-400/50">/</span>
+            <span className="text-mist-200">Service Areas</span>
           </nav>
 
           <span className="section-label">Service areas</span>
-          <h1 className="mt-5 font-display font-semibold text-[40px] md:text-[68px] leading-[1.02] tracking-tight max-w-3xl">
+          <h1 className="mt-5 font-display font-medium text-[40px] md:text-[68px] leading-[1.02] tracking-tight max-w-3xl">
             Where we
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200 italic">
               build locally.
             </span>
           </h1>
-          <p className="mt-7 text-[17px] md:text-[19px] text-steel-300 leading-relaxed max-w-2xl">
+          <p className="mt-7 text-[17px] md:text-[19px] text-mist-300 leading-relaxed max-w-2xl">
             Mako Studio is a Montgomery, TX-based studio shipping custom Next.js
             sites across the Greater Houston region. We cover The Woodlands,
             Conroe, and Houston directly — close enough for an in-person
@@ -129,21 +129,21 @@ export default function ServingIndexPage() {
               <Link
                 key={a.slug}
                 href={`/serving/${a.slug}`}
-                className="group glass rounded-2xl p-6 md:p-7 transition-all hover:border-tide-500/40"
+                className="group glass-deep rounded-2xl p-6 md:p-7 transition-all hover:border-lumen-400/40"
               >
-                <div className="text-[11px] uppercase tracking-[0.2em] text-steel-400 font-medium">
+                <div className="text-[11px] uppercase tracking-[0.2em] text-mist-400 font-medium">
                   {a.label}
                 </div>
-                <h2 className="mt-3 font-display font-semibold text-[22px] md:text-[26px] text-steel-100 leading-tight tracking-tight">
+                <h2 className="mt-3 font-display font-medium text-[22px] md:text-[26px] text-mist-100 leading-tight tracking-tight">
                   {a.city}
                 </h2>
-                <p className="mt-4 text-[14px] md:text-[15px] text-steel-300 leading-relaxed">
+                <p className="mt-4 text-[14px] md:text-[15px] text-mist-300 leading-relaxed">
                   {a.blurb}
                 </p>
-                <p className="mt-5 text-[12px] text-tide-300 font-medium">
+                <p className="mt-5 text-[12px] text-lumen-300 font-medium">
                   {a.highlight}
                 </p>
-                <div className="mt-5 inline-flex items-center gap-2 text-[13px] text-tide-300 font-medium group-hover:text-tide-200">
+                <div className="mt-5 inline-flex items-center gap-2 text-[13px] text-lumen-300 font-medium group-hover:text-lumen-200">
                   See {a.city.split(",")[0]} services
                   <svg viewBox="0 0 16 16" className="w-4 h-4" fill="none">
                     <path
@@ -167,7 +167,7 @@ export default function ServingIndexPage() {
             <div>
               <span className="section-label">Outside these areas?</span>
             </div>
-            <div className="space-y-5 text-[15px] md:text-[16px] text-steel-200 leading-relaxed">
+            <div className="space-y-5 text-[15px] md:text-[16px] text-mist-200 leading-relaxed">
               <p>
                 We work remotely with clients across Texas and the U.S. on
                 anything that doesn&apos;t need an in-person kickoff. Industrial
@@ -186,25 +186,25 @@ export default function ServingIndexPage() {
 
       <section className="py-20 md:py-28">
         <div className="container-narrow">
-          <div className="glass rounded-2xl p-8 md:p-12 text-center">
+          <div className="glass-deep rounded-2xl p-8 md:p-12 text-center">
             <span className="section-label">Start a project</span>
-            <h2 className="mt-5 font-display font-semibold text-[28px] md:text-[38px] leading-tight tracking-tight">
+            <h2 className="mt-5 font-display font-medium text-[28px] md:text-[38px] leading-tight tracking-tight">
               Ready to talk?
             </h2>
-            <p className="mt-4 text-[15px] md:text-[16px] text-steel-300 leading-relaxed max-w-lg mx-auto">
+            <p className="mt-4 text-[15px] md:text-[16px] text-mist-300 leading-relaxed max-w-lg mx-auto">
               Send a few sentences about what you need. If you&apos;re in the
               Greater Houston area, we can meet for coffee this week.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link
                 href="/#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-tide-500 hover:bg-tide-600 text-white text-[14px] font-medium transition-all shadow-glow"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-tide-500 hover:bg-tide-600 text-white text-[14px] font-medium transition-all shadow-glow hover:shadow-glow-lumen"
               >
                 Contact form
               </Link>
               <a
                 href="tel:+12812064848"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 text-steel-100 hover:border-tide-500/40 text-[14px] font-medium transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-mist-300/10 text-mist-100 hover:border-lumen-400/40 text-[14px] font-medium transition-all"
               >
                 (281) 206-4848
               </a>

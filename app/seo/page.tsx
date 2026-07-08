@@ -157,21 +157,21 @@ export default function SeoPage() {
 
       {/* Hero */}
       <section className="relative pt-32 md:pt-40 pb-16">
-        <div className="absolute inset-0 bg-hero-radial pointer-events-none" />
+        <div className="absolute inset-0 bg-surface-light pointer-events-none" />
         <div className="container-narrow relative">
           <span className="section-label">SEO, honestly</span>
-          <h1 className="mt-5 font-display font-semibold text-[44px] md:text-[72px] leading-[1.02] tracking-tight">
+          <h1 className="mt-5 font-display font-medium text-[44px] md:text-[72px] leading-[1.02] tracking-tight">
             Most SEO is sold fear.
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+            <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200">
               Here&apos;s what actually works.
             </span>
           </h1>
-          <p className="mt-7 max-w-2xl text-[17px] md:text-[19px] text-steel-300 leading-relaxed">
+          <p className="mt-7 max-w-2xl text-[17px] md:text-[19px] text-mist-300 leading-relaxed">
             We&apos;ll be blunt: most of the SEO industry runs on fear and vague
             monthly invoices. After building and ranking real sites, we think
             only{" "}
-            <span className="text-steel-100 font-semibold">
+            <span className="text-mist-100 font-semibold">
               three things truly move the needle
             </span>{" "}
             for a local business. The rest is theater you&apos;re billed for
@@ -183,13 +183,13 @@ export default function SeoPage() {
       {/* Manifesto */}
       <section className="pt-4 pb-16 md:pb-20">
         <div className="container-narrow">
-          <div className="glass rounded-3xl border border-tide-500/40 shadow-glow p-8 md:p-12">
-            <p className="text-[19px] md:text-[24px] text-steel-100 font-display font-medium leading-snug tracking-tight">
+          <div className="glass-deep rounded-3xl border border-lumen-400/40 shadow-glow-lumen p-8 md:p-12">
+            <p className="text-[19px] md:text-[24px] text-mist-100 font-display font-medium leading-snug tracking-tight">
               “Most SEO agencies are nothing but BS and lies. The only things
               that truly work are a Google Business listing, customer reviews,
               and a site with good keywords and schema.”
             </p>
-            <p className="mt-5 text-[14px] text-steel-400">
+            <p className="mt-5 text-[14px] text-mist-400">
               — and we built our whole approach around exactly that.
             </p>
           </div>
@@ -201,10 +201,10 @@ export default function SeoPage() {
         <div className="container-narrow">
           <div className="mb-12">
             <span className="section-label">What actually works</span>
-            <h2 className="mt-4 font-display font-semibold text-[32px] md:text-[44px] leading-tight tracking-tight">
+            <h2 className="mt-4 font-display font-medium text-[32px] md:text-[44px] leading-tight tracking-tight">
               The three levers.
             </h2>
-            <p className="mt-3 max-w-xl text-[15px] text-steel-300 leading-relaxed">
+            <p className="mt-3 max-w-xl text-[15px] text-mist-300 leading-relaxed">
               Not twenty. Three. Get these right and you&apos;ll beat almost any
               business paying a five-hundred-dollar-a-month retainer.
             </p>
@@ -214,21 +214,21 @@ export default function SeoPage() {
             {levers.map((l) => (
               <article
                 key={l.number}
-                className="glass rounded-2xl p-7 flex flex-col"
+                className="glass-deep rounded-2xl p-7 flex flex-col"
               >
-                <div className="font-display font-semibold text-[28px] text-tide-400/70 leading-none">
+                <div className="font-display font-medium text-[28px] text-lumen-400/70 leading-none">
                   {l.number}
                 </div>
-                <h3 className="mt-4 font-display text-[22px] font-semibold text-steel-100 leading-tight">
+                <h3 className="mt-4 font-display text-[22px] font-semibold text-mist-100 leading-tight">
                   {l.name}
                 </h3>
-                <p className="mt-2 text-[13px] text-tide-300 font-medium">
+                <p className="mt-2 text-[13px] text-lumen-300 font-medium">
                   {l.tag}
                 </p>
-                <ul className="mt-5 space-y-2.5 text-[13px] text-steel-300 leading-relaxed flex-1">
+                <ul className="mt-5 space-y-2.5 text-[13px] text-mist-300 leading-relaxed flex-1">
                   {l.points.map((p) => (
                     <li key={p} className="flex items-start gap-2">
-                      <span className="text-tide-400 mt-0.5 flex-shrink-0">+</span>
+                      <span className="text-lumen-400 mt-0.5 flex-shrink-0">+</span>
                       <span>{p}</span>
                     </li>
                   ))}
@@ -237,9 +237,9 @@ export default function SeoPage() {
             ))}
           </div>
 
-          <p className="mt-8 text-[13px] text-steel-400 italic max-w-2xl">
+          <p className="mt-8 text-[13px] text-mist-400 italic max-w-2xl">
             One honest caveat: the single biggest factor in local search is{" "}
-            <span className="text-steel-300 font-medium not-italic">
+            <span className="text-mist-300 font-medium not-italic">
               proximity
             </span>{" "}
             — how close your business is to the person searching — and nobody
@@ -256,13 +256,13 @@ export default function SeoPage() {
         <div className="container-narrow">
           <div className="mb-12">
             <span className="section-label">The new frontier</span>
-            <h2 className="mt-4 font-display font-semibold text-[32px] md:text-[44px] leading-tight tracking-tight">
+            <h2 className="mt-4 font-display font-medium text-[32px] md:text-[44px] leading-tight tracking-tight">
               How AI finds{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200">
                 your business.
               </span>
             </h2>
-            <p className="mt-3 max-w-2xl text-[15px] text-steel-300 leading-relaxed">
+            <p className="mt-3 max-w-2xl text-[15px] text-mist-300 leading-relaxed">
               More and more people don&apos;t scroll ten blue links anymore —
               they ask ChatGPT, Claude, Perplexity, or Google&apos;s AI for a
               recommendation and get one answer back. You&apos;re either in that
@@ -272,16 +272,16 @@ export default function SeoPage() {
             </p>
           </div>
 
-          <div className="glass rounded-2xl p-7 md:p-9">
+          <div className="glass-deep rounded-2xl p-7 md:p-9">
             <ul className="space-y-5">
               {aiPoints.map((a) => (
                 <li key={a.h} className="flex items-start gap-3">
-                  <span className="text-tide-400 mt-1 flex-shrink-0">+</span>
+                  <span className="text-lumen-400 mt-1 flex-shrink-0">+</span>
                   <div>
-                    <span className="text-[15px] font-display font-semibold text-steel-100">
+                    <span className="text-[15px] font-display font-medium text-mist-100">
                       {a.h}
                     </span>
-                    <p className="mt-1 text-[13px] text-steel-300 leading-relaxed">
+                    <p className="mt-1 text-[13px] text-mist-300 leading-relaxed">
                       {a.p}
                     </p>
                   </div>
@@ -290,7 +290,7 @@ export default function SeoPage() {
             </ul>
           </div>
 
-          <p className="mt-8 text-[13px] text-steel-400 italic max-w-2xl">
+          <p className="mt-8 text-[13px] text-mist-400 italic max-w-2xl">
             Because we&apos;re AI-native, all of this ships with every site we
             build — no add-on, no separate &quot;AI SEO&quot; invoice.
           </p>
@@ -302,37 +302,37 @@ export default function SeoPage() {
         <div className="container-narrow">
           <div className="mb-12">
             <span className="section-label">Where we stand</span>
-            <h2 className="mt-4 font-display font-semibold text-[32px] md:text-[44px] leading-tight tracking-tight">
+            <h2 className="mt-4 font-display font-medium text-[32px] md:text-[44px] leading-tight tracking-tight">
               What we do —{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200">
                 and what we don&apos;t.
               </span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="glass rounded-2xl p-7 md:p-8 border-tide-500/30">
-              <h3 className="font-display text-[20px] font-semibold text-steel-100">
+            <div className="glass-deep rounded-2xl p-7 md:p-8 border-tide-500/30">
+              <h3 className="font-display text-[20px] font-semibold text-mist-100">
                 What we do
               </h3>
-              <ul className="mt-5 space-y-3 text-[14px] text-steel-300 leading-relaxed">
+              <ul className="mt-5 space-y-3 text-[14px] text-mist-300 leading-relaxed">
                 {weDo.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
-                    <span className="text-tide-400 mt-0.5 flex-shrink-0">✓</span>
+                    <span className="text-lumen-400 mt-0.5 flex-shrink-0">✓</span>
                     <span>{f}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="glass rounded-2xl p-7 md:p-8">
-              <h3 className="font-display text-[20px] font-semibold text-steel-100">
+            <div className="glass-deep rounded-2xl p-7 md:p-8">
+              <h3 className="font-display text-[20px] font-semibold text-mist-100">
                 What we don&apos;t
               </h3>
-              <ul className="mt-5 space-y-3 text-[14px] text-steel-400 leading-relaxed">
+              <ul className="mt-5 space-y-3 text-[14px] text-mist-400 leading-relaxed">
                 {weDont.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
-                    <span className="text-steel-500 mt-0.5 flex-shrink-0">✕</span>
+                    <span className="text-mist-500 mt-0.5 flex-shrink-0">✕</span>
                     <span>{f}</span>
                   </li>
                 ))}
@@ -340,7 +340,7 @@ export default function SeoPage() {
             </div>
           </div>
 
-          <p className="mt-8 text-[13px] text-steel-400 italic max-w-2xl">
+          <p className="mt-8 text-[13px] text-mist-400 italic max-w-2xl">
             The on-site half — keywords, structure, schema, technical SEO — is
             baked into every site we build, at no extra charge. We&apos;ll help
             you stand up the other half (your Google Business Profile and
@@ -354,23 +354,23 @@ export default function SeoPage() {
         <div className="container-narrow max-w-3xl">
           <div className="mb-10">
             <span className="section-label">Straight answers</span>
-            <h2 className="mt-4 font-display font-semibold text-[32px] md:text-[44px] leading-tight tracking-tight">
+            <h2 className="mt-4 font-display font-medium text-[32px] md:text-[44px] leading-tight tracking-tight">
               Common questions.
             </h2>
           </div>
 
           <div className="space-y-4">
             {faqs.map((f) => (
-              <details key={f.q} className="glass rounded-2xl p-6 group">
+              <details key={f.q} className="glass-deep rounded-2xl p-6 group">
                 <summary className="cursor-pointer list-none flex items-center justify-between gap-4">
-                  <h3 className="font-display font-semibold text-[16px] text-steel-100 group-hover:text-white">
+                  <h3 className="font-display font-medium text-[16px] text-mist-100 group-hover:text-white">
                     {f.q}
                   </h3>
-                  <span className="text-steel-400 group-open:rotate-45 transition-transform text-[22px] leading-none">
+                  <span className="text-mist-400 group-open:rotate-45 transition-transform text-[22px] leading-none">
                     +
                   </span>
                 </summary>
-                <p className="mt-4 text-[14px] text-steel-300 leading-relaxed">
+                <p className="mt-4 text-[14px] text-mist-300 leading-relaxed">
                   {f.a}
                 </p>
               </details>
@@ -383,10 +383,10 @@ export default function SeoPage() {
       <section className="py-20 md:py-28">
         <div className="container-narrow text-center">
           <span className="section-label">Next</span>
-          <h2 className="mt-5 font-display font-semibold text-[32px] md:text-[48px] leading-tight tracking-tight">
+          <h2 className="mt-5 font-display font-medium text-[32px] md:text-[48px] leading-tight tracking-tight">
             Want SEO that isn&apos;t a scam?
           </h2>
-          <p className="mt-4 max-w-xl mx-auto text-[15px] text-steel-300 leading-relaxed">
+          <p className="mt-4 max-w-xl mx-auto text-[15px] text-mist-300 leading-relaxed">
             Every site we build ships SEO-ready, and we&apos;ll get your Google
             Business Profile and reviews working too. No retainer, no fear, no
             twenty-page reports. Just the stuff that works.
@@ -409,7 +409,7 @@ export default function SeoPage() {
             </Link>
             <Link
               href="/pricing"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-white/10 hover:border-tide-500/40 text-steel-100 hover:text-white text-[14px] font-semibold transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-mist-300/10 hover:border-lumen-400/40 text-mist-100 hover:text-white text-[14px] font-semibold transition-colors"
             >
               See pricing
             </Link>
