@@ -77,9 +77,11 @@ export async function POST(req: Request) {
     );
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL ?? "admin@makoai.studio";
-  const from = process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev";
+  // .trim() everywhere: a pasted env var with a trailing newline broke
+  // every send for 79 days (invalid Authorization header). Never again.
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  const to = (process.env.CONTACT_TO_EMAIL ?? "admin@makoai.studio").trim();
+  const from = (process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev").trim();
 
   const userAgent = req.headers.get("user-agent") ?? undefined;
   const { subject, html, text } = renderInquiryEmail({

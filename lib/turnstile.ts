@@ -5,14 +5,15 @@ export type TurnstileResult =
 const VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
 export function turnstileEnabled(): boolean {
-  return Boolean(process.env.TURNSTILE_SECRET_KEY);
+  return Boolean(process.env.TURNSTILE_SECRET_KEY?.trim());
 }
 
 export async function verifyTurnstile(
   token: string | undefined | null,
   ip: string
 ): Promise<TurnstileResult> {
-  const secret = process.env.TURNSTILE_SECRET_KEY;
+  // trim: guards against pasted env values with trailing newlines
+  const secret = process.env.TURNSTILE_SECRET_KEY?.trim();
   if (!secret) {
     console.warn(
       "[turnstile] TURNSTILE_SECRET_KEY not set — skipping verification (dormant)."
