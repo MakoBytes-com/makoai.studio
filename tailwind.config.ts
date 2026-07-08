@@ -44,22 +44,6 @@ const config: Config = {
           300: "#C7D3E4",
           200: "#DDE6F2",
           100: "#F2F6FB"
-        },
-
-        // ── LEGACY (pre-Fable palette) — kept so un-rebuilt pages
-        //    render unchanged during the transition. Remove at final sweep.
-        ink: {
-          900: "#050912",
-          800: "#0A1020",
-          700: "#10182C",
-          600: "#1A2540",
-          500: "#26324F"
-        },
-        steel: {
-          400: "#8A95AD",
-          300: "#B8BFD0",
-          200: "#D6DBE6",
-          100: "#E8EDF3"
         }
       },
       fontFamily: {
@@ -73,10 +57,6 @@ const config: Config = {
         ]
       },
       backgroundImage: {
-        "hero-radial":
-          "radial-gradient(ellipse at top, rgba(59,130,246,0.18) 0%, transparent 55%)",
-        "card-gradient":
-          "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)",
         "depth-fade":
           "linear-gradient(180deg, transparent 0%, rgba(2,5,9,0.85) 70%, #020509 100%)",
         "lumen-radial":
@@ -101,25 +81,10 @@ const config: Config = {
         current: "cubic-bezier(0.22, 1, 0.36, 1)"
       },
       animation: {
-        "float-slow": "float 14s ease-in-out infinite",
-        drift: "drift 22s linear infinite",
-        shimmer: "shimmer 3s ease-in-out infinite",
         "pulse-lumen": "pulse-lumen 4s ease-in-out infinite",
         "dive-line": "dive-line 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite"
       },
       keyframes: {
-        float: {
-          "0%, 100%": { transform: "translateY(0) translateX(0)" },
-          "50%": { transform: "translateY(-20px) translateX(10px)" }
-        },
-        drift: {
-          "0%": { transform: "translateX(-10%)" },
-          "100%": { transform: "translateX(110%)" }
-        },
-        shimmer: {
-          "0%, 100%": { opacity: "0.3" },
-          "50%": { opacity: "0.9" }
-        },
         "pulse-lumen": {
           "0%, 100%": { opacity: "0.5", transform: "scale(1)" },
           "50%": { opacity: "1", transform: "scale(1.06)" }
