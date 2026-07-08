@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import SmoothScroll from "@/components/motion/SmoothScroll";
+import CursorGlow from "@/components/motion/CursorGlow";
 import "./globals.css";
 
 // Self-hosted Google Fonts via next/font. Downloaded at build time
@@ -133,6 +134,7 @@ export default function RootLayout({
       <body>
         <SmoothScroll />
         {children}
+        <CursorGlow />
         <div className="grain" aria-hidden />
         <Analytics />
         {/* MakoChat widget (makochat.app) */}

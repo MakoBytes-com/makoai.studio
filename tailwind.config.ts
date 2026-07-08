@@ -64,7 +64,9 @@ const config: Config = {
         "surface-light":
           "radial-gradient(ellipse 90% 55% at 50% -12%, rgba(94,234,255,0.14) 0%, rgba(59,130,246,0.10) 34%, transparent 62%)",
         "water-column":
-          "linear-gradient(180deg, rgba(10,24,50,0.35) 0%, rgba(3,7,17,0.1) 45%, rgba(2,5,9,0.9) 88%, #020509 100%)"
+          "linear-gradient(180deg, rgba(10,24,50,0.35) 0%, rgba(3,7,17,0.1) 45%, rgba(2,5,9,0.9) 88%, #020509 100%)",
+        "lamp-glow":
+          "radial-gradient(circle, rgba(94,234,255,0.09) 0%, rgba(59,130,246,0.05) 32%, transparent 68%)"
       },
       boxShadow: {
         glow: "0 0 40px -10px rgba(59,130,246,0.35)",

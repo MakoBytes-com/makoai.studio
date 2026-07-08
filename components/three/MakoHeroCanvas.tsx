@@ -9,6 +9,9 @@ import MakoParticles from "./MakoParticles";
  * Hero canvas shell. Owns everything that is not art:
  *  - intro choreography (plankton coalesce into the shark over ~3s)
  *  - scroll choreography (the form disperses as the visitor dives)
+ *  - WINDOW-level pointer tracking, mapped into the canvas' NDC space —
+ *    overlays and copy above the canvas can never block the shark's
+ *    awareness of the cursor
  *  - IntersectionObserver pause (zero GPU work once scrolled past)
  *  - DPR cap, mobile particle budget, additive-friendly GL flags
  *  - reduced-motion: renders ONE still frame of the fully-formed
@@ -21,6 +24,8 @@ export default function MakoHeroCanvas() {
   const container = useRef<HTMLDivElement>(null);
   const intro = useRef(0); // 0→1 once, on load
   const disperse = useRef(0); // 0→1 with scroll, scrubbed
+  // NDC pointer (-1..1), tracked on window against the container rect
+  const pointerNdc = useRef({ x: -10, y: -10 });
   const [active, setActive] = useState(true);
   const [reduced, setReduced] = useState<boolean | null>(null);
 
@@ -48,6 +53,22 @@ export default function MakoHeroCanvas() {
   useEffect(() => {
     setReduced(prefersReducedMotion());
   }, []);
+
+  // Window-level pointer → container-relative NDC. Listening on window
+  // (not the canvas) means the reading-pane gradient, headline, and CTAs
+  // sitting above the canvas can't starve the shark of pointer events.
+  useEffect(() => {
+    if (reduced) return;
+    const onMove = (e: PointerEvent) => {
+      const el = container.current;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      pointerNdc.current.x = ((e.clientX - r.left) / r.width) * 2 - 1;
+      pointerNdc.current.y = -(((e.clientY - r.top) / r.height) * 2 - 1);
+    };
+    window.addEventListener("pointermove", onMove, { passive: true });
+    return () => window.removeEventListener("pointermove", onMove);
+  }, [reduced]);
 
   useEffect(() => {
     if (reduced === null) return;
@@ -118,7 +139,12 @@ export default function MakoHeroCanvas() {
         flat
       >
         <group position={[offset[0], offset[1], offset[2]]}>
-          <MakoParticles count={count} formed={formed} />
+          <MakoParticles
+            count={count}
+            formed={formed}
+            pointerNdc={pointerNdc}
+            groupOffset={offset}
+          />
         </group>
       </Canvas>
     </div>

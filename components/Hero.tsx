@@ -25,7 +25,7 @@ export default function Hero() {
       className="relative min-h-[100svh] flex items-center overflow-hidden bg-abyss-950"
     >
       {/* ── the water column ── */}
-      <div className="absolute inset-0" aria-hidden>
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
         {/* God-light breaking the surface */}
         <div className="absolute inset-0 bg-surface-light" />
         {/* Deep-blue mid-water tint */}
@@ -35,9 +35,11 @@ export default function Hero() {
       {/* ── the mako ── */}
       <MakoHeroCanvas />
 
-      {/* Left reading pane so copy floats calm above the light */}
+      {/* Left reading pane so copy floats calm above the light.
+          pointer-events-none — decorative layers must never eat the
+          pointermove stream the shark listens to. */}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-abyss-950/80 via-abyss-950/30 to-transparent"
+        className="absolute inset-0 pointer-events-none bg-gradient-to-r from-abyss-950/80 via-abyss-950/30 to-transparent"
         aria-hidden
       />
 
