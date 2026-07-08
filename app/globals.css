@@ -2,25 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ────────────────────────────────────────────────────────────────
+   BIOLUMINANCE — base layer
+   Note: no CSS scroll-behavior:smooth here — Lenis owns scrolling.
+   Reduced-motion users get native (instant) scrolling instead.
+   ──────────────────────────────────────────────────────────────── */
+
 @layer base {
   html {
-    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    background: theme("colors.ink.900");
-    color: theme("colors.steel.100");
+    background: theme("colors.abyss.950");
+    color: theme("colors.mist.200");
     font-family: theme("fontFamily.sans");
-    font-size: 15px;
-    line-height: 1.65;
+    font-size: 16px;
+    line-height: 1.7;
     overflow-x: hidden;
   }
 
   ::selection {
-    background: theme("colors.tide.500");
-    color: white;
+    background: theme("colors.lumen.400");
+    color: theme("colors.abyss.950");
+  }
+
+  /* Visible focus for keyboard divers — a11y baseline */
+  :focus-visible {
+    outline: 2px solid theme("colors.lumen.400");
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 }
 
@@ -29,16 +41,25 @@
     @apply max-w-6xl mx-auto px-6 md:px-10;
   }
 
+  .container-wide {
+    @apply max-w-[88rem] mx-auto px-6 md:px-12;
+  }
+
+  /* Submersible-instrument voice: small mono uppercase telemetry */
+  .telemetry {
+    @apply font-mono text-[11px] uppercase tracking-telemetry text-mist-500;
+  }
+
   .section-label {
-    @apply inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.25em] uppercase text-steel-400;
+    @apply telemetry inline-flex items-center gap-3 text-lumen-400/90;
   }
   .section-label::before {
     content: "";
-    width: 28px;
+    width: 32px;
     height: 1px;
     background: currentColor;
     display: inline-block;
-    opacity: 0.6;
+    opacity: 0.7;
   }
 
   .glass {
@@ -47,13 +68,68 @@
       rgba(255, 255, 255, 0.04) 0%,
       rgba(255, 255, 255, 0.01) 100%
     );
-    border: 1px solid rgba(184, 191, 208, 0.08);
+    border: 1px solid rgba(199, 211, 228, 0.08);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
+
+  /* Deep-water card: darker glass with a faint lumen rim on hover */
+  .glass-deep {
+    background: linear-gradient(
+      160deg,
+      rgba(15, 34, 71, 0.35) 0%,
+      rgba(5, 11, 24, 0.55) 100%
+    );
+    border: 1px solid rgba(199, 211, 228, 0.09);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition:
+      border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .glass-deep:hover {
+    border-color: rgba(94, 234, 255, 0.22);
+    box-shadow: 0 0 60px -18px rgba(94, 234, 255, 0.25);
+  }
+
+  /* Display serif with a breath of glow — hero-grade headlines only */
+  .headline-glow {
+    text-shadow: 0 0 80px rgba(94, 234, 255, 0.25);
+  }
 }
 
-/* Animated water / underwater placeholder — used until hero.mp4 drops in */
+/* Film grain — one fixed overlay, mounted once in layout. Keeps large
+   dark gradients from banding and gives the whole site a filmic skin. */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+/* Reduced motion: kill animation and let content simply be present.
+   Motion components also check this in JS and no-op. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────
+   LEGACY — pre-Fable underwater CSS still used by Hero/Process/
+   Testimonials until those components are rebuilt. Remove at the
+   final sweep of the rebuild.
+   ──────────────────────────────────────────────────────────────── */
+
 .water-bg {
   position: absolute;
   inset: 0;
@@ -177,7 +253,6 @@
   }
 }
 
-/* Subtle moving silhouette — a "ghost mako" passing through */
 .shadow-swim {
   position: absolute;
   top: 55%;
