@@ -27,15 +27,15 @@ export default function Navbar() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "backdrop-blur-xl bg-ink-900/70"
-          : "bg-transparent"
+          ? "backdrop-blur-xl bg-abyss-950/70 border-b border-mist-300/[0.06]"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="container-narrow flex items-center justify-between h-16 md:h-20">
         <a href="/" className="flex items-center gap-3 group">
           <MakoMark />
-          <span className="font-display font-semibold text-[17px] tracking-tight">
-            Mako <span className="text-tide-400">Studio</span>
+          <span className="font-display font-medium text-[19px] tracking-tight text-mist-100">
+            Mako <span className="italic text-lumen-400">Studio</span>
           </span>
         </a>
 
@@ -44,20 +44,20 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-[14px] text-steel-300 hover:text-white transition-colors"
+              className="text-[14px] text-mist-300 hover:text-lumen-300 transition-colors duration-300"
             >
               {l.label}
             </a>
           ))}
           <a
             href="https://portal.makoai.studio"
-            className="text-[13px] px-4 py-2 rounded-full border border-white/15 hover:border-tide-400/60 text-steel-100 hover:text-white font-medium transition-colors"
+            className="text-[13px] px-4 py-2 rounded-full border border-mist-300/15 hover:border-lumen-400/50 text-mist-100 hover:text-white font-medium transition-colors duration-300"
           >
             Client Portal
           </a>
           <a
             href="/#contact"
-            className="text-[13px] px-4 py-2 rounded-full bg-tide-500 hover:bg-tide-400 text-white font-medium transition-colors shadow-glow"
+            className="text-[13px] px-4 py-2 rounded-full bg-tide-500 hover:bg-tide-400 text-white font-medium transition-all duration-300 shadow-glow hover:shadow-glow-lumen"
           >
             Start a project
           </a>
@@ -65,7 +65,7 @@ export default function Navbar() {
 
         <button
           aria-label="Toggle menu"
-          className="md:hidden text-steel-100 p-2"
+          className="md:hidden text-mist-100 p-2"
           onClick={() => setOpen((v) => !v)}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -89,14 +89,14 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-ink-900/95 backdrop-blur-xl">
+        <div className="md:hidden bg-abyss-950/95 backdrop-blur-xl border-b border-mist-300/[0.06]">
           <div className="container-narrow flex flex-col py-4 gap-1">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="py-3 text-[15px] text-steel-200 hover:text-white"
+                className="py-3 text-[15px] text-mist-200 hover:text-lumen-300"
               >
                 {l.label}
               </a>
@@ -104,7 +104,7 @@ export default function Navbar() {
             <a
               href="https://portal.makoai.studio"
               onClick={() => setOpen(false)}
-              className="mt-3 text-center text-[14px] px-4 py-3 rounded-full border border-white/15 text-steel-100 font-medium"
+              className="mt-3 text-center text-[14px] px-4 py-3 rounded-full border border-mist-300/15 text-mist-100 font-medium"
             >
               Client Portal
             </a>
@@ -130,7 +130,7 @@ function MakoMark() {
       width={40}
       height={40}
       priority
-      className="w-10 h-10 object-contain"
+      className="w-10 h-10 object-contain drop-shadow-[0_0_12px_rgba(94,234,255,0.35)]"
     />
   );
 }

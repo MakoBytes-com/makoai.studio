@@ -15,14 +15,14 @@ export default function Privacy() {
       <Navbar />
       <article className="pt-32 pb-20 container-narrow">
         <span className="section-label">Legal</span>
-        <h1 className="mt-5 font-display font-semibold text-[36px] md:text-[52px] leading-[1.05] tracking-tight">
+        <h1 className="mt-5 font-display font-medium text-[36px] md:text-[52px] leading-[1.05] tracking-tight">
           Privacy Policy
         </h1>
-        <p className="mt-3 text-[13px] text-steel-400">
+        <p className="mt-3 text-[13px] text-mist-400">
           Last updated: April 2026
         </p>
 
-        <div className="mt-10 space-y-6 text-[15px] text-steel-300 leading-relaxed max-w-3xl">
+        <div className="mt-10 space-y-6 text-[15px] text-mist-300 leading-relaxed max-w-3xl">
           <p>
             Mako Studio is a practice of <strong>Mako Logics LLC</strong>, a Texas
             limited liability company (&ldquo;we,&rdquo; &ldquo;us&rdquo;),
@@ -30,13 +30,13 @@ export default function Privacy() {
             This page explains what information we collect, why, and how we
             handle it. We try to keep this simple and honest — if you have a
             question, email{" "}
-            <a href="mailto:admin@makoai.studio" className="text-tide-300">
+            <a href="mailto:admin@makoai.studio" className="text-lumen-300">
               admin@makoai.studio
             </a>
             .
           </p>
 
-          <h2 className="font-display text-[22px] font-semibold text-steel-100 mt-10">
+          <h2 className="font-display text-[22px] font-medium text-mist-100 mt-10">
             What we collect
           </h2>
           <p>
@@ -52,19 +52,19 @@ export default function Privacy() {
             personally identifiable information collected.
           </p>
 
-          <h2 className="font-display text-[22px] font-semibold text-steel-100 mt-10">
+          <h2 className="font-display text-[22px] font-medium text-mist-100 mt-10">
             How we use it
           </h2>
           <p>
             Contact-form submissions are delivered to{" "}
-            <code className="text-tide-300">admin@makoai.studio</code> via{" "}
+            <code className="text-lumen-300">admin@makoai.studio</code> via{" "}
             <strong>Resend</strong>. We read them, reply to them, and keep
             them in our inbox for as long as the conversation is active. We
             do not add submissions to a mailing list, do not share them with
             third parties, and do not sell them.
           </p>
 
-          <h2 className="font-display text-[22px] font-semibold text-steel-100 mt-10">
+          <h2 className="font-display text-[22px] font-medium text-mist-100 mt-10">
             Cookies
           </h2>
           <p>
@@ -75,7 +75,7 @@ export default function Privacy() {
             policy).
           </p>
 
-          <h2 className="font-display text-[22px] font-semibold text-steel-100 mt-10">
+          <h2 className="font-display text-[22px] font-medium text-mist-100 mt-10">
             Third-party services on this site
           </h2>
           <ul className="list-disc pl-5 space-y-2">
@@ -97,20 +97,20 @@ export default function Privacy() {
             </li>
           </ul>
 
-          <h2 className="font-display text-[22px] font-semibold text-steel-100 mt-10">
+          <h2 className="font-display text-[22px] font-medium text-mist-100 mt-10">
             Your choices
           </h2>
           <p>
             You can request deletion of any information you&rsquo;ve sent us
             by emailing{" "}
-            <a href="mailto:admin@makoai.studio" className="text-tide-300">
+            <a href="mailto:admin@makoai.studio" className="text-lumen-300">
               admin@makoai.studio
             </a>{" "}
             with &ldquo;delete my data&rdquo; in the subject line. We&rsquo;ll
             remove it and confirm within 5 business days.
           </p>
 
-          <h2 className="font-display text-[22px] font-semibold text-steel-100 mt-10">
+          <h2 className="font-display text-[22px] font-medium text-mist-100 mt-10">
             Changes
           </h2>
           <p>

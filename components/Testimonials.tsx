@@ -1,5 +1,6 @@
 import { fetchPlaceReviews } from "@/lib/places";
 import TestimonialsVideoBackground from "./TestimonialsVideoBackground";
+import { Reveal, RevealLines } from "@/components/motion/Reveal";
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -60,72 +61,81 @@ export default async function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative py-28 md:py-36 overflow-hidden"
+      className="relative py-28 md:py-40 overflow-hidden"
     >
       <div className="absolute inset-0">
         <TestimonialsVideoBackground />
-        <div className="absolute inset-0 bg-ink-900/25" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[14rem] md:h-[18rem] bg-[linear-gradient(to_bottom,#050912_0%,rgba(5,9,18,0.85)_35%,rgba(5,9,18,0.5)_65%,transparent_100%)]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[14rem] md:h-[18rem] bg-[linear-gradient(to_top,#050912_0%,rgba(5,9,18,0.85)_35%,rgba(5,9,18,0.5)_65%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-abyss-950/30" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(94,234,255,0.06),transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[14rem] md:h-[18rem] bg-[linear-gradient(to_bottom,#020509_0%,rgba(2,5,9,0.85)_35%,rgba(2,5,9,0.5)_65%,transparent_100%)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[14rem] md:h-[18rem] bg-[linear-gradient(to_top,#020509_0%,rgba(2,5,9,0.85)_35%,rgba(2,5,9,0.5)_65%,transparent_100%)]" />
       </div>
       <div className="container-narrow relative">
         <div className="grid md:grid-cols-12 gap-10 mb-14">
           <div className="md:col-span-5">
-            <span className="section-label">What clients say</span>
-            <h2 className="mt-5 font-display font-semibold text-[36px] md:text-[52px] leading-[1.05] tracking-tight">
-              Reviews from
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+            <Reveal y={18}>
+              <span className="section-label">What clients say</span>
+            </Reveal>
+            <RevealLines
+              as="h2"
+              className="mt-6 font-display font-medium text-[38px] md:text-[56px] leading-[1.04] tracking-tight text-mist-100"
+            >
+              <>Reviews from</>
+              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200 pr-1.5">
                 real clients.
               </span>
-            </h2>
+            </RevealLines>
           </div>
           <div className="md:col-span-6 md:col-start-7 flex items-end">
-            <div>
-              <p className="text-[16px] text-steel-300 leading-relaxed">
-                Pulled live from{" "}
-                <a
-                  href="https://makologics.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-tide-300 hover:text-tide-200 underline decoration-tide-500/30 underline-offset-2"
-                >
-                  Mako Logics&apos;
-                </a>{" "}
-                Google Business profile — our parent company. We&apos;ve been
-                doing IT + web work for The Woodlands, Montgomery, Conroe, and
-                greater Houston businesses since 2010 — the same people keep
-                coming back.
-              </p>
-              {rating && userRatingCount ? (
-                <div className="mt-5 inline-flex items-center gap-3 glass rounded-full px-4 py-2">
-                  <GoogleMark />
-                  <span className="text-[13px] text-steel-200 font-medium">
-                    <span className="font-semibold text-steel-100">
-                      {rating.toFixed(1)}
-                    </span>{" "}
-                    · {userRatingCount} reviews
-                  </span>
-                  <Stars rating={Math.round(rating)} />
-                </div>
-              ) : null}
-            </div>
+            <Reveal delay={0.25}>
+              <div>
+                <p className="text-[16px] text-mist-300 leading-relaxed">
+                  Pulled live from{" "}
+                  <a
+                    href="https://makologics.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lumen-300 hover:text-lumen-200 underline decoration-lumen-400/30 underline-offset-2"
+                  >
+                    Mako Logics&apos;
+                  </a>{" "}
+                  Google Business profile — our parent company. We&apos;ve been
+                  doing IT + web work for The Woodlands, Montgomery, Conroe, and
+                  greater Houston businesses since 2010 — the same people keep
+                  coming back.
+                </p>
+                {rating && userRatingCount ? (
+                  <div className="mt-5 inline-flex items-center gap-3 glass-deep rounded-full px-4 py-2">
+                    <GoogleMark />
+                    <span className="text-[13px] text-mist-200 font-medium">
+                      <span className="font-semibold text-mist-100">
+                        {rating.toFixed(1)}
+                      </span>{" "}
+                      · {userRatingCount} reviews
+                    </span>
+                    <Stars rating={Math.round(rating)} />
+                  </div>
+                ) : null}
+              </div>
+            </Reveal>
           </div>
         </div>
 
         {hasReviews ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <Reveal
+            stagger={0.08}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+          >
             {reviews.slice(0, 6).map((r, i) => (
               <article
                 key={`${r.authorName}-${i}`}
-                className="glass rounded-2xl p-6 flex flex-col"
+                className="glass-deep rounded-2xl p-6 flex flex-col"
               >
                 <div className="flex items-center justify-between gap-3 mb-3">
                   <Stars rating={r.rating} />
                   <GoogleMark />
                 </div>
-                <p className="text-[14px] text-steel-200 leading-relaxed flex-1">
+                <p className="text-[14px] text-mist-200 leading-relaxed flex-1">
                   &ldquo;{r.text}&rdquo;
                 </p>
                 <div className="mt-5 pt-4 flex items-center gap-3">
@@ -138,37 +148,39 @@ export default async function Testimonials() {
                       referrerPolicy="no-referrer"
                     />
                   ) : (
-                    <div className="w-8 h-8 rounded-full bg-tide-500/20 flex items-center justify-center text-[12px] font-semibold text-tide-300">
+                    <div className="w-8 h-8 rounded-full bg-lumen-400/15 flex items-center justify-center text-[12px] font-semibold text-lumen-300">
                       {r.authorName.charAt(0).toUpperCase()}
                     </div>
                   )}
                   <div className="min-w-0">
-                    <div className="text-[13px] font-semibold text-steel-100 truncate">
+                    <div className="text-[13px] font-semibold text-mist-100 truncate">
                       {r.authorName}
                     </div>
-                    <div className="text-[11px] text-steel-400">
+                    <div className="text-[11px] text-mist-400">
                       {r.relativePublishTimeDescription}
                     </div>
                   </div>
                 </div>
               </article>
             ))}
-          </div>
+          </Reveal>
         ) : (
-          <div className="glass rounded-2xl p-10 text-center">
-            <p className="text-[16px] text-steel-200 leading-relaxed">
-              See our reviews live on{" "}
-              <a
-                href="https://www.google.com/maps/place/?q=place_id:ChIJ"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-tide-300 hover:text-tide-200 underline decoration-tide-500/30 underline-offset-2"
-              >
-                Mako Logics&apos; Google Business profile
-              </a>
-              .
-            </p>
-          </div>
+          <Reveal>
+            <div className="glass-deep rounded-2xl p-10 text-center">
+              <p className="text-[16px] text-mist-200 leading-relaxed">
+                See our reviews live on{" "}
+                <a
+                  href="https://www.google.com/maps/place/?q=place_id:ChIJ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lumen-300 hover:text-lumen-200 underline decoration-lumen-400/30 underline-offset-2"
+                >
+                  Mako Logics&apos; Google Business profile
+                </a>
+                .
+              </p>
+            </div>
+          </Reveal>
         )}
       </div>
     </section>

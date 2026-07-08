@@ -15,14 +15,14 @@ export default function Terms() {
       <Navbar />
       <article className="pt-32 pb-20 container-narrow">
         <span className="section-label">Legal</span>
-        <h1 className="mt-5 font-display font-semibold text-[36px] md:text-[52px] leading-[1.05] tracking-tight">
+        <h1 className="mt-5 font-display font-medium text-[36px] md:text-[52px] leading-[1.05] tracking-tight">
           Terms of Service
         </h1>
-        <p className="mt-3 text-[13px] text-steel-400">
+        <p className="mt-3 text-[13px] text-mist-400">
           Last updated: April 2026
         </p>
 
-        <div className="mt-10 space-y-6 text-[15px] text-steel-300 leading-relaxed max-w-3xl">
+        <div className="mt-10 space-y-6 text-[15px] text-mist-300 leading-relaxed max-w-3xl">
           <p>
             These terms govern your use of <strong>makoai.studio</strong>,
             the marketing website for Mako Studio, a practice of{" "}
@@ -32,7 +32,7 @@ export default function Terms() {
             own signed agreement executed with Mako Logics LLC.
           </p>
 
-          <h2 className="font-display text-[22px] font-semibold text-steel-100 mt-10">
+          <h2 className="font-display text-[22px] font-medium text-mist-100 mt-10">
             Who we are
           </h2>
           <p>
@@ -40,17 +40,17 @@ export default function Terms() {
             company based at 550 Club Dr #264, Montgomery, TX 77316. Mako
             Studio is the web design and engineering practice inside the LLC.
             Contact:{" "}
-            <a href="mailto:admin@makoai.studio" className="text-tide-300">
+            <a href="mailto:admin@makoai.studio" className="text-lumen-300">
               admin@makoai.studio
             </a>{" "}
             ·{" "}
-            <a href="tel:+12812064848" className="text-tide-300">
+            <a href="tel:+12812064848" className="text-lumen-300">
               (281) 206-4848
             </a>
             .
           </p>
 
-          <h2 className="font-display text-[22px] font-semibold text-steel-100 mt-10">
+          <h2 className="font-display text-[22px] font-medium text-mist-100 mt-10">
             Content on this site
           </h2>
           <p>
@@ -70,7 +70,7 @@ export default function Terms() {
             search engines.
           </p>
 
-          <h2 className="font-display text-[22px] font-semibold text-steel-100 mt-10">
+          <h2 className="font-display text-[22px] font-medium text-mist-100 mt-10">
             What you can expect
           </h2>
           <p>
@@ -80,7 +80,7 @@ export default function Terms() {
             price. Nothing on this site is a binding offer or commitment.
           </p>
 
-          <h2 className="font-display text-[22px] font-semibold text-steel-100 mt-10">
+          <h2 className="font-display text-[22px] font-medium text-mist-100 mt-10">
             What we don&rsquo;t guarantee
           </h2>
           <p>
@@ -95,7 +95,7 @@ export default function Terms() {
             not responsible for their content or privacy practices.
           </p>
 
-          <h2 className="font-display text-[22px] font-semibold text-steel-100 mt-10">
+          <h2 className="font-display text-[22px] font-medium text-mist-100 mt-10">
             Governing law
           </h2>
           <p>
@@ -103,7 +103,7 @@ export default function Terms() {
             United States, without regard to conflict-of-law principles.
           </p>
 
-          <h2 className="font-display text-[22px] font-semibold text-steel-100 mt-10">
+          <h2 className="font-display text-[22px] font-medium text-mist-100 mt-10">
             Changes
           </h2>
           <p>

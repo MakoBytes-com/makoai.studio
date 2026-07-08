@@ -82,17 +82,17 @@ export default function WoodlandsPage() {
       />
 
       <section className="relative pt-32 md:pt-40 pb-16">
-        <div className="absolute inset-0 bg-hero-radial pointer-events-none" />
+        <div className="absolute inset-0 bg-surface-light pointer-events-none" />
         <div className="container-narrow relative">
           <span className="section-label">Service area</span>
-          <h1 className="mt-5 font-display font-semibold text-[40px] md:text-[68px] leading-[1.02] tracking-tight max-w-3xl">
+          <h1 className="mt-5 font-display font-medium text-[40px] md:text-[68px] leading-[1.02] tracking-tight max-w-3xl">
             Web design for
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200 italic">
               The Woodlands, TX.
             </span>
           </h1>
-          <p className="mt-7 text-[17px] md:text-[19px] text-steel-300 leading-relaxed max-w-2xl">
+          <p className="mt-7 text-[17px] md:text-[19px] text-mist-300 leading-relaxed max-w-2xl">
             We&apos;re a Montgomery, TX-based studio — a 20-minute drive up I-45
             from The Woodlands Town Center. Most of our healthcare and
             professional-services builds ship for clients somewhere between
@@ -108,7 +108,7 @@ export default function WoodlandsPage() {
             <div>
               <span className="section-label">What we build</span>
             </div>
-            <div className="space-y-6 text-[16px] md:text-[17px] text-steel-200 leading-relaxed">
+            <div className="space-y-6 text-[16px] md:text-[17px] text-mist-200 leading-relaxed">
               <p>
                 The Woodlands runs on clinical practices, legal and financial
                 services, specialty retail, and professional shops that survive
@@ -156,14 +156,14 @@ export default function WoodlandsPage() {
               <span className="section-label">Featured work</span>
             </div>
             <div>
-              <div className="glass rounded-2xl p-7 md:p-9">
-                <div className="text-[11px] uppercase tracking-[0.2em] text-steel-400 font-medium">
+              <div className="glass-deep rounded-2xl p-7 md:p-9">
+                <div className="text-[11px] uppercase tracking-[0.2em] text-mist-400 font-medium">
                   Healthcare · The Woodlands, TX
                 </div>
-                <h2 className="mt-3 font-display font-semibold text-[24px] md:text-[30px] text-steel-100 leading-tight tracking-tight">
+                <h2 className="mt-3 font-display font-medium text-[24px] md:text-[30px] text-mist-100 leading-tight tracking-tight">
                   Family Psychiatry of The Woodlands
                 </h2>
-                <p className="mt-4 text-[15px] md:text-[16px] text-steel-300 leading-relaxed">
+                <p className="mt-4 text-[15px] md:text-[16px] text-mist-300 leading-relaxed">
                   A family psychiatry practice with 30+ years in The Woodlands
                   was running a Wix site that matched neither the quality of
                   the clinical work nor the trust signals new patients
@@ -177,7 +177,7 @@ export default function WoodlandsPage() {
                 <div className="mt-6">
                   <Link
                     href="/work/woodlands"
-                    className="inline-flex items-center gap-2 text-[14px] text-tide-300 hover:text-tide-200 font-medium"
+                    className="inline-flex items-center gap-2 text-[14px] text-lumen-300 hover:text-lumen-200 font-medium"
                   >
                     Read the full case study
                     <svg viewBox="0 0 16 16" className="w-4 h-4" fill="none">
@@ -203,22 +203,22 @@ export default function WoodlandsPage() {
             <div>
               <span className="section-label">How we work locally</span>
             </div>
-            <div className="space-y-5 text-[15px] md:text-[16px] text-steel-200 leading-relaxed">
+            <div className="space-y-5 text-[15px] md:text-[16px] text-mist-200 leading-relaxed">
               <p>
-                <strong className="text-steel-100">Kickoff in person.</strong>{" "}
+                <strong className="text-mist-100">Kickoff in person.</strong>{" "}
                 For Woodlands-area clients we prefer a real coffee meeting to
                 map the project — 20 minutes on our side, no Zoom fatigue on
                 yours. After that, everything happens on shared staging URLs
                 so you approve real pages, not static mockups.
               </p>
               <p>
-                <strong className="text-steel-100">One engineer, end to end.</strong>{" "}
+                <strong className="text-mist-100">One engineer, end to end.</strong>{" "}
                 Design, code, deploy, DNS, email routing, analytics, ongoing
                 maintenance — all handled by the same person. No agency
                 hand-offs, no &quot;that&apos;s the other team&apos;s ticket.&quot;
               </p>
               <p>
-                <strong className="text-steel-100">Local SEO that&apos;s real.</strong>{" "}
+                <strong className="text-mist-100">Local SEO that&apos;s real.</strong>{" "}
                 Schema that correctly identifies your business, NAP parity
                 between your site and Google Business Profile, and copy that
                 actually mentions where you work — because generic agency copy
@@ -232,25 +232,25 @@ export default function WoodlandsPage() {
 
       <section className="py-20 md:py-28">
         <div className="container-narrow">
-          <div className="glass rounded-2xl p-8 md:p-12 text-center">
+          <div className="glass-deep rounded-2xl p-8 md:p-12 text-center">
             <span className="section-label">Start a project</span>
-            <h2 className="mt-5 font-display font-semibold text-[28px] md:text-[38px] leading-tight tracking-tight">
+            <h2 className="mt-5 font-display font-medium text-[28px] md:text-[38px] leading-tight tracking-tight">
               Ready to talk?
             </h2>
-            <p className="mt-4 text-[15px] md:text-[16px] text-steel-300 leading-relaxed max-w-lg mx-auto">
+            <p className="mt-4 text-[15px] md:text-[16px] text-mist-300 leading-relaxed max-w-lg mx-auto">
               Send a few sentences about what you need. If you&apos;re in The
               Woodlands area, we can meet for coffee this week.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link
                 href="/#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-tide-500 hover:bg-tide-600 text-white text-[14px] font-medium transition-all shadow-glow"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-tide-500 hover:bg-tide-600 text-white text-[14px] font-medium transition-all shadow-glow hover:shadow-glow-lumen"
               >
                 Contact form
               </Link>
               <a
                 href="tel:+12812064848"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 text-steel-100 hover:border-tide-500/40 text-[14px] font-medium transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-mist-300/10 text-mist-100 hover:border-lumen-400/40 text-[14px] font-medium transition-all"
               >
                 (281) 206-4848
               </a>

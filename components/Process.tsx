@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Reveal, RevealLines } from "@/components/motion/Reveal";
 
 const pillars = [
   {
@@ -62,7 +63,7 @@ export default function Process() {
   }, [active]);
 
   return (
-    <section className="relative py-28 md:py-36 overflow-hidden">
+    <section id="process" className="relative py-28 md:py-40 overflow-hidden">
       <div className="absolute inset-0">
         {hasVideo && (
           <>
@@ -71,7 +72,7 @@ export default function Process() {
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
                 active === "a" ? "opacity-100" : "opacity-0"
               }`}
-              style={{ filter: "brightness(0.45) saturate(1.05)" }}
+              style={{ filter: "brightness(0.4) saturate(1.1)" }}
               src="/process.mp4"
               autoPlay
               muted
@@ -84,7 +85,7 @@ export default function Process() {
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
                 active === "b" ? "opacity-100" : "opacity-0"
               }`}
-              style={{ filter: "brightness(0.45) saturate(1.05)" }}
+              style={{ filter: "brightness(0.4) saturate(1.1)" }}
               src="/process.mp4"
               muted
               playsInline
@@ -93,55 +94,57 @@ export default function Process() {
             />
           </>
         )}
-        <div className="absolute inset-0 bg-ink-900/35" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[28rem] md:h-[34rem] bg-[linear-gradient(to_bottom,#050912_0%,#050912_28%,rgba(5,9,18,0.88)_52%,rgba(5,9,18,0.55)_72%,rgba(5,9,18,0.2)_88%,transparent_100%)]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[28rem] md:h-[34rem] bg-[linear-gradient(to_top,#050912_0%,#050912_28%,rgba(5,9,18,0.88)_52%,rgba(5,9,18,0.55)_72%,rgba(5,9,18,0.2)_88%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-abyss-950/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(94,234,255,0.06),transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[28rem] md:h-[34rem] bg-[linear-gradient(to_bottom,#020509_0%,#020509_28%,rgba(2,5,9,0.88)_52%,rgba(2,5,9,0.55)_72%,rgba(2,5,9,0.2)_88%,transparent_100%)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[28rem] md:h-[34rem] bg-[linear-gradient(to_top,#020509_0%,#020509_28%,rgba(2,5,9,0.88)_52%,rgba(2,5,9,0.55)_72%,rgba(2,5,9,0.2)_88%,transparent_100%)]" />
       </div>
       <div className="container-narrow relative">
         <div className="grid md:grid-cols-12 gap-10 mb-16">
           <div className="md:col-span-5">
-            <span className="section-label">How we build</span>
-            <h2 className="mt-5 font-display font-semibold text-[36px] md:text-[52px] leading-[1.05] tracking-tight">
-              AI-native.
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+            <Reveal y={18}>
+              <span className="section-label">How we build</span>
+            </Reveal>
+            <RevealLines
+              as="h2"
+              className="mt-6 font-display font-medium text-[38px] md:text-[56px] leading-[1.04] tracking-tight text-mist-100"
+            >
+              <>AI-native.</>
+              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200 pr-1.5">
                 Not AI-assisted.
               </span>
-            </h2>
+            </RevealLines>
           </div>
           <div className="md:col-span-6 md:col-start-7 flex items-end">
-            <p className="text-[16px] text-steel-300 leading-relaxed">
-              "AI-assisted" means someone's hand-coding with autocomplete.
-              "AI-native" means the AI IS the engineer — and the studio is
-              built around that. It's a fundamentally different shape,
-              and it's how every Mako Studio project ships.
-            </p>
+            <Reveal delay={0.25}>
+              <p className="text-[16px] text-mist-300 leading-relaxed">
+                &quot;AI-assisted&quot; means someone&apos;s hand-coding with
+                autocomplete. &quot;AI-native&quot; means the AI IS the engineer
+                — and the studio is built around that. It&apos;s a fundamentally
+                different shape, and it&apos;s how every Mako Studio project
+                ships.
+              </p>
+            </Reveal>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <Reveal stagger={0.08} className="grid md:grid-cols-2 gap-4">
           {pillars.map((p, i) => (
-            <article
-              key={p.title}
-              className="glass rounded-2xl p-8 hover:border-tide-500/30 transition-colors"
-            >
+            <article key={p.title} className="glass-deep rounded-2xl p-8">
               <div className="flex items-start gap-5">
-                <div className="font-mono text-[13px] text-tide-300 mt-0.5">
-                  0{i + 1}
-                </div>
+                <div className="telemetry text-lumen-400 mt-1">0{i + 1}</div>
                 <div className="flex-1">
-                  <h3 className="font-display text-[18px] font-semibold text-steel-100">
+                  <h3 className="font-display text-[19px] font-medium text-mist-100">
                     {p.title}
                   </h3>
-                  <p className="mt-2 text-[14px] text-steel-300 leading-relaxed">
+                  <p className="mt-2 text-[14px] text-mist-300 leading-relaxed">
                     {p.body}
                   </p>
                 </div>
               </div>
             </article>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

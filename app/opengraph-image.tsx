@@ -5,7 +5,23 @@ export const alt = "Mako Studio — AI-native design and engineering";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+/**
+ * BIOLUMINANCE social card — abyss depths, god-light from the surface,
+ * a school of bioluminescent motes, and the headline in the site's
+ * voice. (next/og can't load display fonts cheaply, so weight and
+ * spacing carry the typography here.)
+ */
 export default function OG() {
+  // Deterministic plankton field — no Math.random at the edge
+  const motes = Array.from({ length: 42 }, (_, i) => {
+    const x = ((i * 733) % 1187) + 8;
+    const y = ((i * 419) % 610) + 10;
+    const s = 2 + ((i * 7) % 5);
+    const o = 0.25 + ((i * 13) % 50) / 100;
+    const cyan = i % 3 === 0;
+    return { x, y, s, o, cyan };
+  });
+
   return new ImageResponse(
     (
       <div
@@ -17,58 +33,97 @@ export default function OG() {
           justifyContent: "space-between",
           padding: "80px 90px",
           background:
-            "radial-gradient(ellipse at top left, #1E4DD8 0%, transparent 55%), radial-gradient(ellipse at bottom right, #3B82F6 0%, transparent 60%), linear-gradient(180deg, #050912 0%, #0A1020 100%)",
-          color: "#E8EDF3",
-          fontFamily: "system-ui, sans-serif"
+            "radial-gradient(ellipse 90% 55% at 50% -12%, rgba(94,234,255,0.20) 0%, rgba(59,130,246,0.12) 34%, transparent 62%), linear-gradient(180deg, #071127 0%, #030711 55%, #020509 100%)",
+          color: "#F2F6FB",
+          fontFamily: "Georgia, 'Times New Roman', serif",
+          position: "relative"
         }}
       >
+        {/* bioluminescent motes */}
+        {motes.map((m, i) => (
+          <div
+            key={i}
+            style={{
+              position: "absolute",
+              left: m.x,
+              top: m.y,
+              width: m.s,
+              height: m.s,
+              borderRadius: 999,
+              background: m.cyan ? "#5EEAFF" : "#60A5FA",
+              opacity: m.o,
+              boxShadow: m.cyan
+                ? "0 0 12px 2px rgba(94,234,255,0.55)"
+                : "0 0 10px 2px rgba(96,165,250,0.4)"
+            }}
+          />
+        ))}
+
         <div
           style={{
             display: "flex",
             alignItems: "center",
             gap: 18,
-            fontSize: 26,
-            letterSpacing: "0.22em",
+            fontSize: 24,
+            letterSpacing: "0.28em",
             textTransform: "uppercase",
-            color: "#8A95AD"
+            color: "#8A95AD",
+            fontFamily: "ui-monospace, monospace"
           }}
         >
           <div
             style={{
-              width: 60,
-              height: 60,
+              width: 58,
+              height: 58,
               borderRadius: 16,
               background:
-                "linear-gradient(135deg, #3B82F6 0%, #10182C 100%)",
-              boxShadow: "0 0 60px -10px rgba(59,130,246,0.6)"
+                "linear-gradient(135deg, #5EEAFF 0%, #3B82F6 45%, #0A1832 100%)",
+              boxShadow: "0 0 70px -8px rgba(94,234,255,0.65)"
             }}
           />
-          <span style={{ color: "#E8EDF3", fontWeight: 600, fontSize: 28 }}>
+          <span
+            style={{
+              color: "#F2F6FB",
+              fontWeight: 600,
+              fontSize: 28,
+              letterSpacing: "0.02em",
+              fontFamily: "Georgia, serif",
+              textTransform: "none"
+            }}
+          >
             Mako Studio
           </span>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div
             style={{
-              fontSize: 90,
-              fontWeight: 600,
-              lineHeight: 1.0,
-              letterSpacing: "-0.03em",
-              color: "#E8EDF3",
+              fontSize: 92,
+              fontWeight: 500,
+              lineHeight: 1.02,
+              letterSpacing: "-0.02em",
+              color: "#F2F6FB",
               display: "flex",
               flexDirection: "column"
             }}
           >
             <span>AI-native design</span>
-            <span style={{ color: "#8A95AD" }}>and engineering.</span>
+            <span
+              style={{
+                fontStyle: "italic",
+                color: "#9AF2FF"
+              }}
+            >
+              and engineering.
+            </span>
           </div>
           <div
             style={{
-              fontSize: 28,
-              color: "#B8BFD0",
+              fontSize: 27,
+              color: "#C7D3E4",
               maxWidth: 900,
-              lineHeight: 1.4
+              lineHeight: 1.4,
+              fontFamily: "system-ui, sans-serif"
             }}
           >
             The web practice inside Mako Logics. Every site built with Claude
@@ -81,14 +136,18 @@ export default function OG() {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            fontSize: 22,
+            fontSize: 21,
             color: "#8A95AD",
-            borderTop: "1px solid rgba(184,191,208,0.15)",
-            paddingTop: 24
+            borderTop: "1px solid rgba(94,234,255,0.18)",
+            paddingTop: 24,
+            fontFamily: "ui-monospace, monospace",
+            letterSpacing: "0.14em"
           }}
         >
           <span>makoai.studio</span>
-          <span style={{ letterSpacing: "0.18em" }}>MONTGOMERY · TEXAS</span>
+          <span style={{ letterSpacing: "0.22em" }}>
+            30.3877° N · 95.6966° W — MONTGOMERY · TEXAS
+          </span>
         </div>
       </div>
     ),
