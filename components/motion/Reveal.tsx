@@ -81,11 +81,13 @@ export function Reveal({
     };
   }, [delay, y, blur, stagger]);
 
+  // Polymorphic escape hatch — JSX can't narrow a dynamic ElementType.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const Comp = Tag as any;
   return (
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    <Tag ref={ref as any} className={className}>
+    <Comp ref={ref} className={className}>
       {children}
-    </Tag>
+    </Comp>
   );
 }
 
@@ -137,9 +139,11 @@ export function RevealLines({
     };
   }, [delay, stagger]);
 
+  // Polymorphic escape hatch — JSX can't narrow a dynamic ElementType.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const Comp = Tag as any;
   return (
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    <Tag ref={ref as any} className={className}>
+    <Comp ref={ref} className={className}>
       {Children.map(children, (line) => (
         <span className="block overflow-hidden pb-[0.12em] -mb-[0.12em]">
           <span data-reveal-line className="block will-change-transform">
@@ -147,6 +151,6 @@ export function RevealLines({
           </span>
         </span>
       ))}
-    </Tag>
+    </Comp>
   );
 }

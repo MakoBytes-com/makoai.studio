@@ -80,7 +80,11 @@ const config: Config = {
         "depth-fade":
           "linear-gradient(180deg, transparent 0%, rgba(2,5,9,0.85) 70%, #020509 100%)",
         "lumen-radial":
-          "radial-gradient(ellipse 70% 50% at 50% 40%, rgba(94,234,255,0.10) 0%, transparent 60%)"
+          "radial-gradient(ellipse 70% 50% at 50% 40%, rgba(94,234,255,0.10) 0%, transparent 60%)",
+        "surface-light":
+          "radial-gradient(ellipse 90% 55% at 50% -12%, rgba(94,234,255,0.14) 0%, rgba(59,130,246,0.10) 34%, transparent 62%)",
+        "water-column":
+          "linear-gradient(180deg, rgba(10,24,50,0.35) 0%, rgba(3,7,17,0.1) 45%, rgba(2,5,9,0.9) 88%, #020509 100%)"
       },
       boxShadow: {
         glow: "0 0 40px -10px rgba(59,130,246,0.35)",
@@ -100,7 +104,8 @@ const config: Config = {
         "float-slow": "float 14s ease-in-out infinite",
         drift: "drift 22s linear infinite",
         shimmer: "shimmer 3s ease-in-out infinite",
-        "pulse-lumen": "pulse-lumen 4s ease-in-out infinite"
+        "pulse-lumen": "pulse-lumen 4s ease-in-out infinite",
+        "dive-line": "dive-line 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite"
       },
       keyframes: {
         float: {
@@ -118,6 +123,11 @@ const config: Config = {
         "pulse-lumen": {
           "0%, 100%": { opacity: "0.5", transform: "scale(1)" },
           "50%": { opacity: "1", transform: "scale(1.06)" }
+        },
+        "dive-line": {
+          "0%": { transform: "translateY(-100%)", opacity: "0" },
+          "15%": { opacity: "1" },
+          "100%": { transform: "translateY(400%)", opacity: "0" }
         }
       }
     }
