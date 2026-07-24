@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import SmoothScroll from "@/components/motion/SmoothScroll";
 import CursorGlow from "@/components/motion/CursorGlow";
 import FleetBeacon from "@/components/FleetBeacon";
+import ChunkReloadGuard from "@/components/ChunkReloadGuard";
 import "./globals.css";
 
 // Self-hosted Google Fonts via next/font. Downloaded at build time
@@ -138,6 +139,7 @@ export default function RootLayout({
         <CursorGlow />
         <div className="grain" aria-hidden />
         <Analytics />
+        <ChunkReloadGuard />
         <FleetBeacon site="makoai-studio" />
         {/* MakoChat widget (makochat.app) */}
         <script src="https://makochat.app/embed.js" data-makochat="makoai-studio" defer />
