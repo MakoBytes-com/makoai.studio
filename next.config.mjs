@@ -16,9 +16,6 @@ const nextConfig = {
     // Tuned for the actual stack on makoai.studio:
     //   - Vercel Analytics (va.vercel-scripts.com, vitals.vercel-insights.com,
     //     vercel.live)
-    //   - Google Fonts via external <link href="...fonts.googleapis.com...">
-    //     in app/layout.tsx (style-src/connect-src) and font woff2 from
-    //     fonts.gstatic.com (font-src)
     //   - Google review avatars (lh3.googleusercontent.com) in the
     //     Testimonials section that pulls live Google reviews via Places API
     //   - Cloudflare Turnstile captcha on the contact form
@@ -31,10 +28,10 @@ const nextConfig = {
     const csp = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vercel.live https://challenges.cloudflare.com https://makochat.app",
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob: https://lh3.googleusercontent.com",
-      "font-src 'self' data: https://fonts.gstatic.com",
-      "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://vercel.live https://fonts.googleapis.com https://fonts.gstatic.com https://portal.makoai.studio",
+      "font-src 'self' data:",
+      "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://vercel.live https://portal.makoai.studio",
       "media-src 'self'",
       "frame-src 'self' https://challenges.cloudflare.com https://www.google.com https://maps.google.com https://makochat.app",
       "form-action 'self' https://challenges.cloudflare.com",
