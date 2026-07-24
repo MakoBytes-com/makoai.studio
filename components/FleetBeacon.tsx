@@ -39,5 +39,52 @@ export default function FleetBeacon({ site }: { site: string }) {
       /* never let analytics break a page */
     }
   }, [pathname, site]);
+
+  // Client-side error beacon → the fleet duty officer. Only in production
+  // (the real domain), each unique message reported once per page load,
+  // and reporting itself can never throw into the page.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!/(^|\.)makoai\.studio$/.test(location.hostname)) return;
+    const sent = new Set<string>();
+    const report = (message: string, stack?: string) => {
+      try {
+        const msg = String(message || "").slice(0, 500);
+        if (!msg || sent.has(msg) || sent.size >= 10) return;
+        sent.add(msg);
+        const payload = JSON.stringify({
+          slug: site,
+          message: msg,
+          stack: stack ? String(stack).slice(0, 2000) : undefined,
+          url: location.href,
+          kind: "client",
+        });
+        const url = "https://portal.makoai.studio/api/err";
+        if (navigator.sendBeacon) navigator.sendBeacon(url, payload);
+        else
+          fetch(url, { method: "POST", body: payload, keepalive: true }).catch(
+            () => {},
+          );
+      } catch {
+        /* reporting must never hurt the page */
+      }
+    };
+    const onError = (e: ErrorEvent) =>
+      report(e.message, e.error instanceof Error ? e.error.stack : undefined);
+    const onRejection = (e: PromiseRejectionEvent) => {
+      const r = e.reason;
+      report(
+        r instanceof Error ? r.message : String(r ?? "unhandled rejection"),
+        r instanceof Error ? r.stack : undefined,
+      );
+    };
+    window.addEventListener("error", onError);
+    window.addEventListener("unhandledrejection", onRejection);
+    return () => {
+      window.removeEventListener("error", onError);
+      window.removeEventListener("unhandledrejection", onRejection);
+    };
+  }, [site]);
+
   return null;
 }
