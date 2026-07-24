@@ -5,6 +5,23 @@ import { Canvas } from "@react-three/fiber";
 import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/gsapClient";
 import MakoParticles from "./MakoParticles";
 
+/** Can this browser actually create a WebGL context? Probed once on a
+ *  throwaway canvas so we never hand @react-three/fiber a context it
+ *  can't make — that throw surfaces as
+ *  "THREE.WebGLRenderer: Error creating WebGL context." */
+function supportsWebGL(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    const canvas = document.createElement("canvas");
+    return !!(
+      window.WebGLRenderingContext &&
+      (canvas.getContext("webgl2") || canvas.getContext("webgl"))
+    );
+  } catch {
+    return false;
+  }
+}
+
 /**
  * Hero canvas shell. Owns everything that is not art:
  *  - intro choreography (plankton coalesce into the shark over ~3s)
@@ -28,6 +45,8 @@ export default function MakoHeroCanvas() {
   const pointerNdc = useRef({ x: -10, y: -10 });
   const [active, setActive] = useState(true);
   const [reduced, setReduced] = useState<boolean | null>(null);
+  // null → not yet probed; false → no WebGL, keep the canvas unmounted
+  const [webglOk, setWebglOk] = useState<boolean | null>(null);
 
   // Composite driver read by the shader every frame
   const formed = useMemo(
@@ -52,6 +71,7 @@ export default function MakoHeroCanvas() {
 
   useEffect(() => {
     setReduced(prefersReducedMotion());
+    setWebglOk(supportsWebGL());
   }, []);
 
   // Window-level pointer → container-relative NDC. Listening on window
@@ -119,8 +139,14 @@ export default function MakoHeroCanvas() {
     return () => io.disconnect();
   }, []);
 
-  if (reduced === null) {
-    // First paint: hold the layer, decide motion policy after hydration
+  if (reduced === null || webglOk === null) {
+    // First paint: hold the layer, decide motion + capability after hydration
+    return <div ref={container} className="absolute inset-0" aria-hidden />;
+  }
+
+  if (!webglOk) {
+    // No WebGL context available on this client — mount nothing and let the
+    // hero's CSS abyss backdrop stand in, instead of letting THREE throw.
     return <div ref={container} className="absolute inset-0" aria-hidden />;
   }
 
