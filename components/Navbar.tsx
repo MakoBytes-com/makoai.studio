@@ -125,7 +125,7 @@ export default function Navbar() {
 function MakoMark() {
   return (
     <Image
-      src="/mako-whale.png"
+      src="/mako-fin.png"
       alt="Mako Studio"
       width={40}
       height={40}
