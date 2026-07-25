@@ -566,26 +566,12 @@ export const portfolio: PortfolioItem[] = [
     }
   },
   {
-    slug: "aipromptshive",
-    name: "AI Prompts Hive",
-    url: "https://aipromptshive.com",
-    tagline: "Curated library of 5,000+ AI prompts",
-    description:
-      "Community-driven prompt library with scraped plus user-submitted content, R2 image CDN, category pillar pages, and run-links to every major model.",
-    tags: ["Next.js", "Supabase", "Cloudflare R2", "SEO"],
-    status: "Live",
-    year: "2026",
-    accent: "steel",
-    screenshot: "/portfolio/aipromptshive.png",
-    tier: "product"
-  },
-  {
     slug: "makobytes",
     name: "MakoBytes",
     url: "https://makobytes.com",
     tagline: "Product line for Mako Logics tools",
     description:
-      "Umbrella site for the MakoBytes product line — PromptPixel, AI Prompts Hive, MakoBot. Product pages, analytics dashboard, download flow.",
+      "Umbrella site for the MakoBytes product line — PixelCopy and MakoBot. Product pages, analytics dashboard, download flow.",
     tags: ["Next.js", "Cloudflare", "Analytics"],
     status: "Live",
     year: "2026",

@@ -12,7 +12,7 @@ import { resolve } from "node:path";
 
 // Source thumbnails from frozen showcase forks for ALL client builds —
 // every portfolio entry except our own products (toppaws, makobot,
-// aipromptshive, makobytes) gets sourced from a *-showcase.vercel.app
+// makobytes) gets sourced from a *-showcase.vercel.app
 // fork so the portfolio image never drifts post-handover.
 const sites = [
   { slug: "bulldog", url: "https://bulldog-showcase.vercel.app" },
@@ -23,7 +23,6 @@ const sites = [
   { slug: "bishopbend", url: "https://bishopbend-showcase.vercel.app" },
   { slug: "toppaws", url: "https://toppaws.com" },
   { slug: "makobot", url: "https://makobot.com" },
-  { slug: "aipromptshive", url: "https://aipromptshive.com" },
   { slug: "machine-template", url: "https://machine-template-web.vercel.app" },
   { slug: "woodlands", url: "https://woodlands-showcase.vercel.app" },
   { slug: "makobytes", url: "https://makobytes.com" }

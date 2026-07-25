@@ -42,9 +42,8 @@ the studio is built around that shape. Design and build run in parallel,
 compressing 6-week timelines into 2 without cutting corners.
 
 ## Featured Work
-- TopPaws (https://toppaws.com) — AI creative platform for pet owners with image/video generation, Stripe billing, admin console
+- TopPaws (https://toppaws.com) — nationwide pet directory, marketplace, and community ("Yelp for pets")
 - MakoBot (https://makobot.com) — AI memory tool for Windows, desktop app + marketing site
-- AI Prompts Hive (https://aipromptshive.com) — curated library of 5,000+ AI prompts, SEO-optimized
 - MakoBytes (https://makobytes.com) — umbrella site for Mako Logics product line
 - AAA Awning Co. (https://www.aaaawning.net) — Houston, TX custom awning fabricator since 1984 (client)
 - Bulldog Security Service (https://bulldogsecurityservice.com) — multi-state ADT-partner residential security (client)
@@ -64,7 +63,7 @@ end-to-end by Mako Logics.
 ## Parent Organization
 Mako Logics — a small-business IT, AI, and web practice based in
 Montgomery, Texas. Also operates Makologics MSP (managed services) and
-MakoBytes (product line: MakoBot, AI Prompts Hive, PromptPixel).
+MakoBytes (product line: MakoBot, PixelCopy).
 `;
 
 export async function GET() {
