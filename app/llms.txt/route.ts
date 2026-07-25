@@ -51,7 +51,7 @@ compressing 6-week timelines into 2 without cutting corners.
 - AXYS Industrial Solutions (https://axyscorp.com) — Houston, TX chemical & refining secondary-stream recovery, full WordPress → Next.js rebuild (client)
 - Bishopbend Insurance Services (https://bishopbend.com) — independent insurance agency licensed in 33+ states, custom build with client portal + admin CRM (client)
 - Family Psychiatry of The Woodlands (https://woodlandsfamilypsychiatry.com) — The Woodlands, TX psychiatric practice (client)
-- Burton NDT Rentals (https://www.bndtrentals.com) — La Porte, TX non-destructive testing equipment rental, sales, calibration & repair (pitch build, pending close)
+- Burton NDT Rentals (https://www.bndtrentals.com) — La Porte, TX non-destructive testing equipment rental, sales, calibration & repair (client build, live in production)
 - Davis Investigation Services (https://www.davisinvestigationservices.com) — Conroe, TX pre-employment screening firm (maintained by Makologics MSP)
 - Pro-Surve Technical Services (https://pro-surve.com) — League City, TX industrial inspection + NDT (maintenance by Makologics MSP)
 

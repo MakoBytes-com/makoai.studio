@@ -180,7 +180,7 @@ export const portfolio: PortfolioItem[] = [
     description:
       "Custom build for a La Porte, TX provider of non-destructive testing equipment — rental, sales, calibration, and repair across ultrasonic, RVI, PMI, X-ray, and eddy-current. Equipment catalog organized by application, online quote-cart workflow, and an oil & gas / petrochemical content depth that ranks for industrial-buyer intent. Shown as shipped on a frozen showcase fork.",
     tags: ["Next.js 16", "B2B Catalog", "Industrial SEO", "Quote Cart"],
-    status: "In Progress",
+    status: "Client",
     year: "2026",
     accent: "steel",
     screenshot: "/portfolio/bndt.png",
@@ -190,7 +190,7 @@ export const portfolio: PortfolioItem[] = [
         "Custom build for a Texas non-destructive testing rental house — equipment catalog, quote-cart workflow, calibration + repair services, all tuned for oil & gas and petrochemical buyer intent.",
       client: "Burton NDT Rentals · La Porte, TX",
       role: "Design + full-stack build",
-      timeline: "2026 · pitch build, pending close",
+      timeline: "2026 · client build, live in production",
       stack: [
         "Next.js 16",
         "Vercel",
@@ -231,7 +231,7 @@ export const portfolio: PortfolioItem[] = [
         }
       ],
       outcome:
-        "Pitch build complete and live on the showcase fork. Currently in front of the client for evaluation. When the deal closes, this is the design we ship under their production domain — and the showcase stays locked as the canonical 'as we built it' version."
+        "Approved by the client and live in production under their own domain at bndtrentals.com. The showcase fork stays locked as the canonical 'as we built it' version while the live site evolves under active management."
     }
   },
   {
@@ -242,7 +242,7 @@ export const portfolio: PortfolioItem[] = [
     description:
       "Full WordPress → Next.js 16 rebuild for a utility concierge service that sets up electricity, internet, security, gas, water, solar, waste, home warranty, and insurance referrals through one dedicated rep. Pexels hero video, deep-navy brand theme, custom SVG icon system across services and partner-types, FAQ with FAQPage schema, Google Maps embed on contact, and the full Mako security + AI-search baseline. Shown as shipped on a frozen showcase fork.",
     tags: ["Next.js 16", "Tailwind v4", "WP Migration", "Local SEO", "FAQ Schema"],
-    status: "In Progress",
+    status: "Client",
     year: "2026",
     accent: "blue",
     screenshot: "/portfolio/utilities-plus.png",
@@ -252,7 +252,7 @@ export const portfolio: PortfolioItem[] = [
         "Full WordPress → Next.js 16 rebuild for a Houston utility concierge — Pexels hero video, deep-navy brand theme, custom icon system, FAQPage schema, Google Maps on contact, and the complete Mako security + AI-search baseline.",
       client: "Utilities Plus · Houston, TX",
       role: "Design + full-stack build + migration",
-      timeline: "2026 · pitch build, pending close",
+      timeline: "2026 · client build, approved",
       stack: [
         "Next.js 16",
         "React 19",
@@ -299,7 +299,7 @@ export const portfolio: PortfolioItem[] = [
         },
       ],
       outcome:
-        "Pitch build live and serving from Vercel. In front of the client for evaluation. When the deal closes, this is the design we ship under their production domain — and the showcase stays locked as the canonical 'as we built it' version.",
+        "Approved by the client — rebuilt to their own final mockups, page for page. Production rollout is underway on their domain, and the showcase stays locked as the canonical 'as we built it' version.",
     },
   },
   {
