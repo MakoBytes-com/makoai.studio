@@ -1,8 +1,9 @@
 name: Dependabot auto-merge
 
-# Auto-merges Dependabot PRs that bump a dependency by a PATCH version
-# only (semver patch = bug fixes / security only, no API changes).
-# Minor + major bumps still require manual review.
+# Auto-merges Dependabot PRs for PATCH and MINOR bumps once checks pass.
+# Majors still require manual review. Golden rule 2026-07-26: maintenance
+# queues never sit — the patch-only gate left a minor-and-patch group PR
+# (#17) waiting for a human for two weeks.
 
 on:
   pull_request_target:
@@ -26,8 +27,8 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Auto-merge patch updates
-        if: steps.meta.outputs.update-type == 'version-update:semver-patch'
+      - name: Auto-merge patch + minor updates
+        if: contains(fromJSON('["version-update:semver-patch","version-update:semver-minor"]'), steps.meta.outputs.update-type)
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
