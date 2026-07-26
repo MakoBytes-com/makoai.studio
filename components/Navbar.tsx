@@ -27,7 +27,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "backdrop-blur-xl bg-abyss-950/70 border-b border-mist-300/[0.06]"
+          ? "backdrop-blur-xl bg-abyss-950/70 border-b border-mist-300/6"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -89,7 +89,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-abyss-950/95 backdrop-blur-xl border-b border-mist-300/[0.06]">
+        <div className="md:hidden bg-abyss-950/95 backdrop-blur-xl border-b border-mist-300/6">
           <div className="container-narrow flex flex-col py-4 gap-1">
             {links.map((l) => (
               <a

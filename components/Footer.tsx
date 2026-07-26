@@ -4,7 +4,7 @@ export default function Footer() {
     <footer className="relative py-16 bg-abyss-950">
       {/* The benthic line — a faint lumen horizon above the floor */}
       <div
-        className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-lumen-400/25 to-transparent"
+        className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-lumen-400/25 to-transparent"
         aria-hidden
       />
       <div className="container-narrow">

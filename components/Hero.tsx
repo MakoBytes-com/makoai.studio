@@ -22,7 +22,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-[100svh] flex items-center overflow-hidden bg-abyss-950"
+      className="relative min-h-svh flex items-center overflow-hidden bg-abyss-950"
     >
       {/* ── the water column ── */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
@@ -39,7 +39,7 @@ export default function Hero() {
           pointer-events-none — decorative layers must never eat the
           pointermove stream the shark listens to. */}
       <div
-        className="absolute inset-0 pointer-events-none bg-gradient-to-r from-abyss-950/80 via-abyss-950/30 to-transparent"
+        className="absolute inset-0 pointer-events-none bg-linear-to-r from-abyss-950/80 via-abyss-950/30 to-transparent"
         aria-hidden
       />
 
@@ -58,7 +58,7 @@ export default function Hero() {
             className="mt-8 font-display font-medium text-[46px] md:text-[84px] leading-[1.02] tracking-tight text-mist-100 headline-glow"
           >
             <>AI-native design</>
-            <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200 pr-2">
+            <span className="italic text-transparent bg-clip-text bg-linear-to-r from-lumen-300 via-tide-300 to-mist-200 pr-2">
               and engineering.
             </span>
           </RevealLines>

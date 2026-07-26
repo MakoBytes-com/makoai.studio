@@ -18,7 +18,7 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
     <>
       {/* Preview */}
       <div
-        className={`relative aspect-[16/10] overflow-hidden bg-abyss-700 ${
+        className={`relative aspect-16/10 overflow-hidden bg-abyss-700 ${
           archived ? "opacity-90" : ""
         }`}
       >
@@ -29,7 +29,7 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
             className={`object-cover object-top transition-transform duration-700 ease-current ${
-              archived ? "grayscale-[30%]" : "group-hover:scale-[1.04]"
+              archived ? "grayscale-30" : "group-hover:scale-[1.04]"
             }`}
           />
         ) : (
@@ -46,17 +46,17 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
             </div>
           </>
         )}
-        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-abyss-950/70 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-20 bg-linear-to-b from-abyss-950/70 to-transparent pointer-events-none" />
         {/* Lumen scan-line sweeps on hover — the card catches the light */}
         {!archived ? (
           <div
-            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-t from-lumen-400/[0.07] to-transparent"
+            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-linear-to-t from-lumen-400/[0.07] to-transparent"
             aria-hidden
           />
         ) : null}
         <div className="absolute top-4 left-4">
           <span
-            className={`inline-flex items-center gap-1.5 text-[11px] font-medium tracking-wide uppercase px-2.5 py-1 rounded-full border ${statusColor[item.status]} backdrop-blur`}
+            className={`inline-flex items-center gap-1.5 text-[11px] font-medium tracking-wide uppercase px-2.5 py-1 rounded-full border ${statusColor[item.status]} backdrop-blur-sm`}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-current" />
             {item.status}
@@ -83,7 +83,7 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
           {!archived ? (
             <svg
               viewBox="0 0 24 24"
-              className="w-5 h-5 text-mist-400 group-hover:text-lumen-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all flex-shrink-0"
+              className="w-5 h-5 text-mist-400 group-hover:text-lumen-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all shrink-0"
               fill="none"
               aria-hidden="true"
             >
@@ -168,11 +168,11 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
 function previewGradient(accent: PortfolioItem["accent"]): string {
   switch (accent) {
     case "silver":
-      return "bg-gradient-to-br from-mist-300/20 via-abyss-600 to-abyss-800";
+      return "bg-linear-to-br from-mist-300/20 via-abyss-600 to-abyss-800";
     case "steel":
-      return "bg-gradient-to-br from-tide-600/30 via-abyss-700 to-abyss-950";
+      return "bg-linear-to-br from-tide-600/30 via-abyss-700 to-abyss-950";
     case "blue":
     default:
-      return "bg-gradient-to-br from-tide-500/30 via-tide-600/20 to-abyss-800";
+      return "bg-linear-to-br from-tide-500/30 via-tide-600/20 to-abyss-800";
   }
 }

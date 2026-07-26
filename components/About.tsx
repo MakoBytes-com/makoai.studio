@@ -45,7 +45,7 @@ export default function About() {
               className="mt-6 font-display font-medium text-[38px] md:text-[56px] leading-[1.04] tracking-tight text-mist-100"
             >
               <>One partner.</>
-              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200 pr-1.5">
+              <span className="italic text-transparent bg-clip-text bg-linear-to-r from-lumen-300 via-tide-300 to-mist-200 pr-1.5">
                 Start to finish.
               </span>
             </RevealLines>

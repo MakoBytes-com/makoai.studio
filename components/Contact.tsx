@@ -72,9 +72,9 @@ export default function Contact() {
           style={{ filter: "saturate(1.1) contrast(1.05)" }}
         />
         <div className="absolute inset-0 bg-abyss-950/30" />
-        <div className="absolute inset-0 bg-gradient-to-l from-abyss-950/85 via-abyss-950/35 to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[28rem] md:h-[34rem] bg-[linear-gradient(to_bottom,#020509_0%,#020509_28%,rgba(2,5,9,0.88)_52%,rgba(2,5,9,0.55)_72%,rgba(2,5,9,0.2)_88%,transparent_100%)]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-abyss-950 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-l from-abyss-950/85 via-abyss-950/35 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-112 md:h-136 bg-[linear-gradient(to_bottom,#020509_0%,#020509_28%,rgba(2,5,9,0.88)_52%,rgba(2,5,9,0.55)_72%,rgba(2,5,9,0.2)_88%,transparent_100%)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-abyss-950 to-transparent" />
       </div>
       <div className="container-narrow relative">
         <div className="grid md:grid-cols-12 gap-12">
@@ -87,7 +87,7 @@ export default function Contact() {
               className="mt-6 font-display font-medium text-[38px] md:text-[56px] leading-[1.04] tracking-tight text-mist-100"
             >
               <>Tell us</>
-              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200 pr-1.5">
+              <span className="italic text-transparent bg-clip-text bg-linear-to-r from-lumen-300 via-tide-300 to-mist-200 pr-1.5">
                 what you need.
               </span>
             </RevealLines>
@@ -139,7 +139,7 @@ export default function Contact() {
             </Reveal>
 
             <Reveal delay={0.45}>
-              <div className="mt-8 relative rounded-2xl overflow-hidden border border-mist-300/10 shadow-card aspect-[16/10]">
+              <div className="mt-8 relative rounded-2xl overflow-hidden border border-mist-300/10 shadow-card aspect-16/10">
                 <iframe
                   title="Mako Logics HQ — 550 Club Dr #264, Montgomery, TX 77316"
                   src="https://www.google.com/maps?q=550+Club+Dr+%23264+Montgomery+TX+77316&z=15&output=embed"
@@ -265,7 +265,7 @@ function Field({
   placeholder?: string;
 }) {
   const baseClass =
-    "w-full bg-abyss-800/60 border border-mist-300/5 focus:border-lumen-400/50 focus:outline-none rounded-xl px-4 py-3 text-[14px] text-mist-100 placeholder-mist-400/60 transition-colors";
+    "w-full bg-abyss-800/60 border border-mist-300/5 focus:border-lumen-400/50 focus:outline-hidden rounded-xl px-4 py-3 text-[14px] text-mist-100 placeholder-mist-400/60 transition-colors";
   return (
     <label className="block">
       <span className="block text-[12px] tracking-wide uppercase text-mist-400 mb-1.5">

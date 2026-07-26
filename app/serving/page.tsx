@@ -108,7 +108,7 @@ export default function ServingIndexPage() {
           <h1 className="mt-5 font-display font-medium text-[40px] md:text-[68px] leading-[1.02] tracking-tight max-w-3xl">
             Where we
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200 italic">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-lumen-300 via-tide-300 to-mist-200 italic">
               build locally.
             </span>
           </h1>

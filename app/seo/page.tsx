@@ -163,7 +163,7 @@ export default function SeoPage() {
           <h1 className="mt-5 font-display font-medium text-[44px] md:text-[72px] leading-[1.02] tracking-tight">
             Most SEO is sold fear.
             <br />
-            <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200">
+            <span className="italic text-transparent bg-clip-text bg-linear-to-r from-lumen-300 via-tide-300 to-mist-200">
               Here&apos;s what actually works.
             </span>
           </h1>
@@ -228,7 +228,7 @@ export default function SeoPage() {
                 <ul className="mt-5 space-y-2.5 text-[13px] text-mist-300 leading-relaxed flex-1">
                   {l.points.map((p) => (
                     <li key={p} className="flex items-start gap-2">
-                      <span className="text-lumen-400 mt-0.5 flex-shrink-0">+</span>
+                      <span className="text-lumen-400 mt-0.5 shrink-0">+</span>
                       <span>{p}</span>
                     </li>
                   ))}
@@ -258,7 +258,7 @@ export default function SeoPage() {
             <span className="section-label">The new frontier</span>
             <h2 className="mt-4 font-display font-medium text-[32px] md:text-[44px] leading-tight tracking-tight">
               How AI finds{" "}
-              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200">
+              <span className="italic text-transparent bg-clip-text bg-linear-to-r from-lumen-300 via-tide-300 to-mist-200">
                 your business.
               </span>
             </h2>
@@ -276,7 +276,7 @@ export default function SeoPage() {
             <ul className="space-y-5">
               {aiPoints.map((a) => (
                 <li key={a.h} className="flex items-start gap-3">
-                  <span className="text-lumen-400 mt-1 flex-shrink-0">+</span>
+                  <span className="text-lumen-400 mt-1 shrink-0">+</span>
                   <div>
                     <span className="text-[15px] font-display font-medium text-mist-100">
                       {a.h}
@@ -304,7 +304,7 @@ export default function SeoPage() {
             <span className="section-label">Where we stand</span>
             <h2 className="mt-4 font-display font-medium text-[32px] md:text-[44px] leading-tight tracking-tight">
               What we do —{" "}
-              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200">
+              <span className="italic text-transparent bg-clip-text bg-linear-to-r from-lumen-300 via-tide-300 to-mist-200">
                 and what we don&apos;t.
               </span>
             </h2>
@@ -318,7 +318,7 @@ export default function SeoPage() {
               <ul className="mt-5 space-y-3 text-[14px] text-mist-300 leading-relaxed">
                 {weDo.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
-                    <span className="text-lumen-400 mt-0.5 flex-shrink-0">✓</span>
+                    <span className="text-lumen-400 mt-0.5 shrink-0">✓</span>
                     <span>{f}</span>
                   </li>
                 ))}
@@ -332,7 +332,7 @@ export default function SeoPage() {
               <ul className="mt-5 space-y-3 text-[14px] text-mist-400 leading-relaxed">
                 {weDont.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
-                    <span className="text-mist-500 mt-0.5 flex-shrink-0">✕</span>
+                    <span className="text-mist-500 mt-0.5 shrink-0">✕</span>
                     <span>{f}</span>
                   </li>
                 ))}

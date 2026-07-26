@@ -174,7 +174,7 @@ export default async function CaseStudyPage({
         <section className="py-16 md:py-20">
           <div className="container-narrow">
             <Reveal blur y={40}>
-              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden glass-deep">
+              <div className="relative aspect-video rounded-2xl overflow-hidden glass-deep">
                 <Image
                   src={item.screenshot}
                   alt={`${item.name} homepage screenshot`}
@@ -265,7 +265,7 @@ export default async function CaseStudyPage({
                   key={g.src}
                   className="glass-deep rounded-2xl overflow-hidden"
                 >
-                  <div className="relative aspect-[16/10]">
+                  <div className="relative aspect-16/10">
                     <Image
                       src={g.src}
                       alt={g.alt}

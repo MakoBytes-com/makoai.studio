@@ -145,7 +145,7 @@ export function RevealLines({
   return (
     <Comp ref={ref} className={className}>
       {Children.map(children, (line) => (
-        <span className="block overflow-hidden pb-[0.12em] -mb-[0.12em]">
+        <span className="block overflow-hidden pb-[0.12em] mb-[-0.12em]">
           <span data-reveal-line className="block will-change-transform">
             {line}
           </span>

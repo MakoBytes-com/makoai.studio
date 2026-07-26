@@ -48,7 +48,7 @@ export default function TestimonialsVideoBackground() {
     <>
       <video
         ref={videoA}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1200 ${
           active === "a" ? "opacity-100" : "opacity-0"
         }`}
         style={{ filter: "brightness(0.75) saturate(1.05)" }}
@@ -61,7 +61,7 @@ export default function TestimonialsVideoBackground() {
       />
       <video
         ref={videoB}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1200 ${
           active === "b" ? "opacity-100" : "opacity-0"
         }`}
         style={{ filter: "brightness(0.75) saturate(1.05)" }}

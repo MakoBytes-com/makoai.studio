@@ -67,8 +67,8 @@ export default async function Testimonials() {
         <TestimonialsVideoBackground />
         <div className="absolute inset-0 bg-abyss-950/30" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(94,234,255,0.06),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[14rem] md:h-[18rem] bg-[linear-gradient(to_bottom,#020509_0%,rgba(2,5,9,0.85)_35%,rgba(2,5,9,0.5)_65%,transparent_100%)]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[14rem] md:h-[18rem] bg-[linear-gradient(to_top,#020509_0%,rgba(2,5,9,0.85)_35%,rgba(2,5,9,0.5)_65%,transparent_100%)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-56 md:h-72 bg-[linear-gradient(to_bottom,#020509_0%,rgba(2,5,9,0.85)_35%,rgba(2,5,9,0.5)_65%,transparent_100%)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-56 md:h-72 bg-[linear-gradient(to_top,#020509_0%,rgba(2,5,9,0.85)_35%,rgba(2,5,9,0.5)_65%,transparent_100%)]" />
       </div>
       <div className="container-narrow relative">
         <div className="grid md:grid-cols-12 gap-10 mb-14">
@@ -81,7 +81,7 @@ export default async function Testimonials() {
               className="mt-6 font-display font-medium text-[38px] md:text-[56px] leading-[1.04] tracking-tight text-mist-100"
             >
               <>Reviews from</>
-              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200 pr-1.5">
+              <span className="italic text-transparent bg-clip-text bg-linear-to-r from-lumen-300 via-tide-300 to-mist-200 pr-1.5">
                 real clients.
               </span>
             </RevealLines>

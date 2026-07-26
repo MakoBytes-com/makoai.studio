@@ -1,6 +1,172 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-abyss-500: #163158;
+  --color-abyss-600: #0f2247;
+  --color-abyss-700: #0a1832;
+  --color-abyss-800: #071127;
+  --color-abyss-850: #050b18;
+  --color-abyss-900: #030711;
+  --color-abyss-950: #020509;
+
+  --color-lumen-200: #c9f9ff;
+  --color-lumen-300: #9af2ff;
+  --color-lumen-400: #5eeaff;
+  --color-lumen-500: #2fcdeb;
+
+  --color-tide-300: #93c5fd;
+  --color-tide-400: #60a5fa;
+  --color-tide-500: #3b82f6;
+  --color-tide-600: #1e4dd8;
+
+  --color-mist-100: #f2f6fb;
+  --color-mist-200: #dde6f2;
+  --color-mist-300: #c7d3e4;
+  --color-mist-400: #a9b5cb;
+  --color-mist-500: #8a95ad;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-mono:
+    var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --background-image-depth-fade: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(2, 5, 9, 0.85) 70%,
+    #020509 100%
+  );
+  --background-image-lumen-radial: radial-gradient(
+    ellipse 70% 50% at 50% 40%,
+    rgba(94, 234, 255, 0.1) 0%,
+    transparent 60%
+  );
+  --background-image-surface-light: radial-gradient(
+    ellipse 90% 55% at 50% -12%,
+    rgba(94, 234, 255, 0.14) 0%,
+    rgba(59, 130, 246, 0.1) 34%,
+    transparent 62%
+  );
+  --background-image-water-column: linear-gradient(
+    180deg,
+    rgba(10, 24, 50, 0.35) 0%,
+    rgba(3, 7, 17, 0.1) 45%,
+    rgba(2, 5, 9, 0.9) 88%,
+    #020509 100%
+  );
+  --background-image-lamp-glow: radial-gradient(
+    circle,
+    rgba(94, 234, 255, 0.09) 0%,
+    rgba(59, 130, 246, 0.05) 32%,
+    transparent 68%
+  );
+
+  --shadow-glow: 0 0 40px -10px rgba(59, 130, 246, 0.35);
+  --shadow-glow-lumen: 0 0 60px -12px rgba(94, 234, 255, 0.35);
+  --shadow-glow-lumen-sm: 0 0 24px -6px rgba(94, 234, 255, 0.45);
+  --shadow-card: 0 10px 40px -20px rgba(0, 0, 0, 0.8);
+  --shadow-card-deep: 0 30px 80px -30px rgba(0, 0, 0, 0.9);
+
+  --tracking-telemetry: 0.28em;
+
+  --ease-current: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-pulse-lumen: pulse-lumen 4s ease-in-out infinite;
+  --animate-dive-line: dive-line 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+
+  @keyframes pulse-lumen {
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.06);
+    }
+  }
+  @keyframes dive-line {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    15% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(400%);
+      opacity: 0;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility container-narrow {
+  @apply max-w-6xl mx-auto px-6 md:px-10;
+}
+
+@utility container-wide {
+  @apply max-w-352 mx-auto px-6 md:px-12;
+}
+
+@utility telemetry {
+  /* Submersible-instrument voice: small mono uppercase telemetry */
+  @apply font-mono text-[11px] uppercase tracking-telemetry text-mist-500;
+}
+
+@utility section-label {
+  @apply telemetry inline-flex items-center gap-3 text-lumen-400/90;
+  &::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: currentColor;
+    display: inline-block;
+    opacity: 0.7;
+  }
+}
+
+@utility glass-deep {
+  /* Deep-water card: dark glass with a faint lumen rim on hover */
+  background: linear-gradient(
+    160deg,
+    rgba(15, 34, 71, 0.35) 0%,
+    rgba(5, 11, 24, 0.55) 100%
+  );
+  border: 1px solid rgba(199, 211, 228, 0.09);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  transition:
+    border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  &:hover {
+    border-color: rgba(94, 234, 255, 0.22);
+    box-shadow: 0 0 60px -18px rgba(94, 234, 255, 0.25);
+  }
+}
+
+@utility headline-glow {
+  /* Display serif with a breath of glow — hero-grade headlines only */
+  text-shadow: 0 0 80px rgba(94, 234, 255, 0.25);
+}
 
 /* ────────────────────────────────────────────────────────────────
    BIOLUMINANCE — base layer
@@ -15,83 +181,31 @@
   }
 
   body {
-    background: theme("colors.abyss.950");
-    color: theme("colors.mist.200");
-    font-family: theme("fontFamily.sans");
+    background: var(--color-abyss-950);
+    color: var(--color-mist-200);
+    font-family: var(--font-sans);
     font-size: 16px;
     line-height: 1.7;
     overflow-x: hidden;
   }
 
   ::selection {
-    background: theme("colors.lumen.400");
-    color: theme("colors.abyss.950");
+    background: var(--color-lumen-400);
+    color: var(--color-abyss-950);
   }
 
   /* Headings surface brighter than body copy by default */
   h1,
   h2,
   h3 {
-    color: theme("colors.mist.100");
+    color: var(--color-mist-100);
   }
 
   /* Visible focus for keyboard divers — a11y baseline */
   :focus-visible {
-    outline: 2px solid theme("colors.lumen.400");
+    outline: 2px solid var(--color-lumen-400);
     outline-offset: 3px;
     border-radius: 2px;
-  }
-}
-
-@layer components {
-  .container-narrow {
-    @apply max-w-6xl mx-auto px-6 md:px-10;
-  }
-
-  .container-wide {
-    @apply max-w-[88rem] mx-auto px-6 md:px-12;
-  }
-
-  /* Submersible-instrument voice: small mono uppercase telemetry */
-  .telemetry {
-    @apply font-mono text-[11px] uppercase tracking-telemetry text-mist-500;
-  }
-
-  .section-label {
-    @apply telemetry inline-flex items-center gap-3 text-lumen-400/90;
-  }
-  .section-label::before {
-    content: "";
-    width: 32px;
-    height: 1px;
-    background: currentColor;
-    display: inline-block;
-    opacity: 0.7;
-  }
-
-  /* Deep-water card: dark glass with a faint lumen rim on hover */
-  .glass-deep {
-    background: linear-gradient(
-      160deg,
-      rgba(15, 34, 71, 0.35) 0%,
-      rgba(5, 11, 24, 0.55) 100%
-    );
-    border: 1px solid rgba(199, 211, 228, 0.09);
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
-    transition:
-      border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .glass-deep:hover {
-    border-color: rgba(94, 234, 255, 0.22);
-    box-shadow: 0 0 60px -18px rgba(94, 234, 255, 0.25);
-  }
-
-  /* Display serif with a breath of glow — hero-grade headlines only */
-  .headline-glow {
-    text-shadow: 0 0 80px rgba(94, 234, 255, 0.25);
   }
 }
 

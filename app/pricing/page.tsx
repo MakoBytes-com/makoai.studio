@@ -236,7 +236,7 @@ export default function PricingPage() {
           <h1 className="mt-5 font-display font-medium text-[44px] md:text-[72px] leading-[1.02] tracking-tight">
             No ghost pricing.
             <br />
-            <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200">
+            <span className="italic text-transparent bg-clip-text bg-linear-to-r from-lumen-300 via-tide-300 to-mist-200">
               No $500/mo SEO scam.
             </span>
           </h1>
@@ -272,7 +272,7 @@ export default function PricingPage() {
             <span className="section-label">Most popular · $0 down</span>
             <h2 className="mt-4 font-display font-medium text-[32px] md:text-[44px] leading-tight tracking-tight">
               Free build.{" "}
-              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200">
+              <span className="italic text-transparent bg-clip-text bg-linear-to-r from-lumen-300 via-tide-300 to-mist-200">
                 $349 a month.
               </span>
             </h2>
@@ -353,7 +353,7 @@ export default function PricingPage() {
                   <ul className="space-y-2.5 text-[13px] text-mist-300 leading-relaxed">
                     {waasIncludes.map((f) => (
                       <li key={f} className="flex items-start gap-2">
-                        <span className="text-lumen-400 mt-0.5 flex-shrink-0">+</span>
+                        <span className="text-lumen-400 mt-0.5 shrink-0">+</span>
                         <span>{f}</span>
                       </li>
                     ))}
@@ -366,7 +366,7 @@ export default function PricingPage() {
                   <ol className="space-y-3 text-[13px] text-mist-300 leading-relaxed">
                     {waasSteps.map((s, i) => (
                       <li key={s} className="flex items-start gap-3">
-                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-tide-500/15 border border-tide-500/30 text-tide-200 text-[11px] font-semibold flex items-center justify-center">
+                        <span className="shrink-0 w-5 h-5 rounded-full bg-tide-500/15 border border-tide-500/30 text-tide-200 text-[11px] font-semibold flex items-center justify-center">
                           {i + 1}
                         </span>
                         <span>{s}</span>
@@ -426,12 +426,12 @@ export default function PricingPage() {
                     <li key={f} className="flex items-start gap-2">
                       {f.startsWith("  ·") ? (
                         <>
-                          <span className="w-4 flex-shrink-0" />
+                          <span className="w-4 shrink-0" />
                           <span className="text-mist-400">{f.replace("  · ", "")}</span>
                         </>
                       ) : (
                         <>
-                          <span className="text-lumen-400 mt-0.5 flex-shrink-0">+</span>
+                          <span className="text-lumen-400 mt-0.5 shrink-0">+</span>
                           <span>{f}</span>
                         </>
                       )}
@@ -487,7 +487,7 @@ export default function PricingPage() {
                 <ul className="mt-5 space-y-2 text-[13px] text-mist-300 leading-relaxed flex-1">
                   {t.features.map((f) => (
                     <li key={f} className="flex items-start gap-2">
-                      <span className="text-lumen-400 mt-0.5 flex-shrink-0">+</span>
+                      <span className="text-lumen-400 mt-0.5 shrink-0">+</span>
                       <span>{f}</span>
                     </li>
                   ))}
@@ -511,7 +511,7 @@ export default function PricingPage() {
             <span className="section-label">Email hosting</span>
             <h2 className="mt-4 font-display font-medium text-[32px] md:text-[44px] leading-tight tracking-tight">
               Mailboxes,{" "}
-              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200">
+              <span className="italic text-transparent bg-clip-text bg-linear-to-r from-lumen-300 via-tide-300 to-mist-200">
                 on our server.
               </span>
             </h2>

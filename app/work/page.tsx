@@ -102,7 +102,7 @@ export default function WorkIndexPage() {
             className="mt-6 font-display font-medium text-[40px] md:text-[68px] leading-[1.02] tracking-tight max-w-3xl text-mist-100"
           >
             <>Case studies from</>
-            <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200 pr-1.5">
+            <span className="italic text-transparent bg-clip-text bg-linear-to-r from-lumen-300 via-tide-300 to-mist-200 pr-1.5">
               Mako Studio.
             </span>
           </RevealLines>
@@ -127,7 +127,7 @@ export default function WorkIndexPage() {
                 className="group glass-deep rounded-2xl overflow-hidden"
               >
                 {p.screenshot ? (
-                  <div className="relative aspect-[16/10] overflow-hidden">
+                  <div className="relative aspect-16/10 overflow-hidden">
                     <Image
                       src={p.screenshot}
                       alt={`${p.name} homepage screenshot`}
@@ -136,7 +136,7 @@ export default function WorkIndexPage() {
                       className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                     <div
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-t from-lumen-400/[0.07] to-transparent"
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-linear-to-t from-lumen-400/[0.07] to-transparent"
                       aria-hidden
                     />
                   </div>

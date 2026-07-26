@@ -69,7 +69,7 @@ export default function Process() {
           <>
             <video
               ref={videoA}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1200 ${
                 active === "a" ? "opacity-100" : "opacity-0"
               }`}
               style={{ filter: "brightness(0.4) saturate(1.1)" }}
@@ -82,7 +82,7 @@ export default function Process() {
             />
             <video
               ref={videoB}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1200 ${
                 active === "b" ? "opacity-100" : "opacity-0"
               }`}
               style={{ filter: "brightness(0.4) saturate(1.1)" }}
@@ -96,8 +96,8 @@ export default function Process() {
         )}
         <div className="absolute inset-0 bg-abyss-950/40" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(94,234,255,0.06),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[28rem] md:h-[34rem] bg-[linear-gradient(to_bottom,#020509_0%,#020509_28%,rgba(2,5,9,0.88)_52%,rgba(2,5,9,0.55)_72%,rgba(2,5,9,0.2)_88%,transparent_100%)]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[28rem] md:h-[34rem] bg-[linear-gradient(to_top,#020509_0%,#020509_28%,rgba(2,5,9,0.88)_52%,rgba(2,5,9,0.55)_72%,rgba(2,5,9,0.2)_88%,transparent_100%)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-112 md:h-136 bg-[linear-gradient(to_bottom,#020509_0%,#020509_28%,rgba(2,5,9,0.88)_52%,rgba(2,5,9,0.55)_72%,rgba(2,5,9,0.2)_88%,transparent_100%)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-112 md:h-136 bg-[linear-gradient(to_top,#020509_0%,#020509_28%,rgba(2,5,9,0.88)_52%,rgba(2,5,9,0.55)_72%,rgba(2,5,9,0.2)_88%,transparent_100%)]" />
       </div>
       <div className="container-narrow relative">
         <div className="grid md:grid-cols-12 gap-10 mb-16">
@@ -110,7 +110,7 @@ export default function Process() {
               className="mt-6 font-display font-medium text-[38px] md:text-[56px] leading-[1.04] tracking-tight text-mist-100"
             >
               <>AI-native.</>
-              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-lumen-300 via-tide-300 to-mist-200 pr-1.5">
+              <span className="italic text-transparent bg-clip-text bg-linear-to-r from-lumen-300 via-tide-300 to-mist-200 pr-1.5">
                 Not AI-assisted.
               </span>
             </RevealLines>
