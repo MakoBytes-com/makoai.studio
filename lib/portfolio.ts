@@ -569,10 +569,10 @@ export const portfolio: PortfolioItem[] = [
     slug: "makobytes",
     name: "MakoBytes",
     url: "https://makobytes.com",
-    tagline: "Product line for Mako Logics tools",
+    tagline: "The software studio site that boots like a desktop",
     description:
-      "Umbrella site for the MakoBytes product line — PixelCopy and MakoBot. Product pages, analytics dashboard, download flow.",
-    tags: ["Next.js", "Cloudflare", "Analytics"],
+      "MakoOS: the entire product site runs as a desktop — boot screen, draggable windows, taskbar, start menu. PixelCopy and MakoBot ship installed, code-signing is shown as a certificate dialog, and a captcha-gated contact form composes like an email client.",
+    tags: ["Next.js", "MakoOS UI", "Turnstile", "Analytics"],
     status: "Live",
     year: "2026",
     accent: "blue",

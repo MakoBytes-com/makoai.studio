@@ -44,7 +44,7 @@ compressing 6-week timelines into 2 without cutting corners.
 ## Featured Work
 - TopPaws (https://toppaws.com) — nationwide pet directory, marketplace, and community ("Yelp for pets")
 - MakoBot (https://makobot.com) — AI memory tool for Windows, desktop app + marketing site
-- MakoBytes (https://makobytes.com) — umbrella site for Mako Logics product line
+- MakoBytes (https://makobytes.com) — the product-line site runs as "MakoOS", a working desktop OS in the browser: boot screen, window manager, PixelCopy + MakoBot installed as apps
 - AAA Awning Co. (https://www.aaaawning.net) — Houston, TX custom awning fabricator since 1984 (client)
 - Bulldog Security Service (https://bulldogsecurityservice.com) — multi-state ADT-partner residential security (client)
 - AXYS Industrial Solutions (https://axyscorp.com) — Houston, TX chemical & refining secondary-stream recovery, full WordPress → Next.js rebuild (client)
