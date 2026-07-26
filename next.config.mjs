@@ -11,6 +11,22 @@ const nextConfig = {
   images: {
     remotePatterns: [{ protocol: "https", hostname: "**" }]
   },
+  async redirects() {
+    // Case studies removed from the portfolio over time. Their URLs were
+    // once indexed/linked, so they redirect permanently to the portfolio
+    // index instead of 404ing.
+    const deadWorkSlugs = [
+      "buffaloseal", // client released project 2026-06-08
+      "lagunares", // client declined project 2026-06-08
+      "aipromptshive", // product retired 2026-07-25
+      "lengleng" // early entry, removed pre-May
+    ];
+    return deadWorkSlugs.map((slug) => ({
+      source: `/work/${slug}`,
+      destination: "/work",
+      permanent: true
+    }));
+  },
   async headers() {
     // Content Security Policy — Report-Only mode (observe, don't enforce).
     // Tuned for the actual stack on makoai.studio:
