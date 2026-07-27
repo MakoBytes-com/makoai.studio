@@ -8,6 +8,19 @@ updates:
       time: "08:00"
       timezone: America/Chicago
     open-pull-requests-limit: 5
+    ignore:
+      # TypeScript 7 is the native (Go) compiler. It does not expose the JS
+      # compiler API that Next.js uses for its built-in typecheck — the build
+      # fails with "TypeScript 7.x does not provide the compiler API required
+      # by Next.js. Enable experimental.useTypeScriptCli ... or install
+      # TypeScript 6 instead." typescript-eslint also still pins its peer to
+      # typescript >=4.8.4 <6.1.0, so lint tooling excludes 7.x as well.
+      # We are NOT turning on an experimental Next.js flag in production for a
+      # devDependency bump. Drop this ignore once Next.js supports the TS 7
+      # compiler API on the stable path (verified 2026-07-27, Next 16.2.12).
+      - dependency-name: typescript
+        update-types:
+          - version-update:semver-major
     groups:
       minor-and-patch:
         update-types:
