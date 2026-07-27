@@ -503,6 +503,76 @@ export const portfolio: PortfolioItem[] = [
     }
   },
   {
+    slug: "makoanswer",
+    name: "MakoAnswer",
+    url: "https://makoanswer.com",
+    tagline: "AI phone receptionist — every call answered, 24/7",
+    description:
+      "An AI receptionist for phone-driven service businesses. Mae picks up on the first ring day or night, books and qualifies the caller, screens spam and robocalls, warm-transfers the urgent ones to a human, and delivers a transcript, summary, recording, and lead after every call. Live demo line, flat published pricing from $24.95/mo, a customer dashboard for calls and leads, and 20+ industry and solution landing pages.",
+    tags: ["Next.js 16", "Retell voice AI", "Twilio", "Programmatic SEO", "Stripe"],
+    status: "Live",
+    year: "2026",
+    accent: "blue",
+    screenshot: "/portfolio/makoanswer.png",
+    tier: "product",
+    caseStudy: {
+      oneLiner:
+        "An AI phone receptionist for service businesses — answers 24/7 on the first ring, books and qualifies, screens spam, warm-transfers the urgent calls, and delivers a transcript, summary, and lead every time. Flat published pricing, no contracts.",
+      client: "Mako Logics (own product)",
+      role: "Design + full-stack build + voice design",
+      timeline: "2026 · live",
+      stack: [
+        "Next.js 16",
+        "React 19",
+        "Tailwind v4",
+        "Retell (voice AI)",
+        "Twilio",
+        "Supabase Postgres",
+        "Stripe",
+        "iron-session + TOTP",
+        "Vercel"
+      ],
+      viewUrl: "https://makoanswer.com",
+      viewLabel: "Visit MakoAnswer",
+      problem:
+        "A missed call at a trades business is usually a lost job — the caller dials the next plumber on the list before your voicemail finishes playing. The existing options are all bad trades: voicemail loses the customer, a live answering service bills per call and reads from a script, and a front-desk hire costs more than most small shops can carry for a phone that rings in bursts.\n\nThe brief (own product): an AI receptionist that answers on the first ring at any hour, sounds like a person rather than a phone tree, actually books the job instead of just taking a name, and prices flat and public so an owner can decide in thirty seconds instead of booking a sales call.",
+      approach:
+        "Next.js 16 for the marketing site, the customer dashboard, and the internal ops panel, with the voice layer on Retell and telephony on Twilio so businesses can forward their existing number immediately and port it later — no number change on day one.\n\nMae, the receptionist, is a designed voice persona, not a default. Every greeting includes a call-recording notice; spam, robocall, and anonymous-caller screening runs on every plan; appointment booking and live warm transfer unlock on the higher tiers. After each call the system writes a transcript, summary, recording, and structured lead and pushes it to the business.\n\nThe SEO surface is programmatic and honest: twelve industry pages (HVAC, plumbing, electrical, roofing, restoration, towing, law firms, insurance and more), nine solution pages, and three named competitor comparisons built strictly from each provider's own published rates and dated, so the numbers can be checked rather than trusted.",
+      shipped: [
+        {
+          title: "Mae — the AI receptionist",
+          body: "A natural-voice receptionist on Retell that picks up on the first ring, 24/7/365 including nights, weekends, and holidays. Callers can dial the live demo line and talk to her before buying anything."
+        },
+        {
+          title: "Books, qualifies, screens, escalates",
+          body: "Appointment booking and lead qualification on the higher plans, spam / robocall / anonymous-caller screening on every plan, and live warm transfer of urgent calls to the business's own team."
+        },
+        {
+          title: "Every call comes back as a lead",
+          body: "Transcript, summary, recording, and a structured lead delivered after each call — so the record of what a caller wanted survives the call instead of living in someone's memory."
+        },
+        {
+          title: "Customer dashboard",
+          body: "Calls, leads, and settings behind iron-session auth with TOTP. Businesses keep their existing number: forward now, port later, no cutover on day one."
+        },
+        {
+          title: "Programmatic SEO across 20+ pages",
+          body: "Twelve industry pages and nine solution pages with their own intent-matched copy, plus vs-Ruby, vs-Smith.ai, and vs-AnswerConnect comparisons built from each provider's published pricing and dated so the claims stay checkable."
+        },
+        {
+          title: "Flat public pricing + Stripe billing",
+          body: "Four plans published on the site from $24.95/mo with per-call rates shown, annual billing, no setup fees, and no contracts — priced to undercut per-call answering services outright."
+        },
+        {
+          title: "Internal ops panel",
+          body: "Admin side covering clients, calls, leads, messages, blocked numbers, analytics, error monitoring, security posture, and team — the console the service is actually operated from."
+        }
+      ],
+      outcome:
+        "Live and taking real calls, with a public demo line anyone can dial to hear the receptionist before they buy. Pricing is published up front instead of gated behind a sales call, and the whole stack — voice, telephony, billing, customer dashboard, and ops panel — is Mako-built and Mako-operated."
+    }
+  },
+  {
     slug: "makobot",
     name: "MakoBot",
     url: "https://makobot.com",
@@ -563,6 +633,76 @@ export const portfolio: PortfolioItem[] = [
       ],
       outcome:
         "MakoBot ships signed, installs cleanly on fresh Windows machines, and updates itself. 80+ builds shipped across 2026 without breaking a user install."
+    }
+  },
+  {
+    slug: "pixelcopy",
+    name: "PixelCopy",
+    url: "https://pixelcopy.app",
+    tagline: "Screen-capture studio for Windows — signed, Store-certified",
+    description:
+      "The Windows screen-capture app Mac users have had for years, plus the product site, account portal, and billing behind it. Region, window, and scrolling capture, a native markup editor, screen recording with audio, pin-to-screen, and on-device OCR in 25+ languages — free forever locally, with an $8/mo Pro tier for hosted sharing. The homepage is a scroll-scrubbed cinematic that flies into a workstation and shows the app doing the work.",
+    tags: ["WinUI 3", "MSIX + code signing", "Next.js 15", "Stripe", "Supabase"],
+    status: "Live",
+    year: "2026",
+    accent: "steel",
+    screenshot: "/portfolio/pixelcopy.png",
+    tier: "product",
+    caseStudy: {
+      oneLiner:
+        "A code-signed, Microsoft Store certified screen-capture, annotation, and recording studio for Windows — free for every local feature, $8/mo for cloud sharing — shipped with its own product site, passwordless account portal, and subscription billing.",
+      client: "Mako Logics (own product · MakoBytes)",
+      role: "Desktop app + product site + release and billing infrastructure",
+      timeline: "2026 · shipping continuously",
+      stack: [
+        "WinUI 3 (C# / .NET)",
+        "MSIX + code signing",
+        "Windows Media OCR",
+        "Next.js 15",
+        "React 19",
+        "Supabase",
+        "Stripe",
+        "Resend",
+        "Vercel"
+      ],
+      viewUrl: "https://pixelcopy.app",
+      viewLabel: "Visit PixelCopy",
+      problem:
+        "Windows has never had the polished capture tool Mac users take for granted. Snipping Tool is a shortcut, not a workflow — no scrolling capture, no real annotation, no recording worth using. ShareX is genuinely powerful and genuinely overwhelming. Snagit is the professional answer and prices like one, per seat, forever.\n\nThe brief (own product): one native Windows app that captures, annotates, records, pins, and reads text off the screen — good enough to replace the paid tools, honest enough to leave every local feature free, and signed properly so it installs on a locked-down work machine without a SmartScreen fight.",
+      approach:
+        "The app is WinUI 3 on .NET, native rather than a wrapped web view, with OCR running on-device through Windows Media OCR in 25+ languages — screen text never leaves the machine to be read. Distribution is a code-signed MSIX that auto-updates from the official signed release, plus a Microsoft Store listing that passed certification review, so it installs cleanly on managed Windows without an unknown-publisher warning.\n\nThe business model is drawn on purpose: every local capture, annotation, recording, and OCR feature is free with no nag and no expiry, and only hosted sharing sits behind the $8/mo Pro tier. Cancel and the local app keeps working — nothing you already made stops opening.\n\nThe product site is Next.js on Vercel with Stripe subscriptions, a passwordless magic-link account portal for managing shared links, and a homepage rebuilt as a scroll-scrubbed camera flight into a workstation, where each beat demonstrates a real capability instead of describing it. Customer share pages and raw media are noindexed so nobody's screenshot ends up in a search index.",
+      shipped: [
+        {
+          title: "Capture, annotate, record — one native app",
+          body: "Region, window, fullscreen, and scrolling capture; a markup editor with arrows, text, blur, pixelate, and numbered steps; screen recording with mic and system audio; GIF export; and pin-to-screen for keeping a capture on top while you work."
+        },
+        {
+          title: "On-device OCR in 25+ languages",
+          body: "Text is lifted off any capture through Windows Media OCR, locally. No upload, no third-party vision API, nothing to disclose in a privacy policy because nothing leaves the machine."
+        },
+        {
+          title: "Code-signed MSIX + Microsoft Store",
+          body: "Signed installer that auto-updates from the official signed release through Windows App Installer, plus a Store listing that passed Microsoft's certification review — so it installs on managed corporate machines without a publisher warning."
+        },
+        {
+          title: "A free tier that stays free",
+          body: "Every local capture, annotation, recording, and OCR feature is free with no nag screen and no expiry. Pro is $8/mo for hosted sharing only, and cancelling never disables the local app."
+        },
+        {
+          title: "Cloud sharing + account portal",
+          body: "Pro uploads produce a short link and a web viewer, with a passwordless magic-link portal showing every link shared from any PC as a thumbnail grid — each one re-copyable, expirable, password-protectable, view-counted, or deletable."
+        },
+        {
+          title: "Scroll-cinematic product site",
+          body: "The homepage is a scroll-scrubbed camera flight into a workstation that demonstrates capture, annotation, recording, pin/OCR, and sharing with the app's real UI — built alongside honest side-by-side comparisons against Snagit, ShareX, Snipping Tool, and Greenshot."
+        },
+        {
+          title: "Privacy-first sharing surface",
+          body: "Customer share pages and raw media are noindexed, AI-crawler rules are current, and the marketing surface is kept separate from anything a user actually uploaded."
+        }
+      ],
+      outcome:
+        "Published and downloadable — v1.0.8 for Windows 10 (1903+) and Windows 11 on x64 and ARM64, live on the Microsoft Store after passing certification, with the $8/mo Pro subscription running. Free download, no account required to use it."
     }
   },
   {

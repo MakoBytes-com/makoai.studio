@@ -12,8 +12,15 @@ import { resolve } from "node:path";
 
 // Source thumbnails from frozen showcase forks for ALL client builds —
 // every portfolio entry except our own products (toppaws, makobot,
-// makobytes) gets sourced from a *-showcase.vercel.app
-// fork so the portfolio image never drifts post-handover.
+// makobytes, pixelcopy, makoanswer) gets sourced from a
+// *-showcase.vercel.app fork so the portfolio image never drifts
+// post-handover. Our own products point straight at the live site.
+//
+// ⚠️ DO NOT use this script for sites whose homepage animates before it
+// settles — makobytes.com boots MakoOS and pixelcopy.app scroll-scrubs a
+// cinematic, so Microlink captures a boot screen or a mid-flight frame.
+// Those two are captured with Puppeteer instead: load, wait ~5s, scroll to
+// top, then shoot at 1440x900 @2x to match the other thumbnails.
 const sites = [
   { slug: "bulldog", url: "https://bulldog-showcase.vercel.app" },
   { slug: "aaaawning", url: "https://aaaawning-showcase.vercel.app" },
@@ -22,16 +29,24 @@ const sites = [
   { slug: "axyscorp", url: "https://axyscorp-showcase.vercel.app" },
   { slug: "bishopbend", url: "https://bishopbend-showcase.vercel.app" },
   { slug: "toppaws", url: "https://toppaws.com" },
+  { slug: "makoanswer", url: "https://makoanswer.com" },
   { slug: "makobot", url: "https://makobot.com" },
   { slug: "machine-template", url: "https://machine-template-web.vercel.app" },
-  { slug: "woodlands", url: "https://woodlands-showcase.vercel.app" },
-  { slug: "makobytes", url: "https://makobytes.com" }
+  { slug: "woodlands", url: "https://woodlands-showcase.vercel.app" }
+  // makobytes + pixelcopy deliberately omitted — Puppeteer only, see above.
 ];
 
-const onlyNew = process.argv.includes("--only-new");
-const filtered = onlyNew
-  ? sites.filter((s) => s.slug === "bndt")
+// Optional slug filter:  node scripts/screenshots.mjs toppaws makobot
+const wanted = process.argv.slice(2).filter((a) => !a.startsWith("-"));
+const filtered = wanted.length
+  ? sites.filter((s) => wanted.includes(s.slug))
   : sites;
+
+if (wanted.length && filtered.length !== wanted.length) {
+  const missing = wanted.filter((w) => !sites.some((s) => s.slug === w));
+  console.error(`Unknown slug(s): ${missing.join(", ")}`);
+  process.exit(1);
+}
 
 const outDir = resolve(process.cwd(), "public", "portfolio");
 await mkdir(outDir, { recursive: true });
