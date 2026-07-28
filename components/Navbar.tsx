@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -32,12 +33,12 @@ export default function Navbar() {
       }`}
     >
       <div className="container-narrow flex items-center justify-between h-16 md:h-20">
-        <a href="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group">
           <MakoMark />
           <span className="font-display font-medium text-[19px] tracking-tight text-mist-100">
             Mako <span className="italic text-lumen-400">Studio</span>
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8">
           {links.map((l) => (
@@ -55,12 +56,12 @@ export default function Navbar() {
           >
             Client Portal
           </a>
-          <a
+          <Link
             href="/#contact"
             className="text-[13px] px-4 py-2 rounded-full bg-tide-500 hover:bg-tide-400 text-white font-medium transition-all duration-300 shadow-glow hover:shadow-glow-lumen"
           >
             Start a project
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -108,13 +109,13 @@ export default function Navbar() {
             >
               Client Portal
             </a>
-            <a
+            <Link
               href="/#contact"
               onClick={() => setOpen(false)}
               className="mt-2 text-center text-[14px] px-4 py-3 rounded-full bg-tide-500 text-white font-medium"
             >
               Start a project
-            </a>
+            </Link>
           </div>
         </div>
       )}

@@ -138,6 +138,7 @@ export default function MakoParticles({
       uForm: { value: 0 },
       uFade: { value: 1 },
       uPixelRatio: { value: 1 },
+      // eslint-disable-next-line react-hooks/refs -- The ref is forwarded as a prop, not dereferenced during render. Nothing reads .current here.
       uPointer: { value: pointerWorld.current }
     }),
     []

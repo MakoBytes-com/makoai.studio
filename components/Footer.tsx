@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -44,14 +45,14 @@ export default function Footer() {
             <h4 className="telemetry mb-4">Studio</h4>
             <ul className="space-y-2 text-[13px]">
               <li>
-                <a href="/#work" className="text-mist-300 hover:text-lumen-300">
+                <Link href="/#work" className="text-mist-300 hover:text-lumen-300">
                   Work
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#services" className="text-mist-300 hover:text-lumen-300">
+                <Link href="/#services" className="text-mist-300 hover:text-lumen-300">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="/pricing" className="text-mist-300 hover:text-lumen-300">
@@ -64,14 +65,14 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/#about" className="text-mist-300 hover:text-lumen-300">
+                <Link href="/#about" className="text-mist-300 hover:text-lumen-300">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#contact" className="text-mist-300 hover:text-lumen-300">
+                <Link href="/#contact" className="text-mist-300 hover:text-lumen-300">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

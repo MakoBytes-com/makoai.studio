@@ -242,7 +242,7 @@ export default function PricingPage() {
           </h1>
           <p className="mt-7 max-w-2xl text-[17px] md:text-[19px] text-mist-300 leading-relaxed">
             Most agencies bury pricing and hand you a $12,000 quote for a
-            brochure site. We don't. Get a custom, AI-native site for{" "}
+            brochure site. We don&apos;t. Get a custom, AI-native site for{" "}
             <span className="text-mist-100 font-semibold">$0 down at $349/mo</span>{" "}
             — or own it outright from $2,500. What you see below is what you
             pay. No ghost pricing, no surprise fees.
@@ -279,7 +279,7 @@ export default function PricingPage() {
             <p className="mt-3 max-w-xl text-[15px] text-mist-300 leading-relaxed">
               No big check up front. We design and build your custom,
               AI-native site for <span className="text-mist-100 font-semibold">$0 down</span>, then host, secure, and
-              maintain it for one flat monthly price. It's the way most small
+              maintain it for one flat monthly price. It&apos;s the way most small
               businesses launch with us.
             </p>
           </div>
@@ -333,12 +333,12 @@ export default function PricingPage() {
 
                 <div className="mt-8 pt-6 border-t border-mist-300/10">
                   <h4 className="text-[14px] font-display font-medium text-mist-100">
-                    You're never locked in.
+                    You&apos;re never locked in.
                   </h4>
                   <p className="mt-2 text-[13px] text-mist-300 leading-relaxed">
-                    Cancel after 12 months with 30 days' notice — no penalty.
+                    Cancel after 12 months with 30 days&apos; notice — no penalty.
                     Want to leave early, or own the site outright? Pay a
-                    one-time build buy-out and it's yours, code and all. No
+                    one-time build buy-out and it&apos;s yours, code and all. No
                     hostage situations, ever.
                   </p>
                 </div>
@@ -348,7 +348,7 @@ export default function PricingPage() {
               <div className="flex flex-col gap-8 lg:border-l lg:border-mist-300/10 lg:pl-12">
                 <div>
                   <h4 className="text-[12px] uppercase tracking-widest font-semibold text-mist-400 mb-4">
-                    Everything's included
+                    Everything&apos;s included
                   </h4>
                   <ul className="space-y-2.5 text-[13px] text-mist-300 leading-relaxed">
                     {waasIncludes.map((f) => (
@@ -396,7 +396,7 @@ export default function PricingPage() {
             <p className="mt-3 max-w-xl text-[15px] text-mist-300 leading-relaxed">
               Rather own it outright from day one and skip the monthly? These
               are fixed-price, pay-once builds. We scope it, you approve it, we
-              deliver. No hourly billing, no padded estimates, no "scope creep"
+              deliver. No hourly billing, no padded estimates, no &quot;scope creep&quot;
               surcharges.
             </p>
           </div>
@@ -601,7 +601,7 @@ export default function PricingPage() {
             Ready to get a real quote?
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-[15px] text-mist-300 leading-relaxed">
-            Tell us about your project. We'll come back within one business
+            Tell us about your project. We&apos;ll come back within one business
             day with a real scope and a fixed quote — usually inside the tiers
             above, sometimes with a note about why it might fall outside.
           </p>

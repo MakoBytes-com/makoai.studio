@@ -153,7 +153,7 @@ export default function Turnstile({ onToken, onExpire }: Props) {
       {state === "error" && (
         <div className="text-[12px] text-amber-300/90 space-y-1">
           <div>
-            Couldn't load the bot-check. An extension or strict privacy setting may be blocking
+            Couldn&apos;t load the bot-check. An extension or strict privacy setting may be blocking
             <span className="opacity-70"> challenges.cloudflare.com</span>.
           </div>
           <button
