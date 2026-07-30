@@ -573,6 +573,75 @@ export const portfolio: PortfolioItem[] = [
     }
   },
   {
+    slug: "makopulse",
+    name: "MakoPulse",
+    url: "https://makopulse.com",
+    tagline: "Uptime monitoring that never cries wolf",
+    description:
+      "A full monitoring platform: seven check types from two continents as often as every 30 seconds, real-browser checks that catch JavaScript errors, AI that diagnoses the root cause within a minute of an incident opening, phone calls that read the alert aloud, heartbeat monitoring for cron jobs, and branded public status pages. Free for 5 monitors, $15/mo for 50. Every Mako client site is on it.",
+    tags: ["Next.js 16", "Fly.io probers", "Cloudflare Workers", "Claude", "Stripe", "Supabase"],
+    status: "Live",
+    year: "2026",
+    accent: "blue",
+    screenshot: "/portfolio/makopulse.png",
+    tier: "product",
+    caseStudy: {
+      oneLiner:
+        "An uptime and API monitoring service built to solve the problem every monitoring tool has — it pages you for things that aren't broken. Multi-region probes, real-browser checks, AI root-cause diagnosis, escalation ladders, cron heartbeats, and branded status pages, running the monitoring for our own fleet and every client site we operate.",
+      client: "Mako Logics (own product)",
+      role: "Product, platform architecture, probe infrastructure, billing",
+      timeline: "2026 · shipping continuously",
+      stack: [
+        "Next.js 16",
+        "React 19",
+        "Fly.io (always-on regional probers)",
+        "Playwright (real-browser checks)",
+        "Cloudflare Workers",
+        "Supabase (Postgres)",
+        "Claude (incident diagnosis + post-mortems)",
+        "Stripe",
+        "Resend",
+        "Twilio (SMS + voice)",
+        "Web Push",
+        "Vercel"
+      ],
+      viewUrl: "https://makopulse.com",
+      viewLabel: "Visit MakoPulse",
+      problem:
+        "Monitoring tools fail in two directions and both of them are expensive. They cry wolf — a single blip from a single location wakes you at 3am for a site that was never down — or they run entirely inside the platform they're supposed to be watching, so a regional outage takes down the site and the thing that was meant to tell you about it at the same moment.\n\nThere is a third gap nobody covers well: a scheduled job that simply stops firing produces no error, no log and no alert. It just goes quiet, and quiet is indistinguishable from healthy. And when something genuinely does break, the alert tells you what failed but not why — you still start from zero at the worst possible time.",
+      approach:
+        "Checks do not run on the same platform as the app. Two always-on probers sit on Fly.io in Virginia and Amsterdam, which is what makes real ICMP ping, TCP connects, traceroute and MTR possible at all — serverless functions cannot do any of them. A confirmed failure has to be seen from both regions before an incident opens, which is what removes most false alarms. A Cloudflare Worker on a separate cron watches MakoPulse itself, so 'everything is quiet because everything is down' still reaches a human.\n\nWhen an incident opens, Claude re-probes from both regions, runs traceroutes, inspects DNS and certificate state, and posts a plain-English root cause with next steps within about a minute — then writes the post-mortem automatically when it resolves. Alerts escalate on a timer through email, SMS, and phone calls that read the alert aloud, so a sleeping phone is not a single point of failure.\n\nCron jobs get inbound heartbeats instead of outbound checks: the job pings a URL each run, and MakoPulse alerts when a check-in does not arrive inside its expected window. Certificate and domain-expiry monitoring stays deliberately quiet on auto-renewing hosts until expiry is genuinely close, because an alert you learn to ignore is worse than no alert.",
+      shipped: [
+        {
+          title: "Seven check types, two continents, 30-second floor",
+          body: "HTTP availability, keyword present, keyword absent, expected status code, real ICMP ping, TCP port, and full headless-Chrome browser checks that catch JavaScript errors a status-code check cannot see. Response times break down by DNS, connect, TLS, and transfer phase, per region."
+        },
+        {
+          title: "AI incident diagnosis and automatic post-mortems",
+          body: "An opening incident triggers a re-probe from both regions plus traceroute and DNS/SSL inspection, and Claude posts a plain-English root cause with next steps in about a minute. When it resolves, the post-mortem writes itself."
+        },
+        {
+          title: "Escalation that reaches a person",
+          body: "Timed escalation ladders across email, SMS, and phone calls that read the alert aloud, plus webhook and Slack-style integrations and on-call assignment — so an unacknowledged incident climbs instead of sitting."
+        },
+        {
+          title: "Heartbeat monitoring for scheduled jobs",
+          body: "Inbound check-ins with a period and grace window, for the failure mode nothing else catches: a cron that silently stops firing. Now deployed across every scheduled job in the Mako fleet."
+        },
+        {
+          title: "Branded public status pages",
+          body: "Customer-facing status pages with 90-day uptime history, email subscriptions, and custom domains — so a client's own visitors get told before they have to ask."
+        },
+        {
+          title: "Live network diagnostics + read-only API",
+          body: "Traceroute, MTR, and ping on demand from either region against any incident, plus a read-only REST API over monitors and incidents for pulling status into other systems."
+        }
+      ],
+      outcome:
+        "Live with a free tier that needs no card — 5 monitors and 3-minute checks — and a $15/mo Pro tier for 50 monitors, 30-second checks, real-browser checks, AI diagnosis, and phone-call alerts. It is not a demo: MakoPulse runs the uptime monitoring for the entire Mako fleet, including every client site we operate, and there is a live public status page anyone can look at before signing up."
+    }
+  },
+  {
     slug: "makobot",
     name: "MakoBot",
     url: "https://makobot.com",

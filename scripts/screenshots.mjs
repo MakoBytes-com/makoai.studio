@@ -32,6 +32,7 @@ const sites = [
   { slug: "makoanswer", url: "https://makoanswer.com" },
   { slug: "makobot", url: "https://makobot.com" },
   { slug: "machine-template", url: "https://machine-template-web.vercel.app" },
+  { slug: "makopulse", url: "https://makopulse.com" },
   { slug: "woodlands", url: "https://woodlands-showcase.vercel.app" }
   // makobytes + pixelcopy deliberately omitted — Puppeteer only, see above.
 ];

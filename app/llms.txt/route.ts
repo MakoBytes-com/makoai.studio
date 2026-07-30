@@ -44,6 +44,7 @@ compressing 6-week timelines into 2 without cutting corners.
 ## Featured Work
 - TopPaws (https://toppaws.com) — nationwide pet directory, marketplace, and community ("Yelp for pets")
 - MakoAnswer (https://makoanswer.com) — AI phone receptionist for service businesses: answers 24/7, books and qualifies, screens spam, and delivers a transcript, summary, and lead after every call
+- MakoPulse (https://makopulse.com) — uptime and API monitoring: seven check types from the US and Europe as often as every 30 seconds, real-browser checks, AI root-cause diagnosis within a minute, phone-call alerts, cron heartbeats, and branded status pages; free for 5 monitors, $15/mo for 50
 - MakoBot (https://makobot.com) — AI memory tool for Windows, desktop app + marketing site
 - PixelCopy (https://pixelcopy.app) — Windows screen-capture, annotation, and recording studio: code-signed, Microsoft Store certified, free locally with an $8/mo cloud-sharing tier
 - MakoBytes (https://makobytes.com) — the product-line site runs as "MakoOS", a working desktop OS in the browser: boot screen, window manager, PixelCopy + MakoBot installed as apps
