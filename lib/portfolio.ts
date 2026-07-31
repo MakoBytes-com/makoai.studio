@@ -789,6 +789,68 @@ export const portfolio: PortfolioItem[] = [
     tier: "product"
   },
   {
+    slug: "scrollhouse",
+    name: "Scrollhouse",
+    url: "https://scrollhouse-theme.vercel.app",
+    tagline: "Scroll-cinematic site theme — the scroll drives a camera flight",
+    description:
+      "A landing site whose hero is a pre-rendered continuous camera flight, scrubbed frame-by-frame by the scroll position: dusk exterior, into the interior, an alert beat, an operations centre, back out to a calm night and the CTA. Filmed twice natively — 16:9 for desktop and a real 9:16 vertical for phones. Available to license and rebrand.",
+    tags: ["Next.js", "Scroll cinematic", "Theme", "AI-generated film"],
+    status: "Available",
+    year: "2026",
+    accent: "blue",
+    screenshot: "/portfolio/scrollhouse.png",
+    tier: "product",
+    caseStudy: {
+      oneLiner:
+        "A scroll-scrubbed cinematic site theme: one continuous pre-rendered camera flight from a dusk exterior into the interior and back out, filmed natively for both desktop and mobile. Available to license and rebrand.",
+      client: "Mako Studio product",
+      role: "Direction, film generation, full-stack build",
+      timeline: "2026",
+      stack: [
+        "Next.js 15",
+        "Tailwind CSS 4",
+        "Vanilla scrub engine",
+        "Vercel",
+        "Higgsfield (seedance_2_0)"
+      ],
+      viewUrl: "https://scrollhouse-theme.vercel.app",
+      viewLabel: "View live demo",
+      problem:
+        "Most \"cinematic\" websites are one of two things: a looping video background that ignores the visitor entirely, or CSS parallax that slides flat layers past each other. Neither gives the feeling the format promises — that the visitor is moving through a real place, at their own pace, in control.\n\nThe hard version is a genuine camera flight the scroll wheel drives: scroll down and the camera moves forward through the space, stop and it stops, scroll back and it reverses. Done naively it is enormous — a WebGL scene, 3D assets, a render budget, and a performance problem on every phone.",
+      approach:
+        "Pre-render the flight instead of computing it. The camera move is generated once as five chained eight-second clips, each starting from the previous clip's final frame so the seams are continuous and the whole thing reads as one unbroken take. At runtime the browser is only seeking a video — no 3D, no physics, no WebGL, and a dependency-free engine under 500 lines.\n\nThe part most builds skip: phones. A 16:9 flight letterboxed or centre-cropped into a portrait viewport throws away the composition. So the entire flight was generated a second time in native 9:16, and the engine picks the right encode per viewport. Most traffic is mobile, so the mobile cut is not the compromise version.\n\nEncoding matters more than it looks. A short keyframe interval is what makes scrubbing feel attached to the scroll — a long GOP makes every seek visibly mushy — so the clips are encoded at low -g and cached immutably.",
+      shipped: [
+        {
+          title: "Scroll-scrubbed continuous flight",
+          body: "Five scenes, frame-locked seams, no cuts. Scroll position maps directly to camera position — forward, paused, or reversed, at the visitor's pace."
+        },
+        {
+          title: "Two native films, not one crop",
+          body: "Desktop 16:9 and mobile 9:16 are separately composed and separately encoded. The engine serves the right one per viewport."
+        },
+        {
+          title: "Copy and CTAs pinned into the film",
+          body: "Per-scene headline, body and tags fade in over the moving image, and the pricing cards pin into the film's held final frame rather than waiting below the fold."
+        },
+        {
+          title: "Static, fast, and cheap to host",
+          body: "Fully static Next.js — no database, no API routes, no server runtime. Assets are immutably cached; the whole site is a CDN read."
+        },
+        {
+          title: "Security baseline shipped, not optional",
+          body: "HSTS with preload, tight CSP, X-Frame-Options, Referrer-Policy, deny-all Permissions-Policy, no X-Powered-By."
+        },
+        {
+          title: "Documented to rebrand",
+          body: "Brand assets regenerate from one script, colours are CSS variables, and the README documents the two engine patches, the re-encode recipe, and every step to make it yours."
+        }
+      ],
+      outcome:
+        "Live demo deployed. The film's scenes are deliberately generic — a house, a wall device, an operations centre — so it fits home security and monitoring, smart home, solar, HVAC and home services, remodelling, and residential real estate. Licensed per project; contact for pricing."
+    }
+  },
+  {
     slug: "machine-template",
     name: "Machine Template",
     url: "https://machine-template-web.vercel.app",
