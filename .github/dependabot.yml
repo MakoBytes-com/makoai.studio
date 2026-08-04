@@ -21,6 +21,16 @@ updates:
       - dependency-name: typescript
         update-types:
           - version-update:semver-major
+      # ESLint 10 removed the legacy rule-context APIs (context.getFilename et
+      # al). eslint-config-next's bundled eslint-plugin-react still calls them,
+      # so `next lint` crashes with exit code 2 (usedPropTypes.js) — PR #34's
+      # CI run proved it on this repo, same failure bishopbend-showcase and
+      # machine-template hit. Minor/patch and security updates still flow.
+      # Drop this ignore once eslint-config-next declares ESLint 10 support
+      # (verified 2026-08-04, eslint-config-next bundled with Next 16.2.12).
+      - dependency-name: eslint
+        update-types:
+          - version-update:semver-major
     groups:
       minor-and-patch:
         update-types:
