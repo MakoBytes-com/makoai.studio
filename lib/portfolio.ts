@@ -440,7 +440,7 @@ export const portfolio: PortfolioItem[] = [
     description:
       "Full rebuild of a family-owned dog boat ladder brand from Wix to an AI-native storefront: a cinematic AI hero video anchored to real product photos, Remmy the product-trained chat assistant (MakoChat), a Claude-vision Fit Check that reads customers' boat photos with a human always confirming, a dedicated waterfowl-hunter landing page, drag-and-drop photo uploads, and Stripe checkout — with the old site's search rankings preserved. Shown as shipped on a frozen showcase fork.",
     tags: ["Next.js 16", "AI Video Hero", "Claude Vision", "MakoChat", "E-commerce"],
-    status: "Client",
+    status: "In Progress",
     year: "2026",
     accent: "blue",
     screenshot: "/portfolio/nautidawgs.png",
