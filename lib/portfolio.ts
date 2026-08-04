@@ -433,6 +433,71 @@ export const portfolio: PortfolioItem[] = [
     },
   },
   {
+    slug: "nautidawgs",
+    name: "nautiDAWGS",
+    url: "https://nautidawgs-showcase.vercel.app",
+    tagline: "The dog boat ladder — an AI-native e-commerce rebuild",
+    description:
+      "Full rebuild of a family-owned dog boat ladder brand from Wix to an AI-native storefront: a cinematic AI hero video anchored to real product photos, Remmy the product-trained chat assistant (MakoChat), a Claude-vision Fit Check that reads customers' boat photos with a human always confirming, a dedicated waterfowl-hunter landing page, drag-and-drop photo uploads, and Stripe checkout — with the old site's search rankings preserved. Shown as shipped on a frozen showcase fork.",
+    tags: ["Next.js 16", "AI Video Hero", "Claude Vision", "MakoChat", "E-commerce"],
+    status: "Client",
+    year: "2026",
+    accent: "blue",
+    screenshot: "/portfolio/nautidawgs.png",
+    tier: "client-build",
+    caseStudy: {
+      oneLiner:
+        "Wix-to-Next.js rebuild for a family dog-boat-ladder brand — AI cinematic hero grounded in real product photos, a product-trained chat assistant, Claude-vision fit checks with human sign-off, and Stripe commerce.",
+      client: "Nauti Dawgs LLC · Goshen, Kentucky",
+      role: "Design + full-stack build",
+      timeline: "2026 · first pass delivered",
+      stack: [
+        "Next.js 16",
+        "Claude Opus 5 (vision fit checks)",
+        "CrazyRouter (nano-banana-pro + Kling 3.0 hero)",
+        "MakoChat + Retell",
+        "Stripe Checkout",
+        "Vercel Blob",
+        "Cloudflare Turnstile",
+        "Vercel",
+      ],
+      viewUrl: "https://nautidawgs-showcase.vercel.app",
+      viewLabel: "View frozen showcase",
+      problem:
+        "nautiDAWGS makes a fold-flat boarding ladder that lets dogs climb back onto boats on their own — a genuinely loved product stuck on a template Wix site. The family had professional footage, a strong origin story, and a fit-sensitive product (customers drill three holes in their boat), but the site couldn't sell the differentiators, capture fit questions, or serve the waterfowl-hunter audience that loves the product most.\n\nThe rebuild had to move commerce off Wix without losing the keyword-rich URLs already ranking on Google, and had to automate the family's 'email us first' fit-check philosophy without ever letting software be the final word on someone's hull.",
+      approach:
+        "Next.js 16 on the Mako stack, with the existing Wix slugs preserved verbatim so rankings carry over. The hero is an AI-generated cinematic — a keyframe composed with nano-banana-pro conditioned on real product photos so the ladder is exact (down to the mounting plate the client himself fact-checked), then animated with Kling 3.0 — a yellow Lab climbing out of clear Florida water.\n\nRemmy, the site's chat assistant, runs on MakoChat with a Retell-powered brain trained on the full product knowledge and refreshed from the live site every 12 hours, behind a custom dog-face launcher. The AI Fit Check pairs Claude vision with tape-measure inputs: it reads the customer's platform photos, cross-checks the numbers, and returns a structured verdict — while every submission, confident or not, is emailed to the family for personal confirmation. Anything below high confidence auto-routes to a human.\n\nStripe Checkout, direct-to-Blob drag-and-drop photo uploads with per-file progress, a hunter-specific landing page built from the client's duck-blind photography, and the full Mako security + AI-search baseline round it out.",
+      shipped: [
+        {
+          title: "AI cinematic hero, product-exact",
+          body: "A 10-second hero film generated from a nano-banana-pro keyframe conditioned on real product photos, animated with Kling 3.0 — regenerated once when the client flagged a mount detail, then locked as the master.",
+        },
+        {
+          title: "Remmy — product-trained chat",
+          body: "MakoChat tenant with a Retell brain carrying the full spec sheet, fit rules, and origin story; auto-refreshes from the live site every 12 hours; collects leads in-conversation; custom dog-face launcher.",
+        },
+        {
+          title: "Claude-vision AI Fit Check",
+          body: "Customers drop platform photos + two measurements; Claude Opus 5 reads the photos, cross-checks the numbers, and returns a structured verdict. Every check emails the family with the evidence — the AI triages, a human always confirms.",
+        },
+        {
+          title: "Hunter audience page",
+          body: "A waterfowl landing page from the client's own blind photography — stay-in-the-pocket copy, blind-material mounting, cold-water dog recovery — with its own keyword slug.",
+        },
+        {
+          title: "Commerce + migration without SEO loss",
+          body: "Stripe Checkout wired and gated for the client's account, order webhooks and emails ready; every indexed Wix slug preserved verbatim, with structured data, llms.txt, and the full security-header baseline.",
+        },
+        {
+          title: "Frozen showcase fork",
+          body: "nautidawgs-showcase.vercel.app with noindex + a Portfolio Demo pill; AI keys, uploads, and email stripped so the demo is credential-free while every page and the chat remain as shipped.",
+        },
+      ],
+      outcome:
+        "First pass delivered and live on the build URL for client review — hero film, chat assistant, fit checks, hunter page, and commerce all working. The frozen showcase locks the as-shipped version for the portfolio while the client site moves toward its domain cutover.",
+    },
+  },
+  {
     slug: "toppaws",
     name: "TopPaws.com",
     url: "https://toppaws.com",

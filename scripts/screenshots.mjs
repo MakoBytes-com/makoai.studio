@@ -35,6 +35,8 @@ const sites = [
   { slug: "makopulse", url: "https://makopulse.com" },
   { slug: "woodlands", url: "https://woodlands-showcase.vercel.app" }
   // makobytes + pixelcopy deliberately omitted — Puppeteer only, see above.
+  // nautidawgs (nautidawgs-showcase.vercel.app) also omitted — autoplay video
+  // hero; capture with Puppeteer: load, wait ~6s, scroll top, 1440x900 @2x.
 ];
 
 // Optional slug filter:  node scripts/screenshots.mjs toppaws makobot
