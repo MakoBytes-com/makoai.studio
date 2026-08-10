@@ -35,6 +35,7 @@
   "overrides": {
     "sharp": "^0.35.3",
     "postcss": "^8.5.19",
+    "nanoid": "^3.3.17",
     "minimatch@3": {
       "brace-expansion": "^1.1.18"
     },
