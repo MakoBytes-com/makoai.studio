@@ -33,6 +33,15 @@ updates:
           - version-update:semver-major
     groups:
       minor-and-patch:
+        # Routine version bumps only. Security updates are deliberately kept
+        # OUT of this group so Dependabot opens them individually — a grouped
+        # PR resolves to the HIGHEST bump in the batch, which the patch/minor
+        # auto-merge in .github/workflows/dependabot-auto-merge.yml would then
+        # skip. Ungrouped, a patch/minor security fix auto-merges on its own.
+        # Dev-only transitive advisories (e.g. nanoid, js-yaml) never get a
+        # Dependabot PR at all — those are pinned to their patched floor via
+        # "overrides" in package.json so they cannot silently regress.
+        applies-to: version-updates
         update-types:
           - minor
           - patch
