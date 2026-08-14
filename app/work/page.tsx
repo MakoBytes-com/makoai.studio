@@ -17,13 +17,22 @@ export const metadata: Metadata = {
       "Selected case studies from Mako Studio — custom Next.js sites and AI-native products, end-to-end.",
     url: "https://makoai.studio/work",
     type: "website",
-    siteName: "Mako Studio"
+    siteName: "Mako Studio",
+    images: [
+      {
+        url: "https://makoai.studio/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Mako Studio — AI-native design and engineering"
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: "Work — Case Studies · Mako Studio",
     description:
-      "Selected case studies from Mako Studio — custom Next.js sites and AI-native products, end-to-end."
+      "Selected case studies from Mako Studio — custom Next.js sites and AI-native products, end-to-end.",
+    images: ["https://makoai.studio/opengraph-image"]
   }
 };
 
@@ -65,7 +74,7 @@ export default function WorkIndexPage() {
   };
 
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Navbar />
       <script
         type="application/ld+json"

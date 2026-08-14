@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Privacy() {
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Navbar />
       <article className="pt-32 pb-20 container-narrow">
         <span className="section-label">Legal</span>
@@ -19,7 +19,7 @@ export default function Privacy() {
           Privacy Policy
         </h1>
         <p className="mt-3 text-[13px] text-mist-400">
-          Last updated: April 2026
+          Last updated: August 2026
         </p>
 
         <div className="mt-10 space-y-6 text-[15px] text-mist-300 leading-relaxed max-w-3xl">
@@ -51,6 +51,18 @@ export default function Privacy() {
             is privacy-friendly by default: no cookies, no fingerprinting, no
             personally identifiable information collected.
           </p>
+          <p>
+            We also run our own small page-view counter, which sends the page
+            you viewed, the site that referred you, and a randomly generated
+            session id to our own server at{" "}
+            <code className="text-lumen-300">portal.makoai.studio</code>. The
+            session id is a random string, is not linked to your name or email,
+            and is discarded when you close the tab. Separately, if a technical
+            error occurs in your browser, we send ourselves the error message
+            and the address of the page it happened on, so we can find and fix
+            it. Neither of these collects personally identifiable information,
+            and both go only to us — never to an advertising network.
+          </p>
 
           <h2 className="font-display text-[22px] font-medium text-mist-100 mt-10">
             How we use it
@@ -68,11 +80,15 @@ export default function Privacy() {
             Cookies
           </h2>
           <p>
-            This site does not set tracking cookies. The only cookies that
-            may be set are session-level cookies from embedded services (for
-            example, a Google Maps embed may set its own cookies if you
-            interact with it — those are governed by Google&rsquo;s privacy
-            policy).
+            This site does not set advertising or cross-site tracking cookies,
+            and nothing here follows you to other websites. Two things are
+            stored in your own browser: a random session id kept in session
+            storage for the page-view counter described above, which is erased
+            when you close the tab, and whatever the chat widget needs to keep
+            your conversation open while you read. Embedded services may also
+            set their own cookies if you interact with them — for example the
+            Google Maps embed, or the Cloudflare check on the contact form —
+            and those are governed by their own privacy policies.
           </p>
 
           <h2 className="font-display text-[22px] font-medium text-mist-100 mt-10">
@@ -83,7 +99,9 @@ export default function Privacy() {
               <strong>Vercel</strong> — hosting + edge delivery
             </li>
             <li>
-              <strong>Cloudflare</strong> — DNS + domain management
+              <strong>Cloudflare</strong> — DNS and domain management, plus the
+              Turnstile bot check on the contact form, which looks at browser
+              and device signals to tell a person from a spam script
             </li>
             <li>
               <strong>Resend</strong> — transactional email (contact form)
@@ -93,7 +111,15 @@ export default function Privacy() {
               section
             </li>
             <li>
-              <strong>Google Fonts</strong> — web fonts (Inter, Space Grotesk)
+              <strong>MakoChat</strong> — the chat widget in the corner of the
+              page. If you open it, what you type is sent to MakoChat so we can
+              answer you
+            </li>
+            <li>
+              <strong>Web fonts</strong> (Inter, Fraunces, JetBrains Mono) —
+              these come from Google Fonts, but we download them when the site
+              is built and serve them from our own server. Your browser never
+              contacts Google for them, so your IP address is not shared
             </li>
           </ul>
 

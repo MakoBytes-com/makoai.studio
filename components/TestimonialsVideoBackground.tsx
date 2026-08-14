@@ -1,76 +1,50 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useAmbientVideo } from "@/lib/useAmbientVideo";
 
 export default function TestimonialsVideoBackground() {
-  const videoA = useRef<HTMLVideoElement>(null);
-  const videoB = useRef<HTMLVideoElement>(null);
-  const [active, setActive] = useState<"a" | "b">("a");
-  const [hasVideo, setHasVideo] = useState(true);
-
-  useEffect(() => {
-    const a = videoA.current;
-    const b = videoB.current;
-    if (!a || !b) return;
-
-    const FADE = 1.2;
-
-    const onTimeA = () => {
-      if (!a.duration) return;
-      if (a.currentTime >= a.duration - FADE && active === "a") {
-        b.currentTime = 0;
-        b.play().catch(() => {});
-        setActive("b");
-      }
-    };
-
-    const onTimeB = () => {
-      if (!b.duration) return;
-      if (b.currentTime >= b.duration - FADE && active === "b") {
-        a.currentTime = 0;
-        a.play().catch(() => {});
-        setActive("a");
-      }
-    };
-
-    a.addEventListener("timeupdate", onTimeA);
-    b.addEventListener("timeupdate", onTimeB);
-    a.play().catch(() => {});
-    return () => {
-      a.removeEventListener("timeupdate", onTimeA);
-      b.removeEventListener("timeupdate", onTimeB);
-    };
-  }, [active]);
-
-  if (!hasVideo) return null;
+  const {
+    containerRef,
+    videoA,
+    videoB,
+    active,
+    onVideoError,
+    ready,
+    autoPlay,
+    preload,
+  } = useAmbientVideo();
 
   return (
-    <>
-      <video
-        ref={videoA}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1200 ${
-          active === "a" ? "opacity-100" : "opacity-0"
-        }`}
-        style={{ filter: "brightness(0.75) saturate(1.05)" }}
-        src="/testimonials.mp4"
-        autoPlay
-        muted
-        playsInline
-        preload="auto"
-        onError={() => setHasVideo(false)}
-      />
-      <video
-        ref={videoB}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1200 ${
-          active === "b" ? "opacity-100" : "opacity-0"
-        }`}
-        style={{ filter: "brightness(0.75) saturate(1.05)" }}
-        src="/testimonials.mp4"
-        muted
-        playsInline
-        preload="auto"
-        onError={() => setHasVideo(false)}
-      />
-    </>
+    <div ref={containerRef} className="absolute inset-0" aria-hidden>
+      {ready && (
+        <>
+          <video
+            ref={videoA}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1200 ${
+              active === "a" ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ filter: "brightness(0.75) saturate(1.05)" }}
+            src="/testimonials.mp4"
+            autoPlay={autoPlay}
+            muted
+            playsInline
+            preload={preload}
+            onError={onVideoError}
+          />
+          <video
+            ref={videoB}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1200 ${
+              active === "b" ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ filter: "brightness(0.75) saturate(1.05)" }}
+            src="/testimonials.mp4"
+            muted
+            playsInline
+            preload={preload}
+            onError={onVideoError}
+          />
+        </>
+      )}
+    </div>
   );
 }

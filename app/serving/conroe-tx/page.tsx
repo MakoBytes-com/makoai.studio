@@ -13,7 +13,23 @@ export const metadata: Metadata = {
     description:
       "Custom sites for Conroe-area businesses. Decade-long client relationships, real local work.",
     url: "https://makoai.studio/serving/conroe-tx",
-    type: "website"
+    type: "website",
+    siteName: "Mako Studio",
+    images: [
+      {
+        url: "https://makoai.studio/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Mako Studio — AI-native design and engineering"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Design for Conroe, TX — Mako Studio",
+    description:
+      "Custom sites for Conroe-area businesses. Decade-long client relationships, real local work.",
+    images: ["https://makoai.studio/opengraph-image"]
   }
 };
 
@@ -57,7 +73,7 @@ const breadcrumbLd = {
       "@type": "ListItem",
       position: 2,
       name: "Service Areas",
-      item: "https://makoai.studio/#work"
+      item: "https://makoai.studio/serving"
     },
     {
       "@type": "ListItem",
@@ -70,7 +86,7 @@ const breadcrumbLd = {
 
 export default function ConroePage() {
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Navbar />
       <script
         type="application/ld+json"

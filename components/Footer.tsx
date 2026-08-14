@@ -50,6 +50,15 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                {/* /work is the full case-study index. Everything else links to
+                    the homepage's #work section, which left the real page with
+                    no inbound internal link at all despite being the highest
+                    priority entry in the sitemap after the homepage. */}
+                <Link href="/work" className="text-mist-300 hover:text-lumen-300">
+                  Case studies
+                </Link>
+              </li>
+              <li>
                 <Link href="/#services" className="text-mist-300 hover:text-lumen-300">
                   Services
                 </Link>

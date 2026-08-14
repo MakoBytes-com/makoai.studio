@@ -76,7 +76,7 @@ export default async function CaseStudyPage({
         "@type": "ListItem",
         position: 2,
         name: "Work",
-        item: "https://makoai.studio/#work"
+        item: "https://makoai.studio/work"
       },
       {
         "@type": "ListItem",
@@ -88,7 +88,7 @@ export default async function CaseStudyPage({
   };
 
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Navbar />
       <script
         type="application/ld+json"

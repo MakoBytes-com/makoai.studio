@@ -221,7 +221,7 @@ const faqJsonLd = {
 
 export default function PricingPage() {
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

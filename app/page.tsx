@@ -11,7 +11,7 @@ import DepthGauge from "@/components/DepthGauge";
 
 export default function Home() {
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Navbar />
       <DepthGauge />
       <Hero />

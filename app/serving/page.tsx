@@ -14,13 +14,22 @@ export const metadata: Metadata = {
       "Custom web design for The Woodlands, Conroe, and Houston, TX. Real local work, no templates.",
     url: "https://makoai.studio/serving",
     type: "website",
-    siteName: "Mako Studio"
+    siteName: "Mako Studio",
+    images: [
+      {
+        url: "https://makoai.studio/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Mako Studio — AI-native design and engineering"
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: "Service Areas — Mako Studio",
     description:
-      "Custom web design for The Woodlands, Conroe, and Houston, TX. Real local work, no templates."
+      "Custom web design for The Woodlands, Conroe, and Houston, TX. Real local work, no templates.",
+    images: ["https://makoai.studio/opengraph-image"]
   }
 };
 
@@ -80,7 +89,7 @@ const areas: ServiceArea[] = [
 
 export default function ServingIndexPage() {
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Navbar />
       <script
         type="application/ld+json"

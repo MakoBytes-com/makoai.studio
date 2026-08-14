@@ -228,18 +228,24 @@ export default function Contact() {
                   )}
                 </button>
 
-                {status === "success" && (
-                  <p className="text-[13px] text-emerald-300 text-center">
-                    Thanks — your message is in. You&apos;ll hear back within a
-                    business day.
-                  </p>
-                )}
-                {status === "error" && (
-                  <p className="text-[13px] text-red-300 text-center">
-                    Something went wrong
-                    {error ? ` — ${error}` : ""}. Try emailing directly.
-                  </p>
-                )}
+                {/* Stays mounted even when empty. A live region that only
+                    appears at the same moment its text does is often missed by
+                    screen readers — the region has to exist first for the
+                    change to be announced. */}
+                <div aria-live="polite" aria-atomic="true">
+                  {status === "success" && (
+                    <p className="text-[13px] text-emerald-300 text-center">
+                      Thanks — your message is in. You&apos;ll hear back within a
+                      business day.
+                    </p>
+                  )}
+                  {status === "error" && (
+                    <p role="alert" className="text-[13px] text-red-300 text-center">
+                      Something went wrong
+                      {error ? ` — ${error}` : ""}. Try emailing directly.
+                    </p>
+                  )}
+                </div>
               </form>
             </Reveal>
           </div>

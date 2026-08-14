@@ -134,6 +134,14 @@ export default function RootLayout({
         />
       </head>
       <body>
+        {/* Keyboard users land here first and can jump past the nav. Hidden
+            until focused, so it costs the visual design nothing. */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-tide-600 focus:px-4 focus:py-2 focus:text-[14px] focus:font-medium focus:text-white focus:outline-2 focus:outline-offset-2 focus:outline-lumen-400"
+        >
+          Skip to content
+        </a>
         <SmoothScroll />
         {children}
         <CursorGlow />

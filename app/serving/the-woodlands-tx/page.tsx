@@ -13,7 +13,23 @@ export const metadata: Metadata = {
     description:
       "Custom web design and development for Woodlands-area small businesses. Real case studies, real local work.",
     url: "https://makoai.studio/serving/the-woodlands-tx",
-    type: "website"
+    type: "website",
+    siteName: "Mako Studio",
+    images: [
+      {
+        url: "https://makoai.studio/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Mako Studio — AI-native design and engineering"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Design for The Woodlands, TX — Mako Studio",
+    description:
+      "Custom web design and development for Woodlands-area small businesses. Real case studies, real local work.",
+    images: ["https://makoai.studio/opengraph-image"]
   }
 };
 
@@ -57,7 +73,7 @@ const breadcrumbLd = {
       "@type": "ListItem",
       position: 2,
       name: "Service Areas",
-      item: "https://makoai.studio/#work"
+      item: "https://makoai.studio/serving"
     },
     {
       "@type": "ListItem",
@@ -70,7 +86,7 @@ const breadcrumbLd = {
 
 export default function WoodlandsPage() {
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Navbar />
       <script
         type="application/ld+json"

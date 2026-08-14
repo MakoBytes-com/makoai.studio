@@ -13,7 +13,26 @@ export const metadata: Metadata = {
     description:
       "Our honest take on SEO: Google Business Profile, customer reviews, and a site with real keywords + schema. The rest is theater.",
     url: "https://makoai.studio/seo",
-    type: "website"
+    type: "website",
+    siteName: "Mako Studio",
+    // Defining openGraph on a page stops it inheriting the root
+    // app/opengraph-image.tsx, so the image has to be named again here or the
+    // page shares with no preview at all.
+    images: [
+      {
+        url: "https://makoai.studio/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Mako Studio — AI-native design and engineering"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Honest SEO — What Actually Works — Mako Studio",
+    description:
+      "Our honest take on SEO: Google Business Profile, customer reviews, and a site with real keywords + schema. The rest is theater.",
+    images: ["https://makoai.studio/opengraph-image"]
   }
 };
 
@@ -144,7 +163,7 @@ const breadcrumbLd = {
 
 export default function SeoPage() {
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

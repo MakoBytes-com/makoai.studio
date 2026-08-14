@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Terms() {
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Navbar />
       <article className="pt-32 pb-20 container-narrow">
         <span className="section-label">Legal</span>
