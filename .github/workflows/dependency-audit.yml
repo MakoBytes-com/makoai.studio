@@ -19,6 +19,97 @@ permissions:
   contents: read
 
 jobs:
+  # Is the updater itself still alive?
+  #
+  # WHY (added 2026-08-14): an EOVERRIDE in package.json killed Dependabot's
+  # own update job on 2026-08-03. Because the thing that failed was the
+  # updater, no PR was ever opened again — so there was nothing red to see.
+  # CI passed, gitleaks passed, and this very audit reported "0 findings",
+  # because npm audit reads a lockfile that nobody was updating any more. The
+  # repo looked healthier than it had ever been while receiving no security
+  # updates at all, for 11 days.
+  #
+  # Every other check here answers "is the code clean?". This one answers "is
+  # the machine that keeps it clean still running?" — the question whose
+  # silence is indistinguishable from good news.
+  dependabot-health:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Check Dependabot's own update jobs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          # Resolve the workflow by NAME, then read that workflow's own run
+          # history. Do not filter the repo-wide /actions/runs feed: that
+          # returns the most recent runs across ALL workflows, and on an active
+          # repo the Dependabot runs scroll off it within days. The first cut of
+          # this check did exactly that, found zero rows, and reported healthy —
+          # while the updater had been dead for eleven days. Its own blind spot
+          # was the bug it was written to catch.
+          #
+          # The path is "dynamic/dependabot/dependabot-updates", which the
+          # by-path API rejects with a 404, so go via the numeric id.
+          WORKFLOW_ID=$(gh api "repos/$REPO/actions/workflows" --paginate \
+            --jq '.workflows[] | select(.name == "Dependabot Updates") | .id' | head -1)
+
+          if [ -z "$WORKFLOW_ID" ]; then
+            echo "Could not find a 'Dependabot Updates' workflow on $REPO."
+            echo "Dependabot may be disabled entirely. UNKNOWN IS NOT ZERO — failing."
+            exit 1
+          fi
+
+          gh api "repos/$REPO/actions/workflows/$WORKFLOW_ID/runs?per_page=50" --jq \
+            '[.workflow_runs[]
+              | select(.status == "completed")
+              | {name: .display_title, conclusion, created_at, url: .html_url}]' > runs.json
+
+          node -e '
+            const runs = require("./runs.json");
+            if (runs.length === 0) {
+              console.error("The Dependabot Updates workflow exists but has never completed a run.");
+              console.error("UNKNOWN IS NOT ZERO — that is not evidence of health. Failing.");
+              process.exit(1);
+            }
+
+            // Runs are titled "<ecosystem> in /<dir> - Update #<n>", plus
+            // security runs titled "<ecosystem> in /<dir> for <pkg> - ...".
+            // Group by ecosystem so a healthy github-actions run can never
+            // mask a dead npm updater — they fail independently.
+            const latest = new Map();
+            for (const run of runs) {
+              const ecosystem = run.name.split(" in ")[0].trim();
+              const seen = latest.get(ecosystem);
+              if (!seen || new Date(run.created_at) > new Date(seen.created_at)) {
+                latest.set(ecosystem, run);
+              }
+            }
+
+            const dead = [];
+            for (const [ecosystem, run] of latest) {
+              const ok = run.conclusion === "success";
+              console.log(`${ok ? "ok  " : "FAIL"}  ${ecosystem}  ${run.created_at}  ${run.name}`);
+              if (!ok) dead.push({ ecosystem, ...run });
+            }
+
+            if (dead.length > 0) {
+              console.error("\nDependabot is not delivering updates for: " +
+                dead.map((d) => d.ecosystem).join(", "));
+              console.error(
+                "\nThe most recent update job FAILED, which means no pull request will be\n" +
+                "opened for any future advisory in that ecosystem. This is a broken\n" +
+                "security pipeline, not a flaky build — npm audit will keep reporting a\n" +
+                "clean lockfile precisely because nothing is updating it.\n");
+              for (const d of dead) console.error("  " + d.url);
+              process.exit(1);
+            }
+
+            console.log("\nDependabot is delivering updates in every ecosystem.");
+          '
+
   audit:
     runs-on: ubuntu-latest
     steps:

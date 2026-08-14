@@ -51,6 +51,15 @@ jobs:
           node-version: 22
           cache: npm
 
+      # Runs before install on purpose: it is a pure manifest check, and the
+      # fault it catches is invisible to `npm ci`. An override pinned to a
+      # literal range on a package that is also a direct dependency installs
+      # perfectly today and kills Dependabot's updater the moment it tries to
+      # bump that package — which took this repo's security updates offline for
+      # 11 days in August 2026 with every check still green. See the script.
+      - name: Check dependency overrides
+        run: node scripts/check-overrides.mjs
+
       # `npm ci` rather than `npm install` on purpose: it fails loudly when the
       # lockfile and package.json have drifted apart, which is how makobytes-com
       # reached a state where no clean install could succeed at all.

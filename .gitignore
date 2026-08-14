@@ -42,6 +42,11 @@ AGENTS.md
 *.bak
 *.tmp.*
 
+# Local scratch art. Site assets belong in public/ — this folder is a staging
+# area for source art that nothing imports, and the repo is public, so stray
+# binaries here should not ship.
+media/
+
 # Supabase CLI debris from MakoAnswer sessions run from this cwd — not this project's infra
 supabase/
 
