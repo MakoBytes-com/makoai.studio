@@ -1,4 +1,12 @@
 version: 2
+
+# BEFORE ADDING AN `overrides` ENTRY to package.json, read
+# scripts/check-overrides.mjs. An override on a package that is ALSO a direct
+# dependency must use the "$name" reference form. Pinning it to a literal range
+# installs fine and passes CI, then kills this updater with EOVERRIDE the first
+# time it tries to bump that package — which silently stopped every security
+# update on this repo for 11 days in August 2026. CI now enforces the rule.
+
 updates:
   - package-ecosystem: npm
     directory: /
