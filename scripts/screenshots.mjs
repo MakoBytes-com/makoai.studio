@@ -17,10 +17,11 @@ import { resolve } from "node:path";
 // post-handover. Our own products point straight at the live site.
 //
 // ⚠️ DO NOT use this script for sites whose homepage animates before it
-// settles — makobytes.com boots MakoOS and pixelcopy.app scroll-scrubs a
-// cinematic, so Microlink captures a boot screen or a mid-flight frame.
-// Those two are captured with Puppeteer instead: load, wait ~5s, scroll to
-// top, then shoot at 1440x900 @2x to match the other thumbnails.
+// settles — makobytes.com boots MakoOS, pixelcopy.app scroll-scrubs a
+// cinematic, and nautidawgs-showcase autoplays a video hero, so Microlink
+// captures a boot screen, a mid-flight frame, or a bare poster.
+// Those three live in scripts/screenshot-video-hero.mjs, which drives a real
+// browser at the same 1440x900 @2x spec. Use that, not this one.
 const sites = [
   { slug: "bulldog", url: "https://bulldog-showcase.vercel.app" },
   { slug: "aaaawning", url: "https://aaaawning-showcase.vercel.app" },
@@ -34,9 +35,8 @@ const sites = [
   { slug: "machine-template", url: "https://machine-template-web.vercel.app" },
   { slug: "makopulse", url: "https://makopulse.com" },
   { slug: "woodlands", url: "https://woodlands-showcase.vercel.app" }
-  // makobytes + pixelcopy deliberately omitted — Puppeteer only, see above.
-  // nautidawgs (nautidawgs-showcase.vercel.app) also omitted — autoplay video
-  // hero; capture with Puppeteer: load, wait ~6s, scroll top, 1440x900 @2x.
+  // makobytes, pixelcopy and nautidawgs are deliberately omitted — animated
+  // heroes, captured by scripts/screenshot-video-hero.mjs instead.
 ];
 
 // Optional slug filter:  node scripts/screenshots.mjs toppaws makobot
