@@ -60,3 +60,5 @@ supabase/
 # Scratch from browser-driven verification runs — never part of the site.
 .playwright-mcp/
 govsprint-app.png
+shot*.png
+theme-*.png

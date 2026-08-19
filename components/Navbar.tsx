@@ -27,10 +27,15 @@ export default function Navbar() {
 
   return (
     <header
+      // Unscrolled, the bar is transparent and floats over the hero — which
+      // stays dark in BOTH themes. So it borrows the deep palette there, or
+      // in light mode its navy links would sit on a near-black hero and
+      // effectively vanish. Once scrolled it gets its own glass background
+      // (white in light mode) and goes back to the page palette.
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
           ? "backdrop-blur-xl bg-abyss-950/70 border-b border-mist-300/6"
-          : "bg-transparent border-b border-transparent"
+          : "surface-deep bg-transparent border-b border-transparent"
       }`}
     >
       <div className="container-narrow flex items-center justify-between h-16 md:h-20">
