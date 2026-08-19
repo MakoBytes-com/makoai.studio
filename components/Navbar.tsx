@@ -87,7 +87,7 @@ export default function Navbar() {
             Start a project
           </Link>
           {/* md → xl only; from xl the corner copy above takes over. */}
-          <ThemeToggle className="xl:hidden" />
+          <ThemeToggle compact className="xl:hidden" />
         </nav>
 
         {/* On mobile the switch sits outside the drawer, so it is reachable

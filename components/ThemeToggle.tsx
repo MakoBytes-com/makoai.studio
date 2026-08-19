@@ -110,7 +110,19 @@ function MoonIcon() {
  * what someone reaching for it is looking for. The icon alone stays on small
  * screens, where the word will not fit, but keeps the same visible border.
  */
-export default function ThemeToggle({ className = "" }: { className?: string }) {
+export default function ThemeToggle({
+  className = "",
+  /**
+   * Drop the word and keep the icon. For the copy that lives INSIDE the nav
+   * row at medium widths, where the full bar (six links plus two buttons) is
+   * already close to the edge — the labelled pill pushed it 58px off-screen at
+   * 800px. The corner copy on wide screens keeps its label.
+   */
+  compact = false
+}: {
+  className?: string;
+  compact?: boolean;
+}) {
   const theme = useTheme();
   const isLight = theme === "light";
   const label = isLight ? "Dark" : "Light";
@@ -124,7 +136,8 @@ export default function ThemeToggle({ className = "" }: { className?: string }) 
       title={`Switch to ${label.toLowerCase()} theme`}
       className={
         "inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-full border-2 " +
-        "px-3.5 sm:px-4 border-mist-300/45 text-mist-100 text-[13px] font-semibold " +
+        (compact ? "w-10 " : "px-3.5 sm:px-4 ") +
+        "border-mist-300/45 text-mist-100 text-[13px] font-semibold " +
         "transition-colors duration-300 " +
         "hover:border-lumen-400 hover:text-lumen-300 " +
         "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lumen-400 " +
@@ -134,10 +147,12 @@ export default function ThemeToggle({ className = "" }: { className?: string }) 
       <span aria-hidden className="shrink-0">
         {isLight ? <MoonIcon /> : <SunIcon />}
       </span>
-      {/* Hidden below sm only — the icon carries it on a phone. */}
-      <span aria-hidden className="hidden sm:inline">
-        {label}
-      </span>
+      {/* Hidden on phones and in the compact copy — the icon carries it. */}
+      {!compact && (
+        <span aria-hidden className="hidden sm:inline">
+          {label}
+        </span>
+      )}
     </button>
   );
 }
