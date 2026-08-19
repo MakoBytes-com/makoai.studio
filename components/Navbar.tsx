@@ -64,7 +64,11 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        {/* lg, not md. The full bar needs ~805px and the row only offers 785px at
+            800px wide, so between 768 and ~850 the nav ran past its container and
+            was silently clipped by body{overflow-x:hidden} — taking a slice of
+            "Start a project" with it. The hamburger covers those widths now. */}
+        <nav className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
             <a
               key={l.href}
@@ -92,7 +96,7 @@ export default function Navbar() {
 
         {/* On mobile the switch sits outside the drawer, so it is reachable
             without opening the menu first. */}
-        <div className="flex items-center gap-1 md:hidden">
+        <div className="flex items-center gap-1 lg:hidden">
           <ThemeToggle />
           <button
             aria-label="Toggle menu"
@@ -121,7 +125,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-abyss-950/95 backdrop-blur-xl border-b border-mist-300/6">
+        <div className="lg:hidden bg-abyss-950/95 backdrop-blur-xl border-b border-mist-300/6">
           <div className="container-narrow flex flex-col py-4 gap-1">
             {links.map((l) => (
               <a
