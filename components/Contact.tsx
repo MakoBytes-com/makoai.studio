@@ -73,7 +73,7 @@ export default function Contact() {
         />
         <div className="absolute inset-0 bg-abyss-950/30" />
         <div className="absolute inset-0 bg-linear-to-l from-abyss-950/85 via-abyss-950/35 to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-112 md:h-136 bg-[linear-gradient(to_bottom,#020509_0%,#020509_28%,rgba(2,5,9,0.88)_52%,rgba(2,5,9,0.55)_72%,rgba(2,5,9,0.2)_88%,transparent_100%)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-112 md:h-136 fade-down" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-abyss-950 to-transparent" />
       </div>
       <div className="container-narrow relative">

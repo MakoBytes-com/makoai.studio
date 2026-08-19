@@ -67,9 +67,9 @@ export default function Process() {
           </>
         )}
         <div className="absolute inset-0 bg-abyss-950/40" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(94,234,255,0.06),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-112 md:h-136 bg-[linear-gradient(to_bottom,#020509_0%,#020509_28%,rgba(2,5,9,0.88)_52%,rgba(2,5,9,0.55)_72%,rgba(2,5,9,0.2)_88%,transparent_100%)]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-112 md:h-136 bg-[linear-gradient(to_top,#020509_0%,#020509_28%,rgba(2,5,9,0.88)_52%,rgba(2,5,9,0.55)_72%,rgba(2,5,9,0.2)_88%,transparent_100%)]" />
+        <div className="absolute inset-0 veil-radial" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-112 md:h-136 fade-down" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-112 md:h-136 fade-up" />
       </div>
       <div className="container-narrow relative">
         <div className="grid md:grid-cols-12 gap-10 mb-16">

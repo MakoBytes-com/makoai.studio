@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
   { href: "/#work", label: "Work" },
@@ -26,10 +27,15 @@ export default function Navbar() {
 
   return (
     <header
+      // Unscrolled, the bar is transparent and floats over the hero — which
+      // stays dark in BOTH themes. So it borrows the deep palette there, or
+      // in light mode its navy links would sit on a near-black hero and
+      // effectively vanish. Once scrolled it gets its own glass background
+      // (white in light mode) and goes back to the page palette.
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
           ? "backdrop-blur-xl bg-abyss-950/70 border-b border-mist-300/6"
-          : "bg-transparent border-b border-transparent"
+          : "surface-deep bg-transparent border-b border-transparent"
       }`}
     >
       <div className="container-narrow flex items-center justify-between h-16 md:h-20">
@@ -62,31 +68,37 @@ export default function Navbar() {
           >
             Start a project
           </Link>
+          <ThemeToggle />
         </nav>
 
-        <button
-          aria-label="Toggle menu"
-          className="md:hidden text-mist-100 p-2"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            {open ? (
-              <path
-                d="M6 6l12 12M6 18L18 6"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            ) : (
-              <path
-                d="M4 7h16M4 12h16M4 17h16"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            )}
-          </svg>
-        </button>
+        {/* On mobile the switch sits outside the drawer, so it is reachable
+            without opening the menu first. */}
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
+          <button
+            aria-label="Toggle menu"
+            className="text-mist-100 p-2"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              {open ? (
+                <path
+                  d="M6 6l12 12M6 18L18 6"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              ) : (
+                <path
+                  d="M4 7h16M4 12h16M4 17h16"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -131,7 +143,7 @@ function MakoMark() {
       width={40}
       height={40}
       priority
-      className="w-10 h-10 object-contain drop-shadow-[0_0_12px_rgba(94,234,255,0.35)]"
+      className="w-10 h-10 object-contain logo-glow"
     />
   );
 }

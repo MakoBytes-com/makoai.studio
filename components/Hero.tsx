@@ -22,7 +22,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-svh flex items-center overflow-hidden bg-abyss-950"
+      className="surface-deep relative min-h-svh flex items-center overflow-hidden bg-abyss-950"
     >
       {/* ── the water column ── */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
