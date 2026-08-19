@@ -78,37 +78,65 @@ export function useTheme(): Theme {
   return useSyncExternalStore(subscribe, readTheme, serverTheme);
 }
 
+function SunIcon() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  );
+}
+
+/**
+ * WHY THIS IS A LABELLED PILL AND NOT A NEAT LITTLE ICON.
+ *
+ * The first version was a 36px circle with a hairline border and a thin icon,
+ * parked past the primary CTA at the far right of the bar. It shipped, it
+ * worked, and Russell's response to being told the site had a light theme was
+ * "I dont see it" — which is the only review that counts. An icon-only control
+ * asks the visitor to already know what it is AND to spot it; a low-contrast
+ * one asks them to hunt.
+ *
+ * So: a real word next to the icon, a border you can see, and the label says
+ * where the button TAKES you ("Light" while you are in dark), because that is
+ * what someone reaching for it is looking for. The icon alone stays on small
+ * screens, where the word will not fit, but keeps the same visible border.
+ */
 export default function ThemeToggle({ className = "" }: { className?: string }) {
   const theme = useTheme();
   const isLight = theme === "light";
+  const label = isLight ? "Dark" : "Light";
 
   return (
     <button
       type="button"
       onClick={() => applyTheme(isLight ? "dark" : "light")}
       aria-pressed={isLight}
-      aria-label={isLight ? "Switch to dark theme" : "Switch to light theme"}
-      title={isLight ? "Switch to dark theme" : "Switch to light theme"}
+      aria-label={`Switch to ${label.toLowerCase()} theme`}
+      title={`Switch to ${label.toLowerCase()} theme`}
       className={
-        "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border " +
-        "border-mist-300/20 text-mist-300 transition-colors duration-300 " +
-        "hover:border-lumen-400/50 hover:text-lumen-300 " +
+        "inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-full border-2 " +
+        "px-3.5 sm:px-4 border-mist-300/45 text-mist-100 text-[13px] font-semibold " +
+        "transition-colors duration-300 " +
+        "hover:border-lumen-400 hover:text-lumen-300 " +
         "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lumen-400 " +
         className
       }
     >
-      <span aria-hidden>
-        {isLight ? (
-          // Moon — the thing this button would switch you TO.
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-          </svg>
-        ) : (
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="4" />
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-          </svg>
-        )}
+      <span aria-hidden className="shrink-0">
+        {isLight ? <MoonIcon /> : <SunIcon />}
+      </span>
+      {/* Hidden below sm only — the icon carries it on a phone. */}
+      <span aria-hidden className="hidden sm:inline">
+        {label}
       </span>
     </button>
   );
