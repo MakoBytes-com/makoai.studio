@@ -58,7 +58,10 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-28 md:py-40 overflow-hidden"
+      // Built on a full-bleed photograph with dark scrims — it stays deep in
+      // both themes, like the hero and the testimonial wall. Light content
+      // sections punctuated by dark photographic bands is the intent.
+      className="surface-deep relative py-28 md:py-40 overflow-hidden"
     >
       <div className="absolute inset-0">
         <Image
