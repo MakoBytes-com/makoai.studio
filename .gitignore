@@ -56,3 +56,7 @@ supabase/
 .cursor/mcp.json
 # MakoBot MCP config contains a local auth token — do not commit
 .cursor/mcp.json.*
+
+# Scratch from browser-driven verification runs — never part of the site.
+.playwright-mcp/
+govsprint-app.png

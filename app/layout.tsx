@@ -125,9 +125,31 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-theme="dark"
+      // The blocking script below rewrites data-theme before React hydrates,
+      // so the server's "dark" and the client's value can legitimately differ.
+      suppressHydrationWarning
       className={`${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}
     >
       <head>
+        <meta name="theme-color" content="#020509" />
+        {/*
+          Theme, applied BEFORE first paint.
+
+          This has to be a blocking inline script in <head>. Deciding the theme
+          in a React effect means the browser paints the default first and then
+          repaints — the white flash every themed site is known for, and it is
+          worst on the slow connections we least want to punish.
+
+          Dark stays the default when nobody has chosen: it is the brand, and
+          it keeps today's behaviour for every visitor who never touches the
+          switch. An explicit choice always wins over the system setting.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('mako-theme');if(t!=='light'&&t!=='dark')t='dark';document.documentElement.dataset.theme=t;var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='light'?'#f8f9fb':'#020509');}catch(e){}})();`
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
