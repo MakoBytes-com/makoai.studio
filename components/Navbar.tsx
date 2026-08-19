@@ -38,6 +38,24 @@ export default function Navbar() {
           : "surface-deep bg-transparent border-b border-transparent"
       }`}
     >
+      {/*
+        Pinned to the actual top-right CORNER of the window, not the corner of
+        the nav.
+
+        Everything else in the bar lives in .container-narrow, which is capped
+        at max-w-6xl and centred — so on a wide monitor the "right-hand end of
+        the nav" is a few hundred pixels short of the edge of the screen, and
+        the switch was sitting out in the middle. Russell looked at the corner,
+        which is where a theme switch belongs, and there was nothing there.
+
+        Only from xl up. Below that the container has no spare margin left and
+        an absolutely-positioned button would land on top of "Start a project",
+        so the copy inside the nav takes over.
+      */}
+      <div className="hidden xl:block absolute right-6 top-1/2 -translate-y-1/2">
+        <ThemeToggle />
+      </div>
+
       <div className="container-narrow flex items-center justify-between h-16 md:h-20">
         <Link href="/" className="flex items-center gap-3 group">
           <MakoMark />
@@ -68,7 +86,8 @@ export default function Navbar() {
           >
             Start a project
           </Link>
-          <ThemeToggle />
+          {/* md → xl only; from xl the corner copy above takes over. */}
+          <ThemeToggle className="xl:hidden" />
         </nav>
 
         {/* On mobile the switch sits outside the drawer, so it is reachable
