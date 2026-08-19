@@ -60,5 +60,9 @@ supabase/
 # Scratch from browser-driven verification runs — never part of the site.
 .playwright-mcp/
 govsprint-app.png
+# Screenshots from browser-driven verification. Narrow patterns let three of
+# these into a commit once; this covers the whole family.
 shot*.png
 theme-*.png
+live-*.png
+final-*.png
