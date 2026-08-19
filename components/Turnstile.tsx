@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { useTheme } from "@/components/ThemeToggle";
+
 declare global {
   interface Window {
     turnstile?: {
@@ -36,6 +38,11 @@ type WidgetState = "loading" | "ready" | "error";
 
 export default function Turnstile({ onToken, onExpire }: Props) {
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  // Cloudflare bakes the colour scheme in at render time, so the widget has
+  // to be re-rendered when the site theme changes — hence `theme` in the
+  // effect deps below. Left hard-coded to "dark" it sat as a black slab in
+  // the middle of the light contact form.
+  const theme = useTheme();
   const mountRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
   const [state, setState] = useState<WidgetState>("loading");
@@ -94,7 +101,7 @@ export default function Turnstile({ onToken, onExpire }: Props) {
         try {
           widgetIdRef.current = window.turnstile.render(mountRef.current, {
             sitekey: siteKey!,
-            theme: "dark",
+            theme,
             appearance: "always",
             callback: (token) => {
               clearTimeout(timeout);
@@ -138,7 +145,7 @@ export default function Turnstile({ onToken, onExpire }: Props) {
         widgetIdRef.current = null;
       }
     };
-  }, [siteKey, onToken, onExpire, attempt]);
+  }, [siteKey, onToken, onExpire, attempt, theme]);
 
   if (!siteKey) return null;
 

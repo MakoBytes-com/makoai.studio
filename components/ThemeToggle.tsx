@@ -67,8 +67,19 @@ export function applyTheme(next: Theme): void {
   listeners.forEach((l) => l());
 }
 
+/**
+ * Read the current theme from anywhere in the tree.
+ *
+ * Needed by the handful of things that cannot be themed with CSS because a
+ * third party paints them — the Turnstile widget is the one that matters, as
+ * it takes its colour scheme as a render option and lives in the contact form.
+ */
+export function useTheme(): Theme {
+  return useSyncExternalStore(subscribe, readTheme, serverTheme);
+}
+
 export default function ThemeToggle({ className = "" }: { className?: string }) {
-  const theme = useSyncExternalStore(subscribe, readTheme, serverTheme);
+  const theme = useTheme();
   const isLight = theme === "light";
 
   return (
