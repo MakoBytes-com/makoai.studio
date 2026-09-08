@@ -389,13 +389,20 @@ function statusLabel(item: PortfolioItem): string {
   if (item.status === "Proposal") return "Proposal · not a client engagement";
   if (item.tier === "product") return "Live";
   if (item.tier === "client-build") {
-    // Only claim a frozen showcase when the entry actually links to one.
-    // The Bulldog properties we operate point at their live domains, and
-    // saying "frozen showcase" there describes something that does not exist.
-    // Derived from the link itself so it cannot go stale.
-    return item.url.includes("-showcase.")
-      ? "Approved · frozen showcase"
-      : "Approved · live";
+    // Two independent facts, and the label has to respect both.
+    //
+    // WHERE it points: only claim a frozen showcase when the entry actually
+    // links to one. The properties we operate point at their live domains.
+    // WHETHER it is finished: an In Progress build has not been approved and
+    // is not live, so it must never inherit the settled wording — that is how
+    // a pre-cutover rebuild ended up reading "Approved · live".
+    //
+    // Both derived from the entry itself, so neither can go stale.
+    const showcase = item.url.includes("-showcase.");
+    if (item.status === "In Progress") {
+      return showcase ? "In progress · frozen showcase" : "In progress · preview build";
+    }
+    return showcase ? "Approved · frozen showcase" : "Approved · live";
   }
   return item.status;
 }
