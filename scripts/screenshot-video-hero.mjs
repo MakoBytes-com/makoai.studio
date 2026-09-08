@@ -47,6 +47,24 @@ const sites = [
     settle: 6000,
   },
   {
+    slug: "bdsgovservices",
+    url: "https://bdsgovservices.com/",
+    settle: 6000,
+    expectText: "Bulldog",
+  },
+  {
+    slug: "handpenned",
+    url: "https://handpenned.com/",
+    settle: 6000,
+    expectText: "read like you did",
+  },
+  {
+    slug: "makochat",
+    url: "https://makochat.app/",
+    settle: 6000,
+    expectText: "Every chat",
+  },
+  {
     slug: "utilities-plus",
     url: "https://utilities-plus.com/",
     settle: 6000,

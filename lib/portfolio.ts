@@ -229,6 +229,62 @@ export const portfolio: PortfolioItem[] = [
     }
   },
   {
+    slug: "bds-government-services",
+    name: "BDS Government Services",
+    url: "https://bdsgovservices.com",
+    tagline: "Federal security & life-safety contracting — Texas",
+    description:
+      "The fourth Bulldog company, and the one with the narrowest audience: a capability site aimed at contracting officers and prime contractors rather than homeowners. Eighteen years and 30,000+ protected homes behind it, the SAM identifiers a buyer checks first put in the hero, and a past-performance page that says plainly the company is new to federal work instead of dressing commercial jobs up as contracts.",
+    tags: ["Next.js", "B2G", "Capability statement", "SAM / NAICS"],
+    status: "Client",
+    year: "2026",
+    accent: "steel",
+    screenshot: "/portfolio/bdsgovservices.png",
+    tier: "client-build",
+    caseStudy: {
+      oneLiner:
+        "A commercial security operator's front door for federal work — identifiers in the hero, a printable capability statement, and an honest answer to the question every contracting officer asks first.",
+      client: "Bulldog Security Services, LLC · Texas",
+      role: "Positioning + design + full-stack build",
+      timeline: "2026 · live",
+      stack: ["Next.js", "Supabase Postgres", "Turnstile", "Cloudflare Email", "Vercel"],
+      viewUrl: "https://bdsgovservices.com",
+      viewLabel: "Visit the live site",
+      problem:
+        "Bulldog has protected more than 30,000 homes since 2008 and runs eight offices across Texas and Florida as the top ADT authorized dealer in the state. None of that is what a contracting officer needs to know.\n\nGovernment buyers open a vendor site looking for a specific, short list: are you registered, what is your UEI and CAGE, what NAICS codes do you hold, what size standard are you under, and have you done federal work before. A consumer security site answers none of those, and burying them three clicks deep reads as a company that has not done this before.\n\nThe honest complication was the last question. Bulldog is new to federal contracting. The tempting move is to blur the line between commercial jobs and federal past performance, which experienced buyers see through immediately and which is exactly the sort of thing that ends a relationship with an agency.",
+      approach:
+        "Answer the checklist above the fold. The hero states what the company is, then puts UEI, CAGE, primary NAICS and Disaster Response Registry status directly under the buttons as monospaced chips — the four things a buyer would otherwise go to SAM to look up. The eyebrow says SAM active and small business before the headline finishes.\n\nThe positioning line does the rest of the work: security and life-safety contracting, backed by a real operating company. Bulldog is an installer and operator, not a broker, and in a market full of resellers with no crews that distinction is the whole pitch.\n\nOn past performance the site simply tells the truth — new to federal, building it through subcontracting and teaming with established primes, bringing eighteen years of commercial delivery. That reads as a company that understands how the process works, which is a better first impression than an inflated one.",
+      shipped: [
+        {
+          title: "Identifiers where the buyer looks",
+          body: "UEI, CAGE, primary NAICS and registry status in the hero, with the full 28-code registration and the size standard a click away. A contracting officer can qualify or disqualify the company without leaving the first screen.",
+        },
+        {
+          title: "A capability statement that prints",
+          body: "The one-page artifact this whole market runs on, as a real page rather than a PDF attachment — laid out to print cleanly when someone needs it in a folder, and impossible to serve out of date because it reads from the same data as the site.",
+        },
+        {
+          title: "An honest past-performance page",
+          body: "States that the company is new to federal contracting and describes the route it is taking. Commercial delivery is presented as commercial delivery. Nothing on the page invites a buyer to assume a federal contract that does not exist.",
+        },
+        {
+          title: "A teaming page for primes, not agencies",
+          body: "The realistic near-term route to federal revenue is as a subcontractor, so primes get their own page describing what Bulldog brings to a team — licensed field crews, monitoring, and a contact-center operation that already runs.",
+        },
+        {
+          title: "Facts held back rather than guessed",
+          body: "Headcount and a dedicated contracting phone number were left off entirely until the client confirms them, because a figure on a government-facing site that disagrees with the SAM record is worse than no figure. Every published fact lives in one file with its source.",
+        },
+        {
+          title: "Part of a family, and says so",
+          body: "An illustrated silhouette frieze of homes, civic buildings and a monitoring mast sets the institutional tone, and the About page links the four Bulldog division sites — proof to a buyer that the operating company behind the registration is real.",
+        },
+      ],
+      outcome:
+        "Live at bdsgovservices.com on its own domain with its own sending address, contact form tested end to end. Completes the Bulldog set — security, water, lighting and now government — and it is the only one of the four whose success is measured in whether a stranger with a solicitation number takes the company seriously in thirty seconds.",
+    },
+  },
+  {
     slug: "aaaawning",
     name: "AAA Awning Co.",
     url: "https://aaaawning-showcase.vercel.app",
@@ -888,6 +944,62 @@ export const portfolio: PortfolioItem[] = [
     }
   },
   {
+    slug: "makochat",
+    name: "MakoChat",
+    url: "https://makochat.app",
+    tagline: "The AI chat receptionist — from $39/mo",
+    description:
+      "Mae answers the visitors a small business misses. She reads the company's own website to learn the business, replies in a real conversation rather than a decision tree, books onto the actual calendar, and emails the lead the moment it happens. Self-setup takes about fifteen minutes; the same assistant escalates to a phone call on the top tier. Running on live client sites, not a demo.",
+    tags: ["Next.js", "Site-crawl knowledge", "Stripe", "Multi-tenant"],
+    status: "Live",
+    year: "2026",
+    accent: "blue",
+    screenshot: "/portfolio/makochat.png",
+    tier: "product",
+    caseStudy: {
+      oneLiner:
+        "An AI chat receptionist that learns a business by reading its own website, books on the real calendar, and emails every lead — $39 to $199 a month, deployed on live client sites.",
+      client: "MakoChat · a Mako Logics product",
+      role: "Product, design, and full-stack build",
+      timeline: "2026 · live",
+      stack: ["Next.js", "Supabase Postgres", "Stripe", "Retell", "Twilio SMS", "Vercel"],
+      viewUrl: "https://makochat.app",
+      viewLabel: "Visit MakoChat",
+      problem:
+        "A plumber gets a question at 9:40 in the evening. By morning that person has booked someone else. Every small business knows this and almost none of them can staff it.\n\nThe existing answers are both bad. A chat widget staffed by humans costs more than the jobs it saves. A scripted bot is a decision tree that visitors recognise in one exchange and abandon, and every one of those is a customer who now thinks the business is careless.\n\nThe real obstacle is setup. An assistant is only useful if it knows the prices, the service area, the brands carried and the questions that business actually gets — and no owner is going to spend a weekend writing that into a form.",
+      approach:
+        "Skip the form. MakoChat crawls the customer's own website and builds the assistant's knowledge from it, up to 5,000 pages on the top tier, and PDFs and price sheets can be uploaded on top. The business already wrote all of this down; the setup problem was only ever that somebody expected them to write it again. That is what makes self-setup in about fifteen minutes real rather than a marketing number.\n\nMae is deliberately one character across two products. She answers chat here and phones on MakoAnswer, and the top tier escalates a chat to a call rather than handing the visitor to a different assistant with a different name and no memory of the conversation.\n\nEvery deployment is a tenant: its own knowledge, its own conversations, its own leads, its own billing. The admin side has clients, transcripts, a lead pipeline and a security page; each customer also gets their own portal.",
+      shipped: [
+        {
+          title: "Knowledge from the site itself",
+          body: "A crawler reads the customer's pages and builds what the assistant knows — 100 pages on Starter, 1,000 on Growth, 5,000 on Scale — with document uploads for the things that never made it onto the website.",
+        },
+        {
+          title: "Booking on the real calendar",
+          body: "Appointments land on the calendar the business already uses through a free Cal.com connection, so a booking is a booking rather than a request someone has to transcribe in the morning.",
+        },
+        {
+          title: "Every lead, immediately",
+          body: "Captured to the database and emailed the moment it happens, day or night. The lead exists whether or not the notification goes through, which is the ordering that decides whether a mail outage costs a customer.",
+        },
+        {
+          title: "Three tiers, published",
+          body: "$39, $79 and $199 a month on the page, in public, with what each includes. Features still being rolled out — SMS follow-ups and phone escalation — are labelled as such rather than sold as shipped.",
+        },
+        {
+          title: "SMS with the opt-out built in",
+          body: "Keyword handling and a suppression list of its own, checked at send time rather than trusting the carrier layer to have caught a STOP. Vendor handling is treated as a second line of defence, not the only one.",
+        },
+        {
+          title: "Free tools that stand alone",
+          body: "A missed-lead calculator, a review QR generator and a sitemap checker, each useful without an account — the kind of thing an owner finds first and remembers later.",
+        },
+      ],
+      outcome:
+        "Live and selling, and genuinely deployed rather than demonstrated: the widget runs on Bulldog client sites we operate, which means the product is exercised by real customers asking real questions before it is sold to anyone else.",
+    },
+  },
+  {
     slug: "makobot",
     name: "MakoBot",
     url: "https://makobot.com",
@@ -949,6 +1061,62 @@ export const portfolio: PortfolioItem[] = [
       outcome:
         "MakoBot ships signed, installs cleanly on fresh Windows machines, and updates itself. 80+ builds shipped across 2026 without breaking a user install."
     }
+  },
+  {
+    slug: "handpenned",
+    name: "HandPenned",
+    url: "https://handpenned.com",
+    tagline: "Make an AI draft read like a person wrote it",
+    description:
+      "Paste a draft or a web address and HandPenned rewrites it in your own voice, keeps every price, phone number, name and date exactly as they were, and scores the result before you publish. The final words come from an open model no company controls, so they carry none of the hidden watermark the big three now put in everything they write. Eight tools; seven are free and need no account.",
+    tags: ["Next.js", "Open-weight models", "Stripe", "Deterministic fact lock"],
+    status: "Live",
+    year: "2026",
+    accent: "blue",
+    screenshot: "/portfolio/handpenned.png",
+    tier: "product",
+    caseStudy: {
+      oneLiner:
+        "A rewrite pass that makes AI copy read human without changing a single fact — enforced by code, not by asking a model nicely, and finished by a model no vendor controls.",
+      client: "HandPenned · a MakoBytes product from Mako Logics",
+      role: "Product, design, and full-stack build",
+      timeline: "2026 · live",
+      stack: ["Next.js", "Supabase Postgres", "Open-weight models", "Stripe", "Vercel"],
+      viewUrl: "https://handpenned.com",
+      viewLabel: "Visit HandPenned",
+      problem:
+        "Anyone publishing AI-drafted copy has the same two fears, and they pull in opposite directions. The first is that it reads like a machine wrote it — the uniform paragraphs, the tidy list of three, the conclusion that restates the introduction. The second is that fixing the first will quietly break something true: a price becomes a different price, a phone number loses a digit, a date drifts by a day.\n\nEvery rewriting tool solves the first by asking a model to try harder, which is the same mechanism that caused the problem. And the way they solve the second is to hope. A model asked to preserve facts will usually preserve facts, and usually is not a standard you can publish against.\n\nThere is a third problem the category has mostly ignored. The major models now embed a statistical signature in the prose they generate. Rewriting an AI draft with another AI leaves it there.",
+      approach:
+        "Three decisions, each enforced in code rather than in a prompt.\n\nThe final text comes only from an open-weight model, held in an allowlist the application checks before any call. No keyed vendor model can touch text that reaches the page, which is what makes the watermark claim structural rather than aspirational.\n\nFacts are locked deterministically. Numbers, names, dates, prices and contact details are extracted and verified by ordinary code, and a model is not allowed to overrule a failure. It may add a note; it may not decide a mismatch was fine. The editor character on the homepage carries the whole product promise: she changes how it reads, never what it says.\n\nAnd the work is visible while it happens. Long jobs report a real percentage from paragraphs actually finished, with the stage in words, rather than a spinner that looks the same whether it is working or dead.",
+      shipped: [
+        {
+          title: "Rewrite that cannot change the facts",
+          body: "Deterministic extraction and verification of every number, name, date and price, run against the output before it is returned. A model may annotate a failure; it cannot override one.",
+        },
+        {
+          title: "A score that explains itself",
+          body: "The AI-score tool returns a number and the reasons behind it, naming what tripped it rather than leaving the writer to guess which sentence to rewrite.",
+        },
+        {
+          title: "Seven free tools, no account",
+          body: "AI score, readability, fact check, voice check, grammar, plagiarism and the browser extension all work without signing up. Only the rewrite costs money — the business model is the one operation that has real compute behind it.",
+        },
+        {
+          title: "Priced in words, not tokens",
+          body: "One credit is ten words. Free covers 200 credits a month, Solo is $29 and Studio $79, with one-time packs at $10, $25 and $75 labelled in pages rather than credits, because nobody thinks in credits.",
+        },
+        {
+          title: "Finished by a model nobody owns",
+          body: "An enforced allowlist of open-weight models for any text that reaches the page. It is the only way to claim output is unwatermarked and be able to show why.",
+        },
+        {
+          title: "Progress you can actually read",
+          body: "Real percentages from paragraphs completed, the current stage in plain words, and a stall timeout that says what went wrong instead of spinning forever.",
+        },
+      ],
+      outcome:
+        "Live at handpenned.com with open signup and a free tier. Eight tools shipped, seven of them usable without an account, and the paid rewrite behind a credit model priced in words. The rule it enforces — never invent a number, a name, a review or a credential — is the same one every Mako site is written under.",
+    },
   },
   {
     slug: "pixelcopy",
