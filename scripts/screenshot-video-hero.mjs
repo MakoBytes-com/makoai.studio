@@ -47,6 +47,17 @@ const sites = [
     settle: 6000,
   },
   {
+    slug: "utilities-plus",
+    url: "https://utilities-plus.com/",
+    settle: 6000,
+    // Moved off Microlink and off the frozen showcase on 2026-09-08: the live
+    // site has evolved past the fork, and the guard below is the point — the
+    // showcase still serves the OLD headline ("Moving Made Effortless"), so a
+    // capture pointed at the wrong URL fails instead of quietly shipping a
+    // thumbnail of a design the client no longer runs.
+    expectText: "Handled Before Move In",
+  },
+  {
     slug: "bulldogh2o",
     url: "https://bulldogh2o.com/",
     settle: 6000,

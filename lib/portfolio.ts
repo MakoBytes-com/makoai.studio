@@ -361,11 +361,11 @@ export const portfolio: PortfolioItem[] = [
   {
     slug: "utilities-plus",
     name: "Utilities Plus",
-    url: "https://utilities-plus-showcase.vercel.app",
+    url: "https://utilities-plus.com",
     tagline: "Free utility concierge — Houston, TX",
     description:
-      "Full WordPress → Next.js 16 rebuild for a utility concierge service that sets up electricity, internet, security, gas, water, solar, waste, home warranty, and insurance referrals through one dedicated rep. Pexels hero video, deep-navy brand theme, custom SVG icon system across services and partner-types, FAQ with FAQPage schema, Google Maps embed on contact, and the full Mako security + AI-search baseline. Shown as shipped on a frozen showcase fork.",
-    tags: ["Next.js 16", "Tailwind v4", "WP Migration", "Local SEO", "FAQ Schema"],
+      "A WordPress rebuild that kept going. Utilities Plus coordinates electricity, internet and TV, smart security, gas and water, water filtration, moving services, home warranty and insurance referrals for people about to move house — one rep, no charge to the homeowner. It now runs on its own control panel: the office edits page copy, FAQs, providers and media, works the leads, and reads its own traffic without touching a developer.",
+    tags: ["Next.js", "Drizzle", "CMS + control panel", "WP Migration", "Local SEO"],
     status: "Client",
     year: "2026",
     accent: "blue",
@@ -373,57 +373,58 @@ export const portfolio: PortfolioItem[] = [
     tier: "client-build",
     caseStudy: {
       oneLiner:
-        "Full WordPress → Next.js 16 rebuild for a Houston utility concierge — Pexels hero video, deep-navy brand theme, custom icon system, FAQPage schema, Google Maps on contact, and the complete Mako security + AI-search baseline.",
+        "A Houston utility concierge moved off WordPress and onto a site its own office runs — page copy, FAQs, providers, media, leads and traffic all editable in-house, with no developer in the loop.",
       client: "Utilities Plus · Houston, TX",
-      role: "Design + full-stack build + migration",
-      timeline: "2026 · client build, approved",
+      role: "Design + full-stack build + migration + control panel",
+      timeline: "2026 · live",
       stack: [
-        "Next.js 16",
+        "Next.js",
         "React 19",
         "Tailwind v4",
+        "Drizzle ORM",
+        "Postgres",
+        "iron-session + TOTP",
+        "Turnstile",
         "Vercel",
-        "Pexels (hero video)",
-        "Google Maps Embed",
-        "JSON-LD (Organization, WebSite, BlogPosting, FAQPage)",
       ],
-      viewUrl: "https://utilities-plus-showcase.vercel.app",
-      viewLabel: "View frozen showcase",
+      viewUrl: "https://utilities-plus.com",
+      viewLabel: "Visit the live site",
       problem:
-        "Utilities Plus is a free utility concierge service in Houston that sets up electricity, internet, security, gas, water, solar, waste, home warranty, and insurance referrals for homebuyers and real-estate professionals through one dedicated rep. Their old site was a stock WordPress / Astra / Elementor build — slow, generic, and indistinguishable from a thousand other home-services templates. The brand was meant to feel premium and trust-first; the site read like a brochure.\n\nThe brief: a custom rebuild that captures the white-glove positioning, makes the eight services feel like one cohesive offering instead of a bullet list, and gives both audiences (homebuyers and real-estate partners) clear paths through the site. AI-search ready. Same security baseline we ship on every Mako property.",
+        "Utilities Plus sets up a household's services before move-in day — electricity, internet and TV, smart security, gas and water, water filtration, moving services, home warranty, insurance referrals — through one rep, at no charge to the homeowner, earning from the providers instead. The old site was a stock WordPress build on Astra and Elementor: slow, generic, and indistinguishable from a thousand other home-services templates.\n\nTwo audiences use the site for opposite reasons. A homeowner arrives stressed and three weeks from a move, wanting to know this is real and free. A real-estate agent arrives evaluating whether to hand clients over, wanting to know it will not embarrass them. One page cannot serve both, and a bullet list of eight services serves neither.\n\nThe rebuild solved that. What it did not solve was the reason people leave WordPress and then miss it: every copy change, every new FAQ, every provider logo came back to us.",
       approach:
-        "Next.js 16 + Tailwind v4 with the brand palette extracted from a sister-property reference and dialed in across a deep-navy ramp from brand-50 to brand-950. Mulish for body, Baskervville for display headlines, Frank Ruhl Libre as a serif accent for the editorial step-numerals — typography mix that reads premium without overshooting into luxury territory.\n\nThe homepage hero pairs a looping Pexels family-moving clip (3.95 MB at 720p, autoplay-muted-loop-playsinline, hidden under prefers-reduced-motion) with a brand-navy gradient overlay so the headline stays sharp. A custom SVG icon library covers all eight services plus the How-It-Works steps, the Why-Use-Us benefits grid, and the Who-We-Partner-With grid — every section has its own visual rhythm without leaning on a third-party icon font.\n\nThe FAQ converts the original blog topics into 29 grouped questions across 5 categories with FAQPage JSON-LD for Google rich results. Google Maps keyless embed on the contact page sits under the office hours, with CSP frame-src updated to allow Google's iframe domains. Full Mako security baseline: HSTS preload, X-Frame, X-Content nosniff, Referrer-Policy, locked Permissions-Policy, full CSP with frame-ancestors none. 301 redirects from every old WordPress slug.",
+        "The homepage answers the homeowner in one line — everything your new home needs, handled before move in — and then shows it rather than describing it. Floating beside the photograph are the cards a customer would actually receive: internet scheduled Tuesday at ten, movers confirmed, security installation Thursday at two. That is the product. Everything below it is the explanation.\n\nThe order is deliberate. How it works comes first, the eight services second, the partner pitch third, because a stressed homeowner three weeks from a move needs to understand the process before a menu means anything. \"100% free, no hidden fees, ever\" sits in the benefits row, since the first question anyone asks about a free concierge is where the catch is. Agents get their own route into the same operation instead of a paragraph aimed at somebody else. Inter for reading, Playfair Display for headlines, with the decorative face deliberately kept off the critical render path so the type it sets is not what people wait for.\n\nProvider names do the work that adjectives usually get asked to do. Reliant, Xfinity, Frontier, ADT, Vivint — a homeowner recognises the companies and stops wondering whether this is a real service. That is worth more than another sentence about being trusted.\n\nThen the site was given a back office. Page copy, FAQs, providers and media all moved into Postgres behind an admin panel, so the content on the public pages is data the client owns rather than markup only a developer can reach.",
       shipped: [
         {
-          title: "Full WordPress → Next.js 16 migration",
-          body: "Astra + Elementor source replaced with hand-written Next.js 16 components. 22 routes generating cleanly — every WP page rebuilt, every image migrated to public/images, every blog post re-stubbed with original copy.",
+          title: "Off WordPress, onto their own stack",
+          body: "The Astra and Elementor build replaced with hand-written components, every old slug redirected, and the full Mako baseline underneath: HSTS preload, a real CSP, locked Permissions-Policy, no server fingerprint, sitemap, robots and llms.txt.",
         },
         {
-          title: "Pexels family-moving hero video",
-          body: "3.95 MB 720p mp4 self-hosted, autoplay-muted-loop-playsinline, brand-navy gradient overlay for legibility, Cache-Control immutable. Falls back to a poster JPG under prefers-reduced-motion.",
+          title: "A content panel the office actually uses",
+          body: "Page copy, FAQs, providers and a media library all live in Postgres and are edited in the admin. The public pages read from the same rows, so a change is live when they save it — the thing WordPress was doing for them, without WordPress.",
         },
         {
-          title: "Custom icon system (24+ SVGs)",
-          body: "Hand-written stroke-based icons covering services (plug, wifi, shield, droplet, sun, trash, warranty, umbrella), how-it-works steps, why-use benefits, and partner-types. One ServiceIcon component, no icon font dependency.",
+          title: "Leads worked in an inbox, not an inbox",
+          body: "Submissions land in a database and are read, opened and tracked in the panel rather than scattered across a mailbox. Turnstile on the forms, rate limiting on the endpoints, and the record written before the notification is attempted so a mail failure cannot lose an enquiry.",
         },
         {
-          title: "FAQ with FAQPage JSON-LD",
-          body: "29 questions across 5 groups (About, Before move, Choosing plans, Day-of, Real-estate pros) using native details/summary accordion. Schema-tagged for Google rich results without third-party widgets.",
+          title: "Their own analytics, not a third party's",
+          body: "Page views, events and Core Web Vitals collected in-house and read in the panel, with background-tab and bfcache samples dropped rather than capped so the vitals reflect what visitors experienced. Connected to the Mako control panel, where it reported 1,047 views and 839 sessions on the day it was wired up.",
         },
         {
-          title: "Google Maps embed on contact",
-          body: "Keyless Google Maps iframe lazy-loaded under office hours with a Get Directions link. CSP frame-src updated to allow www.google.com and maps.google.com without weakening the rest of the policy.",
+          title: "Real providers, named",
+          body: "Reliant, Xfinity, Frontier, ADT and Vivint appear as the companies behind the service, managed as records rather than hardcoded logos. The fastest way to prove a free concierge is legitimate is to show whose services it connects.",
         },
         {
-          title: "Mako security + SEO baseline",
-          body: "HSTS preload, full CSP with frame-ancestors none, locked Permissions-Policy, poweredByHeader off, immutable cache on /images and /videos. Sitemap, robots, llms.txt, Organization + WebSite + BlogPosting + FAQPage JSON-LD, OG/Twitter cards, 301s from every old WP slug.",
+          title: "Two audiences, two routes",
+          body: "Homeowners get how-it-works and the eight services; real-estate agents get a partner track of their own. Fifteen questions grouped by who is asking, in ARIA-correct accordions with FAQPage schema, plus Organization, PostalAddress and WebSite structured data across the site.",
         },
         {
-          title: "Frozen showcase fork",
-          body: "utilities-plus-showcase.vercel.app with noindex + a Portfolio Demo pill. The portfolio version stays canonical even as the live site evolves under client ownership.",
+          title: "Admin nobody can walk into",
+          body: "iron-session with TOTP two-factor, recovery codes, rate-limited attempts, and a bot check that fails open rather than locking a real person out of their own panel — a bug found and fixed after a blocked check did exactly that.",
         },
       ],
       outcome:
-        "Approved by the client — rebuilt to their own final mockups, page for page. Production rollout is underway on their domain, and the showcase stays locked as the canonical 'as we built it' version.",
+        "Live at utilities-plus.com and no longer dependent on us for day-to-day changes. The client edits their own copy, FAQs, providers and media, works their own leads, and reads their own traffic; error capture and the fleet control panel keep the parts they should not have to think about visible on our side.",
     },
   },
   {
@@ -564,7 +565,7 @@ export const portfolio: PortfolioItem[] = [
     description:
       "Full rebuild of a family-owned dog boat ladder brand from Wix to an AI-native storefront: a cinematic AI hero video anchored to real product photos, Remmy the product-trained chat assistant (MakoChat), a Claude-vision Fit Check that reads customers' boat photos with a human always confirming, a dedicated waterfowl-hunter landing page, drag-and-drop photo uploads, and Stripe checkout — with the old site's search rankings preserved. Shown as shipped on a frozen showcase fork.",
     tags: ["Next.js 16", "AI Video Hero", "Claude Vision", "MakoChat", "E-commerce"],
-    status: "In Progress",
+    status: "Client",
     year: "2026",
     accent: "blue",
     screenshot: "/portfolio/nautidawgs.png",
@@ -618,7 +619,7 @@ export const portfolio: PortfolioItem[] = [
         },
       ],
       outcome:
-        "First pass delivered and live on the build URL for client review — hero film, chat assistant, fit checks, hunter page, and commerce all working. The frozen showcase locks the as-shipped version for the portfolio while the client site moves toward its domain cutover.",
+        "Live on nautidawgs.com — the Wix store is retired and the domain now serves the new build, with every indexed slug from the old site redirected rather than dropped. Hero film, chat assistant, fit checks, hunter page and Stripe checkout all shipped. The frozen showcase locks the as-shipped version for the portfolio while the client's own site evolves under their ownership.",
     },
   },
   {

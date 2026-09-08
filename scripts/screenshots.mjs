@@ -26,7 +26,6 @@ const sites = [
   { slug: "bulldog", url: "https://bulldog-showcase.vercel.app" },
   { slug: "aaaawning", url: "https://aaaawning-showcase.vercel.app" },
   { slug: "bndt", url: "https://bndt-showcase.vercel.app" },
-  { slug: "utilities-plus", url: "https://utilities-plus-showcase.vercel.app" },
   { slug: "axyscorp", url: "https://axyscorp-showcase.vercel.app" },
   { slug: "bishopbend", url: "https://bishopbend-showcase.vercel.app" },
   { slug: "toppaws", url: "https://toppaws.com" },
@@ -35,10 +34,12 @@ const sites = [
   { slug: "machine-template", url: "https://machine-template-web.vercel.app" },
   { slug: "makopulse", url: "https://makopulse.com" },
   { slug: "woodlands", url: "https://woodlands-showcase.vercel.app" }
-  // makobytes, pixelcopy, nautidawgs and stress-ad are deliberately omitted —
-  // animated heroes, captured by scripts/screenshot-video-hero.mjs instead.
-  // stress-ad additionally carries an on-page proposal notice the other script
-  // asserts on, so a thumbnail can never present it as a client build.
+  // Omitted on purpose, all captured by scripts/screenshot-video-hero.mjs:
+  // makobytes, pixelcopy, nautidawgs and stress-ad animate before they settle,
+  // and utilities-plus, bulldogh2o and bdslighting are shot with a text guard
+  // because they point at LIVE sites that can change under us. stress-ad's
+  // guard is its on-page proposal notice, so a thumbnail can never present it
+  // as a client build.
 ];
 
 // Optional slug filter:  node scripts/screenshots.mjs toppaws makobot
