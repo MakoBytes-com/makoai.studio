@@ -46,6 +46,16 @@ const sites = [
     // scroll-scrubbed cinematic — needs time, then scroll back to top
     settle: 6000,
   },
+  {
+    slug: "stress-ad",
+    url: "https://stress-ad-preview.vercel.app/",
+    // animated blueprint hero — orbital drift, scanning highlights, no <video>
+    settle: 6000,
+    // guard: this is a proposal for a company that never engaged us. If the
+    // on-site proposal notice ever stops rendering, we must NOT ship a
+    // thumbnail that presents their brand as a delivered client build.
+    expectText: "A design proposal by Mako Studio",
+  },
 ];
 
 const wanted = process.argv.slice(2).filter((a) => !a.startsWith("-"));

@@ -121,6 +121,8 @@ export default function WorkIndexPage() {
               security, and AI-native products — each one designed, coded, and
               shipped end-to-end. Approved client builds live on frozen showcase
               forks so the portfolio stays canonical even as live sites evolve.
+              Anything marked Proposal is spec work for a company that has not
+              engaged us, built on whatever stack suits it.
             </p>
           </Reveal>
         </div>

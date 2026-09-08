@@ -58,6 +58,11 @@ compressing 6-week timelines into 2 without cutting corners.
 - Davis Investigation Services (https://www.davisinvestigationservices.com) — Conroe, TX pre-employment screening firm (maintained by Makologics MSP)
 - Pro-Surve Technical Services (https://pro-surve.com) — League City, TX industrial inspection + NDT (maintenance by Makologics MSP)
 
+## Proposal work (NOT client engagements)
+Built on spec to demonstrate capability. The companies below have not engaged
+Mako Studio, their own websites are untouched, and these builds are noindexed.
+- Stress Aerospace & Defense (https://stress-ad-preview.vercel.app) — Houston, TX aerospace & defense engineering: a design proposal by Mako Studio, built on spec from the company's own published content. Not affiliated with, commissioned by, or endorsed by Stress Aerospace and Defense, LLC, whose own site at stress-ad.com is separate, unaffiliated, and unchanged.
+
 ## About
 Based in Montgomery, TX. Remote-first. Mako Studio is the web practice
 inside Mako Logics — a Texas-based shop that ships AI platforms, client

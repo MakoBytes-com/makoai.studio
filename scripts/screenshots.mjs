@@ -35,8 +35,10 @@ const sites = [
   { slug: "machine-template", url: "https://machine-template-web.vercel.app" },
   { slug: "makopulse", url: "https://makopulse.com" },
   { slug: "woodlands", url: "https://woodlands-showcase.vercel.app" }
-  // makobytes, pixelcopy and nautidawgs are deliberately omitted — animated
-  // heroes, captured by scripts/screenshot-video-hero.mjs instead.
+  // makobytes, pixelcopy, nautidawgs and stress-ad are deliberately omitted —
+  // animated heroes, captured by scripts/screenshot-video-hero.mjs instead.
+  // stress-ad additionally carries an on-page proposal notice the other script
+  // asserts on, so a thumbnail can never present it as a client build.
 ];
 
 // Optional slug filter:  node scripts/screenshots.mjs toppaws makobot

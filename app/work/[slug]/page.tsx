@@ -384,6 +384,9 @@ function MetaItem({ label, value }: { label: string; value: string }) {
 }
 
 function statusLabel(item: PortfolioItem): string {
+  // Status wins over tier. A proposal shares the client-build tier so it lands
+  // in the same grid, but it was never approved and must never say it was.
+  if (item.status === "Proposal") return "Proposal · not a client engagement";
   if (item.tier === "product") return "Live";
   if (item.tier === "client-build") return "Approved · frozen showcase";
   return item.status;

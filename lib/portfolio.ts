@@ -31,7 +31,7 @@ export type PortfolioItem = {
   tagline: string;
   description: string;
   tags: string[];
-  status: "Live" | "Client" | "In Progress" | "Available" | "Archived";
+  status: "Live" | "Client" | "In Progress" | "Available" | "Proposal" | "Archived";
   year: string;
   screenshot?: string;
   accent?: "blue" | "silver" | "steel";
@@ -495,6 +495,62 @@ export const portfolio: PortfolioItem[] = [
       ],
       outcome:
         "First pass delivered and live on the build URL for client review — hero film, chat assistant, fit checks, hunter page, and commerce all working. The frozen showcase locks the as-shipped version for the portfolio while the client site moves toward its domain cutover.",
+    },
+  },
+  {
+    slug: "stress-ad",
+    name: "Stress Aerospace & Defense",
+    url: "https://stress-ad-preview.vercel.app",
+    tagline: "Aerospace & defense engineering — a proposal, not a commission",
+    description:
+      "Nobody hired us for this one. StressAD is a Houston aerospace and defense engineering firm whose site runs on WordPress, and we rebuilt it on spec to show what their own material looks like in a faster shell: an animated blueprint hero, a fixed capability rail, and all 30 routes carrying their writing, photography, technical illustrations and PDFs across intact. Their live site is untouched. The proposal build is noindexed and carries a proposal notice on every page so it can never be mistaken for theirs.",
+    tags: ["Proposal", "Vite", "WordPress rebuild", "30 routes"],
+    status: "Proposal",
+    year: "2026",
+    accent: "blue",
+    screenshot: "/portfolio/stress-ad.png",
+    tier: "client-build",
+    caseStudy: {
+      oneLiner:
+        "A speculative rebuild of a Houston aerospace engineering firm's WordPress site — 30 routes, their own content preserved verbatim, an animated blueprint hero, and a proposal notice on every page.",
+      client: "Stress Aerospace and Defense, LLC · Houston, TX",
+      role: "Design proposal · built on spec",
+      timeline: "2026 · proposal build",
+      stack: ["Vite", "Static SPA", "Vanilla JS", "Vercel", "Playwright"],
+      viewUrl: "https://stress-ad-preview.vercel.app",
+      viewLabel: "View the proposal",
+      problem:
+        "StressAD does the kind of engineering that is genuinely hard to explain: resonant fatigue testing, six-degrees-of-freedom rocket engine duct tests, structural test programs for subsea drones, CMMC Level 2 work for defense customers. All of it was already written down on their site, in their words, with their own photography and technical illustrations.\n\nSo the question this build asks is not what to say. It is what that same material looks like when the engineering is the thing you see first, instead of a page of body copy under a stock banner. We had no brief, no engagement, and no access. Everything here came from what they had already published.",
+      approach:
+        "A static build in Vite, deliberately small. The whole site is 29 kB of JavaScript and 45 kB of CSS, because a firm that tests hardware to destruction should not need a megabyte of framework to show a page of prose.\n\nContent was imported rather than rewritten. A Python pass archived every source page, then extracted copy, images, PDFs and video embeds into a single content file the site renders from. Nothing was invented, no claim was added, and no number was changed. The navigation became a fixed rail so the capability set is on screen at all times, and the hero became an animated blueprint rather than the original background film.",
+      shipped: [
+        {
+          title: "Animated blueprint hero",
+          body: "A continuous aircraft outline drawn as a technical blueprint, with orbital motion, scanning highlights and pointer parallax. The original homepage film is not used in the hero at all; it plays on demand from a film card further down the page, rather than autoplaying at a first-time visitor.",
+        },
+        {
+          title: "Interactive capability explorer",
+          body: "Analysis, instrumentation and monitoring, materials engineering, technical due diligence, and testing services, each with its own panel, imagery and deep link. One click to the detail instead of five scrolls to a paragraph.",
+        },
+        {
+          title: "All 30 routes, content intact",
+          body: "Home, about, certifications, insights articles, resources, literature, the full video gallery, service areas, site map and the legal pages. Their photographs, technical illustrations and PDFs are preserved rather than substituted, and a 30-route check suite runs content, navigation and browser assertions against the build.",
+        },
+        {
+          title: "Certification feature",
+          body: "CMMC Level 2 is the credential that decides whether a defense contractor can hold controlled information at all, and on the original it read as one more page. Here it gets its own section on the homepage.",
+        },
+        {
+          title: "Honest contact form",
+          body: "The form prepares an email draft and says so. It does not claim a message was sent, because no submission backend exists on a build for a company that has not engaged us, and pretending otherwise would lose a real enquiry.",
+        },
+        {
+          title: "Proposal notice on every page",
+          body: "noindex, nofollow, a robots.txt that disallows everything, an X-Robots-Tag on every response, and a visible notice stating this is a Mako Studio proposal that is not affiliated with, commissioned by, or endorsed by Stress Aerospace and Defense. A speculative build must never compete with the real company in search.",
+        },
+      ],
+      outcome:
+        "Unbuilt work is a promise; this is the thing itself. The proposal sits on its own URL where it can be looked at rather than described, and it is finished enough to hand over: what remains is a submission backend and a domain, both of which are a client's decision to make. Their own site continues to run exactly as it did.",
     },
   },
   {

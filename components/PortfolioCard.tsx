@@ -7,6 +7,9 @@ const statusColor: Record<PortfolioItem["status"], string> = {
   Client: "bg-tide-500/15 text-tide-300 border-tide-500/20",
   "In Progress": "bg-amber-500/15 text-amber-300 border-amber-500/20",
   Available: "bg-mist-400/15 text-mist-300 border-mist-400/20",
+  // Speculative work, never a client engagement — it must not wear the
+  // same colour as anything a client actually approved.
+  Proposal: "bg-lumen-400/15 text-lumen-300 border-lumen-400/25",
   Archived: "bg-mist-400/10 text-mist-300 border-mist-400/15"
 };
 

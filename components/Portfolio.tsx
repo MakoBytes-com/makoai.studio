@@ -26,8 +26,9 @@ export default function Portfolio() {
           </RevealLines>
           <Reveal delay={0.25}>
             <p className="mt-6 max-w-xl text-[15px] text-mist-300 leading-relaxed">
-              Products we own, and client sites we built. Every project here was
-              designed and shipped AI-native, start to finish.
+              Products we own, client sites we built, and work made on spec to
+              show what we would do. Designed and built AI-native, start to
+              finish.
             </p>
           </Reveal>
         </div>
