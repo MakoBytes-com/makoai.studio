@@ -47,6 +47,21 @@ const sites = [
     settle: 6000,
   },
   {
+    slug: "bulldogh2o",
+    url: "https://bulldogh2o.com/",
+    settle: 6000,
+    expectText: "Bulldog Water",
+  },
+  {
+    slug: "bdslighting",
+    url: "https://bdslighting.com/",
+    settle: 6000,
+    // guard: the 4.5★/2,556 Google reviews belong to the PARENT company and are
+    // always attributed, never claimed as this site's own rating. If the brand
+    // name is missing the page is not the one we think it is.
+    expectText: "BDS Lighting",
+  },
+  {
     slug: "stress-ad",
     url: "https://stress-ad-preview.vercel.app/",
     // animated blueprint hero — orbital drift, scanning highlights, no <video>

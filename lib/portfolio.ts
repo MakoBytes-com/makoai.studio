@@ -105,6 +105,130 @@ export const portfolio: PortfolioItem[] = [
     }
   },
   {
+    slug: "bulldog-water",
+    name: "Bulldog Water",
+    url: "https://bulldogh2o.com",
+    tagline: "Home water treatment — Houston, Austin, Dallas, Fort Worth",
+    description:
+      "A second company launched under the Bulldog roof, built from nothing: a HomeWater dealer selling whole-home filtration, drinking water, point-of-use and replacement systems across four Texas metros. The lead offer is a free in-home water test rather than a quote form, so the site is built to book a visit. It ships with its own control panel — leads, traffic, errors, FAQs, users, two-factor — because a new company needs to run itself from day one.",
+    tags: ["Next.js", "Drizzle", "Control panel", "Local SEO"],
+    status: "Client",
+    year: "2026",
+    accent: "blue",
+    screenshot: "/portfolio/bulldogh2o.png",
+    tier: "client-build",
+    caseStudy: {
+      oneLiner:
+        "A new company under the Bulldog roof, launched with its own site and its own control panel — free in-home water tests, a four-category system catalog, and an admin the office runs itself.",
+      client: "Bulldog Water · a Bulldog Security Services, LLC company",
+      role: "Design + full-stack build + control panel",
+      timeline: "2026 · live",
+      stack: [
+        "Next.js 16",
+        "Drizzle ORM",
+        "Supabase Postgres",
+        "iron-session + TOTP",
+        "Vercel"
+      ],
+      viewUrl: "https://bulldogh2o.com",
+      viewLabel: "Visit the live site",
+      problem:
+        "Bulldog Security Services has been in Texas homes since 2010 with an A+ BBB rating and a 2019 BBB Award of Excellence. Water treatment was a new line of business under the same roof, which is a harder starting position than it sounds: no reviews of its own, no history of its own, and a category full of companies that sell a system before anyone knows what is in the water.\n\nTwo constraints shaped everything. The reputation is real but it belongs to the parent, so it can be shown and must be attributed — the homepage reads \"4.5★ · 2,556 Google reviews for Bulldog Security Services, our parent company\", never as this company's own rating. And a brand-new operation cannot wait on someone else to publish a price change or add an FAQ.",
+      approach:
+        "Sell the test, not the system. The primary call to action across the site is a free in-home water test, and the page explaining it is deliberately sequenced: we come to you, we test your actual water, you get the numbers, and only then do we talk systems. That is a materially different promise from a quote form, and the site is built around booking a visit.\n\nThe catalog is structured rather than listed — whole-home, drinking water, point-of-use and replacements, each category with its own products underneath — so a homeowner who knows they want a softener and one who knows nothing both have a route in. Four metros get their own service-area pages.",
+      shipped: [
+        {
+          title: "Free in-home water test as the front door",
+          body: "The lead offer is a technician at your kitchen tap with a test kit, not a form promising a callback. Sequenced so the numbers come before the sales conversation, which is the whole argument against the way this category usually sells."
+        },
+        {
+          title: "Structured system catalog",
+          body: "Whole-home, drinking water, point-of-use and replacements, each with products underneath and its own page. Sized and installed by Bulldog as an authorized HomeWater dealer, with the manufacturer relationship stated plainly rather than buried."
+        },
+        {
+          title: "Its own control panel",
+          body: "Leads inbox, traffic, error log, FAQ editor, user management, TOTP two-factor, password reset. The office runs the site without us in the loop, and the FAQ module genuinely feeds the public page — verified with a live edit round-trip, not assumed."
+        },
+        {
+          title: "Leads survive a mail outage",
+          body: "A submission is written to the database BEFORE the notification email is attempted. If mail fails the lead still exists, which is the difference between a slow day and a lost customer."
+        },
+        {
+          title: "Borrowed credibility, correctly attributed",
+          body: "The parent's rating, BBB standing, Texas licence and 2010 founding all appear, always tied to the company that earned them. A new brand gets the benefit of the history without claiming a review it never received."
+        },
+        {
+          title: "Locked-down data layer",
+          body: "Its own Supabase project with row-level security on every table and the anonymous role revoked, proven by probing with the public key rather than trusting the config. Wired into the Mako control panel so it reports uptime, deploys, errors and traffic with the rest of the fleet."
+        }
+      ],
+      outcome:
+        "Live at bulldogh2o.com and running its own operation — leads, content and users all handled in-house. Sits alongside the parent security business and BDS Lighting as one of three Bulldog properties we build and operate."
+    }
+  },
+  {
+    slug: "bds-lighting",
+    name: "BDS Lighting",
+    url: "https://bdslighting.com",
+    tagline: "Permanent architectural lighting — Houston metro",
+    description:
+      "The third company under the Bulldog roof: an authorized Trimlight dealer installing permanent LED lighting that is invisible by day and programmable by night. Eight product categories from holiday runs to game-day colours and commercial work, seven Houston-area cities, and the same self-service control panel as its sister site. The service area stops at the Houston metro on purpose, because that is exactly what the dealer registration covers.",
+    tags: ["Next.js", "Drizzle", "Control panel", "Dealer compliance"],
+    status: "Client",
+    year: "2026",
+    accent: "steel",
+    screenshot: "/portfolio/bdslighting.png",
+    tier: "client-build",
+    caseStudy: {
+      oneLiner:
+        "An authorized Trimlight dealer's site where the dealer is the brand — eight lighting categories, seven Houston-metro cities, and product claims that cannot be written unless the manufacturer published them.",
+      client: "BDS Lighting · Bulldog Signature Lighting, LLC",
+      role: "Design + full-stack build + control panel",
+      timeline: "2026 · live",
+      stack: [
+        "Next.js 16",
+        "Drizzle ORM",
+        "Supabase Postgres",
+        "iron-session + TOTP",
+        "Vercel"
+      ],
+      viewUrl: "https://bdslighting.com",
+      viewLabel: "Visit the live site",
+      problem:
+        "Permanent lighting is an easy product to sell badly. The tracks disappear into the roofline and the app does the rest, so most dealer sites end up as a manufacturer brochure with a local phone number stapled on — which makes the dealer look like a reseller and gives the homeowner no reason to pick one over another.\n\nBDS Lighting is a Bulldog company and a Trimlight dealer, and those are different things. The site had to sell the installer, not the manufacturer, while staying strictly inside what a dealer is permitted to claim and where a dealer is permitted to sell.",
+      approach:
+        "The dealer is the brand. Customer-facing copy talks about our channel, our app, our factory-trained installers; Trimlight appears once, on the About page, as the credential it is. That reads as confidence rather than evasion, and it is also what makes the company ownable — a homeowner is hiring the people who climb the ladder.\n\nThe honesty constraints are enforced in code rather than remembered. Product claims must trace to a fact the manufacturer published, held in an allow-list — if a claim is not on the list, the site does not make it. The parent's 2,556 Google reviews are shown with attribution and never emitted as this company's own structured-data rating, which would be a lie a search engine would happily repeat.",
+      shipped: [
+        {
+          title: "Beautiful by day, unforgettable by night",
+          body: "The whole pitch of permanent lighting is that you cannot see it until you want to. The hero shows a house lit at night above the promise that it disappears in daylight, and the feature row leads with discreet-by-day and colour-matched channel rather than a spec sheet."
+        },
+        {
+          title: "Eight ways to light a property",
+          body: "Permanent holiday lighting, down lights, patio globes, landscape, pool cage, accent and security, game day, and commercial — each its own page. Holiday runs are the way in; game-day colours and year-round accent lighting are what stop it being a seasonal purchase."
+        },
+        {
+          title: "A service area that matches the paperwork",
+          body: "Seven Houston-metro cities and nothing beyond, because that is the territory the Trimlight dealer registration covers. The parent company reaches four Texas metros; inheriting that footprint would have advertised work this company cannot legitimately take."
+        },
+        {
+          title: "Claims that trace to a source",
+          body: "An allow-list of manufacturer-published facts backs the product pages. Warranty terms, colour capability and app behaviour all resolve to something Trimlight actually states, so nobody has to relitigate a specification later or explain it to a customer who read it here."
+        },
+        {
+          title: "Its own control panel",
+          body: "Leads, traffic, errors, FAQs, users and TOTP two-factor, plus a Trimlight section for the dealer-specific content. Same shape as Bulldog Water, so one office learns one admin and runs both sites."
+        },
+        {
+          title: "Built as a sibling, not a copy",
+          body: "Forked from the Bulldog Water build and re-themed rather than started over: same security baseline, same admin, same data layer, entirely different brand and category. A third Bulldog company reached its own live site in a fraction of the time the first one took."
+        }
+      ],
+      outcome:
+        "Live at bdslighting.com, running its own leads and content. Completes the set of Bulldog properties we build and operate — security, water and lighting — each with its own brand, its own territory and its own control panel, sharing one security baseline underneath."
+    }
+  },
+  {
     slug: "aaaawning",
     name: "AAA Awning Co.",
     url: "https://aaaawning-showcase.vercel.app",
