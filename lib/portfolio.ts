@@ -1429,23 +1429,6 @@ export const portfolio: PortfolioItem[] = [
         "Finished and waiting on one dependency outside the site itself. The client's WordPress site continues to serve uninterrupted; the rebuild continues to take content changes; and the switch happens when the portal can move with it, not before.",
     },
   },
-  {
-    slug: "pro-surve",
-    name: "Pro-Surve Technical Services",
-    url: "",
-    tagline: "Industrial inspection & NDT — League City, TX",
-    description:
-      "Site for an inspection, engineering, and non-destructive testing provider serving oil & gas, petrochemical, aerospace, and power generation clients. Designed and built from scratch with a custom theme.",
-    tags: ["Ongoing MSP", "Custom theme"],
-    status: "Archived",
-    year: "",
-    accent: "silver",
-    screenshot: "/portfolio/prosurve.png",
-    tier: "earlier-work",
-    archived: true,
-    archivedNote:
-      "Active Makologics MSP client · web engagement 2023–2026 · shown as originally shipped · company recently sold."
-  }
 ];
 
 export const portfolioBySlug = (slug: string): PortfolioItem | undefined =>

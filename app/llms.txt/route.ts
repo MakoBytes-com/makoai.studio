@@ -62,7 +62,6 @@ compressing 6-week timelines into 2 without cutting corners.
 - Family Psychiatry of The Woodlands (https://woodlandsfamilypsychiatry.com) — The Woodlands, TX psychiatric practice (client)
 - Burton NDT Rentals (https://www.bndtrentals.com) — La Porte, TX non-destructive testing equipment rental, sales, calibration & repair (client build, live in production)
 - Davis Investigation Services (https://www.davisinvestigationservices.com) — Conroe, TX pre-employment screening firm, 10+ year Makologics MSP client. Their WordPress site is being rebuilt in Next.js; the rebuild is finished and awaiting cutover, held until their client portal can move with it (client, in progress)
-- Pro-Surve Technical Services (https://pro-surve.com) — League City, TX industrial inspection + NDT (maintenance by Makologics MSP)
 
 ## Proposal work (NOT client engagements)
 Built on spec to demonstrate capability. The companies below have not engaged

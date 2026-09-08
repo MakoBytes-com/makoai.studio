@@ -48,10 +48,12 @@ export default function Portfolio() {
                   <h3 className="mt-4 font-display font-medium text-[26px] md:text-[30px] leading-tight tracking-tight text-mist-100">
                     Builds from the archive
                   </h3>
+                  {/* Dormant while nothing is filed as earlier-work; the
+                      section hides itself. Keep this copy generic so it does
+                      not describe whichever entry happens to return here. */}
                   <p className="mt-3 max-w-xl text-[13px] text-mist-400 leading-relaxed">
                     Designed and built before the current chapter, shown as
-                    originally shipped. Still a Makologics MSP client; the
-                    company has since been sold.
+                    originally shipped.
                   </p>
                 </div>
               </div>

@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "AI-Native Web Design for Greater Houston, TX — Mako Studio",
   description:
-    "Custom Next.js web design for Houston-area businesses — no WordPress, no templates. Industrial B2B, energy corridor, specialty trades, and small businesses that need more than a Galleria-priced agency can profitably deliver. Featured: Pro-Surve Technical Services.",
+    "Custom Next.js web design for Houston-area businesses — no WordPress, no templates. Industrial B2B, energy corridor, specialty trades, and small businesses that need more than a Galleria-priced agency can profitably deliver. Featured: AAA Awning Co.",
   alternates: { canonical: "https://makoai.studio/serving/houston-tx" },
   openGraph: {
     title: "Web Design for Greater Houston, TX — Mako Studio",
@@ -176,21 +176,36 @@ export default function HoustonPage() {
               <span className="section-label">Featured work</span>
             </div>
             <div>
-              <div className="glass-deep rounded-2xl p-7 md:p-9">
+              <Link
+                href="/work/aaaawning"
+                className="block glass-deep rounded-2xl p-7 md:p-9 transition-transform hover:-translate-y-1"
+              >
                 <div className="text-[11px] uppercase tracking-[0.2em] text-mist-400 font-medium">
-                  Inspection &amp; NDT · League City, TX
+                  Custom awnings · Houston, TX
                 </div>
                 <h2 className="mt-3 font-display font-medium text-[24px] md:text-[30px] text-mist-100 leading-tight tracking-tight">
-                  Pro-Surve Technical Services
+                  AAA Awning Co.
                 </h2>
                 <p className="mt-4 text-[15px] md:text-[16px] text-mist-300 leading-relaxed">
-                  Inspection, engineering, and non-destructive testing for oil
-                  &amp; gas, petrochemical, aerospace, and power generation
-                  clients out of League City. Custom-themed site, built from
-                  scratch. Longstanding Mako Logics MSP client, represented in
-                  the portfolio&apos;s earlier-work tier.
+                  A Houston fabricator that has been making awnings since 1984,
+                  moved off WordPress onto a custom build: 36 Texas city landing
+                  pages, live Google reviews pulled through the Places API, and
+                  a lead form that reaches a real inbox. Shown as shipped on a
+                  frozen showcase fork.
                 </p>
-              </div>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-medium text-lumen-300">
+                  Read the case study
+                  <svg viewBox="0 0 16 16" className="w-3.5 h-3.5" fill="none" aria-hidden>
+                    <path
+                      d="M3 8h10m0 0l-4-4m4 4l-4 4"
+                      stroke="currentColor"
+                      strokeWidth="1.75"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </Link>
             </div>
           </div>
         </div>
