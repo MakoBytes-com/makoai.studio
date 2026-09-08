@@ -1376,19 +1376,58 @@ export const portfolio: PortfolioItem[] = [
   {
     slug: "davis-investigations",
     name: "Davis Investigation Services",
-    url: "",
+    url: "https://davisinvestigationservices.vercel.app",
     tagline: "Pre-employment screening — Conroe, TX",
     description:
-      "Full site for a Conroe, TX investigation firm serving Fortune 500 companies and government agencies since 2005. Covers pre-employment screening, background checks, DOT drug testing, and legal investigations. Designed and built from scratch with a custom theme.",
-    tags: ["Long-term client", "Custom theme"],
-    status: "Archived",
-    year: "",
+      "A WordPress rebuild for a Conroe investigation firm that has screened hires for Fortune 500 companies and government agencies since 2005 — pre-employment screening, background checks, DOT drug testing and legal investigations. Built and finished, deliberately not switched on: their client portal has to move across first, because a login going dark for a day is worse than an old site staying up for a month.",
+    tags: ["Next.js", "WP Migration", "Client portal", "10+ year client"],
+    status: "In Progress",
+    year: "2026",
     accent: "silver",
     screenshot: "/portfolio/davis.png",
-    tier: "earlier-work",
-    archived: true,
-    archivedNote:
-      "10+ year Makologics MSP client · shown as originally shipped · client has since modified the frontend."
+    tier: "client-build",
+    caseStudy: {
+      oneLiner:
+        "A finished rebuild for a 10+ year client, held back from launch on purpose until their client portal can move without a single login going dark.",
+      client: "Davis Investigation Services · Conroe, TX",
+      role: "Design + full-stack build + migration",
+      timeline: "2026 · built, awaiting cutover",
+      stack: ["Next.js", "Supabase Postgres", "iron-session", "Turnstile", "Vercel"],
+      viewUrl: "https://davisinvestigationservices.vercel.app",
+      viewLabel: "View the rebuild",
+      problem:
+        "Davis has been screening hires since 2005 for Fortune 500 companies and government agencies, and we have run their IT through Mako Logics for over a decade. The site was WordPress on Elementor, and the case for replacing it was the ordinary one.\n\nWhat made it unusual is that the domain does not only serve a website. It serves a client portal that HR departments log into to pull background reports. A DNS change is instant and total: the moment it propagates, whatever is not yet rebuilt is gone. A marketing page being briefly out of date costs nothing. A screening client hitting a dead login on a Monday morning costs the relationship.",
+      approach:
+        "Rebuild everything, then wait. The new site is finished and deployed, and the cutover is gated behind one condition written into the runbook: the portal has to land in the new app first. Until then their WordPress site stays exactly where it is, untouched and serving.\n\nContent was reproduced rather than reinterpreted, including the parts that were technically wrong. A slug that redirects on the live site redirects the same way here. An article that reuses the wrong featured image keeps it, flagged for the client to decide rather than silently corrected. A homepage logo carousel that points at six images their server returns 404 for was left out, because it renders as nothing on the live site and reproducing nothing faithfully is silly.\n\nThe hero is a case in point. An AI-generated video was produced for it and rejected, so the rebuild uses the client's own Ken Burns slideshow. Their config lists three slides and one of them 404s, so the real rotation is two — the rebuild ships the two that exist.",
+      shipped: [
+        {
+          title: "The whole site, rebuilt and deployed",
+          body: "Every page migrated off Elementor with the copy intact, running on the same security baseline as the rest of the fleet, deployed and ready behind its own URL.",
+        },
+        {
+          title: "A cutover runbook with a hard gate",
+          body: "An ordered checklist ending in the DNS change, opening with the condition that blocks it: no cutover until the portal is imported. Email verification, real Turnstile keys and post-cutover form testing are steps in it, not things to remember.",
+        },
+        {
+          title: "Parity down to the quirks",
+          body: "Redirects that match the live site's behaviour, their own imagery, and content oddities reproduced and flagged rather than quietly fixed. On a migration, an unexplained difference is indistinguishable from a mistake.",
+        },
+        {
+          title: "Submissions that survive the gap",
+          body: "Contact submissions are written to the database regardless of what the email layer is doing, so nothing depends on mail configuration that is still pending the domain move.",
+        },
+        {
+          title: "Already taking client tickets",
+          body: "The client asked for collection-site weekday hours to change from 6:30 to 6:00 PM. That shipped to the rebuild before launch — the new site is maintained as a live property even while the old one is still the public one.",
+        },
+        {
+          title: "Kept out of the index while it waits",
+          body: "A crawlable copy of a site that is still ranking would compete with the client for their own brand. The rebuild sends noindex on its preview host, keyed to the hostname so the guard removes itself the moment the real domain serves it.",
+        },
+      ],
+      outcome:
+        "Finished and waiting on one dependency outside the site itself. The client's WordPress site continues to serve uninterrupted; the rebuild continues to take content changes; and the switch happens when the portal can move with it, not before.",
+    },
   },
   {
     slug: "pro-surve",

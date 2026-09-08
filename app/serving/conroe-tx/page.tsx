@@ -189,9 +189,9 @@ export default function ConroePage() {
                   not an agency that ships and ghosts.
                 </p>
                 <div className="mt-6 text-[12px] text-mist-400 italic">
-                  Archived case study · original site as shipped; client has
-                  since modified the frontend independently, which is why it
-                  lives in the earlier-work tier of the portfolio.
+                  Their site is being rebuilt now. The new build is finished and
+                  waiting on their client portal to move across, so a login
+                  never goes dark during the switch.
                 </div>
               </div>
             </div>

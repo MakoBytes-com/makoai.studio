@@ -61,7 +61,7 @@ compressing 6-week timelines into 2 without cutting corners.
 - nautiDAWGS (https://www.nautidawgs.com) — family-owned dog boat ladder brand: AI cinematic hero, product-trained chat assistant, Claude-vision fit checks, Stripe commerce (client)
 - Family Psychiatry of The Woodlands (https://woodlandsfamilypsychiatry.com) — The Woodlands, TX psychiatric practice (client)
 - Burton NDT Rentals (https://www.bndtrentals.com) — La Porte, TX non-destructive testing equipment rental, sales, calibration & repair (client build, live in production)
-- Davis Investigation Services (https://www.davisinvestigationservices.com) — Conroe, TX pre-employment screening firm (maintained by Makologics MSP)
+- Davis Investigation Services (https://www.davisinvestigationservices.com) — Conroe, TX pre-employment screening firm, 10+ year Makologics MSP client. Their WordPress site is being rebuilt in Next.js; the rebuild is finished and awaiting cutover, held until their client portal can move with it (client, in progress)
 - Pro-Surve Technical Services (https://pro-surve.com) — League City, TX industrial inspection + NDT (maintenance by Makologics MSP)
 
 ## Proposal work (NOT client engagements)

@@ -49,9 +49,9 @@ export default function Portfolio() {
                     Builds from the archive
                   </h3>
                   <p className="mt-3 max-w-xl text-[13px] text-mist-400 leading-relaxed">
-                    Sites we designed and built before the current chapter. Shown
-                    as originally shipped. Some clients remain active under
-                    Makologics MSP; some have since modified the frontend.
+                    Designed and built before the current chapter, shown as
+                    originally shipped. Still a Makologics MSP client; the
+                    company has since been sold.
                   </p>
                 </div>
               </div>

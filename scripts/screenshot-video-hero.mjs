@@ -47,6 +47,15 @@ const sites = [
     settle: 6000,
   },
   {
+    slug: "davis",
+    // Pre-cutover rebuild. The client's real domain still serves their old
+    // WordPress site, so this must never point at davisinvestigationservices.com.
+    url: "https://davisinvestigationservices.vercel.app/",
+    // Ken Burns slideshow hero — needs to settle before it is worth shooting.
+    settle: 7000,
+    expectText: "Davis Investigation",
+  },
+  {
     slug: "bdsgovservices",
     url: "https://bdsgovservices.com/",
     settle: 6000,
