@@ -119,10 +119,11 @@ export default function WorkIndexPage() {
             <p className="mt-7 text-[17px] md:text-[19px] text-mist-300 leading-relaxed max-w-2xl">
               Custom Next.js builds across industrial B2B, healthcare, energy,
               security, and AI-native products — each one designed, coded, and
-              shipped end-to-end. Approved client builds live on frozen showcase
-              forks so the portfolio stays canonical even as live sites evolve.
-              Anything marked Proposal is spec work for a company that has not
-              engaged us, built on whatever stack suits it.
+              shipped end-to-end. Most approved client builds live on frozen
+              showcase forks so the portfolio stays canonical even as live sites
+              evolve; the ones we operate ourselves link straight at the real
+              thing. Anything marked Proposal is spec work for a company that
+              has not engaged us, built on whatever stack suits it.
             </p>
           </Reveal>
         </div>

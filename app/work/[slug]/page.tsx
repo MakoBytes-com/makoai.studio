@@ -388,6 +388,14 @@ function statusLabel(item: PortfolioItem): string {
   // in the same grid, but it was never approved and must never say it was.
   if (item.status === "Proposal") return "Proposal · not a client engagement";
   if (item.tier === "product") return "Live";
-  if (item.tier === "client-build") return "Approved · frozen showcase";
+  if (item.tier === "client-build") {
+    // Only claim a frozen showcase when the entry actually links to one.
+    // The Bulldog properties we operate point at their live domains, and
+    // saying "frozen showcase" there describes something that does not exist.
+    // Derived from the link itself so it cannot go stale.
+    return item.url.includes("-showcase.")
+      ? "Approved · frozen showcase"
+      : "Approved · live";
+  }
   return item.status;
 }
