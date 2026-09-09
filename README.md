@@ -12,12 +12,17 @@ cp .env.local.example .env.local   # fill in RESEND_API_KEY later
 npm run dev                         # http://localhost:3000
 ```
 
-## Hero video
+## Hero
 
-Drop the final RunwayML `.mp4` into `public/hero.mp4`. The Hero component
-detects it automatically and uses a crossfade loop (two staggered `<video>`
-elements) to hide any hard cut on non-seamlessly-looping AI video. If the
-file is missing, an animated underwater gradient renders in its place.
+The hero is a WebGL particle mako built with custom GLSL, not a video —
+`components/three/{makoPointCloud,MakoParticles,MakoHeroCanvas}.tsx`, mounted
+through a `dynamic()` import so Three.js stays out of the initial bundle. It
+forms on load, disperses on scroll, and repels the pointer.
+
+Fallbacks are built in: `prefers-reduced-motion` gets a still frame, and a
+browser without WebGL gets a CSS backdrop. The old `public/hero.mp4` video
+path was retired with the BIOLUMINANCE rebuild and the file has been deleted;
+nothing reads it.
 
 ## Contact form
 

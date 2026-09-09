@@ -39,13 +39,20 @@ const nextConfig = {
     //   - Google Maps embed in the Contact section (www.google.com /
     //     maps.google.com in frame-src) — the iframe at the bottom of the
     //     homepage that shows the Mako Logics HQ pin.
-    // Flip the header key from "Content-Security-Policy" to
-    // "Content-Security-Policy" once an audit confirms zero violations.
+    // 'unsafe-inline' stays in script-src on purpose. Removing it means a
+    // per-request nonce from middleware, and a nonce forces every route to
+    // render dynamically — this site is 32 prerendered pages with no login
+    // and no user content, so that trade costs real caching to harden a
+    // surface that has nothing behind it. Bulldog runs nonce + strict-dynamic
+    // because it has an authenticated control panel; this does not.
+    //
+    // 'unsafe-eval' is gone: nothing in the production bundle calls eval or
+    // new Function, and none of the three third-party scripts need it.
     const csp = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vercel.live https://challenges.cloudflare.com https://makochat.app",
+      "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://vercel.live https://challenges.cloudflare.com https://makochat.app",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob: https://lh3.googleusercontent.com",
+      "img-src 'self' data: blob:",
       "font-src 'self' data:",
       "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://vercel.live https://portal.makoai.studio",
       "media-src 'self'",

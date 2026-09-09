@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import SmoothScroll from "@/components/motion/SmoothScroll";
 import CursorGlow from "@/components/motion/CursorGlow";
 import FleetBeacon from "@/components/FleetBeacon";
@@ -169,6 +170,10 @@ export default function RootLayout({
         <CursorGlow />
         <div className="grain" aria-hidden />
         <Analytics />
+        {/* Real-user Core Web Vitals. Without this the only performance
+            numbers we have are lab runs, which never see a real phone on a
+            real network. */}
+        <SpeedInsights />
         <ChunkReloadGuard />
         <FleetBeacon site="makoai-studio" />
         {/* MakoChat widget (makochat.app) */}
