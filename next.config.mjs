@@ -52,7 +52,12 @@ const nextConfig = {
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://vercel.live https://challenges.cloudflare.com https://makochat.app",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob:",
+      // lh3.googleusercontent.com serves the reviewer avatars on the
+      // testimonials rail. The URLs arrive from the Google Places API at
+      // runtime, so the origin appears nowhere in source — grepping the repo
+      // says "unused" and is wrong. Removing it blanks five faces on the
+      // homepage. Confirmed by breaking it once.
+      "img-src 'self' data: blob: https://lh3.googleusercontent.com",
       "font-src 'self' data:",
       "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://vercel.live https://portal.makoai.studio",
       "media-src 'self'",
