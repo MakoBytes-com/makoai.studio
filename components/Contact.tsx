@@ -14,8 +14,21 @@ export default function Contact() {
   const [error, setError] = useState<string | null>(null);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
+  // A Turnstile token can be redeemed exactly ONCE. Every submit spends it,
+  // whether the server accepts the message or rejects it — so holding on to
+  // the old token means the next attempt is refused no matter what the visitor
+  // types, while the widget still shows a solved challenge. Bumping this
+  // counter remounts the widget, which is what makes Cloudflare issue a new
+  // one. Without it, a single validation error ends the conversation and we
+  // never hear from them again.
+  const [captchaEpoch, setCaptchaEpoch] = useState(0);
+
   const handleToken = useCallback((token: string) => setCaptchaToken(token), []);
   const handleExpire = useCallback(() => setCaptchaToken(null), []);
+  const resetCaptcha = useCallback(() => {
+    setCaptchaToken(null);
+    setCaptchaEpoch((n) => n + 1);
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -48,10 +61,13 @@ export default function Contact() {
 
       setStatus("success");
       form.reset();
-      setCaptchaToken(null);
+      resetCaptcha();
     } catch (err) {
       setStatus("error");
       setError(err instanceof Error ? err.message : "Submission failed");
+      // The token went to the server and is spent even though the request
+      // failed. Mint a new one or the retry is refused before it is read.
+      resetCaptcha();
     }
   }
 
@@ -208,7 +224,7 @@ export default function Contact() {
 
                 {TURNSTILE_ENABLED && (
                   <div className="pt-1">
-                    <Turnstile onToken={handleToken} onExpire={handleExpire} />
+                    <Turnstile key={captchaEpoch} onToken={handleToken} onExpire={handleExpire} />
                   </div>
                 )}
 
