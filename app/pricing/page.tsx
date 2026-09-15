@@ -33,7 +33,7 @@ const buildTiers = [
       "6–12 pages",
       "Everything in Starter",
       "Google Maps embed + local SEO",
-      "Analytics wiring, Resend email",
+      "Analytics wiring, Cloudflare email",
       "Custom sections / interactions",
       "Light CMS for copy edits"
     ],

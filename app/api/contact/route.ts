@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import { mailEnabled, sendMail } from "@/lib/mail";
 import { renderInquiryEmail } from "@/lib/email";
 import { verifyTurnstile } from "@/lib/turnstile";
 
@@ -79,9 +79,8 @@ export async function POST(req: Request) {
 
   // .trim() everywhere: a pasted env var with a trailing newline broke
   // every send for 79 days (invalid Authorization header). Never again.
-  const apiKey = process.env.RESEND_API_KEY?.trim();
   const to = (process.env.CONTACT_TO_EMAIL ?? "admin@makoai.studio").trim();
-  const from = (process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev").trim();
+  const from = (process.env.CONTACT_FROM_EMAIL ?? "admin@makoai.studio").trim();
 
   const userAgent = req.headers.get("user-agent") ?? undefined;
   const { subject, html, text } = renderInquiryEmail({
@@ -94,27 +93,25 @@ export async function POST(req: Request) {
     userAgent
   });
 
-  if (!apiKey) {
+  if (!mailEnabled()) {
     console.warn(
-      "[contact] RESEND_API_KEY is not set — dropping submission to console only."
+      "[contact] CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_EMAIL_TOKEN not set — dropping submission to console only."
     );
     console.log("[contact] Submission:", { name, email, company, budget });
     return NextResponse.json({ ok: true, devFallback: true });
   }
 
-  const resend = new Resend(apiKey);
-
-  const { error } = await resend.emails.send({
+  const result = await sendMail({
     from: `Mako Studio <${from}>`,
-    to: [to],
+    to,
     replyTo: email,
     subject,
     html,
     text
   });
 
-  if (error) {
-    console.error("[contact] Resend error:", error);
+  if (!result.ok) {
+    console.error("[contact] Cloudflare Email Service error:", result.error);
     return NextResponse.json(
       { error: "Email provider rejected the send." },
       { status: 502 }

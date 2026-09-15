@@ -100,11 +100,6 @@ export default function Hero() {
               <span>Vercel</span>
               <span className="w-1 h-1 rounded-full bg-mist-500/50" aria-hidden />
               <span>Cloudflare</span>
-              <span
-                className="hidden md:inline w-1 h-1 rounded-full bg-mist-500/50"
-                aria-hidden
-              />
-              <span className="hidden md:inline">Resend</span>
             </div>
           </Reveal>
         </div>

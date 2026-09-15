@@ -70,7 +70,7 @@ export default function Privacy() {
           <p>
             Contact-form submissions are delivered to{" "}
             <code className="text-lumen-300">admin@makoai.studio</code> via{" "}
-            <strong>Resend</strong>. We read them, reply to them, and keep
+            <strong>Cloudflare Email Service</strong>. We read them, reply to them, and keep
             them in our inbox for as long as the conversation is active. We
             do not add submissions to a mailing list, do not share them with
             third parties, and do not sell them.
@@ -104,7 +104,8 @@ export default function Privacy() {
               and device signals to tell a person from a spam script
             </li>
             <li>
-              <strong>Resend</strong> — transactional email (contact form)
+              <strong>Cloudflare Email Service</strong> — transactional email
+              (contact form)
             </li>
             <li>
               <strong>Google Maps</strong> — embedded map on the contact
