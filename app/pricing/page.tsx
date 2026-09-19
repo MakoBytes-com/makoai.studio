@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AnglerFish from "@/components/AnglerFish";
 
 export const metadata: Metadata = {
   title: "Pricing — Mako Studio",
@@ -151,6 +152,15 @@ export default function PricingPage() {
       {/* Hero */}
       <section className="relative pt-32 md:pt-40 pb-16">
         <div className="absolute inset-0 bg-surface-light pointer-events-none" />
+        {/* The resident anglerfish, drifting in the open water right of
+            the hero copy. Decorative only: pointer-inert, aria-hidden,
+            dark theme + large screens only. */}
+        <div
+          className="angler-wrap pointer-events-none absolute hidden lg:block right-[3%] xl:right-[6%] -bottom-36 w-[340px] xl:w-[400px]"
+          aria-hidden="true"
+        >
+          <AnglerFish />
+        </div>
         <div className="container-narrow relative">
           <span className="section-label">Pricing</span>
           <h1 className="mt-5 font-display font-medium text-[44px] md:text-[72px] leading-[1.02] tracking-tight">

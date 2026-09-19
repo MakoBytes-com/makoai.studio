@@ -527,3 +527,86 @@
   }
 }
 
+
+/* The pricing page's anglerfish — decorative SVG chrome swimming in
+   the dark water right of the hero. Deep-sea creature, dark theme
+   only: the light surface has no abyss for it to live in. The global
+   prefers-reduced-motion block above already stills every keyframe. */
+.angler-fish {
+  animation: angler-drift 11s ease-in-out infinite;
+  filter: drop-shadow(0 0 24px rgba(59, 130, 246, 0.12));
+}
+.angler-tail {
+  transform-box: fill-box;
+  transform-origin: 0% 50%;
+  animation: angler-tail 3.4s ease-in-out infinite;
+}
+.angler-fin {
+  transform-box: fill-box;
+  transform-origin: 15% 10%;
+  animation: angler-fin 4.6s ease-in-out infinite;
+}
+.angler-rod {
+  transform-box: fill-box;
+  transform-origin: 100% 100%;
+  animation: angler-rod 7s ease-in-out infinite;
+}
+.angler-lure-glow {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: angler-lure 4s ease-in-out infinite;
+}
+[data-theme='light'] .angler-wrap {
+  display: none;
+}
+
+@keyframes angler-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  30% {
+    transform: translate(-10px, -14px) rotate(-1.6deg);
+  }
+  65% {
+    transform: translate(6px, 8px) rotate(1deg);
+  }
+}
+@keyframes angler-tail {
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+}
+@keyframes angler-fin {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(9deg);
+  }
+}
+@keyframes angler-rod {
+  0%,
+  100% {
+    transform: rotate(-2.5deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+@keyframes angler-lure {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+}
