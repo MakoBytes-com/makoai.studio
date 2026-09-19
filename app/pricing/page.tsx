@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Pricing — Mako Studio",
   description:
-    "One plan, no surprises: a custom AI-native website for $0 down at $349/mo — built, hosted, secured, and maintained. Maintenance for existing sites from $149/mo. No ghost pricing, no $500/mo SEO retainers.",
+    "One plan, no surprises: a custom AI-native website for $0 down at $349/mo — built, hosted, secured, and maintained. Social media + Google Business Profile management for $200/mo. Maintenance for existing sites from $149/mo. No ghost pricing.",
   alternates: { canonical: "https://makoai.studio/pricing" }
 };
 
@@ -59,6 +59,16 @@ const waasIncludes = [
   "A direct line to the person who actually built it"
 ];
 
+const socialIncludes = [
+  "Google Business Profile managed — posts, photos, hours, Q&A kept current",
+  "Review monitoring with responses drafted in your voice",
+  "Facebook page posts and replies, on a steady schedule",
+  "YouTube uploads posted with titles and descriptions written for search",
+  "Name, address, and phone kept consistent across every listing",
+  "Posts drawn from your real work — never generic filler",
+  "A plain-English monthly recap of what went out and what it did"
+];
+
 const waasSteps = [
   "Free discovery + build — we scope, design, and build your site at $0 down.",
   "Launch — your site goes live on fast, managed hosting.",
@@ -89,6 +99,10 @@ const faqs = [
   {
     q: "What if a change is bigger than my monthly maintenance covers?",
     a: "We flag it the moment we see it, send a quick quote for the extra time, and wait for your approval before starting. No surprise invoices, ever. Most months, maintenance covers everything."
+  },
+  {
+    q: "Do I need the $349 plan to get social media management?",
+    a: "No. The $200/mo presence management stands on its own — we can manage your Google Business Profile, Facebook, and YouTube even if someone else built your website. It also stacks onto the $349 plan or any maintenance tier, and most clients pair it with one of those so the whole online presence is handled in one place."
   },
   {
     q: "What about existing clients — are you raising prices on them?",
@@ -343,6 +357,83 @@ export default function PricingPage() {
             integration, a redesign — is quoted separately. You approve the
             estimate before we start. Never any surprise invoices.
           </p>
+        </div>
+      </section>
+
+      {/* Social & presence management */}
+      <section className="py-20 md:py-28">
+        <div className="container-narrow">
+          <div className="mb-10">
+            <span className="section-label">Add-on · your presence everywhere else</span>
+            <h2 className="mt-4 font-display font-medium text-[32px] md:text-[44px] leading-tight tracking-tight">
+              Social &amp;{" "}
+              <span className="italic text-transparent bg-clip-text bg-linear-to-r from-lumen-300 via-tide-300 to-mist-200">
+                Google Business
+              </span>{" "}
+              management.
+            </h2>
+            <p className="mt-3 max-w-xl text-[15px] text-mist-300 leading-relaxed">
+              Your website is only part of how customers find you. We keep the
+              rest of it alive too — Google Business Profile, Facebook,
+              YouTube — posting, responding, and keeping every listing
+              accurate, so you never have to log into any of them.
+            </p>
+          </div>
+
+          <div className="glass-deep rounded-3xl p-8 md:p-10">
+            <div className="grid lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-12">
+              <div className="flex flex-col">
+                <span className="inline-block self-start mb-5 px-2.5 py-1 text-[10px] uppercase tracking-widest font-semibold text-tide-200 bg-tide-500/15 border border-tide-500/30 rounded-full">
+                  Presence management
+                </span>
+                <div className="flex items-baseline gap-2">
+                  <span className="font-display font-medium text-[56px] md:text-[64px] text-mist-100 leading-none">
+                    $200
+                  </span>
+                  <span className="text-[16px] text-mist-400">/ mo</span>
+                </div>
+                <p className="mt-3 text-[14px] text-lumen-300 font-medium">
+                  Add it to the $349 plan or any maintenance tier — or take it
+                  on its own
+                </p>
+                <p className="mt-5 text-[13px] text-mist-300 leading-relaxed">
+                  Most small businesses set these profiles up once and never
+                  touch them again — and Google notices. A profile that posts,
+                  answers reviews, and keeps its hours right outranks one that
+                  went quiet in 2023.
+                </p>
+                <Link
+                  href="/#contact"
+                  className="mt-7 self-start inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-tide-500 hover:bg-tide-400 text-white text-[14px] font-semibold transition-colors shadow-glow"
+                >
+                  Add presence management
+                  <svg viewBox="0 0 16 16" className="w-4 h-4" fill="none">
+                    <path
+                      d="M3 8h10m0 0l-4-4m4 4l-4 4"
+                      stroke="currentColor"
+                      strokeWidth="1.75"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </Link>
+              </div>
+
+              <div className="lg:border-l lg:border-mist-300/10 lg:pl-12">
+                <h4 className="text-[12px] uppercase tracking-widest font-semibold text-mist-400 mb-4">
+                  What we handle every month
+                </h4>
+                <ul className="space-y-2.5 text-[13px] text-mist-300 leading-relaxed">
+                  {socialIncludes.map((f) => (
+                    <li key={f} className="flex items-start gap-2">
+                      <span className="text-lumen-400 mt-0.5 shrink-0">+</span>
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
