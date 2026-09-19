@@ -537,12 +537,22 @@
    any of those creates a stacking context that isolates the child's
    mix-blend-mode from the page, and the black frame reappears. The
    drift therefore animates the video element itself. */
-.angler-video {
-  mix-blend-mode: screen;
-  animation: angler-drift 12s ease-in-out infinite;
-}
+/* Edge feather: even with the video's blacks crushed to zero at
+   encode time, compression noise could tint the frame a hair lighter
+   than the page under `screen`. Fading the outer 7% of the frame to
+   transparent guarantees no straight edge can ever render. */
+.angler-video,
 .angler-still {
   mix-blend-mode: screen;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 7%, #000 93%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 7%, #000 93%, transparent 100%);
+  mask-composite: intersect;
+}
+.angler-video {
+  animation: angler-drift 12s ease-in-out infinite;
 }
 [data-theme='light'] .angler-wrap {
   display: none;
