@@ -1063,62 +1063,6 @@ export const portfolio: PortfolioItem[] = [
     }
   },
   {
-    slug: "handpenned",
-    name: "HandPenned",
-    url: "https://handpenned.com",
-    tagline: "Make an AI draft read like a person wrote it",
-    description:
-      "Paste a draft or a web address and HandPenned rewrites it in your own voice, keeps every price, phone number, name and date exactly as they were, and scores the result before you publish. The final words come from an open model no company controls, so they carry none of the hidden watermark the big three now put in everything they write. Eight tools; seven are free and need no account.",
-    tags: ["Next.js", "Open-weight models", "Stripe", "Deterministic fact lock"],
-    status: "Live",
-    year: "2026",
-    accent: "blue",
-    screenshot: "/portfolio/handpenned.png",
-    tier: "product",
-    caseStudy: {
-      oneLiner:
-        "A rewrite pass that makes AI copy read human without changing a single fact — enforced by code, not by asking a model nicely, and finished by a model no vendor controls.",
-      client: "HandPenned · a MakoBytes product from Mako Logics",
-      role: "Product, design, and full-stack build",
-      timeline: "2026 · live",
-      stack: ["Next.js", "Supabase Postgres", "Open-weight models", "Stripe", "Vercel"],
-      viewUrl: "https://handpenned.com",
-      viewLabel: "Visit HandPenned",
-      problem:
-        "Anyone publishing AI-drafted copy has the same two fears, and they pull in opposite directions. The first is that it reads like a machine wrote it — the uniform paragraphs, the tidy list of three, the conclusion that restates the introduction. The second is that fixing the first will quietly break something true: a price becomes a different price, a phone number loses a digit, a date drifts by a day.\n\nEvery rewriting tool solves the first by asking a model to try harder, which is the same mechanism that caused the problem. And the way they solve the second is to hope. A model asked to preserve facts will usually preserve facts, and usually is not a standard you can publish against.\n\nThere is a third problem the category has mostly ignored. The major models now embed a statistical signature in the prose they generate. Rewriting an AI draft with another AI leaves it there.",
-      approach:
-        "Three decisions, each enforced in code rather than in a prompt.\n\nThe final text comes only from an open-weight model, held in an allowlist the application checks before any call. No keyed vendor model can touch text that reaches the page, which is what makes the watermark claim structural rather than aspirational.\n\nFacts are locked deterministically. Numbers, names, dates, prices and contact details are extracted and verified by ordinary code, and a model is not allowed to overrule a failure. It may add a note; it may not decide a mismatch was fine. The editor character on the homepage carries the whole product promise: she changes how it reads, never what it says.\n\nAnd the work is visible while it happens. Long jobs report a real percentage from paragraphs actually finished, with the stage in words, rather than a spinner that looks the same whether it is working or dead.",
-      shipped: [
-        {
-          title: "Rewrite that cannot change the facts",
-          body: "Deterministic extraction and verification of every number, name, date and price, run against the output before it is returned. A model may annotate a failure; it cannot override one.",
-        },
-        {
-          title: "A score that explains itself",
-          body: "The AI-score tool returns a number and the reasons behind it, naming what tripped it rather than leaving the writer to guess which sentence to rewrite.",
-        },
-        {
-          title: "Seven free tools, no account",
-          body: "AI score, readability, fact check, voice check, grammar, plagiarism and the browser extension all work without signing up. Only the rewrite costs money — the business model is the one operation that has real compute behind it.",
-        },
-        {
-          title: "Priced in words, not tokens",
-          body: "One credit is ten words. Free covers 200 credits a month, Solo is $29 and Studio $79, with one-time packs at $10, $25 and $75 labelled in pages rather than credits, because nobody thinks in credits.",
-        },
-        {
-          title: "Finished by a model nobody owns",
-          body: "An enforced allowlist of open-weight models for any text that reaches the page. It is the only way to claim output is unwatermarked and be able to show why.",
-        },
-        {
-          title: "Progress you can actually read",
-          body: "Real percentages from paragraphs completed, the current stage in plain words, and a stall timeout that says what went wrong instead of spinning forever.",
-        },
-      ],
-      outcome:
-        "Live at handpenned.com with open signup and a free tier. Eight tools shipped, seven of them usable without an account, and the paid rewrite behind a credit model priced in words. The rule it enforces — never invent a number, a name, a review or a credential — is the same one every Mako site is written under.",
-    },
-  },
-  {
     slug: "pixelcopy",
     name: "PixelCopy",
     url: "https://pixelcopy.app",

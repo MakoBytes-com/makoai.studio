@@ -62,12 +62,6 @@ const sites = [
     expectText: "Bulldog",
   },
   {
-    slug: "handpenned",
-    url: "https://handpenned.com/",
-    settle: 6000,
-    expectText: "read like you did",
-  },
-  {
     slug: "makochat",
     url: "https://makochat.app/",
     settle: 6000,
