@@ -230,8 +230,8 @@ export default function HoustonPage() {
                 agency has to bill $12k for what a custom Next.js site should
                 actually cost. We pass that arithmetic directly back to the
                 client. A Houston small business gets a production-grade build
-                at Starter ($2,500) to Premium ($6,000), not at $15k
-                downtown-agency minimum.
+                for $0 down at $349 a month — hosted, secured, and maintained
+                — not a $15k downtown-agency invoice.
               </p>
               <p>
                 The trade-off is: you don&apos;t meet at a high-rise, you meet
