@@ -20,16 +20,19 @@ export default function AnglerFish() {
         loop
         playsInline
         preload="metadata"
-        poster="/videos/anglerfish-poster.webp"
+        poster="/videos/anglerfish-poster-v2.webp"
         aria-hidden="true"
         tabIndex={-1}
       >
-        <source src="/videos/anglerfish.mp4" type="video/mp4" />
+        {/* Versioned filename: /videos/* is cached immutable for a year,
+            so any re-encode must ship under a NEW name or the CDN keeps
+            serving the old bytes forever. */}
+        <source src="/videos/anglerfish-v2.mp4" type="video/mp4" />
       </video>
       {/* Reduced-motion fallback: same fish, holding still */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/videos/anglerfish-poster.webp"
+        src="/videos/anglerfish-poster-v2.webp"
         alt=""
         className="angler-still hidden w-full h-auto"
         aria-hidden="true"
