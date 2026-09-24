@@ -8,6 +8,12 @@ import { Reveal, RevealLines } from "@/components/motion/Reveal";
 type Status = "idle" | "loading" | "success" | "error";
 
 const TURNSTILE_ENABLED = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
+const SUPPORT_EMAIL = "admin@makoai.studio";
+
+// Every error the API returns is a complete, visitor-ready sentence, so it is
+// shown verbatim. This covers the cases where we never got an answer at all.
+const FALLBACK_ERROR = `Something went wrong. Please email ${SUPPORT_EMAIL} directly.`;
+const OFFLINE_ERROR = `We couldn't reach the server. Check your connection, or email ${SUPPORT_EMAIL} directly.`;
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
@@ -56,17 +62,22 @@ export default function Contact() {
 
       if (!res.ok) {
         const { error: errMsg } = await res.json().catch(() => ({}));
-        throw new Error(errMsg ?? "Submission failed");
+        setStatus("error");
+        setError(errMsg ?? FALLBACK_ERROR);
+        // The token went to the server and is spent even though the request
+        // failed. Mint a new one or the retry is refused before it is read.
+        resetCaptcha();
+        return;
       }
 
       setStatus("success");
       form.reset();
       resetCaptcha();
-    } catch (err) {
+    } catch {
+      // Transport failure — the request never got an answer. The browser's own
+      // wording ("Failed to fetch") means nothing to a visitor.
       setStatus("error");
-      setError(err instanceof Error ? err.message : "Submission failed");
-      // The token went to the server and is spent even though the request
-      // failed. Mint a new one or the retry is refused before it is read.
+      setError(OFFLINE_ERROR);
       resetCaptcha();
     }
   }
@@ -260,8 +271,7 @@ export default function Contact() {
                   )}
                   {status === "error" && (
                     <p role="alert" className="text-[13px] text-red-300 text-center">
-                      Something went wrong
-                      {error ? ` — ${error}` : ""}. Try emailing directly.
+                      {error ?? FALLBACK_ERROR}
                     </p>
                   )}
                 </div>
