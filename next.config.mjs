@@ -21,11 +21,24 @@ const nextConfig = {
       "aipromptshive", // product retired 2026-07-25
       "lengleng" // early entry, removed pre-May
     ];
-    return deadWorkSlugs.map((slug) => ({
-      source: `/work/${slug}`,
-      destination: "/work",
-      permanent: true
-    }));
+    return [
+      // www redirects to the apex here rather than in Vercel's domain
+      // settings: a domain-level redirect is answered before this config
+      // runs, so it went out with Vercel's short default HSTS (no
+      // includeSubDomains, no preload). Done here, headers() below applies to
+      // the 308 as well. Path and query string pass through unchanged.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.makoai.studio" }],
+        destination: "https://makoai.studio/:path*",
+        permanent: true
+      },
+      ...deadWorkSlugs.map((slug) => ({
+        source: `/work/${slug}`,
+        destination: "/work",
+        permanent: true
+      }))
+    ];
   },
   async headers() {
     // Content Security Policy — Report-Only mode (observe, don't enforce).
