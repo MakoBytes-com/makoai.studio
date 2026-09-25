@@ -110,4 +110,7 @@ for (const blob of blobs) {
 console.log(
   `\nsent: ${counts.sent}   failed: ${counts.failed}   unknown (pre-2026-09-25): ${counts.unknown}   unreadable: ${counts.unreadable}`
 );
-process.exit(counts.failed > 0 ? 1 : 0);
+// exitCode, not process.exit(): exiting hard while the Blob client's HTTP
+// sockets are still closing trips a libuv assertion on Windows
+// (UV_HANDLE_CLOSING, exit 127), which would swallow the 1-means-failures code.
+process.exitCode = counts.failed > 0 ? 1 : 0;
