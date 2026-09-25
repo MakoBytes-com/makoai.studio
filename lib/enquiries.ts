@@ -33,10 +33,32 @@ export interface Enquiry {
   userAgent: string | null;
 }
 
+/** What is actually written to the store: the enquiry plus when it arrived. */
+export interface EnquiryRecord extends Enquiry {
+  receivedAt: string;
+  /**
+   * How the notification email went, stamped on after the send attempt. A
+   * record with `sent: false` is an enquiry nobody has been told about —
+   * scripts/unsent-enquiries.mjs lists them. Records stored before 2026-09-25
+   * have no `notification` field at all, so their outcome is unknown, not
+   * failed. Not called `email`: that field is the sender's address.
+   */
+  notification?: EmailOutcome;
+}
+
+export interface EmailOutcome {
+  sent: boolean;
+  messageId: string | null;
+  error: string | null;
+  attemptedAt: string;
+}
+
 export interface StoreResult {
   ok: boolean;
   /** Blob pathname of the stored record — quote this when recovering one. */
   key?: string;
+  /** The exact record written, so the send outcome can be added without a read-back. */
+  record?: EnquiryRecord;
   error?: string;
 }
 
@@ -68,24 +90,64 @@ export async function storeEnquiry(enquiry: Enquiry): Promise<StoreResult> {
     .toISOString()
     .slice(0, 10)}/${stamp}-${crypto.randomUUID().slice(0, 8)}.json`;
 
+  const record: EnquiryRecord = { receivedAt: receivedAt.toISOString(), ...enquiry };
+
   try {
-    const blob = await put(
-      key,
-      JSON.stringify({ receivedAt: receivedAt.toISOString(), ...enquiry }, null, 2),
-      {
-        access: "private",
-        contentType: "application/json",
-        addRandomSuffix: false,
-        token,
-        abortSignal: AbortSignal.timeout(15_000)
-      }
-    );
-    return { ok: true, key: blob.pathname };
+    const blob = await put(key, JSON.stringify(record, null, 2), {
+      access: "private",
+      contentType: "application/json",
+      addRandomSuffix: false,
+      token,
+      abortSignal: AbortSignal.timeout(15_000)
+    });
+    return { ok: true, key: blob.pathname, record };
   } catch (err) {
     console.error("[enquiry] could not store enquiry:", err);
     return {
       ok: false,
       error: err instanceof Error ? err.message : "store failed"
     };
+  }
+}
+
+/**
+ * Stamps the notification outcome onto a stored enquiry, so a failed email is
+ * self-identifying in the store instead of relying on an alert that may never
+ * arrive. Same pattern as govsprint's markContactMessageSent.
+ *
+ * Rewrites the same pathname. A Blob `put` replaces the object atomically, so
+ * if this rewrite fails the original record is still there, intact — it just
+ * lacks the `notification` field, which the recovery script reports as "unknown".
+ *
+ * Never throws: the enquiry is already safe by the time this runs, and failing
+ * the visitor's request over a bookkeeping update would undo the point of
+ * storing first.
+ */
+export async function markEnquiryEmailed(
+  key: string,
+  record: EnquiryRecord,
+  outcome: { sent: boolean; messageId?: string | null; error?: string | null }
+): Promise<void> {
+  const token = process.env.BLOB_READ_WRITE_TOKEN?.trim();
+  if (!token) return;
+
+  const notification: EmailOutcome = {
+    sent: outcome.sent,
+    messageId: outcome.messageId ?? null,
+    error: outcome.sent ? null : outcome.error ?? "send failed",
+    attemptedAt: new Date().toISOString()
+  };
+
+  try {
+    await put(key, JSON.stringify({ ...record, notification }, null, 2), {
+      access: "private",
+      contentType: "application/json",
+      addRandomSuffix: false,
+      allowOverwrite: true,
+      token,
+      abortSignal: AbortSignal.timeout(15_000)
+    });
+  } catch (err) {
+    console.error(`[enquiry] could not record email outcome on ${key}:`, err);
   }
 }

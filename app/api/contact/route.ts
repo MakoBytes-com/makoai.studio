@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { mailEnabled, sendMail, type MailResult } from "@/lib/mail";
 import { renderInquiryEmail } from "@/lib/email";
 import { verifyTurnstile } from "@/lib/turnstile";
-import { storeEnquiry } from "@/lib/enquiries";
+import { markEnquiryEmailed, storeEnquiry } from "@/lib/enquiries";
 import { reportProblem } from "@/lib/alert";
 
 export const runtime = "nodejs";
@@ -133,7 +133,18 @@ export async function POST(req: Request) {
     });
   }
 
-  // 3. Decide what the visitor sees, based on what actually survived.
+  // 3. Write the outcome back onto the stored record, success or failure, so an
+  //    enquiry nobody was told about can be found in the store itself
+  //    (scripts/unsent-enquiries.mjs) rather than only through an alert.
+  if (stored.ok && stored.key && stored.record) {
+    await markEnquiryEmailed(stored.key, stored.record, {
+      sent: mail.ok,
+      messageId: mail.id ?? null,
+      error: mail.ok ? null : mail.error ?? null
+    });
+  }
+
+  // 4. Decide what the visitor sees, based on what actually survived.
   if (stored.ok) {
     if (!mail.ok) {
       // Saved, but nobody has been told yet — raise it so it doesn't sit unread.
