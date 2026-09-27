@@ -42,7 +42,6 @@ the studio is built around that shape. Design and build run in parallel,
 compressing 6-week timelines into 2 without cutting corners.
 
 ## Featured Work
-- TopPaws (https://toppaws.com) — nationwide pet directory, marketplace, and community ("Yelp for pets")
 - MakoAnswer (https://makoanswer.com) — AI phone receptionist for service businesses: answers 24/7, books and qualifies, screens spam, and delivers a transcript, summary, and lead after every call
 - MakoPulse (https://makopulse.com) — uptime and API monitoring: seven check types from the US and Europe as often as every 30 seconds, real-browser checks, AI root-cause diagnosis within a minute, phone-call alerts, cron heartbeats, and branded status pages; free for 5 monitors, $15/mo for 50
 - MakoChat (https://makochat.app) — AI chat receptionist for small business websites: learns the business by crawling its own site (up to 5,000 pages), answers visitors 24/7, books onto the real calendar via Cal.com, and emails every lead instantly; $39/$79/$199 a month, self-setup in about 15 minutes

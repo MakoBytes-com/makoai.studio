@@ -11,7 +11,7 @@ import { writeFile, mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
 
 // Source thumbnails from frozen showcase forks for ALL client builds —
-// every portfolio entry except our own products (toppaws, makobot,
+// every portfolio entry except our own products (makobot,
 // makobytes, pixelcopy, makoanswer) gets sourced from a
 // *-showcase.vercel.app fork so the portfolio image never drifts
 // post-handover. Our own products point straight at the live site.
@@ -28,7 +28,6 @@ const sites = [
   { slug: "bndt", url: "https://bndt-showcase.vercel.app" },
   { slug: "axyscorp", url: "https://axyscorp-showcase.vercel.app" },
   { slug: "bishopbend", url: "https://bishopbend-showcase.vercel.app" },
-  { slug: "toppaws", url: "https://toppaws.com" },
   { slug: "makoanswer", url: "https://makoanswer.com" },
   { slug: "makobot", url: "https://makobot.com" },
   { slug: "machine-template", url: "https://machine-template-web.vercel.app" },
@@ -42,7 +41,7 @@ const sites = [
   // as a client build.
 ];
 
-// Optional slug filter:  node scripts/screenshots.mjs toppaws makobot
+// Optional slug filter:  node scripts/screenshots.mjs makobot
 const wanted = process.argv.slice(2).filter((a) => !a.startsWith("-"));
 const filtered = wanted.length
   ? sites.filter((s) => wanted.includes(s.slug))
