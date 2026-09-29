@@ -19,7 +19,7 @@ export default function Privacy() {
           Privacy Policy
         </h1>
         <p className="mt-3 text-[13px] text-mist-400">
-          Last updated: August 2026
+          Last updated: September 2026
         </p>
 
         <div className="mt-10 space-y-6 text-[15px] text-mist-300 leading-relaxed max-w-3xl">
@@ -42,8 +42,10 @@ export default function Privacy() {
           <p>
             When you fill out the contact form on this site, we collect the
             name, email address, optional company name, optional budget range,
-            and message content you provide. We do not ask for, and do not
-            want, any other personal information.
+            and message content you provide. Alongside your message we record
+            the time it arrived, your IP address and your browser type, which
+            help us spot spam and abuse. We do not ask for, and do not want,
+            any other personal information.
           </p>
           <p>
             We use <strong>Vercel Analytics</strong> to measure aggregate
@@ -57,21 +59,31 @@ export default function Privacy() {
             session id to our own server at{" "}
             <code className="text-lumen-300">portal.makoai.studio</code>. The
             session id is a random string, is not linked to your name or email,
-            and is discarded when you close the tab. Separately, if a technical
-            error occurs in your browser, we send ourselves the error message
-            and the address of the page it happened on, so we can find and fix
-            it. Neither of these collects personally identifiable information,
-            and both go only to us — never to an advertising network.
+            and is discarded when you close the tab.
+          </p>
+          <p>
+            Separately, if a page breaks in your browser, the site sends this
+            website&rsquo;s own server the technical error message, the
+            technical trace of where in our code it failed, and the page it
+            happened on (the page address only, never anything after a
+            &ldquo;?&rdquo;). The server records it and emails it to us so we
+            can fix it. It does not include your name, anything you typed, or
+            cookies. Neither the page-view counter nor error reports collect
+            personally identifiable information, and both go only to us —
+            never to an advertising network.
           </p>
 
           <h2 className="font-display text-[22px] font-medium text-mist-100 mt-10">
             How we use it
           </h2>
           <p>
-            Contact-form submissions are delivered to{" "}
+            Contact-form submissions are first saved to private storage on{" "}
+            <strong>Vercel</strong>, our host, so an enquiry is never lost if
+            an email fails, and then delivered to{" "}
             <code className="text-lumen-300">admin@makoai.studio</code> via{" "}
-            <strong>Cloudflare Email Service</strong>. We read them, reply to them, and keep
-            them in our inbox for as long as the conversation is active. We
+            <strong>Cloudflare Email Service</strong>. That storage is not
+            public; only we can read it. We read your message and reply to
+            it, and we delete it whenever you ask (see below). We
             do not add submissions to a mailing list, do not share them with
             third parties, and do not sell them.
           </p>
@@ -96,7 +108,8 @@ export default function Privacy() {
           </h2>
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              <strong>Vercel</strong> — hosting + edge delivery
+              <strong>Vercel</strong> — hosting + edge delivery, and private
+              storage for contact-form submissions
             </li>
             <li>
               <strong>Cloudflare</strong> — DNS and domain management, plus the

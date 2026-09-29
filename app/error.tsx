@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import { ERROR_ENDPOINT, PROD_HOSTS } from "@/components/FleetBeacon";
+import { isForeignError } from "@/lib/client-error-noise";
 
 /**
  * Route-level error boundary.
@@ -27,19 +29,29 @@ export default function Error({
   useEffect(() => {
     // The global listener in FleetBeacon only sees uncaught errors; React has
     // already caught this one, so report it explicitly or it goes unrecorded.
+    // Same endpoint and same noise filter as FleetBeacon.
     try {
-      if (!/(^|\.)makoai\.studio$/.test(location.hostname)) return;
+      if (!PROD_HOSTS.includes(location.hostname)) return;
+      const message = String(error?.message || "render error").slice(0, 500);
+      const trace = error?.stack ? String(error.stack) : "";
+      if (isForeignError(message, trace || undefined)) return;
+      // The route reads message, stack and url only. The digest ties this to
+      // the server log line for the same failure, so it leads the stack text
+      // (which reaches the email) rather than the message (which is the
+      // once-an-hour key, and a per-request digest would defeat it).
+      const stack = [error?.digest ? `digest: ${error.digest}` : "", trace]
+        .filter(Boolean)
+        .join("\n")
+        .slice(0, 2000);
       const payload = JSON.stringify({
         slug: "makoai-studio",
-        message: String(error?.message || "render error").slice(0, 500),
-        stack: error?.stack ? String(error.stack).slice(0, 2000) : undefined,
+        message,
+        stack: stack || undefined,
         url: location.href,
         kind: "client",
-        digest: error?.digest,
       });
-      const url = "https://portal.makoai.studio/api/err";
-      if (navigator.sendBeacon) navigator.sendBeacon(url, payload);
-      else fetch(url, { method: "POST", body: payload, keepalive: true }).catch(() => {});
+      if (navigator.sendBeacon) navigator.sendBeacon(ERROR_ENDPOINT, payload);
+      else fetch(ERROR_ENDPOINT, { method: "POST", body: payload, keepalive: true }).catch(() => {});
     } catch {
       /* reporting must never replace the error screen with a worse one */
     }

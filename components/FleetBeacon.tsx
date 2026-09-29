@@ -2,6 +2,10 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { isForeignError } from "@/lib/client-error-noise";
+
+export const PROD_HOSTS = ["makoai.studio", "www.makoai.studio"];
+export const ERROR_ENDPOINT = "/api/client-error";
 
 // Anonymous page-view beacon → the Mako Studio fleet portal. Reports only
 // the path, a random per-session id (sessionStorage), and referrer — no PII.
@@ -40,17 +44,21 @@ export default function FleetBeacon({ site }: { site: string }) {
     }
   }, [pathname, site]);
 
-  // Client-side error beacon → the fleet duty officer. Only in production
-  // (the real domain), each unique message reported once per page load,
-  // and reporting itself can never throw into the page.
+  // Client-side error beacon → this site's own /api/client-error, which logs
+  // it and emails the ops inbox (the fleet portal's /api/err collector no
+  // longer exists). Only on the production domain (skips localhost and
+  // preview deploys), each unique message reported once per page load, errors
+  // that are not ours (browser extensions, injected history hooks, opaque
+  // "Script error.") dropped, and reporting itself can never throw into the page.
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (!/(^|\.)makoai\.studio$/.test(location.hostname)) return;
+    if (!PROD_HOSTS.includes(location.hostname)) return;
     const sent = new Set<string>();
-    const report = (message: string, stack?: string) => {
+    const report = (message: string, stack?: string, filename?: string) => {
       try {
         const msg = String(message || "").slice(0, 500);
         if (!msg || sent.has(msg) || sent.size >= 10) return;
+        if (isForeignError(msg, stack, filename)) return;
         sent.add(msg);
         const payload = JSON.stringify({
           slug: site,
@@ -59,10 +67,9 @@ export default function FleetBeacon({ site }: { site: string }) {
           url: location.href,
           kind: "client",
         });
-        const url = "https://portal.makoai.studio/api/err";
-        if (navigator.sendBeacon) navigator.sendBeacon(url, payload);
+        if (navigator.sendBeacon) navigator.sendBeacon(ERROR_ENDPOINT, payload);
         else
-          fetch(url, { method: "POST", body: payload, keepalive: true }).catch(
+          fetch(ERROR_ENDPOINT, { method: "POST", body: payload, keepalive: true }).catch(
             () => {},
           );
       } catch {
@@ -70,7 +77,7 @@ export default function FleetBeacon({ site }: { site: string }) {
       }
     };
     const onError = (e: ErrorEvent) =>
-      report(e.message, e.error instanceof Error ? e.error.stack : undefined);
+      report(e.message, e.error instanceof Error ? e.error.stack : undefined, e.filename);
     const onRejection = (e: PromiseRejectionEvent) => {
       const r = e.reason;
       report(

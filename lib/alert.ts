@@ -26,8 +26,11 @@ const SUPPORT_EMAIL = "admin@makoai.studio";
 const ONCE_PER_MS = 60 * 60_000;
 const lastSent = new Map<string, number>();
 
-export async function reportProblem(message: string, where: string): Promise<void> {
-  console.error(`[alert] ${where}: ${message}`);
+export async function reportProblem(message: string, where: string, detail?: string): Promise<void> {
+  // `detail` (a stack trace, say) rides along in the email and the log but is
+  // not part of the once-an-hour key, so the same error from two browsers with
+  // slightly different stacks is still one email.
+  console.error(`[alert] ${where}: ${message}${detail ? `\n${detail}` : ""}`);
   // Only the real production deployment emails, so preview branches and local
   // dev never reach the inbox.
   if (process.env.VERCEL_ENV !== "production") return;
@@ -44,8 +47,10 @@ export async function reportProblem(message: string, where: string): Promise<voi
     await sendMail({
       from: `Mako Studio alerts <${from}>`,
       to,
-      subject: `⚠️ makoai.studio: ${message.slice(0, 80)}`,
-      text: `Something on makoai.studio needs a look.\n\nWhere: ${where}\nWhat: ${message.slice(0, 1000)}\n\nThis alert is sent at most once an hour for the same problem.`,
+      // Control characters out of the subject: some messages now come from a
+      // visitor's browser (app/api/client-error), so never trust them in a header.
+      subject: `⚠️ makoai.studio: ${message.replace(/[\x00-\x1f\x7f]+/g, " ").slice(0, 80)}`,
+      text: `Something on makoai.studio needs a look.\n\nWhere: ${where}\nWhat: ${message.slice(0, 1000)}${detail ? `\n\nDetail:\n${detail.slice(0, 2000)}` : ""}\n\nThis alert is sent at most once an hour for the same problem.`,
     });
   } catch {
     /* an alert that fails must never affect the visitor's request */
